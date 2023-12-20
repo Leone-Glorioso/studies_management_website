@@ -1,0 +1,25 @@
+.NavbarItems{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    padding: 0px;
+    background-color: #8CBFE4;
+    height: 90px;
+    position: fixed;
+    top: 150px;
+    left: 250px;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 30px;
+    list-style: none;
+    position: fixed;
+    top: 180px;
+    left: 280px;
+}
+
+.nav-links {
+    color: #FFFFFF;
+}
