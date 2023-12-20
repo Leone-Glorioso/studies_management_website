@@ -1,67 +1,67 @@
-// import React, {useState} from 'react';
-// import firebase from "firebase/compat";
-//
-// const LoginWindow = () => {
-//     const [username, setUsername] = useState('');
-//     const [password, setPassword] = useState('');
-//
-//     const handleLogin = async () => {
-//         try {
-//             const userCredential = await firebase.auth().signInWithEmailAndPassword(username, password);
-//             const user = userCredential.user;
-//             console.log('Login successful:', user);
-//             // Add your further logic after successful login
-//         } catch (error) {
-//             console.error('Login failed:', error.message);
-//             // Handle login error here
-//         }
-//     };
-//
-//     return (
-//         <div
-//             style={{
-//                 backgroundColor: 'beige',
-//                 padding: '20px',
-//                 width: '300px',
-//                 margin: 'auto',
-//                 marginTop: '100px',
-//                 borderRadius: '10px',
-//                 boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-//             }}
-//         >
-//             <h2>Login</h2>
-//             <label>
-//                 Username:
-//                 <input
-//                     type="text"
-//                     value={username}
-//                     onChange={(e) => setUsername(e.target.value)}
-//                 />
-//             </label>
-//             <br />
-//             <label>
-//                 Password:
-//                 <input
-//                     type="password"
-//                     value={password}
-//                     onChange={(e) => setPassword(e.target.value)}
-//                 />
-//             </label>
-//             <br />
-//             <button
-//                 style={{
-//                     backgroundColor: 'forestgreen',
-//                     color: 'white',
-//                     padding: '10px',
-//                     borderRadius: '5px',
-//                     cursor: 'pointer',
-//                 }}
-//                 onClick={handleLogin}
-//             >
-//                 Login
-//             </button>
-//         </div>
-//     );
-// };
-//
-// export default LoginWindow;
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./LoginWindow.css";
+import { FaUser, FaLock } from 'react-icons/fa';
+
+const LoginWindow = (props) => {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [emailError, setEmailError] = useState("")
+    const [passwordError, setPasswordError] = useState("")
+
+    const navigate = useNavigate();
+
+    const onButtonClick = () => {
+        // You'll update this function later...
+    }
+
+        return (
+            <div className={"mainContainer"}>
+                <div className="inputContainer">
+                    <div className="input-group">
+                    <span className="icon">
+                      <FaUser />
+                    </span>
+                        <input
+                            value={email}
+                            placeholder="Όνομα Χρήστη"
+                            onChange={ev => setEmail(ev.target.value)}
+                            className="inputBox"
+                        />
+                    </div>
+                    <label className="errorLabel">{emailError}</label>
+                </div>
+                <br />
+                <div className="inputContainer">
+                    <div className="input-group">
+                        <span className="icon">
+                          <FaLock />
+                        </span>
+                        <input
+                            value={password}
+                            placeholder="Κωδικός"
+                            type="password" // Ensure the input type is set to "password" for password fields
+                            onChange={ev => setPassword(ev.target.value)}
+                            className="inputBox"
+                        />
+                    </div>
+                    <label className="errorLabel">{passwordError}</label>
+                </div>
+                <br />
+                <div className={"container"}>
+                    <button className="round-button">
+                        <span className="lock-icon">&#128274;</span>
+                    </button>
+                    <input
+                        className={"green-button"}
+                        type="button"
+                        onClick={onButtonClick}
+                        value={"Σύνδεση"} />
+                </div>
+            </div>
+
+        );
+
+};
+
+export default LoginWindow;
