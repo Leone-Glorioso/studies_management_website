@@ -1,0 +1,54 @@
+/* AnnouncementBoard.css */
+
+
+.announcement-board {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%; /* Adjusted to fit the width of the page */
+    margin: auto;
+}
+
+.announcements-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.announcement {
+    flex: 0 0 calc(100% / 3); /* Set each announcement to take up one-third of the container */
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.announcement-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.announcement-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}

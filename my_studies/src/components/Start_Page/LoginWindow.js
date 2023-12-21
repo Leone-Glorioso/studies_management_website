@@ -36,69 +36,51 @@ const LoginWindow = (props) => {
     };
 
         return (
-            <div>
-                <div className={"mainContainer"}>
-                    <div className="inputContainer">
-                        <div className="input-group">
-                        <span className="icon">
-                          <FaUser />
-                        </span>
-                            <input
-                                value={email}
-                                placeholder="Όνομα Χρήστη"
-                                onChange={ev => setEmail(ev.target.value)}
-                                className="inputBox"
-                            />
-                        </div>
-                        <label className="errorLabel">{emailError}</label>
-                    </div>
-                    <br />
-                    <div className="inputContainer">
-                        <div className="input-group">
-                            <span className="icon">
-                              <FaLock />
-                            </span>
-                            <input
-                                value={password}
-                                placeholder="Κωδικός"
-                                type="password" // Ensure the input type is set to "password" for password fields
-                                onChange={ev => setPassword(ev.target.value)}
-                                className="inputBox"
-                            />
-                        </div>
-                        <label className="errorLabel">{passwordError}</label>
-                    </div>
-                    <br />
-                    <div className={"container"}>
-                        <button className="round-button">
-                            <span className="lock-icon">
-                              <FaUnlockAlt />
-                            </span>
-                        </button>
-                        {isTooltipVisible && <div className="tooltip"><p>This is pop-up text</p></div>}
+            <div className={"mainContainer"}>
+                <div className="inputContainer">
+                    <div className="input-group">
+                    <span className="icon">
+                      <FaUser />
+                    </span>
                         <input
-                            className={"green-button"}
-                            type="button"
-                            onClick={onButtonClick}
-                            value={"Σύνδεση"} />
+                            value={email}
+                            placeholder="Όνομα Χρήστη"
+                            onChange={ev => setEmail(ev.target.value)}
+                            className="inputBox"
+                        />
                     </div>
+                    <label className="errorLabel">{emailError}</label>
                 </div>
-                {/*<div className="carousel-container">*/}
-                {/*    <Slider {...settings}>*/}
-                {/*        <div className="carousel-slide">*/}
-                {/*            <h3>Slide 1</h3>*/}
-                {/*            <p>This is some text for slide 1. Add your content here.</p>*/}
-                {/*        </div>*/}
-                {/*        <div className="carousel-slide">*/}
-                {/*            <h3>Slide 2</h3>*/}
-                {/*            <p>This is some text for slide 2. Add your content here.</p>*/}
-                {/*        </div>*/}
-                {/*        <div className="carousel-slide">*/}
-                {/*            <h3>Slide 3</h3>*/}
-                {/*            <p>This is some text for slide 3. Add your content here.</p>*/}
-                {/*        </div>*/}
-                {/*    </Slider>*/}
-                {/*</div>*/}
+                <br />
+                <div className="inputContainer">
+                    <div className="input-group">
+                        <span className="icon">
+                          <FaLock />
+                        </span>
+                        <input
+                            value={password}
+                            placeholder="Κωδικός"
+                            type="password" // Ensure the input type is set to "password" for password fields
+                            onChange={ev => setPassword(ev.target.value)}
+                            className="inputBox"
+                        />
+                    </div>
+                    <label className="errorLabel">{passwordError}</label>
+                </div>
+                <br />
+                <div className={"container"}>
+                    <button className="round-button">
+                        <span className="lock-icon">
+                          <FaUnlockAlt />
+                        </span>
+                    </button>
+                    {isTooltipVisible && <div className="tooltip"><p>This is pop-up text</p></div>}
+                    <input
+                        className={"green-button"}
+                        type="button"
+                        onClick={onButtonClick}
+                        value={"Σύνδεση"} />
+                </div>
             </div>
         );
 

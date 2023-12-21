@@ -1,0 +1,21 @@
+/* App.css or your preferred stylesheet */
+
+/*body {*/
+/*    margin: 0;*/
+/*    font-family: 'Arial', sans-serif; !* Adjust the font family as needed *!*/
+/*}*/
+
+.container {
+    background-color: #ccc; /* Gray background color for the container */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding to create space between the header and container */
+    text-align: center; /* Center-align the text within the container */
+}
+
+h1 {
+    color: #000; /* Black text color for the header */
+    padding: 10px; /* Padding to create space inside the header */
+    border-radius: 5px; /* Optional: Add rounded corners to the header */
+    display: inline-block; /* Make the header an inline block to center it */
+    margin-left: 40%;
+}
