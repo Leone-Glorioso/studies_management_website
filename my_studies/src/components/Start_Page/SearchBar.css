@@ -18,7 +18,6 @@
 
 .search-input {
     width: calc(100% - 30px); /* Take up the remaining space, considering the icon width and padding */
-    padding: 8px; /* Adjust padding as needed */
     box-sizing: border-box;
     border: 1px solid #aaa; /* Border color */
     border-radius: 5px; /* Rounded corners */
