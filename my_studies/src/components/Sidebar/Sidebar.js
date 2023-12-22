@@ -7,7 +7,7 @@ class Sidebar extends Component {
     render() {
         return(
             <nav className="SidebarItems">
-                <ul className="nav-menu">
+                <ul className="side-menu">
                     {MenuItems.map((item, index) => {
                         return (
                             <li key={index}>
