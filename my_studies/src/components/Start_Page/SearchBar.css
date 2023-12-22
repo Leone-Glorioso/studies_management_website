@@ -1,0 +1,25 @@
+/* SearchBar.css */
+
+.search-container {
+    position: relative; /* Relative positioning for the container */
+    background-color: #ccc; /* Gray background color for the search bar */
+    padding: 10px; /* Adjust padding as needed */
+    border-radius: 5px; /* Rounded corners */
+    width: 400px; /* Set the width to 400px */
+    margin-left: auto; /* Align to the right by using auto margin on the left */
+}
+
+.search-icon {
+    position: absolute; /* Absolute positioning for the icon */
+    top: 50%; /* Center vertically */
+    left: 18px; /* Adjust as needed */
+    transform: translateY(-50%); /* Center vertically */
+}
+
+.search-input {
+    width: calc(100% - 30px); /* Take up the remaining space, considering the icon width and padding */
+    box-sizing: border-box;
+    border: 1px solid #aaa; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    padding-left: 30px; /* Ensure text doesn't overlap with the icon */
+}

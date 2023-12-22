@@ -1,0 +1,247 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #EAD6B7; /* Set the background color to beige */
+    max-width: 500px; /* Set the maximum width of the container */
+    max-height: 250px; /* Set the maximum height of the container */
+    margin: 50px auto 0; /* Add margin to the top (50px in this example), and center horizontally */
+    padding: 20px; /* Add some padding for better visual appearance */
+    border-radius: 15px; /* Add rounded corners with a radius of 15 pixels */
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 64px;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultContainer, .historyItem {
+    flex-direction: row;
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.historyContainer {
+    flex-direction: column;
+    display: flex;
+    height: 200px;
+    align-items: center;
+    flex-grow: 5;
+    justify-content: flex-start;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 260px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.inputContainer > .errorLabel {
+    color: red;
+    font-size: 12px;
+}
+
+.buttonCont {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.inputBox {
+    height: 48px;
+    width: 400px;
+    font-size: large;
+    border-radius: 8px;
+    border: 1px solid grey;
+    padding-left: 8px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.green-button {
+    background-color: #005D3C; /* Green background color */
+    color: white; /* White text color */
+    padding: 15px 30px; /* Add padding to the button */
+    font-size: 16px; /* Set the font size */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    margin-left: 10px; /* Adjust the margin to move the button more to the right */
+}
+
+.green-button:hover {
+    background-color: #003A1A; /* Darker green on hover */
+}
+
+
+.round-button {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #005D3C;
+        border-radius: 10rem;
+        z-index: -2;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        /*background-color: darken(#005D3C, 15%);*/
+        transition: all .3s;
+        border-radius: 10rem;
+        z-index: -1;
+    }
+    &:hover {
+        color: #fff;
+        &:before {
+            width: 100%;
+        }
+    }
+}
+
+@keyframes waveAnimation {
+    0%, 100% {
+        background-position: 100% 0;
+    }
+    50% {
+        background-position: 0 0;
+    }
+}
+
+.round-button:hover {
+    background: linear-gradient(90deg, #005D3C, #FF0000); /* Wave-like linear gradient on hover */
+    background-size: 200% 100%; /* Double the size to create the sliding effect */
+}
+
+.lock-icon {
+    line-height: 1; /* Center the lock icon vertically */
+    font-weight: bold; /* Adjust font weight for a bolder appearance */
+}
+
+/*.background-container {*/
+/*    background-image: url('https://as1.ftcdn.net/v2/jpg/06/25/25/48/1000_F_625254822_ZnId6bB60hqC9WXH1uEzViKtLznxHv6t.jpg'); !* Set the path to your background image *!*/
+/*    background-size: cover; !* Ensure the background image covers the entire container *!*/
+/*    background-position: center; !* Center the background image *!*/
+/*    background-repeat: no-repeat; !* Do not repeat the background image *!*/
+/*    height: 600px;*/
+/*    width: 2000px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    left: 10px; /* Adjust the left positioning of the icon as needed */
+}
+
+.inputBox {
+    padding-left: 30px; /* Ensure there is enough padding to accommodate the icon */
+}
+
+
+.carousel-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.carousel-slide {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 10px; /* Add some margin between slides */
+}
+
+/* Customize the dots style */
+.slick-dots {
+    bottom: 10px;
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    font-size: 10px;
+    color: #666;
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    display: none;
+    z-index: 1;
+}
+
+.tooltip-container:hover .tooltip {
+    display: block;
+}
