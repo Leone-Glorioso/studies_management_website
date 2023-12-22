@@ -1,4 +1,12 @@
-export const MenuItems = [
+export const profile = [
+    {
+        url: "#",
+        cName: "nav-links",
+        icon: "fa-regular fa-circle-user",
+        title: "ΟΝΟΜΑ-ΕΠΩΝΥΜΟ"
+    },
+]
+export const MenuItems1 = [
     {
         url: "#",
         cName: "nav-links",
@@ -34,6 +42,9 @@ export const MenuItems = [
         cName: "nav-links",
         title: "Μηνύματα"
     },
+]
+
+export const MenuItems2 = [
     {
         url: "#",
         cName: "nav-links",
