@@ -67,8 +67,10 @@ class Sidebar extends Component {
 
                 <div className="search-bar">
                     <input type="text" placeholder=" Αναζήτηση"/>
-                    <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i> </button>
+                    <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
                 </div>
+
+                <div className="title">Ακαδημαϊκή περίοδος, έτος</div>
 
             </div>
         )
