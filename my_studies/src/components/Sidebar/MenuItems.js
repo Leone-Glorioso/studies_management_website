@@ -64,3 +64,21 @@ export const MenuItems2 = [
         title: "Αποσύνδεση"
     },
 ]
+
+export const subjects = [
+    {
+        url:"#",
+        cName: "sub-links",
+        title: "ΕΠΙΚΟΙΝΩΝΙΑ ΑΝΘΡΩΠΟΥ ΜΗΧΑΝΗΣ"
+    },
+    {
+        url:"#",
+        cName: "sub-links",
+        title: "ΓΡΑΦΙΚΑ Ι"
+    },
+    {
+        url:"#",
+        cName: "sub-links",
+        title: "ΛΕΙΤΟΥΡΓΙΚΑ ΣΥΣΤΗΜΑΤΑ"
+    },
+]
