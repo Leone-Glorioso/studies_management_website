@@ -1,0 +1,136 @@
+.help-start-body-body {
+  width: 925px;
+  height: 734px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.help-start-body-studentsbutton {
+  top: 0px;
+  left: 49.6759033203125px;
+  width: 875.3240966796875px;
+  height: 173.6946563720703px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.help-start-body-rectangle5 {
+  top: 3.7353689670562744px;
+  left: 0px;
+  width: 875px;
+  height: 170px;
+  position: absolute;
+  border-radius: 17px;
+}
+.help-start-body-text {
+  top: 61px;
+  color: rgba(255, 255, 255, 1);
+  right: -16px;
+  width: 875px;
+  height: auto;
+  position: absolute;
+  font-size: 49px;
+  font-style: Medium;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.help-start-body-user {
+  top: 42.95674133300781px;
+  left: 234.67593383789062px;
+  width: 77px;
+  height: 84px;
+  position: absolute;
+}
+.help-start-body-teachersbutton {
+  top: 280.1526794433594px;
+  left: 0px;
+  width: 925px;
+  height: 173.6946563720703px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.help-start-body-rectangle51 {
+  top: 3.7353689670562744px;
+  left: 49.675926208496094px;
+  width: 875px;
+  height: 170px;
+  position: absolute;
+  border-radius: 17px;
+}
+.help-start-body-text2 {
+  top: 53px;
+  color: rgba(255, 255, 255, 1);
+  right: -52px;
+  width: 875px;
+  height: auto;
+  position: absolute;
+  font-size: 49px;
+  font-style: Medium;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.help-start-body-academiccap {
+  top: 28.01526641845703px;
+  left: 217.54629516601562px;
+  width: 103px;
+  height: 112px;
+  position: absolute;
+}
+.help-start-body-administrationbutton {
+  top: 560.3053588867188px;
+  left: 49.6759033203125px;
+  width: 875.3240966796875px;
+  height: 173.6946563720703px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.help-start-body-rectangle52 {
+  top: 3.7353687286376953px;
+  left: 0px;
+  width: 875px;
+  height: 170px;
+  position: absolute;
+  border-radius: 17px;
+}
+.help-start-body-text4 {
+  top: 57px;
+  color: rgba(255, 255, 255, 1);
+  right: -40px;
+  width: 875px;
+  height: auto;
+  position: absolute;
+  font-size: 49px;
+  font-style: Medium;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.help-start-body-library {
+  top: 41.08905792236328px;
+  left: 179.86111450195312px;
+  width: 74px;
+  height: 80px;
+  position: absolute;
+}
+.help-start-body-root-class-name {
+  top: 190px;
+  left: 444px;
+  position: absolute;
+}

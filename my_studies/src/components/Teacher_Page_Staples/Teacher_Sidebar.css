@@ -1,0 +1,300 @@
+.home-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+.home-teachersmessages22 {
+    width: 100%;
+    height: 1024px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 1);
+}
+.home-sidebar {
+    top: 0px;
+    left: 0px;
+    width: 288px;
+    height: 1024px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(16, 97, 78, 1);
+}
+.home-settings {
+    top: 866px;
+    left: 18px;
+    width: 150px;
+    height: 30px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+}
+.home-cog {
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+.home-text {
+    left: 37px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 23px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.home-sideheader {
+    top: 143px;
+    left: 14px;
+    width: 170px;
+    height: 59px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+}
+.home-usercircle {
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 59px;
+    position: absolute;
+}
+.home-text02 {
+    top: 5px;
+    left: 64px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.home-line2 {
+    top: 209px;
+    left: 0px;
+    width: 288px;
+    height: 1px;
+    position: absolute;
+}
+.home-line3 {
+    top: 834px;
+    left: 0px;
+    width: 288px;
+    height: 1px;
+    position: absolute;
+}
+.home-logout {
+    top: 958px;
+    left: 22px;
+    width: 179px;
+    height: 30px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+}
+.home-text07 {
+    top: 2px;
+    left: 33px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 23px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.home-logout1 {
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+.home-help {
+    top: 911px;
+    left: 18px;
+    width: 130px;
+    height: 30px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+}
+.home-text09 {
+    top: 2px;
+    left: 37px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 23px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.home-questionmarkcircle {
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+.home-frame {
+    top: 491px;
+    left: 0px;
+    width: 288px;
+    height: 65px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(16, 97, 78, 1);
+}
+.home-text11 {
+    top: 17px;
+    left: 18px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 23px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.home-frame1 {
+    top: 426px;
+    left: 0px;
+    width: 288px;
+    height: 65px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(7, 57, 45, 1);
+}
+.home-text13 {
+    top: 17px;
+    left: 18px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 23px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.home-frame2 {
+    top: 361px;
+    left: 0px;
+    width: 288px;
+    height: 65px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(16, 97, 78, 1);
+}
+.home-text15 {
+    top: 17px;
+    left: 18px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 23px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.home-vathmologio {
+    top: 294px;
+    left: 0px;
+    width: 288px;
+    height: 65px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(16, 97, 78, 1);
+}
+.home-text17 {
+    top: 18px;
+    left: 18px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 23px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.home-frame3 {
+    top: 229px;
+    left: 0px;
+    width: 288px;
+    height: 65px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(16, 97, 78, 1);
+}
+.home-text19 {
+    top: 17px;
+    left: 18px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 23px;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}

@@ -1,0 +1,55 @@
+.help-header-header {
+  width: 1010px;
+  height: 116px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(175, 178, 181, 1);
+}
+.help-header-searchbar {
+  top: 24.507049560546875px;
+  left: 136.8611297607422px;
+  width: 738.0101928710938px;
+  height: 66.98591613769531px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(255, 255, 255, 1);
+}
+.help-header-text {
+  top: 13.070404052734375px;
+  left: 21.60433578491211px;
+  color: rgba(107, 107, 107, 1);
+  width: 205px;
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.help-header-search {
+  top: 13.070404052734375px;
+  left: 668.7133178710938px;
+  width: 42px;
+  height: 39px;
+  position: absolute;
+}
+.help-header-home {
+  top: 24.507049560546875px;
+  left: 27.86209487915039px;
+  width: 71px;
+  height: 67px;
+  position: absolute;
+}
+.help-header-root-class-name {
+  top: -3px;
+  right: -20px;
+  position: absolute;
+}
