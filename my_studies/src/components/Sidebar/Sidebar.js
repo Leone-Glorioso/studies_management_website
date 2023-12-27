@@ -72,7 +72,23 @@ class Sidebar extends Component {
 
                 <div className="title">Ακαδημαϊκή περίοδος, έτος</div>
 
+                <table>
+                    <tr>
+                        <th>Κωδικός Μαθήματος</th>
+                        <th>Τίτλος Μαθήματος</th>
+                    </tr>
+                    <tr>
+                        <td>000000</td>
+                        <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                    </tr>
+                    <tr>
+                        <td>111111</td>
+                        <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                    </tr>
+                </table>
+
             </div>
+
         )
     }
 

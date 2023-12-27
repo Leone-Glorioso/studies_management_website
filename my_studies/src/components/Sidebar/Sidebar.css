@@ -80,3 +80,37 @@
     padding-left: 30px;
     padding-right: 950px;
 }
+
+table{
+    position: fixed;
+    bottom: 90px;
+    left: 250px;
+    width: 500px;
+    /*border: 5px;*/
+    border-collapse: collapse;
+
+    th {
+        text-align: left;
+        font-size: 15px;
+        text-decoration-color: black;
+        font-weight: 600;
+
+    }
+
+    td {
+        font-size: 15px;
+        text-decoration-color: black;
+        font-weight: 400;
+        border: 3px solid #A2D2F5;
+    }
+
+    tr {
+        height: 40px;
+    }
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+
+tr:hover {background-color: #8CBFE4;}
