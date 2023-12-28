@@ -27,7 +27,7 @@ export const MenuItems1 = [
         cName: "nav-links-side",
         title: "Πιστοποιητικά"
     },
-    {
+    /*{
         url: "#",
         cName: "nav-links-side",
         title: "Ανακοινώσεις"
@@ -41,7 +41,7 @@ export const MenuItems1 = [
         url: "#",
         cName: "nav-links-side",
         title: "Μηνύματα"
-    },
+    },*/
 ]
 
 export const MenuItems2 = [
@@ -65,20 +65,20 @@ export const MenuItems2 = [
     },
 ]
 
-export const subjects = [
+export const MenuItems = [
     {
-        url:"#",
-        cName: "sub-links",
-        title: "ΕΠΙΚΟΙΝΩΝΙΑ ΑΝΘΡΩΠΟΥ ΜΗΧΑΝΗΣ"
+        url: "#",
+        cName: "nav-links",
+        icon: "fa-solid fa-house"
     },
     {
-        url:"#",
-        cName: "sub-links",
-        title: "ΓΡΑΦΙΚΑ Ι"
+        url: "#",
+        cName: "nav-links",
+        icon: "fa-solid fa-earth-americas"
     },
     {
-        url:"#",
-        cName: "sub-links",
-        title: "ΛΕΙΤΟΥΡΓΙΚΑ ΣΥΣΤΗΜΑΤΑ"
+        url: "#",
+        cName: "nav-links",
+        icon: "fa-solid fa-bell"
     },
 ]
