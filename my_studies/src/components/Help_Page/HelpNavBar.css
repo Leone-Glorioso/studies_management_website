@@ -71,3 +71,14 @@
 span {
     margin-left: 15px;
 }
+
+.nav-img {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 1px 0px 5px 5px;
+    list-style: none;
+    height: 105px;
+    object-position: bottom;
+    margin-top: 54vh;
+}

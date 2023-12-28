@@ -40,7 +40,9 @@ function HelpNavbar() {
                                 </li>
                             );
                         })}
+                        <img src={"/cyan-left-greek-1-1024x283.png"} alt={"Logo ΕΚΠΑ"} className={'nav-img'}/>
                     </ul>
+                    {/*<img src={"/cyan-left-greek-1-1024x283.png"} alt={"Logo ΕΚΠΑ"} className={'nav-img'}/>*/}
                 </nav>
             </IconContext.Provider>
         </>
