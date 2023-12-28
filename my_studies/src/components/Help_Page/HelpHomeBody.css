@@ -1,0 +1,31 @@
+.centered-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.big-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+    font-size: 50px;
+    margin: 5px;
+    height: 20vh;
+    width: 75vh;
+    background-color: #D49A42;
+    color: white;
+    align-self: center;
+    border-radius: 50px;
+    border: 0px;
+}
+
+.big-button svg {
+    margin-right: 8px; /* Adjust the margin as needed */
+}
+.big-button:hover {
+    background-color: #BE8A3B;
+}
