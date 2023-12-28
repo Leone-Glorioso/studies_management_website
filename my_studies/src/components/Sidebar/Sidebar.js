@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {MenuItems1} from "./MenuItems";
+import {MenuItems1, subjects} from "./MenuItems";
 import {MenuItems2} from "./MenuItems";
 import {profile} from "./MenuItems";
 import './Sidebar.css'
@@ -69,6 +69,18 @@ class Sidebar extends Component {
                     <input type="text" placeholder=" Αναζήτηση"/>
                     <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
                 </div>
+
+                <ul className="sub-list">
+                    {subjects.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a href={item.url} className={item.cName}>
+                                    {item.title}
+                                </a>
+                            </li>
+                        )
+                    })}
+                </ul>
 
                 <div className="title">Ακαδημαϊκή περίοδος, έτος</div>
 

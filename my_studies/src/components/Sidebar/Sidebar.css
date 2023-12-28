@@ -65,6 +65,24 @@
     padding: 10px 2px;
 }
 
+.sub-list {
+    position: fixed;
+    top: 225px;
+    left: 300px;
+    list-style: none;
+}
+
+.sub-links {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    /*padding: 2px;
+    background-color: #D9EF9B;*/
+}
+
 .title {
     /*display: flex;
     align-items: center;*/
