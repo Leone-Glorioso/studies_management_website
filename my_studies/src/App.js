@@ -7,7 +7,7 @@ import Sidebar from "./components/Student_Home/Sidebar";
 import StudentCert from "./components/Student_Certificates/StudentCert";
 import StartPage from "./components/Start_Page/StartPage";
 import Teacher_Sidebar from "./components/Teacher_Page_Staples/Teacher_Sidebar";
-import HelpHome from "./components/Help_Page/help-home";
+import HelpHome from "./components/FileGraveyard/help-home";
 import HelpNavbar from "./components/Help_Page/HelpNavbar";
 
 function App() {

@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import { IconContext } from 'react-icons';
 import './HelpNavBar.css';
-import HelpSearchBar from "./HelpSearchBar";
-import Data from "./HelpData.json";
+import HelpSearchBar from "../FileGraveyard/HelpSearchBar";
+import Data from "../FileGraveyard/HelpData.json";
 
 function HelpNavbar() {
     const [sidebar, setSidebar] = useState(false);
@@ -30,6 +30,7 @@ function HelpNavbar() {
                                 <AiIcons.AiOutlineClose />
                             </Link>
                         </li>
+                        <img src={"/logo_1-removebg-preview.png"} alt={"Logo Σελίδας Βοήθειας"} className={'nav-img2'}/>
                         {SidebarData.map((item, index) => {
                             return (
                                 <li key={index} className={item.cName}>
