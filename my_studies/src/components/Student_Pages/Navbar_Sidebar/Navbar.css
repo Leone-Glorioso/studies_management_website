@@ -4,8 +4,7 @@
     font-size: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-left: 60px;
-    padding-right: 1200px;
+    width: 100%;
     background-color: #8CBFE4;
     height: 90px;
     position: fixed;

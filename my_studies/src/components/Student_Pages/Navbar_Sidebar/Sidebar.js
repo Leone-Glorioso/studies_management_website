@@ -70,23 +70,6 @@ class Sidebar extends Component {
                     <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 
-                <div className="title">Τα μαθηματά μου</div>
-
-                <table>
-                    <tr>
-                        <th>Κωδικός Μαθήματος</th>
-                        <th>Τίτλος Μαθήματος</th>
-                    </tr>
-                    <tr>
-                        <td>000000</td>
-                        <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
-                    </tr>
-                    <tr>
-                        <td>111111</td>
-                        <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
-                    </tr>
-                </table>
-
             </div>
 
         )

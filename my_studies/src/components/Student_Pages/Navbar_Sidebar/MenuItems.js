@@ -23,7 +23,7 @@ export const MenuItems1 = [
         title: "Δηλώσεις"
     },
     {
-        url: "#",
+        url: "/certificates",
         cName: "nav-links-side",
         title: "Πιστοποιητικά"
     },
