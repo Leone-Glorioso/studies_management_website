@@ -7,7 +7,7 @@ import HelpHeader from "./help-header";
 import HelpStartBody from "./help-start-body";
 import './help-home.css'
 
-const HelpHome = (props) => {
+const HelpHome2 = (props) => {
   return (
     <div className="help-home-container">
       {/*<Helmet>*/}
@@ -23,4 +23,4 @@ const HelpHome = (props) => {
   )
 }
 
-export default HelpHome
+export default HelpHome2
