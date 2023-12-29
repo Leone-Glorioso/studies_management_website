@@ -2,20 +2,22 @@ import './App.css';
 import LoginWindow from "./components/Start_Page/LoginWindow";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import React from "react";
-import Sidebar from "./components/Student_Home/Sidebar";
-import StudentCert from "./components/Student_Certificates/StudentCert";
+import StudentCert from "./components/Student_Pages/Student_Certificates/StudentCert";
+import StudentCert1 from "./components/Student_Pages/Student_Certificates/StudentCert1";
 import StartPage from "./components/Start_Page/StartPage";
 import Teacher_Sidebar from "./components/Teacher_Page_Staples/Teacher_Sidebar";
 import HelpHome from "./components/Help_Page/HelpHome";
 import HelpStudents from "./components/Help_Page/HelpStudents";
+import StudentHome from "./components/Student_Pages/Student_Home/StudentHome";
 import {MantineProvider} from "@mantine/core";
 
 function App() {
     return(
         <Router>
           <Routes>
+              <Route path='/certificates/new-certificate' element={<StudentCert1/>} />
               <Route path='/certificates' element={<StudentCert/>} />
-              <Route path='/' element={<Sidebar/>} />
+              <Route path='/' element={<StudentHome/>} />
               <Route path='/login' element={<LoginWindow/>}/>
               <Route path='/start' element={<StartPage/>}/>
               <Route path='/ts' element={<Teacher_Sidebar/>}/>
