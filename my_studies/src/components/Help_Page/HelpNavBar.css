@@ -14,7 +14,7 @@
 
 .nav-menu {
     background-color: #E9BD7B;
-    width: 350px;
+    width: 20vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -49,6 +49,7 @@
     padding: 0 16px;
     border-radius: 4px;
     -webkit-text-stroke: 1px #D49A42;
+    font-weight: bold;
 }
 
 .nav-text a:hover {

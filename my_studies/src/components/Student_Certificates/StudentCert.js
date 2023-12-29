@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useState, useEffect} from "react";
 import './StudentCert.css'
 import {MenuItems1} from "./MenuItems";
 import {MenuItems2} from "./MenuItems";
@@ -6,109 +6,108 @@ import {profile} from "./MenuItems";
 import './Sidebar.css'
 import {MenuItems} from "./MenuItems";
 import './Navbar.css'
+import Sidebar from "../Student_Home/Sidebar";
 
-class StudentCert extends Component {
+function StudentCert(props) {
 
-    render() {
-        return (
-            <div>
+    const [dropdownVisible, setDropdownVisible] = useState(false);
 
-                <nav className="SidebarItems">
-                    <ul className="prof">
-                        {profile.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <a href={item.url} className={item.cName}>
-                                        <i className={item.icon}></i>{item.title}
-                                    </a>
-                                </li>
-                            )
-                        })}
-                    </ul>
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (dropdownVisible && !event.target.matches('.dropbtn')) {
+                setDropdownVisible(false);
+            }
+        };
 
-                    <ul className="side-menu1">
-                        {MenuItems1.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <a href={item.url} className={item.cName}>
-                                        <i className={item.icon}></i>{item.title}
-                                    </a>
-                                </li>
-                            )
-                        })}
-                    </ul>
+        window.addEventListener('click', handleOutsideClick);
 
-                    <ul className="side-menu2">
-                        {MenuItems2.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <a href={item.url} className={item.cName}>
-                                        <i className={item.icon}></i>{item.title}
-                                    </a>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                </nav>
+        return () => {
+            window.removeEventListener('click', handleOutsideClick);
+        };
+    }, [dropdownVisible]);
 
-                <nav className="NavbarItems">
-                    <ul className="nav-menu">
-                        {MenuItems.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <a href={item.url} className={item.cName}>
-                                        <i className={item.icon}></i>
-                                    </a>
-                                </li>
-                            )
-                        })}
+    const toggleDropdown = () => {
+        setDropdownVisible((prevVisible) => !prevVisible);
+    };
 
-                    </ul>
-                </nav>
+    return(
+        <div>
+            {/*<nav className="SidebarItems">*/}
+            {/*    <ul className="prof">*/}
+            {/*        {profile.map((item, index) => {*/}
+            {/*            return (*/}
+            {/*                <li key={index}>*/}
+            {/*                    <a href={item.url} className={item.cName}>*/}
+            {/*                        <i className={item.icon}></i>{item.title}*/}
+            {/*                    </a>*/}
+            {/*                </li>*/}
+            {/*            )*/}
+            {/*        })}*/}
+            {/*    </ul>*/}
 
-                <div className="search-bar">
-                    <input type="text" placeholder=" Αναζήτηση"/>
-                    <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+            {/*    <ul className="side-menu1">*/}
+            {/*        {MenuItems1.map((item, index) => {*/}
+            {/*            return (*/}
+            {/*                <li key={index}>*/}
+            {/*                    <a href={item.url} className={item.cName}>*/}
+            {/*                        <i className={item.icon}></i>{item.title}*/}
+            {/*                    </a>*/}
+            {/*                </li>*/}
+            {/*            )*/}
+            {/*        })}*/}
+            {/*    </ul>*/}
 
-                <ul className="breadcrumb">
-                    <li><a href="/#">Αρχική Μαθητή</a></li>
-                    <li>Πιστοποιητικά</li>
-                </ul>
+            {/*    <ul className="side-menu2">*/}
+            {/*        {MenuItems2.map((item, index) => {*/}
+            {/*            return (*/}
+            {/*                <li key={index}>*/}
+            {/*                    <a href={item.url} className={item.cName}>*/}
+            {/*                        <i className={item.icon}></i>{item.title}*/}
+            {/*                    </a>*/}
+            {/*                </li>*/}
+            {/*            )*/}
+            {/*        })}*/}
+            {/*    </ul>*/}
+            {/*</nav>*/}
 
-                <div className="dropdown">
-                    <button onClick="myFunction()" className="dropbtn">Κατάσταση Αίτησης</button>
-                    <div id="myDropdown" className="dropdown-content">
-                        <a href="#">Εγκεκριμένη</a>
-                        <a href="#">Σε Εκκρεμότητα</a>
-                        <a href="#">Απορριφθείσα</a>
-                        <a href="#">Ακυρωμένη</a>
-                    </div>
-                </div>
+            {/*<nav className="NavbarItems">*/}
+            {/*    <ul className="nav-menu">*/}
+            {/*        {MenuItems.map((item, index) => {*/}
+            {/*            return (*/}
+            {/*                <li key={index}>*/}
+            {/*                    <a href={item.url} className={item.cName}>*/}
+            {/*                        <i className={item.icon}></i>*/}
+            {/*                    </a>*/}
+            {/*                </li>*/}
+            {/*            )*/}
+            {/*        })}*/}
 
-                <script>
-                    function myFunction() {
-                        document.getElementById("myDropdown").classList.toggle("show");
-                    }
+            {/*    </ul>*/}
+            {/*</nav>*/}
 
-                    window.onclick = function(event) {
-                        if (!event.target.matches('.dropbtn')) {
-                            var dropdowns = document.getElementsByClassName("dropdown-content");
-                            var i;
-                            for (i = 0; i < dropdowns.length; i++) {
-                                var openDropdown = dropdowns[i];
-                                if (openDropdown.classList.contains('show')) {
-                                    openDropdown.classList.remove('show');
-                                }
-                            }
-                        }
-                    }
-                </script>
+            {/*<div className="search-bar">*/}
+            {/*    <input type="text" placeholder=" Αναζήτηση"/>*/}
+            {/*    <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>*/}
+            {/*</div>*/}
+            <Sidebar/>
 
+            <ul className="breadcrumb">
+                <li><a href="/#">Αρχική Μαθητή</a></li>
+                <li>Πιστοποιητικά</li>
+            </ul>
+
+            <div className="dropdown">
+                <button onClick={toggleDropdown} className="dropbtn">Κατάσταση Αίτησης</button>
+                {dropdownVisible && <div id="myDropdown" className="dropdown-content">
+                    <a href="#">Εγκεκριμένη</a>
+                    <a href="#">Σε Εκκρεμότητα</a>
+                    <a href="#">Απορριφθείσα</a>
+                    <a href="#">Ακυρωμένη</a>
+                </div>}
             </div>
 
-        )
-    }
+        </div>
+    );
 
 }
 
