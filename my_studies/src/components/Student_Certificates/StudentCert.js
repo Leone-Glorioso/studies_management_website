@@ -76,6 +76,34 @@ class StudentCert extends Component {
                     <li>Πιστοποιητικά</li>
                 </ul>
 
+                <div className="dropdown">
+                    <button onClick="myFunction()" className="dropbtn">Κατάσταση Αίτησης</button>
+                    <div id="myDropdown" className="dropdown-content">
+                        <a href="#">Εγκεκριμένη</a>
+                        <a href="#">Σε Εκκρεμότητα</a>
+                        <a href="#">Απορριφθείσα</a>
+                        <a href="#">Ακυρωμένη</a>
+                    </div>
+                </div>
+
+                <script>
+                    function myFunction() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
+
+                    window.onclick = function(event) {
+                        if (!event.target.matches('.dropbtn')) {
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            var i;
+                            for (i = 0; i < dropdowns.length; i++) {
+                                var openDropdown = dropdowns[i];
+                                if (openDropdown.classList.contains('show')) {
+                                    openDropdown.classList.remove('show');
+                                }
+                            }
+                        }
+                    }
+                </script>
 
             </div>
 
@@ -83,5 +111,7 @@ class StudentCert extends Component {
     }
 
 }
+
+
 
 export default StudentCert
