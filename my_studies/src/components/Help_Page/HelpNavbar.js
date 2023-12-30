@@ -1,4 +1,3 @@
-// import React from 'react';
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
@@ -6,8 +5,6 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import { IconContext } from 'react-icons';
 import './HelpNavBar.css';
-import HelpSearchBar from "../FileGraveyard/HelpSearchBar";
-import Data from "../FileGraveyard/HelpData.json";
 
 function HelpNavbar() {
     const [sidebar, setSidebar] = useState(false);
@@ -21,7 +18,6 @@ function HelpNavbar() {
                     <Link to='#' className='menu-bars'>
                         <FaIcons.FaBars onClick={showSidebar} />
                     </Link>
-                    {/*<HelpSearchBar  placeholder="Αναζήτηση..." data={Data} />*/}
                 </div>
                 <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items' onClick={showSidebar}>
@@ -41,9 +37,10 @@ function HelpNavbar() {
                                 </li>
                             );
                         })}
-                        <img src={"/cyan-left-greek-1-1024x283.png"} alt={"Logo ΕΚΠΑ"} className={'nav-img'}/>
+                        <Link to={'/'}>
+                            <img src={"/cyan-left-greek-1-1024x283.png"} alt={"Logo ΕΚΠΑ"} className={'nav-img'}/>
+                        </Link>
                     </ul>
-                    {/*<img src={"/cyan-left-greek-1-1024x283.png"} alt={"Logo ΕΚΠΑ"} className={'nav-img'}/>*/}
                 </nav>
             </IconContext.Provider>
         </>

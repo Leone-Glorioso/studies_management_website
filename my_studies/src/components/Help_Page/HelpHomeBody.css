@@ -29,3 +29,7 @@
 .big-button:hover {
     background-color: #BE8A3B;
 }
+
+.link {
+    text-decoration: none;
+}

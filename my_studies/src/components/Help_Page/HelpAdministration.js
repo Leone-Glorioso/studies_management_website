@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import HelpNavbar from "./HelpNavbar";
 import HelpEntityBody from "./HelpEntityBody";
 
-function HelpStudents(props) {
+function HelpAdministration(props) {
     const [faqs, setFaqs] = useState([
         {
             question: "How many programmers does it take to screw a lightbulb?",
@@ -45,4 +45,4 @@ function HelpStudents(props) {
     );
 }
 
-export default HelpStudents;
+export default HelpAdministration;

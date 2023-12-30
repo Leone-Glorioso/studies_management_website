@@ -6,25 +6,25 @@ import {AiFillHome} from "react-icons/ai";
 export const SidebarData = [
     {
         title: 'Αρχική',
-        path: '/',
+        path: '/help',
         icon: <AiFillHome />,
         cName: 'nav-text'
     },
     {
         title: 'Φοιτητές',
-        path: '/reports',
+        path: '/help/student',
         icon: <FaUser />,
         cName: 'nav-text'
     },
     {
         title: 'Εκπαιδευτικοί',
-        path: '/products',
+        path: '/help/teacher',
         icon: <FaGraduationCap/>,
         cName: 'nav-text'
     },
     {
         title: 'Γραμματεία',
-        path: '/team',
+        path: '/help/admin',
         icon: <HiMiniBuildingLibrary/>,
         cName: 'nav-text'
     }
