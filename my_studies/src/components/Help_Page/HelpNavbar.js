@@ -7,7 +7,7 @@ import { IconContext } from 'react-icons';
 import './HelpNavBar.css';
 
 function HelpNavbar() {
-    const [sidebar, setSidebar] = useState(false);
+    const [sidebar, setSidebar] = useState(true);
 
     const showSidebar = () => setSidebar(!sidebar);
 
