@@ -100,3 +100,130 @@ ul.breadcrumb {
         color: #6C6C6C;
     }
 }
+
+.text {
+    position: fixed;
+    top: 320px;
+    left: 370px;
+    color: #262323;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.radio-buttons {
+    /*position: fixed;
+    top: 500px;
+    left: 500px;
+    margin:0;
+    min-height:100vh;
+    display:grid;
+    place-content:center;
+    font-size: 20px;
+    font-weight: normal;
+    color: #262323;*/
+    --s: 1em;     /* control the size */
+    --g: 10px;    /* the gap */
+
+    display: grid;
+    grid-auto-rows: 1fr;
+    gap: var(--g);
+    position: fixed;
+    top: 360px;
+    left: 370px;
+}
+
+input[type=radio] {
+    --s: 20px;     /* control the size */
+    --c: #1C5413; /* the active color */
+
+    height: var(--s);
+    aspect-ratio: 1;
+    border: calc(var(--s)/8) solid #939393;
+    padding: calc(var(--s)/8);
+    background:
+            radial-gradient(farthest-side,var(--c) 94%,#0000)
+            50%/0 0 no-repeat content-box;
+    border-radius: 50%;
+    outline-offset: calc(var(--s)/10);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    font-size: inherit;
+    transition: .3s;
+}
+input[type=radio]:checked {
+    border-color: var(--c);
+    background-size: 100% 100%;
+}
+
+@media print {
+    input[type=radio] {
+        -webkit-appearance: auto;
+        -moz-appearance: auto;
+        appearance: auto;
+        background: none;
+    }
+}
+
+label {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin:5px 0;
+    cursor: pointer;
+}
+
+.buttons {
+    position: fixed;
+    bottom: 50px;
+    right: 125px;
+    width: 1000px;
+
+    li {
+        border-radius: 3px;
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+    .buttons-c {
+        letter-spacing: 0.03em;
+
+    }
+
+    .prev, .next {
+        flex-basis: 20%;
+
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        background: #69C05B;
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    .cancel {
+        flex-basis: 10%;
+
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        background: #95A5A6;
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+}

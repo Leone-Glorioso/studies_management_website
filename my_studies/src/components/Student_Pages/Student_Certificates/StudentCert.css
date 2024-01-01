@@ -181,6 +181,7 @@ a.new-button {
 
     background: #1C5413;
     color: white;
+    text-decoration: none;
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
@@ -236,6 +237,7 @@ a.new-button {
         .col-4{
             background-color: #909090;
             color: white;
+            text-decoration: none;
             padding: 5px;
             border: none;
             border-radius: 5px;
@@ -244,6 +246,7 @@ a.new-button {
         .col-5{
             background-color: #328424;
             color: white;
+            text-decoration: none;
             padding: 5px;
             border: none;
             border-radius: 5px;

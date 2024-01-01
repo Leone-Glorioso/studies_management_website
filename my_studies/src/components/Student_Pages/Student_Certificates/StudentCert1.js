@@ -33,6 +33,24 @@ class StudentCert1 extends Component {
                     </li>
                 </ul>
 
+                <p className="text">Επέλεξε τον τύπο του πιστοποιητικού που θέλεις να εκδόσεις:</p>
+
+                <div className="radio-buttons">
+                    <label><input type="radio" name="e"/> Φοιτητικής Ιδιότητας</label>
+                    <label><input type="radio" name="e"/> Φορολογικής Χρήσης</label>
+                    <label><input type="radio" name="e"/> Αναλυτικής βαθμολογίας με προβιβάσιμους</label>
+                    <label><input type="radio" name="e"/> Στρατολογικής Χρήσης (Συνοπτικό)</label>
+                    <label><input type="radio" name="e"/> Στρατολογικής Χρήσης (Αναλυτικό)</label>
+                </div>
+
+                <ul className="buttons">
+                    <li className="buttons-c">
+                        <a href="/certificates/" className="prev">Προηγούμενο</a>
+                        <a href="/certificates/" className="cancel">Άκυρο</a>
+                        <a href="/certificates/" className="next">Επόμενο</a>
+                    </li>
+                </ul>
+
             </div>
 
         )
