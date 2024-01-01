@@ -4,6 +4,9 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import React from "react";
 import StudentCert from "./components/Student_Pages/Student_Certificates/StudentCert";
 import StudentCert1 from "./components/Student_Pages/Student_Certificates/StudentCert1";
+import StudentCert1_2 from "./components/Student_Pages/Student_Certificates/StudentCert1_2";
+import StudentCert1_3 from "./components/Student_Pages/Student_Certificates/StudentCert1_3";
+import StudentCert1_4 from "./components/Student_Pages/Student_Certificates/StudentCert1_4";
 import StartPage from "./components/Start_Page/StartPage";
 import Teacher_Sidebar from "./components/Teacher_Page_Staples/Teacher_Sidebar";
 import HelpHome from "./components/Help_Page/HelpHome";
@@ -16,6 +19,9 @@ function App() {
     return(
         <Router>
           <Routes>
+              <Route path='/certificates/new-certificate/personal_info/confirmation/end' element={<StudentCert1_4/>} />
+              <Route path='/certificates/new-certificate/personal_info/confirmation' element={<StudentCert1_3/>} />
+              <Route path='/certificates/new-certificate/personal_info' element={<StudentCert1_2/>} />
               <Route path='/certificates/new-certificate' element={<StudentCert1/>} />
               <Route path='/certificates' element={<StudentCert/>} />
               <Route path='/' element={<StudentHome/>} />

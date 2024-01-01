@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import './StudentCert1.css'
+import './StudentCert1_2.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
 
-class StudentCert1 extends Component {
+class StudentCert1_2 extends Component {
 
     render() {
         return (
@@ -33,21 +33,16 @@ class StudentCert1 extends Component {
                     </li>
                 </ul>
 
-                <p className="text">Επέλεξε τον τύπο του πιστοποιητικού που θέλεις να εκδόσεις:</p>
+                <p className="text">Επιβεβαιωσε τα προσωπικά σου στοιχεία:</p>
 
-                <div className="radio-buttons">
-                    <label><input type="radio" name="e"/> Φοιτητικής Ιδιότητας</label>
-                    <label><input type="radio" name="e"/> Φορολογικής Χρήσης</label>
-                    <label><input type="radio" name="e"/> Αναλυτικής βαθμολογίας με προβιβάσιμους</label>
-                    <label><input type="radio" name="e"/> Στρατολογικής Χρήσης (Συνοπτικό)</label>
-                    <label><input type="radio" name="e"/> Στρατολογικής Χρήσης (Αναλυτικό)</label>
-                </div>
+
 
                 <ul className="buttons">
                     <li className="buttons-c">
-                        <a href="/certificates/" className="prev">Προηγούμενο</a>
+                        <a href="/certificates/new-certificate" className="prev">Προηγούμενο</a>
                         <a href="/certificates/" className="cancel">Άκυρο</a>
-                        <a href="/certificates/new-certificate/personal_info" className="next">Επόμενο</a>
+                        <a href="/certificates/new-certificate/personal_info/confirmation" className="edit">Επεξεργασία</a>
+                        <a href="/certificates/new-certificate/personal_info/confirmation/end" className="next">Επόμενο</a>
                     </li>
                 </ul>
 
@@ -59,4 +54,4 @@ class StudentCert1 extends Component {
 }
 
 
-export default StudentCert1
+export default StudentCert1_2
