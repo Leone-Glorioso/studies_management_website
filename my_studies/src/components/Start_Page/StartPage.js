@@ -1,8 +1,8 @@
 import React from 'react';
 import AnnouncementBoard from "./AnnouncementBoard";
-import LoginWindow from "./LoginWindow";
 import "./StartPage.css";
-import SearchBar from "./SearchBar";
+// import { Carousel } from 'react-responsive-carousel';
+// TODO use MUI Carousel
 
 const StartPage = () => {
     const announcements = [
@@ -19,24 +19,38 @@ const StartPage = () => {
 
     return (
         <div>
-            <SearchBar/>
+            {/*<SearchBar/>*/}
             <br/>
-            <LoginWindow/>
+            {/*<LoginWindow/>*/}
             <br/>
-            <div className="container">
-                <h1>Φοιτητές</h1>
-            </div>
+            {/*<div className="container">*/}
+            {/*    <h1>Φοιτητές</h1>*/}
+            {/*</div>*/}
             <AnnouncementBoard announcements={announcements} />
             <br/>
-            <div className="container">
-                <h1>Εκπαιδευτικοί</h1>
-            </div>
+            {/*<div className="container">*/}
+            {/*    <h1>Εκπαιδευτικοί</h1>*/}
+            {/*</div>*/}
             <AnnouncementBoard announcements={announcements} />
             <br/>
-            <div className="container">
-                <h1>Γραμματεία</h1>
-            </div>
+            {/*<div className="container">*/}
+            {/*    <h1>Γραμματεία</h1>*/}
+            {/*</div>*/}
             <AnnouncementBoard announcements={announcements} />
+            {/*<Carousel>*/}
+            {/*    <div>*/}
+            {/*        <img src='https://t3.ftcdn.net/jpg/02/65/18/30/360_F_265183061_NkulfPZgRxbNg3rvYSNGGwi0iD7qbmOp.jpg' />*/}
+            {/*        <p className="legend">Legend 1</p>*/}
+            {/*    </div>*/}
+            {/*    <div>*/}
+            {/*        <img src='https://t3.ftcdn.net/jpg/02/65/18/30/360_F_265183061_NkulfPZgRxbNg3rvYSNGGwi0iD7qbmOp.jpg' />*/}
+            {/*        <p className="legend">Legend 2</p>*/}
+            {/*    </div>*/}
+            {/*    <div>*/}
+            {/*        <img src='https://t3.ftcdn.net/jpg/02/65/18/30/360_F_265183061_NkulfPZgRxbNg3rvYSNGGwi0iD7qbmOp.jpg' />*/}
+            {/*        <p className="legend">Legend 3</p>*/}
+            {/*    </div>*/}
+            {/*</Carousel>*/}
         </div>
     );
 };
