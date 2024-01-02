@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import './StudentCert1_4.css'
+import './StudentCert1_5.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
 
-class StudentCert1_4 extends Component {
+class StudentCert1_5 extends Component {
 
     render() {
         return (
@@ -24,7 +24,7 @@ class StudentCert1_4 extends Component {
                     </li>
                 </ul>
 
-                <ul className="progress-bar4">
+                <ul className="progress-bar5">
                     <li className="table-header">
                         <div className="step1">1</div>
                         <div className="step2">2</div>
@@ -33,28 +33,33 @@ class StudentCert1_4 extends Component {
                     </li>
                 </ul>
 
-                <p className="text">Τελική αίτηση:</p>
+                <p className="text">Η αίτησή σου υποβλήθηκε με επιτυχία!</p>
 
-                <ul className="buttons">
+                <ul className="buttons2">
                     <li className="buttons-c">
-                        <a href="/certificates/new-certificate/personal_info" className="prev">Προηγούμενο</a>
-                        <a href="/certificates/" className="cancel">Άκυρο</a>
-                        <a href="#popup1" className="edit">Επιβεβαίωση</a>
+                        <a href="#popup2" className="undo">Αναίρεση</a>
+                        <a href="/" className="home">Επιστροφή στην αρχική</a>
                     </li>
                 </ul>
 
-                <div id="popup1" className="overlay">
+                <div id="popup2" className="overlay">
                     <div className="popup">
                         <div className="content">
-                            Σίγουρα θέλετε να υποβάλετε την δήλωση;
+                            Σίγουρα θέλετε να αναιρέσετε την δήλωση;
                         </div>
                         <ul className="buttons1">
                             <li className="buttons-c1">
-                                <a href="/certificates/new-certificate/personal_info/confirmation/end" className="cancel">Άκυρο</a>
-                                <a href="/certificates/new-certificate/personal_info/confirmation/end/done" className="confirm">Επιβεβαίωση</a>
+                                <a href="/certificates/new-certificate/personal_info/confirmation/end/done"
+                                   className="cancel">Άκυρο</a>
+                                <a href="/certificates/new-certificate/" className="confirm">Αναίρεση</a>
                             </li>
                         </ul>
                     </div>
+                </div>
+
+                <div className="message">
+                    <div className="text2">Τι κάνω τώρα;</div>
+                    <div className="text1">Μόλις η αίτησή σου εγκριθεί θα λάβεις ειδοποιητικό μήνυμα. Θα μπορείς να δεις την αίτησή σου μέσα από το προφίλ σου.</div>
                 </div>
 
             </div>
@@ -65,4 +70,4 @@ class StudentCert1_4 extends Component {
 }
 
 
-export default StudentCert1_4
+export default StudentCert1_5

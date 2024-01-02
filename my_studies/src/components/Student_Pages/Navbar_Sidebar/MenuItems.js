@@ -13,7 +13,7 @@ export const MenuItems1 = [
         title: "Μαθήματα"
     },
     {
-        url: "#",
+        url: "/grades",
         cName: "nav-links-side",
         title: "Βαθμολογίες"
     },

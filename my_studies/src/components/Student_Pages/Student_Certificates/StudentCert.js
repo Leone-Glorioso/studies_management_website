@@ -30,14 +30,14 @@ class StudentCert extends Component {
                             <div className="col col-2" data-label="type">ΧΧΧΧΧΧΧΧ</div>
                             <div className="col col-3" data-label="state">ΚΚΚΚΚΚΚΚ</div>
                             <a href="#" className="col col-4">Προβολή</a>
-                            <a href="#" className="col col-5">Εκτύπωση</a>
+                            <a href="#popup-pr" className="col col-5">Εκτύπωση</a>
                         </li>
                         <li className="table-row">
                             <div className="col col-1" data-label="date">00-00-0000</div>
                             <div className="col col-2" data-label="type">ΧΧΧΧΧΧΧΧ</div>
                             <div className="col col-3" data-label="state">ΚΚΚΚΚΚΚΚ</div>
                             <a href="#" className="col col-4">Προβολή</a>
-                            <a href="#" className="col col-5">Εκτύπωση</a>
+                            <a href="#popup-pr" className="col col-5">Εκτύπωση</a>
                         </li>
                     </ul>
                 </div>
@@ -63,6 +63,20 @@ class StudentCert extends Component {
                         <li><a href="#">Λιγότερο πρόσφατα</a></li>
                     </ul>
                 </details>
+
+                <div id="popup-pr" className="overlay">
+                    <div className="popup">
+                        <div className="content">
+                            Το πιστοποιητικό σας αποθηκεύτηκε με επιτυχία!
+                        </div>
+                        <ul className="buttons1">
+                            <li className="buttons-c1">
+                                <a href="/certificates"
+                                   className="confirm">OK</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
             </div>
 

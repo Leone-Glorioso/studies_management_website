@@ -24,7 +24,7 @@ class StudentCert1_2 extends Component {
                     </li>
                 </ul>
 
-                <ul className="progress-bar1">
+                <ul className="progress-bar2">
                     <li className="table-header">
                         <div className="step1">1</div>
                         <div className="step2">2</div>
