@@ -63,7 +63,8 @@
 .navbar-toggle {
     background-color: #E9BD7B;
     width: 100%;
-    height: 80px;
+    height: 9vh;
+    /*height: 80px;*/
     display: flex;
     justify-content: start;
     align-items: center;
