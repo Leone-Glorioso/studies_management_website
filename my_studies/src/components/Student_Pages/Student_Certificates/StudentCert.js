@@ -42,9 +42,9 @@ class StudentCert extends Component {
                     </ul>
                 </div>
 
-                <details className="dropdown">
+                <details className="dropdown-c">
                     <summary role="button">
-                        <a className="button">Κατάσταση Αίτησης</a>
+                        <a className="button-c">Κατάσταση Αίτησης</a>
                     </summary>
                     <ul>
                         <li><a href="#">Εγκεκριμένη</a></li>
@@ -54,9 +54,9 @@ class StudentCert extends Component {
                     </ul>
                 </details>
 
-                <details className="dropdown1">
+                <details className="dropdown1-c">
                     <summary role="button">
-                        <a className="button1">Ταξινόμηση κατά</a>
+                        <a className="button1-c">Ταξινόμηση κατά</a>
                     </summary>
                     <ul>
                         <li><a href="#">Πιο Πρόσφατα</a></li>
