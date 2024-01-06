@@ -37,10 +37,10 @@ class StudentCert1_2 extends Component {
 
 
 
-                <ul className="buttons">
+                <ul className="buttons1_2">
                     <li className="buttons-c">
                         <a href="/certificates/new-certificate" className="prev">Προηγούμενο</a>
-                        <a href="/certificates/" className="cancel">Άκυρο</a>
+                        <a href="/certificates/" className="cancel-p">Άκυρο</a>
                         <a href="/certificates/new-certificate/personal_info/confirmation" className="edit">Επεξεργασία</a>
                         <a href="/certificates/new-certificate/personal_info/confirmation/end" className="next">Επόμενο</a>
                     </li>

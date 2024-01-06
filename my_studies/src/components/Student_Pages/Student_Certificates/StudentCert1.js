@@ -43,7 +43,7 @@ class StudentCert1 extends Component {
                     <label><input type="radio" name="e"/> Στρατολογικής Χρήσης (Αναλυτικό)</label>
                 </div>
 
-                <ul className="buttons">
+                <ul className="buttons1_1">
                     <li className="buttons-c">
                         <a href="/certificates/" className="prev">Προηγούμενο</a>
                         <a href="/certificates/" className="cancel">Άκυρο</a>

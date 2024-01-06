@@ -208,7 +208,7 @@ ul.breadcrumb {
     }
 }
 
-.buttons1 {
+.buttons1_5 {
 
     li {
         border-radius: 3px;
@@ -238,7 +238,7 @@ ul.breadcrumb {
         cursor: pointer;
     }
 
-    .cancel {
+    .cancel-p {
         flex-basis: 10%;
 
         font-size: 20px;

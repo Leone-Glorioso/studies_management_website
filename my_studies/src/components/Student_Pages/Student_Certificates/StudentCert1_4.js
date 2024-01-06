@@ -35,7 +35,7 @@ class StudentCert1_4 extends Component {
 
                 <p className="text">Τελική αίτηση:</p>
 
-                <ul className="buttons">
+                <ul className="buttons1_4">
                     <li className="buttons-c">
                         <a href="/certificates/new-certificate/personal_info" className="prev">Προηγούμενο</a>
                         <a href="/certificates/" className="cancel">Άκυρο</a>
@@ -50,7 +50,7 @@ class StudentCert1_4 extends Component {
                         </div>
                         <ul className="buttons1">
                             <li className="buttons-c1">
-                                <a href="/certificates/new-certificate/personal_info/confirmation/end" className="cancel">Άκυρο</a>
+                                <a href="/certificates/new-certificate/personal_info/confirmation/end" className="cancel-p">Άκυρο</a>
                                 <a href="/certificates/new-certificate/personal_info/confirmation/end/done" className="confirm">Επιβεβαίωση</a>
                             </li>
                         </ul>

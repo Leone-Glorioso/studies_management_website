@@ -16,11 +16,19 @@ import HelpStudents from "./components/Help_Page/HelpStudents";
 import StudentHome from "./components/Student_Pages/Student_Home/StudentHome";
 import HelpTeachers from "./components/Help_Page/HelpTeachers";
 import HelpAdministration from "./components/Help_Page/HelpAdministration";
+import StudentDhlwseis from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis";
+import StudentDhlwseis1 from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis1";
+import StudentDhlwseis2 from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis2";
+import StudentDhlwseis3 from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis3";
 
 function App() {
     return(
         <Router>
           <Routes>
+              <Route path='forms/saved' element={<StudentDhlwseis3/>} />
+              <Route path='forms/new-form/done' element={<StudentDhlwseis2/>} />
+              <Route path='forms/new-form' element={<StudentDhlwseis1/>} />
+              <Route path='/forms' element={<StudentDhlwseis/>} />
               <Route path='/grades' element={<StudentGrades/>} />
               <Route path='/certificates/new-certificate/personal_info/confirmation/end/done' element={<StudentCert1_5/>} />
               <Route path='/certificates/new-certificate/personal_info/confirmation/end' element={<StudentCert1_4/>} />

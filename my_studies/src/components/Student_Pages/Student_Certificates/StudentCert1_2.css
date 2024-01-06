@@ -110,7 +110,7 @@ ul.breadcrumb {
     font-weight: bold;
 }
 
-.buttons {
+.buttons1_2 {
     position: fixed;
     bottom: 50px;
     right: 125px;
@@ -162,7 +162,7 @@ ul.breadcrumb {
         cursor: pointer;
     }
 
-    .cancel {
+    .cancel-p {
         flex-basis: 10%;
 
         font-size: 20px;

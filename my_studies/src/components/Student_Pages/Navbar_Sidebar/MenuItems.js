@@ -18,7 +18,7 @@ export const MenuItems1 = [
         title: "Βαθμολογίες"
     },
     {
-        url: "#",
+        url: "/forms",
         cName: "nav-links-side",
         title: "Δηλώσεις"
     },

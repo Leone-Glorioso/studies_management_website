@@ -28,80 +28,7 @@ ul.breadcrumb {
     }
 }
 
-.progress-bar {
-    position: fixed;
-    top: 250px;
-    right: 125px;
-    width: 1000px;
-
-    li {
-        border-radius: 3px;
-        padding: 25px 30px;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 25px;
-    }
-    .table-header {
-        font-size: 14px;
-        letter-spacing: 0.03em;
-    }
-
-    .step1 {
-        flex-basis: 25%;
-    }
-    .step2 {
-        flex-basis: 25%;
-    }
-    .step3 {
-        flex-basis: 25%;
-    }
-    .step4 {
-        flex-basis: 25%;
-    }
-}
-
-.progress-bar4 {
-    position: fixed;
-    top: 240px;
-    right: 125px;
-    width: 1000px;
-
-    li {
-        border-radius: 3px;
-        padding: 25px 30px;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 25px;
-    }
-    .table-header {
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-    }
-
-    .step1 {
-        flex-basis: 25%;
-        background-color: #96EA89;
-        color: #96EA89;
-    }
-    .step2 {
-        flex-basis: 25%;
-        background-color: #96EA89;
-        color: #96EA89;
-    }
-    .step3 {
-        flex-basis: 25%;
-        background-color: #96EA89;
-        color: #96EA89;
-    }
-    .step4 {
-        flex-basis: 25%;
-        background-color: #6C6C6C;
-        color: #6C6C6C;
-    }
-}
-
-.text {
+.text-d {
     position: fixed;
     top: 320px;
     left: 370px;
@@ -110,43 +37,11 @@ ul.breadcrumb {
     font-weight: bold;
 }
 
-.buttons1_4 {
-    position: fixed;
-    bottom: 50px;
-    right: 125px;
-    width: 1000px;
-
-    li {
-        border-radius: 3px;
-        padding: 25px 30px;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 25px;
-    }
-    .buttons-c {
-        letter-spacing: 0.03em;
-
-    }
-
-    .prev, .next {
-        flex-basis: 20%;
-
-        font-size: 20px;
-        font-weight: bold;
-        text-decoration: none;
-        color: white;
-        background: #69C05B;
-        display: inline-block;
-        text-align: center;
-        padding: 5px;
-        border: none;
-        border-radius: 5px;
-        box-sizing: border-box;
-        cursor: pointer;
-    }
-
-    .edit {
-        flex-basis: 20%;
+.buttons2-d {
+    .home, .last-form {
+        position: fixed;
+        top: 370px;
+        left: 740px;
 
         font-size: 20px;
         font-weight: bold;
@@ -162,8 +57,18 @@ ul.breadcrumb {
         cursor: pointer;
     }
 
-    .cancel {
-        flex-basis: 10%;
+    .home {
+        position: fixed;
+        top: 370px;
+        left: 480px;
+
+        background: #95A5A6;
+    }
+
+    .undo {
+        position: fixed;
+        top: 370px;
+        left: 360px;
 
         font-size: 20px;
         font-weight: bold;
@@ -213,6 +118,7 @@ ul.breadcrumb {
     font-weight: bold;
     max-height: 30%;
     overflow: auto;
+    text-align: center;
 }
 
 @media screen and (max-width: 700px){
