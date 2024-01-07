@@ -39,7 +39,7 @@ ul.breadcrumb {
     padding-right: 10px;
 }
 
-.responsive-table {
+.responsive-table-d {
     width: 1150px;
 
     li {
@@ -203,7 +203,7 @@ ul.breadcrumb {
         opacity: 1;
     }
 
-    .popup-d {
+    .popup {
         margin: 70px auto;
         padding: 20px;
         background: #fff;
@@ -214,7 +214,7 @@ ul.breadcrumb {
         top: 25%;
     }
 
-    .popup-d .content {
+    .popup .content {
         font-size: 20px;
         font-weight: bold;
         max-height: 30%;

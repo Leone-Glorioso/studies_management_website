@@ -8,7 +8,7 @@ export const profile = [
 ]
 export const MenuItems1 = [
     {
-        url: "#",
+        url: "/lessons",
         cName: "nav-links-side",
         title: "Μαθήματα"
     },
