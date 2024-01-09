@@ -68,8 +68,8 @@ const LoginWindow = (props) => {
                     <label className="errorLabel">{passwordError}</label>
                 </div>
                 <br />
-                <div className={"container"}>
-                    <button className="round-button">
+                <div className={"container_special"}>
+                    <button className="green-button-round">
                         <span className="lock-icon">
                           <FaUnlockAlt />
                         </span>

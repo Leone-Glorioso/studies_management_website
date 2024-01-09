@@ -1,6 +1,9 @@
 import React from 'react';
 import AnnouncementBoard from "./AnnouncementBoard";
 import "./StartPage.css";
+import LoginWindow from "./LoginWindow";
+import SearchBar from "./SearchBar";
+import {Carousel} from "react-responsive-carousel";
 // import { Carousel } from 'react-responsive-carousel';
 // TODO use MUI Carousel
 
@@ -21,21 +24,21 @@ const StartPage = () => {
         <div>
             {/*<SearchBar/>*/}
             <br/>
-            {/*<LoginWindow/>*/}
+            <LoginWindow/>
             <br/>
-            {/*<div className="container">*/}
-            {/*    <h1>Φοιτητές</h1>*/}
-            {/*</div>*/}
+            <div className="container_two">
+                <h1>Φοιτητές</h1>
+            </div>
             <AnnouncementBoard announcements={announcements} />
             <br/>
-            {/*<div className="container">*/}
-            {/*    <h1>Εκπαιδευτικοί</h1>*/}
-            {/*</div>*/}
+            <div className="container_two">
+                <h1>Εκπαιδευτικοί</h1>
+            </div>
             <AnnouncementBoard announcements={announcements} />
             <br/>
-            {/*<div className="container">*/}
-            {/*    <h1>Γραμματεία</h1>*/}
-            {/*</div>*/}
+            <div className="container_two">
+                <h1>Γραμματεία</h1>
+            </div>
             <AnnouncementBoard announcements={announcements} />
             {/*<Carousel>*/}
             {/*    <div>*/}

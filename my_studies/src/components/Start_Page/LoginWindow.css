@@ -74,7 +74,7 @@
     padding-left: 8px;
 }
 
-.container {
+.container_special {
     display: flex;
     align-items: center;
 }
@@ -91,6 +91,21 @@
 }
 
 .green-button:hover {
+    background-color: #003A1A; /* Darker green on hover */
+}
+
+.green-button-round {
+    background-color: #005D3C; /* Green background color */
+    color: white; /* White text color */
+    padding: 15px 10px; /* Add padding to the button */
+    font-size: 1.2rem; /* Set the font size */
+    border: none; /* Remove default border */
+    border-radius: 10rem; /* Optional: Add border-radius for rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    margin-left: 10px; /* Adjust the margin to move the button more to the right */
+}
+
+.green-button-round:hover {
     background-color: #003A1A; /* Darker green on hover */
 }
 
@@ -181,7 +196,7 @@
 }
 
 .inputBox {
-    padding-left: 30px; /* Ensure there is enough padding to accommodate the icon */
+    padding-left: 3vw; /* Ensure there is enough padding to accommodate the icon */
 }
 
 
