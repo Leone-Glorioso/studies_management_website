@@ -16,7 +16,7 @@ class StudentDhlwseis3 extends Component {
                 </ul>
 
                 <div className="container">
-                    <ul className="responsive-table">
+                    <ul className="responsive-table-d">
                         <li className="table-header">
                             <div className="col col-1">Ημερομηνία</div>
                             <div className="col col-2">Ώρα</div>

@@ -20,14 +20,16 @@ import StudentDhlwseis from "./components/Student_Pages/Student_Dhlwseis/Student
 import StudentDhlwseis1 from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis1";
 import StudentDhlwseis2 from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis2";
 import StudentDhlwseis3 from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis3";
+import StudentLessons from "./components/Student_Pages/Student_Lessons/StudentLessons";
 
 function App() {
     return(
         <Router>
           <Routes>
-              <Route path='forms/saved' element={<StudentDhlwseis3/>} />
-              <Route path='forms/new-form/done' element={<StudentDhlwseis2/>} />
-              <Route path='forms/new-form' element={<StudentDhlwseis1/>} />
+              <Route path='/lessons' element={<StudentLessons/>} />
+              <Route path='/forms/saved' element={<StudentDhlwseis3/>} />
+              <Route path='/forms/new-form/done' element={<StudentDhlwseis2/>} />
+              <Route path='/forms/new-form' element={<StudentDhlwseis1/>} />
               <Route path='/forms' element={<StudentDhlwseis/>} />
               <Route path='/grades' element={<StudentGrades/>} />
               <Route path='/certificates/new-certificate/personal_info/confirmation/end/done' element={<StudentCert1_5/>} />
