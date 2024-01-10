@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginWindow.css";
-import { FaUser, FaLock, FaUnlockAlt } from 'react-icons/fa';
-import Slider from 'react-slick';
+import {FaUser, FaLock, FaUnlockAlt, FaUnlock} from 'react-icons/fa';
+// import Slider from 'react-slick';
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 
@@ -67,12 +67,13 @@ const LoginWindow = (props) => {
                     </div>
                     <label className="errorLabel">{passwordError}</label>
                 </div>
-                <br />
+                {/*<br />*/}
+                <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
+                <br/>
                 <div className={"container_special"}>
                     <button className="green-button-round">
-                        <span className="lock-icon">
-                          <FaUnlockAlt />
-                        </span>
+                          <FaUnlock id={"icon1"}/>
+                            <FaLock id={"icon2"}/>
                     </button>
                     {isTooltipVisible && <div className="tooltip"><p>This is pop-up text</p></div>}
                     <input

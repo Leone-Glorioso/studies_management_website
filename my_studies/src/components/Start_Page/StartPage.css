@@ -19,3 +19,8 @@
     display: inline-block; /* Make the header an inline block to center it */
     margin-left: 40%;
 }
+
+.container_images{
+    width: 30vw;
+    height: 40vh;
+}

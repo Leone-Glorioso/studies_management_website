@@ -97,16 +97,35 @@
 .green-button-round {
     background-color: #005D3C; /* Green background color */
     color: white; /* White text color */
-    padding: 15px 10px; /* Add padding to the button */
+    padding: 15px 15px; /* Add padding to the button */
     font-size: 1.2rem; /* Set the font size */
     border: none; /* Remove default border */
     border-radius: 10rem; /* Optional: Add border-radius for rounded corners */
     cursor: pointer; /* Add a pointer cursor on hover */
     margin-left: 10px; /* Adjust the margin to move the button more to the right */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.green-button-round #icon1{
+    display: block;
+}
+
+.green-button-round #icon2{
+    display: none;
 }
 
 .green-button-round:hover {
-    background-color: #003A1A; /* Darker green on hover */
+    background-color: #c30101; /* Darker green on hover */
+}
+
+.green-button-round:hover #icon1{
+    display: none;
+}
+
+.green-button-round:hover #icon2{
+    display: block;
 }
 
 
@@ -167,10 +186,10 @@
     background-size: 200% 100%; /* Double the size to create the sliding effect */
 }
 
-.lock-icon {
-    line-height: 1; /* Center the lock icon vertically */
-    font-weight: bold; /* Adjust font weight for a bolder appearance */
-}
+/*.lock-icon {*/
+/*    !*line-height: 1; !* Center the lock icon vertically *!*!*/
+/*    !*font-weight: bold; !* Adjust font weight for a bolder appearance *!*!*/
+/*}*/
 
 /*.background-container {*/
 /*    background-image: url('https://as1.ftcdn.net/v2/jpg/06/25/25/48/1000_F_625254822_ZnId6bB60hqC9WXH1uEzViKtLznxHv6t.jpg'); !* Set the path to your background image *!*/
@@ -192,7 +211,7 @@
 
 .icon {
     position: absolute;
-    left: 10px; /* Adjust the left positioning of the icon as needed */
+    left: 0rem; /* Adjust the left positioning of the icon as needed */
 }
 
 .inputBox {
