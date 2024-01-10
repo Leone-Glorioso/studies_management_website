@@ -12,6 +12,20 @@
     border-radius: 15px; /* Add rounded corners with a radius of 15 pixels */
 }
 
+.tooltipContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    max-width: 20vw; /* Set the maximum width of the container */
+    max-height: 20vh; /* Set the maximum height of the container */
+    margin: 1vh auto 0; /* Add margin to the top (50px in this example), and center horizontally */
+    padding: 1vw; /* Add some padding for better visual appearance */
+    border-radius: 15px; /* Add rounded corners with a radius of 15 pixels */
+}
+
 .titleContainer {
     display: flex;
     flex-direction: column;
@@ -235,47 +249,28 @@
     margin: 0 10px; /* Add some margin between slides */
 }
 
-/* Customize the dots style */
-.slick-dots {
-    bottom: 10px;
-}
-
-.slick-dots li {
-    margin: 0 5px;
-}
-
-.slick-dots li button {
-    font-size: 10px;
-    color: #666;
-}
-
-.tooltip-container {
+.tooltip {
     position: relative;
     display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
-.tooltip-button {
-    background-color: #3498db;
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
     color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
 
-.tooltip {
+    /* Position the tooltip text - see examples below! */
     position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 8px;
-    border-radius: 4px;
-    display: none;
     z-index: 1;
 }
 
-.tooltip-container:hover .tooltip {
-    display: block;
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }

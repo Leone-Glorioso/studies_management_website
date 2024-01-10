@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginWindow.css";
 import {FaUser, FaLock, FaUnlockAlt, FaUnlock} from 'react-icons/fa';
+import { Tooltip } from 'primereact/tooltip';
+import { Button } from 'primereact/button';
+// import Tooltip, { tooltipClasses, TooltipProps} from "@mui/material/Tooltip";
+// import {styled, Typography} from "@mui/material";
 // import Slider from 'react-slick';
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
@@ -13,27 +17,27 @@ const LoginWindow = (props) => {
     const [passwordError, setPasswordError] = useState("")
     const [isTooltipVisible, setTooltipVisible] = useState(false);
 
-    const handleMouseEnter = () => {
-        setTooltipVisible(true);
-    };
-
-    const handleMouseLeave = () => {
-        setTooltipVisible(false);
-    };
-
-    const navigate = useNavigate();
+    // const handleMouseEnter = () => {
+    //     setTooltipVisible(true);
+    // };
+    //
+    // const handleMouseLeave = () => {
+    //     setTooltipVisible(false);
+    // };
+    //
+    // const navigate = useNavigate();
 
     const onButtonClick = () => {
         // You'll update this function later...
     }
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    };
+    // const settings = {
+    //     dots: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    // };
 
         return (
             <div className={"mainContainer"}>
@@ -71,10 +75,20 @@ const LoginWindow = (props) => {
                 <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
                 <br/>
                 <div className={"container_special"}>
-                    <button className="green-button-round">
-                          <FaUnlock id={"icon1"}/>
+                    {/*<TooltipSafe*/}
+                    {/*    title={*/}
+                    {/*        <React.Fragment>*/}
+                    {/*            <Typography color="inherit">Tooltip with HTML</Typography>*/}
+                    {/*            <em>{"And here's"}</em> <b>{'some'}</b> <u>{'amazing content'}</u>.{' '}*/}
+                    {/*            {"It's very engaging. Right?"}*/}
+                    {/*        </React.Fragment>*/}
+                    {/*    }>*/}
+                        <Button className="green-button-round" tooltip="Ασφαλής Σύνδεση: Χρησιμοποιείται εάν βρίσκεστε σε δημόσιο δίκτυο" tooltipOptions={{ position: 'bottom' , className: 'tooltipContainer', fontSize: '2rem', cursor: 'pointer'}}>
+                            <FaUnlock id={"icon1"}/>
                             <FaLock id={"icon2"}/>
-                    </button>
+                        </Button>
+                    {/*<Button tooltip="Confirm to proceed" tooltipOptions={{ showDelay: 1000, hideDelay: 300 }} label="Save" />*/}
+                    {/*</TooltipSafe>*/}
                     {isTooltipVisible && <div className="tooltip"><p>This is pop-up text</p></div>}
                     <input
                         className={"green-button"}
