@@ -28,8 +28,8 @@
 .button-round {
     background-color: #005D3C; /* Green background color */
     color: white; /* White text color */
-    padding: 1vw 1vw; /* Add padding to the button */
-    font-size: 2rem; /* Set the font size */
+    padding: 0.2vw 0.2vw; /* Add padding to the button */
+    font-size: 4rem; /* Set the font size */
     border: none; /* Remove default border */
     border-radius: 10rem; /* Optional: Add border-radius for rounded corners */
     cursor: pointer; /* Add a pointer cursor on hover */
