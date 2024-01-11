@@ -3,6 +3,8 @@ import AnnouncementBoard from "./AnnouncementBoard";
 import "./StartPage.css";
 import LoginWindow from "./LoginWindow";
 import StartPageHeader from "./StartPageHeader";
+import {BiBook} from "react-icons/bi";
+import { Button } from 'primereact/button';
 
 const StartPage = () => {
     const announcements = [
@@ -37,6 +39,11 @@ const StartPage = () => {
                 <h1>Γραμματεία</h1>
             </div>
             <AnnouncementBoard announcements={announcements} />
+            <a href={'/help'}>
+                <Button className={'button-round'}  tooltip="Σελίδα Βοήθειας" tooltipOptions={{ position: 'right' , className: 'toolTip', fontSize: '2rem', cursor: 'pointer'}}>
+                    <BiBook/>
+                </Button>
+            </a>
         </div>
     );
 };

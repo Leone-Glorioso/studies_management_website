@@ -14,7 +14,7 @@
 
 .bgContainer {
     height: 40vh;
-    width: 100vw;
+    width: 99vw;
     background-image: url("/public/bookcase_2.jpg");
     background-size: contain;
 }

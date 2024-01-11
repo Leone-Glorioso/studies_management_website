@@ -1,15 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./LoginWindow.css";
 import {FaUser, FaLock, FaUnlockAlt, FaUnlock} from 'react-icons/fa';
-import { Tooltip } from 'primereact/tooltip';
 import { Button } from 'primereact/button';
-import ImageCarousel from "./ImageCarousel";
-// import Tooltip, { tooltipClasses, TooltipProps} from "@mui/material/Tooltip";
-// import {styled, Typography} from "@mui/material";
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
 
 const LoginWindow = (props) => {
     const [email, setEmail] = useState("")
