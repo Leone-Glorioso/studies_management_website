@@ -2,6 +2,8 @@ import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Announcement from "./Announcement";
+import './ContentCarousel.css';
+import Card from "./Card";
 // import React from 'react';
 
 const responsive = {
@@ -11,7 +13,7 @@ const responsive = {
 };
 
 const items = [
-    <div data-value="1">1</div>,
+    <Card text={'FirstCardodfsfjiofjdsfioljdsfioldsjfioldsjflikdsfjdslkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'}/>,
     <div data-value="2">2</div>,
     <div data-value="3">3</div>,
     <div data-value="4">4</div>,
@@ -21,12 +23,13 @@ const items = [
 function ContentCarousel(ann) {
 
     return(
-        <div>
+        <div className={'bg_content'}>
             <AliceCarousel
                 mouseTracking
                 items={items}
                 responsive={responsive}
                 controlsStrategy="alternate"
+                infinite={true}
             />
         </div>
     );

@@ -51,7 +51,7 @@ const StartPage = () => {
             <br/>
             <ContentCarousel ann={announcements}/>
             <a href={'/help'}>
-                <Button className={'button-round'}  tooltip="Σελίδα Βοήθειας" tooltipOptions={{ position: 'right' , className: 'toolTip', fontSize: '2rem', cursor: 'pointer'}}>
+                <Button className={'button-round'}  tooltip="Σελίδα Βοήθειας" tooltipOptions={{ position: 'right' , className: 'toolTip', fontSize: '2rem', cursor: 'pointer', mouseTrack: true, mouseTrackTop: 15}}>
                     <BiHelpCircle/>
                 </Button>
             </a>
