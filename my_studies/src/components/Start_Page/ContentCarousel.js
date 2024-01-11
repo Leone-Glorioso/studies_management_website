@@ -13,8 +13,8 @@ const responsive = {
 };
 
 const items = [
-    <Card text={'FirstCardodfsfjiofjdsfioljdsfioldsjfioldsjflikdsfjdslkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'}/>,
-    <div data-value="2">2</div>,
+    <Card text={'FirstCardodfsfjiofjdsfioljdsfioldsjfioldsjflikdsfjdslkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={1}/>,
+    <Card text={'FirstCardodfsfjiofjdsfioljdsfioldsjfioldsjflikdsfjdslkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={2}/>,
     <div data-value="3">3</div>,
     <div data-value="4">4</div>,
     <div data-value="5">5</div>,
