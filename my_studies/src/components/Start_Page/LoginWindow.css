@@ -12,6 +12,13 @@
     border-radius: 15px; /* Add rounded corners with a radius of 15 pixels */
 }
 
+.bgContainer {
+    height: 40vh;
+    width: 100vw;
+    background-image: url("/public/bookcase_2.jpg");
+    background-size: contain;
+}
+
 .tooltipContainer {
     display: flex;
     flex-direction: column;

@@ -41,61 +41,54 @@ const LoginWindow = (props) => {
     // };
 
         return (
-            <div className={"mainContainer"}>
-                <div className="inputContainer">
-                    <div className="input-group">
-                    <span className="icon">
-                      <FaUser />
-                    </span>
-                        <input
-                            value={email}
-                            placeholder="Όνομα Χρήστη"
-                            onChange={ev => setEmail(ev.target.value)}
-                            className="inputBox"
-                        />
-                    </div>
-                    <label className="errorLabel">{emailError}</label>
-                </div>
-                <br />
-                <div className="inputContainer">
-                    <div className="input-group">
-                        <span className="icon">
-                          <FaLock />
-                        </span>
-                        <input
-                            value={password}
-                            placeholder="Κωδικός"
-                            type="password" // Ensure the input type is set to "password" for password fields
-                            onChange={ev => setPassword(ev.target.value)}
-                            className="inputBox"
-                        />
-                    </div>
-                    <label className="errorLabel">{passwordError}</label>
-                </div>
-                {/*<br />*/}
-                <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
+            <div className={"bgContainer"}>
                 <br/>
-                <div className={"container_special"}>
-                    {/*<TooltipSafe*/}
-                    {/*    title={*/}
-                    {/*        <React.Fragment>*/}
-                    {/*            <Typography color="inherit">Tooltip with HTML</Typography>*/}
-                    {/*            <em>{"And here's"}</em> <b>{'some'}</b> <u>{'amazing content'}</u>.{' '}*/}
-                    {/*            {"It's very engaging. Right?"}*/}
-                    {/*        </React.Fragment>*/}
-                    {/*    }>*/}
+                <div className={"mainContainer"}>
+                    <div className="inputContainer">
+                        <div className="input-group">
+                        <span className="icon">
+                          <FaUser />
+                        </span>
+                            <input
+                                value={email}
+                                placeholder="Όνομα Χρήστη"
+                                onChange={ev => setEmail(ev.target.value)}
+                                className="inputBox"
+                            />
+                        </div>
+                        <label className="errorLabel">{emailError}</label>
+                    </div>
+                    <br />
+                    <div className="inputContainer">
+                        <div className="input-group">
+                            <span className="icon">
+                              <FaLock />
+                            </span>
+                            <input
+                                value={password}
+                                placeholder="Κωδικός"
+                                type="password" // Ensure the input type is set to "password" for password fields
+                                onChange={ev => setPassword(ev.target.value)}
+                                className="inputBox"
+                            />
+                        </div>
+                        <label className="errorLabel">{passwordError}</label>
+                    </div>
+                    {/*<br />*/}
+                    <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
+                    <br/>
+                    <div className={"container_special"}>
                         <Button className="green-button-round" tooltip="Ασφαλής Σύνδεση: Χρησιμοποιείται εάν βρίσκεστε σε δημόσιο δίκτυο" tooltipOptions={{ position: 'bottom' , className: 'tooltipContainer', fontSize: '2rem', cursor: 'pointer'}}>
                             <FaUnlock id={"icon1"}/>
                             <FaLock id={"icon2"}/>
                         </Button>
-                    {/*<Button tooltip="Confirm to proceed" tooltipOptions={{ showDelay: 1000, hideDelay: 300 }} label="Save" />*/}
-                    {/*</TooltipSafe>*/}
-                    {isTooltipVisible && <div className="tooltip"><p>This is pop-up text</p></div>}
-                    <input
-                        className={"green-button"}
-                        type="button"
-                        onClick={onButtonClick}
-                        value={"Σύνδεση"} />
+                        {isTooltipVisible && <div className="tooltip"><p>This is pop-up text</p></div>}
+                        <input
+                            className={"green-button"}
+                            type="button"
+                            onClick={onButtonClick}
+                            value={"Σύνδεση"} />
+                    </div>
                 </div>
             </div>
         );
