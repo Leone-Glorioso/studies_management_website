@@ -15,7 +15,7 @@
         max-width: 99%;
         height: auto;
         background-color: white;
-        opacity: 0.7;
+        opacity: 0.6;
         position: relative;
         margin-top: -3.5vh;
         translate: 0% 5%;
@@ -24,22 +24,131 @@
         margin-bottom: 1vh;
     }
 
-    .image_opaque:hover {
-        opacity: 0.4;
+    .image_opaque_hovered {
+        flex: 0 0 calc(100% / 3);
+        max-width: 99%;
+        height: auto;
+        background-color: white;
+        position: relative;
+        margin-top: -3.5vh;
+        translate: 0% 5%;
+        border-radius: 15px;
+        align-self: center;
+        margin-bottom: 1vh;
+        opacity: 0.2;
     }
 
     .text_in_card {
-        font-size: 1rem;
+        font-size: 1.5rem;
         position: absolute;
         top: 50%;
-        left: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        color: black;
     }
 
-    .icon_in_card {
-        font-size: 6rem;
+    .card_title {
+        font-size: 2rem;
+        color: whitesmoke;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .card_title_2 {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        color:black;
         position: absolute;
         top: 30%;
-        left: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .icon_in_card_1 {
+        font-size: 6rem;
+        position: absolute;
+        top: 20%;
+        left: 52%;
+        translate: -4vw;
+        color: whitesmoke;
+        background-color: #205982;
+        border-radius: 10rem;
+        max-width: 100%;
+        height: auto;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    .icon_in_card_1_alt {
+        font-size: 3rem;
+        position: absolute;
+        top: 5%;
+        left: 57%;
+        translate: -4vw;
+        color: whitesmoke;
+        background-color: #205982;
+        border-radius: 10rem;
+        max-width: 100%;
+        height: auto;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: -10px;
+    }
+
+    .icon_in_card_2 {
+        font-size: 6rem;
+        position: absolute;
+        top: 20%;
+        left: 52%;
+        translate: -4vw;
+        color: whitesmoke;
+        background-color: #10624E;
+        border-radius: 10rem;
+        max-width: 100%;
+        height: auto;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    .icon_in_card_2_alt {
+        font-size: 3rem;
+        position: absolute;
+        top: 5%;
+        left: 57%;
+        translate: -4vw;
+        color: whitesmoke;
+        background-color: #10624E;
+        border-radius: 10rem;
+        max-width: 100%;
+        height: auto;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: -10px;
+    }
+
+
+    .icon_in_card_3 {
+        font-size: 6rem;
+        position: absolute;
+        top: 20%;
+        left: 52%;
         translate: -4vw;
         color: whitesmoke;
         background-color: #1C5413;
@@ -52,5 +161,24 @@
         padding-right: 20px;
         padding-top: 20px;
         padding-bottom: 0px;
+    }
+
+    .icon_in_card_3_alt {
+        font-size: 3rem;
+        position: absolute;
+        top: 5%;
+        left: 57%;
+        translate: -4vw;
+        color: whitesmoke;
+        background-color: #1C5413;
+        border-radius: 10rem;
+        max-width: 100%;
+        height: auto;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: -10px;
     }
 }
