@@ -9,7 +9,7 @@ const responsive = {
     1024: { items: 3 },
 };
 
-function ContentCarousel(items) {
+function ContentCarousel({items}) {
 
     return(
         <div className={'bg_content'}>

@@ -10,6 +10,15 @@
     border-radius: 10px; /* Rounded corners */
     padding: 20px; /* Padding to create space between the header and container */
     text-align: center; /* Center-align the text within the container */
+    margin-top: 10vh;
+}
+
+.container_two_alt {
+    background-color: #ccc; /* Gray background color for the container */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding to create space between the header and container */
+    text-align: center; /* Center-align the text within the container */
+    margin-top: 2vh;
 }
 
 .header {

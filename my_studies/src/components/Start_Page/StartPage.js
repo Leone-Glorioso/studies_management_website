@@ -9,27 +9,27 @@ import Card from "./Card";
 import {AiFillLock} from "react-icons/ai";
 
 const items_1 = [
-    <Card text={'First Cardodfsfjiofjdsfio ljdsfioldsjfioldsjflikdsfjdslkfjdsdsadsadsadsasflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={1} icon={<BiCard/>} title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_1'} icon_style_2={'icon_in_card_1_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={2} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_1'} icon_style_2={'icon_in_card_1_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={3} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_1'} icon_style_2={'icon_in_card_1_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={4} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_1'} icon_style_2={'icon_in_card_1_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={5} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_1'} icon_style_2={'icon_in_card_1_alt'}/>
+    <Card text={'First Cardodfsfjiofjdsfio ljdsfioldsjfioldsjflikdsfjdslkfjdsdsadsadsadsasflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={1} icon={<BiCard/>} title={'Δες Βαθμούς'} type={"student"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={2} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"student"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={3} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"student"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={4} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"student"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={5} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"student"}/>
 ];
 
 const items_2 = [
-    <Card text={'First Cardodfsfjiofjdsfio ljdsfioldsjfioldsjflikdsfjdslkfjdsdsadsadsadsasflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={1} icon={<BiCard/>} title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_2'} icon_style_2={'icon_in_card_2_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={2} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_2'} icon_style_2={'icon_in_card_2_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={3} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_2'} icon_style_2={'icon_in_card_2_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={4} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_2'} icon_style_2={'icon_in_card_2_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={5} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_2'} icon_style_2={'icon_in_card_2_alt'}/>
+    <Card text={'First Cardodfsfjiofjdsfio ljdsfioldsjfioldsjflikdsfjdslkfjdsdsadsadsadsasflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={1} icon={<BiCard/>} title={'Δες Βαθμούς'} type={"teacher"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={2} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"teacher"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={3} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"teacher"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={4} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"teacher"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={5} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"teacher"}/>
 ];
 
 const items_3 = [
-    <Card text={'First Cardodfsfjiofjdsfio ljdsfioldsjfioldsjflikdsfjdslkfjdsdsadsadsadsasflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={1} icon={<BiCard/>} title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_3'} icon_style_2={'icon_in_card_3_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={2} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_3'} icon_style_2={'icon_in_card_3_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={3} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_3'} icon_style_2={'icon_in_card_3_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={4} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_3'} icon_style_2={'icon_in_card_3_alt'}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={5} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} icon_style_1={'icon_in_card_3'} icon_style_2={'icon_in_card_3_alt'}/>
+    <Card text={'First Cardodfsfjiofjdsfio ljdsfioldsjfioldsjflikdsfjdslkfjdsdsadsadsadsasflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={1} icon={<BiCard/>} title={'Δες Βαθμούς'} type={"admin"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={2} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"admin"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={3} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"admin"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={4} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"admin"}/>,
+    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={5} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"admin"}/>
 ];
 
 
@@ -40,7 +40,7 @@ const StartPage = () => {
             <br/>
             <LoginWindow/>
             <br/>
-            <div className="container_two">
+            <div className="container_two_alt">
                 <h1>Φοιτητές</h1>
             </div>
             <ContentCarousel items={items_1}/>
