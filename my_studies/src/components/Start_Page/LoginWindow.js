@@ -10,27 +10,9 @@ const LoginWindow = (props) => {
     const [passwordError, setPasswordError] = useState("")
     const [isTooltipVisible, setTooltipVisible] = useState(false);
 
-    // const handleMouseEnter = () => {
-    //     setTooltipVisible(true);
-    // };
-    //
-    // const handleMouseLeave = () => {
-    //     setTooltipVisible(false);
-    // };
-    //
-    // const navigate = useNavigate();
-
     const onButtonClick = () => {
         // You'll update this function later...
     }
-
-    // const settings = {
-    //     dots: true,
-    //     infinite: true,
-    //     speed: 500,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    // };
 
         return (
             <div className={"bgContainer"}>
@@ -66,7 +48,6 @@ const LoginWindow = (props) => {
                         </div>
                         <label className="errorLabel">{passwordError}</label>
                     </div>
-                    {/*<br />*/}
                     <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
                     <br/>
                     <div className={"container_special"}>
