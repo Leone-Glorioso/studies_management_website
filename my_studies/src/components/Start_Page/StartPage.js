@@ -7,12 +7,12 @@ import { Button } from 'primereact/button';
 import ContentCarousel from "./ContentCarousel";
 import Card from "./Card";
 import {AiFillLock} from "react-icons/ai";
-import {FaBook, FaCertificate} from "react-icons/fa6";
+import {FaBook, FaCertificate, FaRegBookmark, FaWpforms} from "react-icons/fa6";
 import {FaScroll} from "react-icons/fa6";
 import {BsBookmarkPlus, BsBookmarkPlusFill} from "react-icons/bs";
 import {MdSettings} from "react-icons/md";
 import {IoHelpCircleOutline} from "react-icons/io5";
-import {FaUserCircle} from "react-icons/fa";
+import {FaChalkboardTeacher, FaUserCircle, FaUserFriends} from "react-icons/fa";
 import {GiScrollQuill} from "react-icons/gi";
 
 const items_1 = [
@@ -34,11 +34,13 @@ const items_2 = [
 ];
 
 const items_3 = [
-    <Card text={'First Cardodfsfjiofjdsfio ljdsfioldsjfioldsjflikdsfjdslkfjdsdsadsadsadsasflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={1} icon={<BiCard/>} title={'Δες Βαθμούς'} type={"admin"}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={2} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"admin"}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={3} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"admin"}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={4} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"admin"}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={5} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"admin"}/>
+    <Card text={'Δες όλoυς τους προπτυχιακούς, μεταπτυχιακούς και διδακτορικούς φοιτητές της σχολής και τις πληροφορίες τους!'} image={'/carousel/admin/students.jpg'} image_alt={'students'} data_value={1} icon={<FaUserFriends/>} title={'Φοιτητές'} type={"admin"}/>,
+    <Card text={'Δες όλο το εκπαιδευτικό προσωπικό από διδάκτορες και ομότιμα μέλη εώς διδακτοτικό και μεταπτυχιακό προσωπικό!'} image={'/carousel/admin/teachers.jpg'} image_alt={'teachers'} data_value={2} icon={<FaChalkboardTeacher/>} title={'Εκπαιδευτές'} type={"admin"}/>,
+    <Card text={'Δες όλα τα μαθήματα της σχολής! Πρόσθεσε μαθήματα, αφαίρεσε και προσάρμοσε τις πληροφορίες τους, όπως για παράδειγμα το ποιοί καθηγητές τα έχουν αναλάβει'} image={'/carousel/student/lessons.jpg'} image_alt={'lessons'} data_value={3} icon={<FaBook/>} title={'Μαθήματα'} type={"admin"}/>,
+    <Card text={'Δες όλες τις αιτήσεις για πιστοποιητικά από φοιτητές! Έλεγξε τις πληροφορίες του φοιτητή και δώσε την έγκριση για την έκδοσή του!'} image={'/carousel/admin/aithseis.jpg'} image_alt={'aithseis'} data_value={4} icon={<FaWpforms/>} title={'Αιτήσεις'} type={"admin"}/>,
+    <Card text={'Επεξεργάσου τις περιόδους δηλώσεων. Άνοιξε και κλείσε την τρέχουσα περίοδο ανάλογα!'} image={'/carousel/admin/dhloseis.jpg'} image_alt={'dhloseis'} data_value={5} icon={<FaRegBookmark/>} title={'Δηλώσεις'} type={"admin"}/>,
+    <Card text={'Η δικιά σου σελίδα βοήθειας για να εξερευνήσεις τις δυνατότητες της εφαρμογής με ασφάλεια!'} image={'/carousel/student/help.jpg'} image_alt={'help'} data_value={6} icon={<IoHelpCircleOutline/>}  title={'Βοήθεια'} type={"admin"}/>,
+    <Card text={'Δες το προφίλ της σχολής και άλλαξε τις πληροφορίες κατάλληλα!'} image={'/carousel/student/profile.jpg'} image_alt={'profile'} data_value={7} icon={<FaUserCircle/>}  title={'Προφίλ'} type={"admin"}/>
 ];
 
 
