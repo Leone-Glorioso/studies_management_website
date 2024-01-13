@@ -7,13 +7,19 @@ import { Button } from 'primereact/button';
 import ContentCarousel from "./ContentCarousel";
 import Card from "./Card";
 import {AiFillLock} from "react-icons/ai";
+import {FaBook, FaCertificate} from "react-icons/fa6";
+import {FaScroll} from "react-icons/fa6";
+import {BsBookmarkPlus, BsBookmarkPlusFill} from "react-icons/bs";
+import {MdSettings} from "react-icons/md";
+import {IoHelpCircleOutline} from "react-icons/io5";
 
 const items_1 = [
-    <Card text={'First Cardodfsfjiofjdsfio ljdsfioldsjfioldsjflikdsfjdslkfjdsdsadsadsadsasflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={1} icon={<BiCard/>} title={'Δες Βαθμούς'} type={"student"}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={2} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"student"}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={3} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"student"}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={4} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"student"}/>,
-    <Card text={'First Cardodfsfjiofjdsfiol jdsfioldsjfioldsjflikdsfjdsssdsadsadsadlkfjdsflkjd'} image={'/bookcase.jpg'} image_alt={'bookcase'} data_value={5} icon={<AiFillLock/>}  title={'Δες Βαθμούς'} type={"student"}/>
+    <Card text={'Δες πληροφορίες για τα μαθήματα που έχεις πάρει, αλλά και όσα μπορείς να πάρεις. Δες πληροφορίες όπως ποιοί καθηγητές τα έχουν πάρει, πόσες πιστωτικές μονάδες δίνουν και πολλά άλλα.'} image={'/carousel/student/lessons.jpg'} image_alt={'lessons'} data_value={1} icon={<FaBook/>} title={'Μαθήματα'} type={"student"}/>,
+    <Card text={'Δες τις βαθμολογίες από όλα σου τα μαθήματα! Μπορείς να τις εκτυπώσεις ή να τις εξάγεις σε pdf'} image={'/carousel/student/grades.jpg'} image_alt={'grades'} data_value={2} icon={<FaScroll/>}  title={'Βαθμολογίες'} type={"student"}/>,
+    <Card text={'Δήλωσε τα μαθήματα που θες να παρακολουθήσεις! Μπορείς να κάνεις όσες δηλώσεις θες εντός της προθεσμίας άμα αλλάξεις την γνώμη σου!'} image={'/carousel/student/dhloseis.png'} image_alt={'dhloseis'} data_value={3} icon={<BsBookmarkPlusFill/>}  title={'Δηλώσεις'} type={"student"}/>,
+    <Card text={'Έκδοσε πιστοποιητικά από τα διαθέσιμα είδη. Μπορείς ανά πάσα στιγμή να ελέγξεις την κατάσταση τους και να εκτυπώσεις όσα έχουν εγκριθεί'} image={'/carousel/student/certificate.jpg'} image_alt={'certificate'} data_value={4} icon={<FaCertificate/>}  title={'Πιστοποιητικά'} type={"student"}/>,
+    <Card text={'Εξερεύνησε τις ρυθμίσεις που προσφέρει η εφαρμογή μας. Προσάρμοσε την στις ανάγκες σου!'} image={'/carousel/student/settings.jpg'} image_alt={'settings'} data_value={5} icon={<MdSettings/>}  title={'Ρυθμίσεις'} type={"student"}/>,
+    <Card text={'Η δικιά σου σελίδα βοήθειας για να εξερευνήσεις τις δυνατότητες της εφαρμογής με ασφάλεια!'} image={'/carousel/student/help.jpg'} image_alt={'help'} data_value={6} icon={<IoHelpCircleOutline/>}  title={'Βοήθεια'} type={"student"}/>
 ];
 
 const items_2 = [
