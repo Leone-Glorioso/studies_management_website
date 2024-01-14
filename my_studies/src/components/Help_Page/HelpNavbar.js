@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import { IconContext } from 'react-icons';
 import './HelpNavBar.css';
+import {Tooltip} from "primereact/tooltip";
 
 function HelpNavbar() {
     const [sidebar, setSidebar] = useState(true);
@@ -37,8 +38,9 @@ function HelpNavbar() {
                                 </li>
                             );
                         })}
+                        <Tooltip target={".nav-img"} mouseTrack mouseTrackTop={15} className={'toolTipHelp'} position={"top"} />
                         <Link to={'/'}>
-                            <img src={"/cyan-left-greek-1-1024x283.png"} alt={"Logo ΕΚΠΑ"} className={'nav-img'}/>
+                            <img src={"/cyan-left-greek-1-1024x283.png"} alt={"Logo ΕΚΠΑ"} className={"nav-img"} data-pr-tooltip="Αρχική Σελίδα"/>
                         </Link>
                     </ul>
                 </nav>

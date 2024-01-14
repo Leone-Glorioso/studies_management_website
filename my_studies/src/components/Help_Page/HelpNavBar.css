@@ -84,7 +84,7 @@ span {
     bottom: 0px;
     width: 25vw;
     /*margin-top: 10vh;*/
-    transform: translateY(130%);
+    transform: translateY(100%);
 }
 
 .nav-img2 {
@@ -95,4 +95,18 @@ span {
     list-style: none;
     /*height: 17vh;*/
     width: 25vw;
+}
+
+.toolTipHelp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #D49A42;
+    color: white;
+    max-width: 20vw; /* Set the maximum width of the container */
+    max-height: 10vh; /* Set the maximum height of the container */
+    margin: 1vh auto 0; /* Add margin to the top (50px in this example), and center horizontally */
+    padding: 1vh; /* Add some padding for better visual appearance */
+    border-radius: 15px; /* Add rounded corners with a radius of 15 pixels */
 }
