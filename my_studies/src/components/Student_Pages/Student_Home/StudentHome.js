@@ -23,9 +23,7 @@ function StudentHome()  {
                 data.push(doc.data().lessons);
             })
             if(data.length !== 1)
-            {
                 return;
-            }
             const data_alt = [];
             const lesson_names = data[0];
             for (const lesson of lesson_names) {
