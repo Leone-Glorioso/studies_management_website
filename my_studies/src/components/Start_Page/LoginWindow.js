@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import "./LoginWindow.css";
 import {FaUser, FaLock, FaUnlock} from 'react-icons/fa';
 import { Button } from 'primereact/button';
-import { collection, query, where, getDocs , and} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
 
 async function getUserLogin(username, password)
 {
-    const db_ref = collection(db, 'user');
-    const q = query(db_ref,
-            where('username', '==', username),
-            where('password', '==', password)
-        );
-    const docs = await getDocs(q);
+    // const db_ref = db.collection('user');
+    // const q = query(collection(db, 'user'),
+    //         where('username', '==', username),
+    //         where('password', '==', password)
+    //     );
+    // const q = await db.collection('user').where('username', '==', username).where('password', '==', password).get();
+    const docs = await db.collection('user').where('username', '==', username).where('password', '==', password).get();
     const data = [];
     docs.forEach((doc)=> {
         data.push({id: doc.id, ...doc.data()});
