@@ -1,6 +1,6 @@
 export const profile = [
     {
-        url: "#",
+        url: "/profile",
         cName: "nav-links-side",
         icon: "fa-regular fa-circle-user",
         title: "ΟΝΟΜΑ-ΕΠΩΝΥΜΟ"
