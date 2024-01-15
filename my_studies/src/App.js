@@ -21,33 +21,36 @@ import StudentDhlwseis1 from "./components/Student_Pages/Student_Dhlwseis/Studen
 import StudentDhlwseis2 from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis2";
 import StudentDhlwseis3 from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis3";
 import StudentLessons from "./components/Student_Pages/Student_Lessons/StudentLessons";
+import {AuthProvider} from "./components/Auth/AuthContext";
 
 function App() {
     return(
-        <Router>
-          <Routes>
-              <Route path='/lessons' element={<StudentLessons/>} />
-              <Route path='/forms/saved' element={<StudentDhlwseis3/>} />
-              <Route path='/forms/new-form/done' element={<StudentDhlwseis2/>} />
-              <Route path='/forms/new-form' element={<StudentDhlwseis1/>} />
-              <Route path='/forms' element={<StudentDhlwseis/>} />
-              <Route path='/grades' element={<StudentGrades/>} />
-              <Route path='/certificates/new-certificate/personal_info/confirmation/end/done' element={<StudentCert1_5/>} />
-              <Route path='/certificates/new-certificate/personal_info/confirmation/end' element={<StudentCert1_4/>} />
-              <Route path='/certificates/new-certificate/personal_info/confirmation' element={<StudentCert1_3/>} />
-              <Route path='/certificates/new-certificate/personal_info' element={<StudentCert1_2/>} />
-              <Route path='/certificates/new-certificate' element={<StudentCert1/>} />
-              <Route path='/certificates' element={<StudentCert/>} />
-              <Route path='/' element={<StudentHome/>} />
-              <Route path='/login' element={<LoginWindow/>}/>
-              <Route path='/start' element={<StartPage/>}/>
-              <Route path='/ts' element={<Teacher_Sidebar/>}/>
-              <Route path='/help' element={<HelpHome/>}/>
-              <Route path='/help/student' element={<HelpStudents/>}/>
-              <Route path='/help/teacher' element={<HelpTeachers/>}/>
-              <Route path='/help/admin' element={<HelpAdministration/>}/>
-          </Routes>
-        </Router>
+        <AuthProvider>
+            <Router>
+              <Routes>
+                  <Route path='/lessons' element={<StudentLessons/>} />
+                  <Route path='/forms/saved' element={<StudentDhlwseis3/>} />
+                  <Route path='/forms/new-form/done' element={<StudentDhlwseis2/>} />
+                  <Route path='/forms/new-form' element={<StudentDhlwseis1/>} />
+                  <Route path='/forms' element={<StudentDhlwseis/>} />
+                  <Route path='/grades' element={<StudentGrades/>} />
+                  <Route path='/certificates/new-certificate/personal_info/confirmation/end/done' element={<StudentCert1_5/>} />
+                  <Route path='/certificates/new-certificate/personal_info/confirmation/end' element={<StudentCert1_4/>} />
+                  <Route path='/certificates/new-certificate/personal_info/confirmation' element={<StudentCert1_3/>} />
+                  <Route path='/certificates/new-certificate/personal_info' element={<StudentCert1_2/>} />
+                  <Route path='/certificates/new-certificate' element={<StudentCert1/>} />
+                  <Route path='/certificates' element={<StudentCert/>} />
+                  <Route path='/' element={<StudentHome/>} />
+                  <Route path='/login' element={<LoginWindow/>}/>
+                  <Route path='/start' element={<StartPage/>}/>
+                  <Route path='/ts' element={<Teacher_Sidebar/>}/>
+                  <Route path='/help' element={<HelpHome/>}/>
+                  <Route path='/help/student' element={<HelpStudents/>}/>
+                  <Route path='/help/teacher' element={<HelpTeachers/>}/>
+                  <Route path='/help/admin' element={<HelpAdministration/>}/>
+              </Routes>
+            </Router>
+        </AuthProvider>
     );
 }
 

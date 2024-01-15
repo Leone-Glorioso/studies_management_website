@@ -2,21 +2,32 @@ import React, { useState } from "react";
 import "./LoginWindow.css";
 import {FaUser, FaLock, FaUnlock} from 'react-icons/fa';
 import { Button } from 'primereact/button';
-import {db} from "../../config/firebase_config";
+import {getFirestore, collection, query, where, getDocs} from "firebase/firestore";
+import {useAuth} from "../Auth/AuthContext";
+import {db} from "../config/firebase_config";
 
 async function getUserLogin(username, password)
 {
-    // const db_ref = db.collection('user');
+    console.log("Reached 0");
+    const db_ref = collection(db, 'user');
+    console.log("Reached 1");
     // const q = query(collection(db, 'user'),
     //         where('username', '==', username),
     //         where('password', '==', password)
     //     );
+    // const q = db_ref.where('username', '==', username).where('password', '==', password);
+    const q = query(db_ref, where('username', '==', username), where('password', '==', password));
+    console.log("Reached 2");
     // const q = await db.collection('user').where('username', '==', username).where('password', '==', password).get();
-    const docs = await db.collection('user').where('username', '==', username).where('password', '==', password).get();
+    // const docs = await db.collection('user').where('username', '==', username).where('password', '==', password).get();
+    // const docs = await q.get();
+    const docs = await getDocs(q);
+    console.log("Reached 3");
     const data = [];
     docs.forEach((doc)=> {
         data.push({id: doc.id, ...doc.data()});
     })
+    console.log("Reached 4");
     return data;
 }
 
@@ -26,6 +37,7 @@ const LoginWindow = (props) => {
     const [usernameError, setUsernameError] = useState("")
     const [passwordError, setPasswordError] = useState("")
     const [user, setUser] = useState({})
+    const Auth = useAuth()
 
     const onButtonClick = () => {
         async function fetchUser()
@@ -33,8 +45,9 @@ const LoginWindow = (props) => {
             const temp = await getUserLogin(username, password);
             setUser(temp[0]);
         }
-        fetchUser();
+        fetchUser().then(r => console.log(r));
         console.log(user);
+        Auth.userLogin(user);
     }
 
         return (

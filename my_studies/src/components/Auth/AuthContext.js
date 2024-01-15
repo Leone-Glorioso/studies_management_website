@@ -13,12 +13,12 @@ function AuthProvider({ children }) {
     };
 
 
-    const userLogin = (user, accessToken) => {
-        sessionStorage.setItem("user", JSON.stringify({ user, accessToken }));
-        cookies.set('user', JSON.stringify({ user, accessToken }), {
+    const userLogin = (user) => {
+        sessionStorage.setItem("user", JSON.stringify(user));
+        cookies.set('user', JSON.stringify(user), {
             expires: new Date(Date.now() + 1000000)
         })
-        setUser({ user, accessToken });
+        setUser(user);
     };
 
 
