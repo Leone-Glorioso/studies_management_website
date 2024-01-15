@@ -1,10 +1,43 @@
-import React, {Component} from "react";
+import React, {Component, useEffect, useState} from "react";
 import './StudentGrades.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
+import {useAuth} from "../../Auth/AuthContext";
+import {collection, getDocs, query, where} from "firebase/firestore";
+import {db} from "../../config/firebase_config";
 
-class StudentGrades extends Component {
+function StudentGrades() {
 
-    render() {
+    const Auth = useAuth();
+    const isLogged = Auth.userIsAuthenticated();
+    const user = Auth.getUser();
+    const [grades, setGrades] = useState([]);
+
+    useEffect(() => {
+    async function fetchGrades()
+    {
+        const db_ref = collection(db, 'grades');
+        const q = query(db_ref, where('student_username', '==', user.username));
+        const docs = await getDocs(q);
+        const data = [];
+        docs.forEach((doc)=> {
+            data.push({lesson: doc.data().lesson_id, grade: doc.data().grade});
+        })
+        const data_alt = [];
+        for (const grade of data) {
+            const db_ref_alt = collection(db, 'lessons');
+            const q_alt = query(db_ref_alt, where('num', '==', grade.lesson));
+            const docs_alt = await getDocs(q_alt);
+            docs_alt.forEach((doc)=> {
+                data_alt.push({code: doc.data().num, name: doc.data().name, grade: grade.grade});
+            })
+        }
+        setGrades(data_alt);
+    }
+    if(isLogged)
+        fetchGrades();
+}, []);
+
+
         return (
             <div>
                 <Sidebar/>
@@ -14,7 +47,7 @@ class StudentGrades extends Component {
                     <li>Βαθμολογίες</li>
                 </ul>
 
-                <table className="table-gr">
+                {!isLogged && <table className="table-gr">
                     <tr>
                         <th>Κωδικός Μαθήματος</th>
                         <th>Τίτλος Μαθήματος</th>
@@ -30,7 +63,26 @@ class StudentGrades extends Component {
                         <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
                         <td>Χ</td>
                     </tr>
-                </table>
+                </table>}
+
+                {isLogged &&
+                    <table className="table-gr">
+                        <tr>
+                            <th>Κωδικός Μαθήματος</th>
+                            <th>Τίτλος Μαθήματος</th>
+                            <th>Βαθμός</th>
+                        </tr>
+                        {grades.map((grade)=> {
+                            return(
+                                <tr>
+                                    <td>{grade.code}</td>
+                                    <td>{grade.name}</td>
+                                    {grade.grade >= 5 && <td className={'passed_grade'}>{grade.grade}</td>}
+                                    {grade.grade < 5 && <td className={'failed_grade'}>{grade.grade}</td>}
+                                </tr>
+                            )
+                        })}
+                    </table>}
 
                 <ul className="dropdowns">
                     <li className="drop-buttons">
@@ -120,7 +172,6 @@ class StudentGrades extends Component {
             </div>
 
         )
-    }
 
 }
 

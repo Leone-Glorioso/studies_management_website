@@ -286,3 +286,15 @@ a.print {
         width: 70%;
     }
 }
+
+.passed_grade {
+    text-align: center;
+    color: green;
+    font-size: 1vw;
+}
+
+.failed_grade {
+    text-align: center;
+    color: red;
+    font-size: 1vw;
+}
