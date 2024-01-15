@@ -33,9 +33,9 @@ function StudentGrades() {
         }
         setGrades(data_alt);
     }
-    if(isLogged)
-        fetchGrades();
-}, []);
+        if(isLogged)
+            fetchGrades();
+    }, []);
 
 
         return (
