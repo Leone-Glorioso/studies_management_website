@@ -22,16 +22,16 @@ async function getUserLogin({username, password})
 }
 
 const LoginWindow = (props) => {
-    const [email, setEmail] = useState("")
+    const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [emailError, setEmailError] = useState("")
+    const [usernameError, setUsernameError] = useState("")
     const [passwordError, setPasswordError] = useState("")
     const [user, setUser] = useState({})
 
     const onButtonClick = () => {
         async function fetchUser()
         {
-            const temp = await getUserLogin({email, password});
+            const temp = await getUserLogin({email: username, password});
             setUser(temp[0]);
         }
         fetchUser();
@@ -48,13 +48,13 @@ const LoginWindow = (props) => {
                           <FaUser />
                         </span>
                             <input
-                                value={email}
+                                value={username}
                                 placeholder="Όνομα Χρήστη"
-                                onChange={ev => setEmail(ev.target.value)}
+                                onChange={ev => setUsername(ev.target.value)}
                                 className="inputBox"
                             />
                         </div>
-                        <label className="errorLabel">{emailError}</label>
+                        <label className="errorLabel">{usernameError}</label>
                     </div>
                     <br />
                     <div className="inputContainer">
