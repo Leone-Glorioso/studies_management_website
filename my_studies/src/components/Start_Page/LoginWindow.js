@@ -2,16 +2,40 @@ import React, { useState } from "react";
 import "./LoginWindow.css";
 import {FaUser, FaLock, FaUnlockAlt, FaUnlock} from 'react-icons/fa';
 import { Button } from 'primereact/button';
+import { collection, query, where, getDocs , and} from "firebase/firestore";
+import {db} from "../../config/firebase_config";
+
+async function getUserLogin({username, password})
+{
+    const db_ref = collection(db, 'user');
+    const q = query(db_ref,
+        and(
+            where('username', '==', username),
+            where('password', '==', password)
+        ));
+    const docs = await getDocs(q);
+    const data = [];
+    docs.forEach((doc)=> {
+        data.push({id: doc.id, ...doc.data()});
+    })
+    return data;
+}
 
 const LoginWindow = (props) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [emailError, setEmailError] = useState("")
     const [passwordError, setPasswordError] = useState("")
-    const [isTooltipVisible, setTooltipVisible] = useState(false);
+    const [user, setUser] = useState({})
 
     const onButtonClick = () => {
-        // You'll update this function later...
+        async function fetchUser()
+        {
+            const temp = await getUserLogin({email, password});
+            setUser(temp[0]);
+        }
+        fetchUser();
+        console.log(user);
     }
 
         return (
@@ -51,11 +75,10 @@ const LoginWindow = (props) => {
                     <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
                     <br/>
                     <div className={"container_special"}>
-                        <Button className="green-button-round" tooltip="Ασφαλής Σύνδεση: Χρησιμοποιείται εάν βρίσκεστε σε δημόσιο δίκτυο" tooltipOptions={{ position: 'bottom' , className: 'tooltipContainer', fontSize: '2rem', cursor: 'pointer'}}>
+                        <Button className="green-button-round" tooltip="Ασφαλής Σύνδεση: Χρησιμοποιείται εάν βρίσκεστε σε δημόσιο δίκτυο" tooltipOptions={{ position: 'bottom' , className: 'tooltipContainer', fontSize: '2rem', cursor: 'pointer'}} onClick={onButtonClick}>
                             <FaUnlock id={"icon1"}/>
                             <FaLock id={"icon2"}/>
                         </Button>
-                        {isTooltipVisible && <div className="tooltip"><p>This is pop-up text</p></div>}
                         <input
                             className={"green-button"}
                             type="button"
