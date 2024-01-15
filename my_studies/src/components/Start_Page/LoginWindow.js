@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import "./LoginWindow.css";
-import {FaUser, FaLock, FaUnlockAlt, FaUnlock} from 'react-icons/fa';
+import {FaUser, FaLock, FaUnlock} from 'react-icons/fa';
 import { Button } from 'primereact/button';
 import { collection, query, where, getDocs , and} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
 
-async function getUserLogin({username, password})
+async function getUserLogin(username, password)
 {
     const db_ref = collection(db, 'user');
     const q = query(db_ref,
-        and(
             where('username', '==', username),
             where('password', '==', password)
-        ));
+        );
     const docs = await getDocs(q);
     const data = [];
     docs.forEach((doc)=> {
@@ -31,7 +30,7 @@ const LoginWindow = (props) => {
     const onButtonClick = () => {
         async function fetchUser()
         {
-            const temp = await getUserLogin({email: username, password});
+            const temp = await getUserLogin(username, password);
             setUser(temp[0]);
         }
         fetchUser();
