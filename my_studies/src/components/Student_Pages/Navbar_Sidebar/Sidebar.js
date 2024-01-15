@@ -1,79 +1,109 @@
-import React, {Component} from "react";
-import {MenuItems1} from "./MenuItems";
+import React, {Component, useEffect, useState} from "react";
+import {MenuItems1, MenuItems2_alt} from "./MenuItems";
 import {MenuItems2} from "./MenuItems";
 import {profile} from "./MenuItems";
 import './Sidebar.css'
 import {MenuItems} from "./MenuItems";
 import './Navbar.css'
+import {useAuth} from "../../Auth/AuthContext";
 
-class Sidebar extends Component {
 
-    render() {
-        return (
-            <div>
 
-                <nav className="SidebarItems">
-                    <ul className="prof">
-                        {profile.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <a href={item.url} className={item.cName}>
-                                        <i className={item.icon}></i>{item.title}
-                                    </a>
-                                </li>
-                            )
-                        })}
-                    </ul>
+function Sidebar() {
 
-                    <ul className="side-menu1">
-                        {MenuItems1.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <a href={item.url} className={item.cName}>
-                                        <i className={item.icon}></i>{item.title}
-                                    </a>
-                                </li>
-                            )
-                        })}
-                    </ul>
+    const Auth = useAuth();
+    const isLogged = Auth.userIsAuthenticated();
+    const [fullname, setFullname] = useState("");
 
-                    <ul className="side-menu2">
-                        {MenuItems2.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <a href={item.url} className={item.cName}>
-                                        <i className={item.icon}></i>{item.title}
-                                    </a>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                </nav>
+    useEffect(() => {
+        if(isLogged)
+        {
+            const user = Auth.getUser();
+            setFullname(" " + user.name + " " + user.surname);
+        }
+    }, []);
 
-                <nav className="NavbarItems">
-                    <ul className="nav-menu">
-                        {MenuItems.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <a href={item.url} className={item.cName}>
-                                        <i className={item.icon}></i>
-                                    </a>
-                                </li>
-                            )
-                        })}
+    return (
+        <div>
+            <nav className="SidebarItems">
+                <ul className="prof">
+                    {!isLogged && profile.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a href={item.url} className={item.cName}>
+                                    <i className={item.icon}></i>{item.title}
+                                </a>
+                            </li>
+                        )
+                    })}
+                    {isLogged && profile.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a href={item.url} className={item.cName}>
+                                    <i className={item.icon}></i>{fullname}
+                                </a>
+                            </li>
+                        )
+                    })}
+                </ul>
 
-                    </ul>
-                </nav>
+                <ul className="side-menu1">
+                    {MenuItems1.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a href={item.url} className={item.cName}>
+                                    <i className={item.icon}></i>{item.title}
+                                </a>
+                            </li>
+                        )
+                    })}
+                </ul>
 
-                <div className="search-bar">
-                    <input type="text" placeholder=" Αναζήτηση"/>
-                    <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+                <ul className="side-menu2">
+                    {isLogged && MenuItems2.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a href={item.url} className={item.cName}>
+                                    <i className={item.icon}></i>{item.title}
+                                </a>
+                            </li>
+                        )
+                    })}
+                    {!isLogged && MenuItems2_alt.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a href={item.url} className={item.cName}>
+                                    <i className={item.icon}></i>{item.title}
+                                </a>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </nav>
 
+            <nav className="NavbarItems">
+                <ul className="nav-menu">
+                    {MenuItems.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a href={item.url} className={item.cName}>
+                                    <i className={item.icon}></i>
+                                </a>
+                            </li>
+                        )
+                    })}
+
+                </ul>
+            </nav>
+
+            <div className="search-bar">
+                <input type="text" placeholder=" Αναζήτηση"/>
+                <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
-        )
-    }
+        </div>
+
+    )
 
 }
 

@@ -5,49 +5,32 @@ import { Button } from 'primereact/button';
 import {getFirestore, collection, query, where, getDocs} from "firebase/firestore";
 import {useAuth} from "../Auth/AuthContext";
 import {db} from "../config/firebase_config";
-
-async function getUserLogin(username, password)
-{
-    console.log("Reached 0");
-    const db_ref = collection(db, 'user');
-    console.log("Reached 1");
-    // const q = query(collection(db, 'user'),
-    //         where('username', '==', username),
-    //         where('password', '==', password)
-    //     );
-    // const q = db_ref.where('username', '==', username).where('password', '==', password);
-    const q = query(db_ref, where('username', '==', username), where('password', '==', password));
-    console.log("Reached 2");
-    // const q = await db.collection('user').where('username', '==', username).where('password', '==', password).get();
-    // const docs = await db.collection('user').where('username', '==', username).where('password', '==', password).get();
-    // const docs = await q.get();
-    const docs = await getDocs(q);
-    console.log("Reached 3");
-    const data = [];
-    docs.forEach((doc)=> {
-        data.push({id: doc.id, ...doc.data()});
-    })
-    console.log("Reached 4");
-    return data;
-}
-
+import {useNavigate} from "react-router-dom";
 const LoginWindow = (props) => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [usernameError, setUsernameError] = useState("")
-    const [passwordError, setPasswordError] = useState("")
-    const [user, setUser] = useState({})
+    const [error, setError] = useState(false);
     const Auth = useAuth()
+    const navigate = useNavigate();
 
-    const onButtonClick = () => {
+    const onButtonClick = async () => {
         async function fetchUser()
         {
-            const temp = await getUserLogin(username, password);
-            setUser(temp[0]);
+            const db_ref = collection(db, 'user');
+            const q = query(db_ref, where('username', '==', username), where('password', '==', password));
+            const docs = await getDocs(q);
+            const data = [];
+            docs.forEach((doc)=> {
+                data.push({id: doc.id, ...doc.data()});
+            })
+            if(data.length === 0)
+            {
+                return;
+            }
+            Auth.userLogin(data[0]);
+            navigate('/');
         }
-        fetchUser().then(r => console.log(r));
-        console.log(user);
-        Auth.userLogin(user);
+        await fetchUser();
     }
 
         return (
@@ -66,7 +49,6 @@ const LoginWindow = (props) => {
                                 className="inputBox"
                             />
                         </div>
-                        <label className="errorLabel">{usernameError}</label>
                     </div>
                     <br />
                     <div className="inputContainer">
@@ -82,7 +64,6 @@ const LoginWindow = (props) => {
                                 className="inputBox"
                             />
                         </div>
-                        <label className="errorLabel">{passwordError}</label>
                     </div>
                     <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
                     <br/>

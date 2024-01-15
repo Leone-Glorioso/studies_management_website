@@ -65,6 +65,27 @@ export const MenuItems2 = [
     },
 ]
 
+export const MenuItems2_alt = [
+    {
+        url: "#",
+        cName: "nav-links-side",
+        icon: "fa-solid fa-gear",
+        title: "Ρυθμίσεις"
+    },
+    {
+        url: "#",
+        cName: "nav-links-side",
+        icon: "fa-solid fa-circle-question",
+        title: "Βοήθεια"
+    },
+    {
+        url: "#",
+        cName: "nav-links-side",
+        icon: "fa-solid fa-arrow-right-from-bracket",
+        title: "Αποσύνδεση"
+    },
+]
+
 export const MenuItems = [
     {
         url: "#",
