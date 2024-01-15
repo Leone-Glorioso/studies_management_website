@@ -6,6 +6,7 @@ const AuthContext = createContext();
 
 function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
+    const [lesson, setLesson] = useState(null);
     const cookies = new Cookies();
 
     const userIsAuthenticated = () => {
@@ -34,12 +35,33 @@ function AuthProvider({ children }) {
         setUser(null);
     };
 
+    const lessonSetter = (lesson) => {
+        sessionStorage.setItem("lesson", JSON.stringify(lesson));
+        cookies.set('lesson', JSON.stringify(lesson), {
+            expires: new Date(Date.now() + 1000000)
+        })
+        setUser(user);
+    }
+
+    const getLesson = () => {
+        return cookies.get('lesson')
+    }
+
+    const isLessonSet = () => {
+        return cookies.get('lesson') !== undefined;
+    };
+
     const contextValue = {
         user,
         userIsAuthenticated,
         userLogin,
         userLogout,
         getUser,
+        lesson,
+        setLesson,
+        lessonSetter,
+        getLesson,
+        isLessonSet,
     };
 
     return (

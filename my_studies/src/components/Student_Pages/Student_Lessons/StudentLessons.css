@@ -40,7 +40,7 @@ ul.breadcrumb {
 .lesson {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    grid-gap: 100px;
+    grid-gap: 200px;
     list-style: none;
 }
 
