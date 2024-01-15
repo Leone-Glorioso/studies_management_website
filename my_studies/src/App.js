@@ -21,6 +21,8 @@ import StudentDhlwseis1 from "./components/Student_Pages/Student_Dhlwseis/Studen
 import StudentDhlwseis2 from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis2";
 import StudentDhlwseis3 from "./components/Student_Pages/Student_Dhlwseis/StudentDhlwseis3";
 import StudentLessons from "./components/Student_Pages/Student_Lessons/StudentLessons";
+import StudentLessons1 from "./components/Student_Pages/Student_Lessons/StudentLessons1";
+import StudentProf from "./components/Student_Pages/Student_Profile/StudentProf";
 import {AuthProvider} from "./components/Auth/AuthContext";
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <AuthProvider>
             <Router>
               <Routes>
+                  <Route path='/profile' element={<StudentProf/>} />
+                  <Route path='/lessons/lesson' element={<StudentLessons1/>} />
                   <Route path='/lessons' element={<StudentLessons/>} />
                   <Route path='/forms/saved' element={<StudentDhlwseis3/>} />
                   <Route path='/forms/new-form/done' element={<StudentDhlwseis2/>} />
