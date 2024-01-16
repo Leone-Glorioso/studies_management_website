@@ -16,7 +16,6 @@ class StudentProf extends Component {
                 </ul>
 
                 <a href="#" className="cert-button">Πιστοποιητικά</a>
-
                 <p className="title1">Σχετικά με της σπουδές μου:</p>
                 <div className="Study-info">
                     <ul className="info">

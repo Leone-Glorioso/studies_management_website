@@ -16,29 +16,29 @@ export const LessonItems = [
     },
 ]
 
-export const LessonInfo = [
-    {
-        cName: "lesson-info",
-        title: "Εξάμηνο"
-    },
-    {
-        cName: "lesson-info",
-        title: "Τύπος"
-    },
-    {
-        cName: "lesson-info",
-        title: "ECTS"
-    },
-    {
-        cName: "lesson-info",
-        title: "Γνωστικό αντικείμενο"
-    },
-    {
-        cName: "lesson-info",
-        title: "Καθηγητές"
-    },
-    {
-        cName: "lesson-info",
-        title: "Συγγράματα"
-    },
-]
+// export const LessonInfo = [
+//     {
+//         cName: "lesson-info",
+//         title: "Εξάμηνο"
+//     },
+//     {
+//         cName: "lesson-info",
+//         title: "Τύπος"
+//     },
+//     {
+//         cName: "lesson-info",
+//         title: "ECTS"
+//     },
+//     {
+//         cName: "lesson-info",
+//         title: "Γνωστικό αντικείμενο"
+//     },
+//     {
+//         cName: "lesson-info",
+//         title: "Καθηγητές"
+//     },
+//     {
+//         cName: "lesson-info",
+//         title: "Συγγράματα"
+//     },
+// ]

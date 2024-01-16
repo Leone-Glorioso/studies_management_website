@@ -48,7 +48,7 @@ a.cert-button {
 
 p.title1 {
     position: fixed;
-    top: 260px;
+    top: 310px;
     left: 290px;
 
     font-weight: bold;
@@ -61,7 +61,7 @@ p.title1 {
     align-items: center;
     font-size: 30px;
     position: fixed;
-    top: 300px;
+    top: 350px;
     left: 290px;
 
     padding: 10px 300px 10px 10px;
@@ -78,7 +78,7 @@ p.title1 {
 
 p.title2 {
     position: fixed;
-    top: 520px;
+    top: 570px;
     left: 290px;
 
     font-weight: bold;
@@ -91,12 +91,13 @@ p.title2 {
     align-items: center;
     font-size: 30px;
     position: fixed;
-    top: 550px;
+    top: 610px;
     left: 290px;
 
     padding: 10px 300px 10px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
+    width: 600px;
 
     .info {
         display: grid;
@@ -108,8 +109,8 @@ p.title2 {
 
 p.title3 {
     position: fixed;
-    top: 780px;
-    left: 290px;
+    top: 310px;
+    left: 1000px;
 
     font-weight: bold;
     font-size: 20px;
@@ -121,8 +122,8 @@ p.title3 {
     align-items: center;
     font-size: 30px;
     position: fixed;
-    top: 810px;
-    left: 290px;
+    top: 350px;
+    left: 1000px;
 
     padding: 10px 300px 10px 10px;
     border-radius: 5px;
@@ -143,4 +144,9 @@ p.title3 {
     color: #01447e;
 
     padding: 10px;
+}
+
+.profile-card {
+    position: sticky;
+    background-color: #95A5A6;
 }
