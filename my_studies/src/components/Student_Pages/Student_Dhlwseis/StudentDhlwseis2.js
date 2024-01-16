@@ -10,8 +10,8 @@ class StudentDhlwseis2 extends Component {
                 <Sidebar/>
 
                 <ul className="breadcrumb">
-                    <li><a href="/#">Αρχική Μαθητή</a></li>
-                    <li><a href="/forms">Δηλώσεις</a></li>
+                    <li><a href="/student">Αρχική Μαθητή</a></li>
+                    <li><a href="/student/forms">Δηλώσεις</a></li>
                     <li>Νέα Δήλωση</li>
                 </ul>
 
@@ -19,7 +19,7 @@ class StudentDhlwseis2 extends Component {
 
                 <div className="buttons2-d">
                     <a href="#popup2" className="undo">Αναίρεση</a>
-                    <a href="/" className="home">Επιστροφή στην αρχική</a>
+                    <a href="/student" className="home">Επιστροφή στην αρχική</a>
                     <a href="#" className="last-form">Επισκόπηση της δήλωσης</a>
                 </div>
 
@@ -36,8 +36,8 @@ class StudentDhlwseis2 extends Component {
                         </div>
                         <ul className="buttons1">
                             <li className="buttons-c1">
-                                <a href="/form/new-form/done" className="cancel-p">Άκυρο</a>
-                                <a href="/form/new-form" className="confirm">Αναίρεση</a>
+                                <a href="/student/form/new-form/done" className="cancel-p">Άκυρο</a>
+                                <a href="/student/form/new-form" className="confirm">Αναίρεση</a>
                             </li>
                         </ul>
                     </div>

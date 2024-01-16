@@ -28,7 +28,7 @@ const LoginWindow = (props) => {
                 return;
             }
             Auth.userLogin(data[0]);
-            navigate('/');
+            navigate('/student');
         }
         await fetchUser();
     }

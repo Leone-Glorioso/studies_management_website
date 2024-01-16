@@ -54,11 +54,11 @@ function StudentCert() {
             <Sidebar/>
 
             <ul className="breadcrumb">
-                <li><a href="/#">Αρχική Μαθητή</a></li>
+                <li><a href="/student">Αρχική Μαθητή</a></li>
                 <li>Πιστοποιητικά</li>
             </ul>
 
-            <a href="/certificates/new-certificate" className="new-button">Νεό Πιστοποιητικό</a>
+            <a href="/student/certificates/new-certificate" className="new-button">Νεό Πιστοποιητικό</a>
 
             {!isLogged && <div className="container">
                 <ul className="responsive-table">
@@ -140,7 +140,7 @@ function StudentCert() {
                     </div>
                     <ul className="buttons1">
                         <li className="buttons-c1">
-                            <a href="/certificates"
+                            <a href="/student/certificates"
                                className="confirm">OK</a>
                         </li>
                     </ul>

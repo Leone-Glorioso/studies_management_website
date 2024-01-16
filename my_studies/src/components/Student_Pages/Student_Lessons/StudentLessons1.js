@@ -12,8 +12,8 @@ class StudentLessons1 extends Component {
                 <Sidebar/>
 
                 <ul className="breadcrumb">
-                    <li><a href="/#">Αρχική Μαθητή</a></li>
-                    <li><a href="/lessons">Μαθήματα</a></li>
+                    <li><a href="/student">Αρχική Μαθητή</a></li>
+                    <li><a href="/student/lessons">Μαθήματα</a></li>
                     <li>Όνομα μαθήματος</li>
                 </ul>
 

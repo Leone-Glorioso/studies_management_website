@@ -51,7 +51,7 @@ function StudentLessons() {
             <Sidebar/>
 
             <ul className="breadcrumb">
-                <li><a href="/#">Αρχική Μαθητή</a></li>
+                <li><a href="/student">Αρχική Μαθητή</a></li>
                 <li>Μαθήματα</li>
             </ul>
 

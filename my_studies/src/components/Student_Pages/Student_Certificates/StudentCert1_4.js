@@ -10,8 +10,8 @@ class StudentCert1_4 extends Component {
                 <Sidebar/>
 
                 <ul className="breadcrumb">
-                    <li><a href="/#">Αρχική Μαθητή</a></li>
-                    <li><a href="/certificates">Πιστοποιητικά</a></li>
+                    <li><a href="/student">Αρχική Μαθητή</a></li>
+                    <li><a href="/student/certificates">Πιστοποιητικά</a></li>
                     <li>Νέο Πιστοποιητικό</li>
                 </ul>
 
@@ -37,8 +37,8 @@ class StudentCert1_4 extends Component {
 
                 <ul className="buttons1_4">
                     <li className="buttons-c">
-                        <a href="/certificates/new-certificate/personal_info" className="prev">Προηγούμενο</a>
-                        <a href="/certificates/" className="cancel">Άκυρο</a>
+                        <a href="/student/certificates/new-certificate/personal_info" className="prev">Προηγούμενο</a>
+                        <a href="/student/certificates/" className="cancel">Άκυρο</a>
                         <a href="#popup1" className="edit">Επιβεβαίωση</a>
                     </li>
                 </ul>
@@ -50,8 +50,8 @@ class StudentCert1_4 extends Component {
                         </div>
                         <ul className="buttons1">
                             <li className="buttons-c1">
-                                <a href="/certificates/new-certificate/personal_info/confirmation/end" className="cancel-p">Άκυρο</a>
-                                <a href="/certificates/new-certificate/personal_info/confirmation/end/done" className="confirm">Επιβεβαίωση</a>
+                                <a href="/student/certificates/new-certificate/personal_info/confirmation/end" className="cancel-p">Άκυρο</a>
+                                <a href="/student/certificates/new-certificate/personal_info/confirmation/end/done" className="confirm">Επιβεβαίωση</a>
                             </li>
                         </ul>
                     </div>

@@ -43,7 +43,7 @@ function StudentGrades() {
                 <Sidebar/>
 
                 <ul className="breadcrumb">
-                    <li><a href="/#">Αρχική Μαθητή</a></li>
+                    <li><a href="/student">Αρχική Μαθητή</a></li>
                     <li>Βαθμολογίες</li>
                 </ul>
 
@@ -162,7 +162,7 @@ function StudentGrades() {
                         </div>
                         <ul className="buttons1">
                             <li className="buttons-c1">
-                                <a href="/grades"
+                                <a href="/student/grades"
                                    className="confirm">OK</a>
                             </li>
                         </ul>

@@ -10,7 +10,7 @@ class StudentDhlwseis extends Component {
                 <Sidebar/>
 
                 <ul className="breadcrumb">
-                    <li><a href="/#">Αρχική Μαθητή</a></li>
+                    <li><a href="/student">Αρχική Μαθητή</a></li>
                     <li>Δηλώσεις</li>
                 </ul>
 
@@ -92,8 +92,8 @@ class StudentDhlwseis extends Component {
 
 
                 <div className="buttons-c">
-                    <a href="/forms/saved" className="saved">Αποθηκευμένες Δηλώσεις</a>
-                    <a href="/forms/new-form" className="new">Νέα Δήλωση</a>
+                    <a href="/student/forms/saved" className="saved">Αποθηκευμένες Δηλώσεις</a>
+                    <a href="/student/forms/new-form" className="new">Νέα Δήλωση</a>
                 </div>
 
 

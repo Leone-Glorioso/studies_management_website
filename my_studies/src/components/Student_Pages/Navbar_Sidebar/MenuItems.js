@@ -1,6 +1,6 @@
 export const profile = [
     {
-        url: "/profile",
+        url: "/student/profile",
         cName: "nav-links-side",
         icon: "fa-regular fa-circle-user",
         title: "ΟΝΟΜΑ-ΕΠΩΝΥΜΟ"
@@ -8,22 +8,22 @@ export const profile = [
 ]
 export const MenuItems1 = [
     {
-        url: "/lessons",
+        url: "/student/lessons",
         cName: "nav-links-side",
         title: "Μαθήματα"
     },
     {
-        url: "/grades",
+        url: "/student/grades",
         cName: "nav-links-side",
         title: "Βαθμολογίες"
     },
     {
-        url: "/forms",
+        url: "/student/forms",
         cName: "nav-links-side",
         title: "Δηλώσεις"
     },
     {
-        url: "/certificates",
+        url: "/student/certificates",
         cName: "nav-links-side",
         title: "Πιστοποιητικά"
     },

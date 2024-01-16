@@ -1,16 +1,16 @@
 export const LessonItems = [
     {
-        url: "/lessons/lesson",
+        url: "/student/lessons/lesson",
         cName: "lesson-links",
         title: "ΜΑΘΗΜΑ 1"
     },
     {
-        url: "/lessons/lesson",
+        url: "/student/lessons/lesson",
         cName: "lesson-links",
         title: "ΜΑΘΗΜΑ 2"
     },
     {
-        url: "/lessons/lesson",
+        url: "/student/lessons/lesson",
         cName: "lesson-links",
         title: "ΜΑΘΗΜΑ 3"
     },
