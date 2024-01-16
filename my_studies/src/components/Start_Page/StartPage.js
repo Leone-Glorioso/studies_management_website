@@ -63,11 +63,11 @@ const StartPage = () => {
                 <h1>Γραμματεία</h1>
             </div>
             <ContentCarousel items={items_3}/>
-            <a href={'/help'}>
-                <Button className={'button-round'}  tooltip="Σελίδα Βοήθειας" tooltipOptions={{ position: 'right' , className: 'toolTip', fontSize: '2rem', cursor: 'pointer', mouseTrack: true, mouseTrackTop: 15}}>
-                    <BiHelpCircle/>
-                </Button>
-            </a>
+            {/*<a href={'/help'}>*/}
+            {/*    <Button className={'button-round'}  tooltip="Σελίδα Βοήθειας" tooltipOptions={{ position: 'right' , className: 'toolTip', fontSize: '2rem', cursor: 'pointer', mouseTrack: true, mouseTrackTop: 15}}>*/}
+            {/*        <BiHelpCircle/>*/}
+            {/*    </Button>*/}
+            {/*</a>*/}
         </div>
     );
 };

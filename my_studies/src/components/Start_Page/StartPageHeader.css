@@ -13,3 +13,31 @@
 .out_div{
     margin-bottom: -150px;
 }
+
+.NavbarItems{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    background-color: #8CBFE4;
+    height: 90px;
+    position: fixed;
+    top: 105px;
+    left: 250px;
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 30px;
+    list-style: none;
+    position: fixed;
+    top: 135px;
+    left: 280px;
+}
+
+.nav-links {
+    color: #FFFFFF;
+}

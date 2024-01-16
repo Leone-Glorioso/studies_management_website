@@ -23,7 +23,7 @@
 /*}*/
 
 .menu-item, .menu-open-button {
-    background: #EAD6B7;
+    background: #205982;
     border-radius: 100%;
     width: 80px;
     height: 80px;
@@ -84,7 +84,7 @@
     /*margin-top: 10px;*/
     padding-top: 20px;
     padding-left: 80px;
-    width: 650px;
+    width: 100px;
     height: 150px;
     box-sizing: border-box;
     align-items: center;
@@ -93,7 +93,7 @@
 }
 
 .menu-item:hover {
-    background: #D49A42;
+    background: #123C5A;
     color: whitesmoke;
 }
 #profile {
