@@ -8,6 +8,7 @@ import './Navbar.css'
 import {useAuth} from "../../Auth/AuthContext";
 import {Button} from "primereact/button";
 import {IoLogIn} from "react-icons/io5";
+import UniversalNavbar from "../../Navbar/UniversalNavbar";
 
 
 
@@ -27,6 +28,7 @@ function Sidebar() {
 
     return (
         <div>
+            <UniversalNavbar/>
             <nav className="SidebarItems">
                 <ul className="prof">
                     {!isLogged && profile.map((item, index) => {
