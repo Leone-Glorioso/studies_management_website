@@ -65,6 +65,7 @@ const LoginWindow = (props) => {
                             />
                         </div>
                     </div>
+                    <br/>
                     <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
                     <br/>
                     <div className={"container_special"}>

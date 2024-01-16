@@ -6,6 +6,8 @@ import './Sidebar.css'
 import {MenuItems} from "./MenuItems";
 import './Navbar.css'
 import {useAuth} from "../../Auth/AuthContext";
+import {Button} from "primereact/button";
+import {IoLogIn} from "react-icons/io5";
 
 
 
@@ -100,6 +102,12 @@ function Sidebar() {
                 <input type="text" placeholder=" Αναζήτηση"/>
                 <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
             </div>
+
+            <a href={'/login'}>
+                <Button className={'button-round-blue'}  tooltip="Login" tooltipOptions={{ position: 'left' , className: 'toolTip-blue', fontSize: '2rem', cursor: 'pointer', mouseTrack: true, mouseTrackTop: 15}}>
+                    <IoLogIn/>
+                </Button>
+            </a>
 
         </div>
 

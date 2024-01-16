@@ -10,22 +10,22 @@ export const MenuItems1 = [
     {
         url: "/student/lessons",
         cName: "nav-links-side",
-        title: "Μαθήματα"
+        title: " Μαθήματα"
     },
     {
         url: "/student/grades",
         cName: "nav-links-side",
-        title: "Βαθμολογίες"
+        title: " Βαθμολογίες"
     },
     {
         url: "/student/forms",
         cName: "nav-links-side",
-        title: "Δηλώσεις"
+        title: " Δηλώσεις"
     },
     {
         url: "/student/certificates",
         cName: "nav-links-side",
-        title: "Πιστοποιητικά"
+        title: " Πιστοποιητικά"
     },
     /*{
         url: "#",
@@ -49,19 +49,19 @@ export const MenuItems2 = [
         url: "#",
         cName: "nav-links-side",
         icon: "fa-solid fa-gear",
-        title: "Ρυθμίσεις"
+        title: " Ρυθμίσεις"
     },
     {
         url: "#",
         cName: "nav-links-side",
         icon: "fa-solid fa-circle-question",
-        title: "Βοήθεια"
+        title: " Βοήθεια"
     },
     {
         url: "#",
         cName: "nav-links-side",
         icon: "fa-solid fa-arrow-right-from-bracket",
-        title: "Αποσύνδεση"
+        title: " Αποσύνδεση"
     },
 ]
 
@@ -70,19 +70,19 @@ export const MenuItems2_alt = [
         url: "#",
         cName: "nav-links-side",
         icon: "fa-solid fa-gear",
-        title: "Ρυθμίσεις"
+        title: " Ρυθμίσεις"
     },
     {
         url: "#",
         cName: "nav-links-side",
         icon: "fa-solid fa-circle-question",
-        title: "Βοήθεια"
+        title: " Βοήθεια"
     },
     {
-        url: "#",
+        url: "/",
         cName: "nav-links-side",
         icon: "fa-solid fa-arrow-right-from-bracket",
-        title: "Αποσύνδεση"
+        title: " Επιστροφή"
     },
 ]
 
