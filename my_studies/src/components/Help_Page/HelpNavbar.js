@@ -41,7 +41,6 @@ function HelpNavbar() {
                                 </li>
                             );
                         })}
-                        {/*<Tooltip target={".nav-img"} mouseTrack mouseTrackTop={15} className={'toolTipHelp'} position={"top"} />*/}
                     </ul>
                 </nav>
             </IconContext.Provider>

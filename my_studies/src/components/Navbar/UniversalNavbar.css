@@ -101,17 +101,21 @@
     line-height: 100px;
     transition-duration: 180ms;
 }
-.menu-item:nth-child(4) {
+#help {
     font-size: 80px;
     transition-duration: 180ms;
 }
-.menu-item:nth-child(5) {
+#students {
     transition-duration: 180ms;
 }
-.menu-item:nth-child(6) {
+#teachers {
     transition-duration: 180ms;
 }
-
+#logout {
+    line-height: 100px;
+    font-size: 70px;
+    transition-duration: 180ms;
+}
 .menu-open-button {
     z-index: 2;
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -137,15 +141,33 @@
     transition-duration: 190ms;
     transform: translate3d(-110px, 0, 0);
 }
-.menu-open:checked ~ .menu-item:nth-child(4) {
+.menu-open:checked ~ #help {
     transition-duration: 290ms;
     transform: translate3d(-220px, 0, 0);
 }
-.menu-open:checked ~ .menu-item:nth-child(5) {
+.menu-open:checked ~ #students {
     transition-duration: 390ms;
     transform: translate3d(-330px, 0, 0);
 }
-.menu-open:checked ~ .menu-item:nth-child(6) {
+.menu-open:checked ~ #teachers {
     transition-duration: 490ms;
     transform: translate3d(-440px, 0, 0);
+}
+.menu-open:checked ~ #logout {
+    transition-duration: 590ms;
+    transform: translate3d(-550px, 0, 0);
+}
+
+.toolTipUniv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #123C5A;
+    color: white;
+    max-width: 20vw; /* Set the maximum width of the container */
+    max-height: 10vh; /* Set the maximum height of the container */
+    margin: 1vh auto 0; /* Add margin to the top (50px in this example), and center horizontally */
+    padding: 1vh; /* Add some padding for better visual appearance */
+    border-radius: 15px; /* Add rounded corners with a radius of 15 pixels */
 }

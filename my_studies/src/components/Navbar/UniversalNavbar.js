@@ -1,9 +1,11 @@
 import React from 'react';
 import './UniversalNavbar.css';
 import {useAuth} from "../Auth/AuthContext";
-import {FaUser, FaUserCircle} from "react-icons/fa";
+import {FaChalkboardTeacher, FaGraduationCap, FaUser, FaUserCircle, FaUserGraduate} from "react-icons/fa";
 import {BiHelpCircle} from "react-icons/bi";
 import {IoHelp, IoHelpCircle, IoHelpCircleOutline} from "react-icons/io5";
+import {TbLogin, TbLogout} from "react-icons/tb";
+import {Tooltip} from "primereact/tooltip";
 
 function UniversalNavbar() {
 
@@ -23,10 +25,14 @@ function UniversalNavbar() {
                         <span className="hamburger hamburger-3"></span>
                     </label>
 
-                    <a href="#" className="menu-item" id={'profile'}> <i><FaUserCircle/></i> </a>
-                    <a href="#" className="menu-item"> <i><IoHelpCircleOutline/></i> </a>
-                    <a href="#" className="menu-item"> <i className="fa fa-heart"></i> </a>
-                    <a href="#" className="menu-item"> <i className="fa fa-envelope"></i> </a>
+                    <Tooltip target={".menu-item"} className={'toolTipUniv'} position={"bottom"} mouseTrack/>
+
+                    {isLogged && <a href="/student/profile" className="menu-item" id={'profile'} data-pr-tooltip="Προφίλ"> <i><FaUserCircle/></i> </a>}
+                    {!isLogged && <a href="/student/profile" className="menu-item" id={'profile'} data-pr-tooltip="Είσοδος"> <i><TbLogin/></i> </a>}
+                    <a href="/help" className="menu-item" id={'help'} data-pr-tooltip="Βοήθεια"> <i><IoHelpCircleOutline/></i> </a>
+                    <a href="/students" className="menu-item" id={'students'} data-pr-tooltip="Φοιτητές"> <i><FaUserGraduate/></i> </a>
+                    <a href="#" className="menu-item" id={'teachers'} data-pr-tooltip="Εκπαιδευτικοί"> <i><FaChalkboardTeacher/></i> </a>
+                    {isLogged && <a href="/" className="menu-item" id={'logout'} onClick={()=>{Auth.userLogout()}} data-pr-tooltip="Αποσύνδεση"> <i><TbLogout/></i> </a>}
 
 
                 </nav>
