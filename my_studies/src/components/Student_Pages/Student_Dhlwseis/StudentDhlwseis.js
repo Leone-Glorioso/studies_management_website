@@ -100,7 +100,7 @@ function StudentDhlwseis() {
                         <tr>
                             <td>{item.num}</td>
                             <td>{item.name}</td>
-                            <td className="checkboxes"><input type="checkbox" checked={true}/></td>
+                            <td className="checkboxes"><input type="checkbox" defaultChecked={true} /></td>
                         </tr>
                     )
                 })}
@@ -110,7 +110,7 @@ function StudentDhlwseis() {
                         <tr>
                             <td>{item.num}</td>
                             <td>{item.name}</td>
-                            <td className="checkboxes"><input type="checkbox" checked={false}/></td>
+                            <td className="checkboxes"><input type="checkbox" defaultChecked={false}/></td>
                         </tr>
                     )
                 })}
