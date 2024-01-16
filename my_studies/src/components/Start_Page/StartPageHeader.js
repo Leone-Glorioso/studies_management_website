@@ -4,7 +4,7 @@ import './StartPageHeader.css';
 function StartPageHeader(props) {
     return (
         <div>
-            <img src={'/cyan-left-greek-1-1024x283.png'} alt={"Logo"} className={'logo_ekpa'}/>
+            <img src={'/logo.png'} alt={"Logo"} className={'logo_ekpa'}/>
         </div>
     );
 }

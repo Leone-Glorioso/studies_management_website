@@ -27,7 +27,10 @@ function HelpNavbar() {
                                 <AiIcons.AiOutlineClose />
                             </Link>
                         </li>
-                        <img src={"/logo_1-removebg-preview.png"} alt={"Logo Σελίδας Βοήθειας"} className={'nav-img2'}/>
+                        <Tooltip target={".nav-img2"} mouseTrack mouseTrackTop={15} className={'toolTipHelp'} position={"bottom"} />
+                        <Link to={'/'}>
+                            <img src={"/logo_1-removebg-preview.png"} alt={"Logo Σελίδας Βοήθειας"} className={'nav-img2'}  data-pr-tooltip="Αρχική Σελίδα"/>
+                        </Link>
                         {SidebarData.map((item, index) => {
                             return (
                                 <li key={index} className={item.cName}>
@@ -38,10 +41,7 @@ function HelpNavbar() {
                                 </li>
                             );
                         })}
-                        <Tooltip target={".nav-img"} mouseTrack mouseTrackTop={15} className={'toolTipHelp'} position={"top"} />
-                        <Link to={'/'}>
-                            <img src={"/cyan-left-greek-1-1024x283.png"} alt={"Logo ΕΚΠΑ"} className={"nav-img"} data-pr-tooltip="Αρχική Σελίδα"/>
-                        </Link>
+                        {/*<Tooltip target={".nav-img"} mouseTrack mouseTrackTop={15} className={'toolTipHelp'} position={"top"} />*/}
                     </ul>
                 </nav>
             </IconContext.Provider>
