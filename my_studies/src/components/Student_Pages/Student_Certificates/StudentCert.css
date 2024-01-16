@@ -40,7 +40,7 @@ ul.breadcrumb {
 
 a.button-c {
     position: fixed;
-    top: 240px;
+    top: 270px;
     left: 290px;
     display: inline-block;
     padding: 10px 15px;
@@ -56,7 +56,7 @@ a.button-c {
 
 a.button1-c {
     position: fixed;
-    top: 240px;
+    top: 270px;
     left: 510px;
     display: inline-block;
     padding: 10px 15px;
@@ -74,7 +74,7 @@ a.button1-c {
 /* Dropdown styles */
 .dropdown-c {
     position: fixed;
-    top: 280px;
+    top: 310px;
     left: 360px;
     padding: 0;
     margin-right: 1em;
@@ -84,7 +84,7 @@ a.button1-c {
 
 .dropdown1-c {
     position: fixed;
-    top: 280px;
+    top: 310px;
     left: 600px;
     padding: 0;
     margin-right: 1em;
@@ -171,7 +171,7 @@ a.button1-c {
 
 a.new-button {
     position: fixed;
-    top: 240px;
+    top: 260px;
     right: 50px;
     display: inline-block;
     padding: 15px 20px;
@@ -189,17 +189,18 @@ a.new-button {
 
 .container {
     position: fixed;
-    top: 300px;
-    right: 50px;
-    width: 1150px;
+    /*top: 20vh;*/
+    left: -9vw;
+    width: 80vw;
     margin-left: auto;
     margin-right: auto;
     padding-left: 10px;
     padding-right: 10px;
+    margin-top: 5vh;
 }
 
 .responsive-table {
-    width: 1150px;
+    width: 83vw;
     li {
         border-radius: 3px;
         padding: 25px 30px;
@@ -241,6 +242,12 @@ a.new-button {
             padding: 5px;
             border: none;
             border-radius: 5px;
+            font-size: 1.2vw;
+            text-align: center;
+        }
+
+        .col-4:hover{
+            background-color: #6C6C6C;
         }
 
         .col-5{
@@ -250,6 +257,12 @@ a.new-button {
             padding: 5px;
             border: none;
             border-radius: 5px;
+            font-size: 1.2vw;
+            text-align: center;
+        }
+
+        .col-5:hover {
+            background-color: #1C5413;
         }
     }
 

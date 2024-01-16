@@ -86,21 +86,11 @@ function StudentGrades() {
 
                 <ul className="dropdowns">
                     <li className="drop-buttons">
-                        <details className="dropdown">
+                        <details className="dropdown_grades">
                             <summary role="button">
-                                <a className="button">Κατηγορίες</a>
+                                <a className="button_grades">Κατηγορίες</a>
                             </summary>
 
-                            {/*<div className="check-buttons">
-                        <label><input type="checkbox" name="check"/> Περασμένα</label>
-                        <label><input type="checkbox" name="check"/> Κομμένα</label>
-                        <label><input type="checkbox" name="check"/> Γενικής Παιδείας</label>
-                        <label><input type="checkbox" name="check"/> Κατεύθυνσης Α</label>
-                        <label><input type="checkbox" name="check"/> Κατεύθυνσης Β</label>
-                        <label><input type="checkbox" name="check"/> Υποχρεωτικά</label>
-                        <label><input type="checkbox" name="check"/> Προαιρετικά</label>
-                        <label><input type="checkbox" name="check"/> Κατ' επιλογή υποχρεωτικά</label>
-                    </div>*/}
 
                             <ul>
                                 <li><a href="#">Όλα</a></li>
@@ -115,9 +105,9 @@ function StudentGrades() {
                             </ul>
                         </details>
 
-                        <details className="dropdown1">
+                        <details className="dropdown1_grades">
                             <summary role="button">
-                                <a className="button1">Ακαδημαϊκή Περίοδος</a>
+                                <a className="button1_grades">Ακαδημαϊκή Περίοδος</a>
                             </summary>
                             <ul>
                                 <li><a href="#">2022-2023</a></li>
@@ -125,9 +115,9 @@ function StudentGrades() {
                             </ul>
                         </details>
 
-                        <details className="dropdown2">
+                        <details className="dropdown2_grades">
                             <summary role="button">
-                                <a className="button2">Εξάμηνο</a>
+                                <a className="button2_grades">Εξάμηνο</a>
                             </summary>
                             <ul>
                                 <li><a href="#">1ο</a></li>
@@ -141,9 +131,9 @@ function StudentGrades() {
                             </ul>
                         </details>
 
-                        <details className="dropdown3">
+                        <details className="dropdown3_grades">
                             <summary role="button">
-                                <a className="button3">Ταξινόμηση κατά</a>
+                                <a className="button3_grades">Ταξινόμηση κατά</a>
                             </summary>
                             <ul>
                                 <li><a href="#">Πιο Πρόσφατα</a></li>
@@ -153,7 +143,7 @@ function StudentGrades() {
                     </li>
                 </ul>
 
-                <a href="#popup-pr" className="print">Εκτύπωση</a>
+                <a href="#popup-pr" className="print_button">Εκτύπωση</a>
 
                 <div id="popup-pr" className="overlay">
                     <div className="popup">

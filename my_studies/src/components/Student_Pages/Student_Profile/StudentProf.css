@@ -3,7 +3,7 @@ ul.breadcrumb {
     list-style: none;
     background-color: white;
     position: fixed;
-    top: 200px;
+    top: 220px;
     left: 280px;
 
     li {
@@ -30,7 +30,7 @@ ul.breadcrumb {
 
 a.cert-button {
     position: fixed;
-    top: 215px;
+    top: 235px;
     right: 50px;
     display: inline-block;
     padding: 15px 20px;

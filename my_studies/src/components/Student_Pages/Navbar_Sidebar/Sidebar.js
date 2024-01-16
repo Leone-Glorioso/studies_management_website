@@ -63,26 +63,26 @@ function Sidebar() {
                     })}
                 </ul>
 
-                <ul className="side-menu2">
-                    {isLogged && MenuItems2.map((item, index) => {
-                        return (
-                            <li key={index}>
-                                <a href={item.url} className={item.cName}>
-                                    <i className={item.icon}></i>{item.title}
-                                </a>
-                            </li>
-                        )
-                    })}
-                    {!isLogged && MenuItems2_alt.map((item, index) => {
-                        return (
-                            <li key={index}>
-                                <a href={item.url} className={item.cName}>
-                                    <i className={item.icon}></i>{item.title}
-                                </a>
-                            </li>
-                        )
-                    })}
-                </ul>
+                {/*<ul className="side-menu2">*/}
+                {/*    {isLogged && MenuItems2.map((item, index) => {*/}
+                {/*        return (*/}
+                {/*            <li key={index}>*/}
+                {/*                <a href={item.url} className={item.cName}>*/}
+                {/*                    <i className={item.icon}></i>{item.title}*/}
+                {/*                </a>*/}
+                {/*            </li>*/}
+                {/*        )*/}
+                {/*    })}*/}
+                {/*    {!isLogged && MenuItems2_alt.map((item, index) => {*/}
+                {/*        return (*/}
+                {/*            <li key={index}>*/}
+                {/*                <a href={item.url} className={item.cName}>*/}
+                {/*                    <i className={item.icon}></i>{item.title}*/}
+                {/*                </a>*/}
+                {/*            </li>*/}
+                {/*        )*/}
+                {/*    })}*/}
+                {/*</ul>*/}
             </nav>
 
             <nav className="NavbarItems">
