@@ -97,7 +97,7 @@ function TeacherLessons() {
                     <td>111111</td>
                     <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
                     <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
-                    <td><a href="#" className="button-n">Νέο Βαθμολόγιο</a></td>
+                    <td><a href="/teacher/lessons/new-grades" className="button-n">Νέο Βαθμολόγιο</a></td>
                 </tr>
 
             </table>}

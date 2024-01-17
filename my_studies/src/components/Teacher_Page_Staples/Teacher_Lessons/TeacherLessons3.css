@@ -38,43 +38,25 @@ ul.breadcrumb {
 
 }
 
-.table-s{
+.text, .text1, .text2 {
     position: fixed;
     top: 330px;
     left: 290px;
-    width: 78vw;
-    border-collapse: collapse;
-
-    th {
-        text-align: left;
-        font-size: 1.2vw;
-        text-decoration-color: black;
-        font-weight: 600;
-        background-color: #A2D2F5;
-        padding-left: 10px;
-    }
-
-    td {
-        font-size: 1.2vw;
-        text-decoration-color: black;
-        font-weight: 400;
-        border: 3px solid #A2D2F5;
-        padding-left: 10px;
-    }
-
-    tr {
-        height: 5vh;
-    }
+    font-size: 1.5vw;
+    color: black;
+    font-weight: normal;
 }
 
-tr:nth-child(even) {
-    background-color: #D6EEEE;
+.text1 {
+    top: 360px;
 }
 
-tr:hover {background-color: #8CBFE4;}
+.text2 {
+    top: 390px;
+}
 
 .teach-buttons {
-    .mult, .save, .new, .sub {
+    .mult, .save, .new {
         position: fixed;
         top: 260px;
         right: 50px;
@@ -101,12 +83,6 @@ tr:hover {background-color: #8CBFE4;}
         right: 390px;
         background: #95A5A6;
     }
-
-    .sub {
-        top: 500px;
-        right: 50px;
-        background: #328424;
-    }
 }
 
 .overlay {
@@ -125,7 +101,7 @@ tr:hover {background-color: #8CBFE4;}
     opacity: 1;
 }
 
-.popup-s, .popup-sv {
+.popup-m, .popup-o {
     margin: 70px auto;
     padding: 20px;
     background: #fff;
@@ -136,7 +112,7 @@ tr:hover {background-color: #8CBFE4;}
     top: 25%;
 }
 
-.popup-s .content, .popup-sv .content {
+.popup-m .content, .popup-o .content {
     font-size: 20px;
     font-weight: bold;
     max-height: 30%;
@@ -201,3 +177,16 @@ tr:hover {background-color: #8CBFE4;}
 
 }
 
+input[type=number] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}

@@ -126,10 +126,43 @@ function TeacherLessons1() {
             }
 
             <div className="teach-buttons">
-                <a href="/student/forms/saved" className="save">Προσωρινή αποθήκευση</a>
-                <a href="/student/forms/new-form" className="mult">Πολλαπλή Βαθμολόγηση</a>
+                <a href="#popup-save" className="save">Προσωρινή αποθήκευση</a>
+                <a href="" className="mult">Πολλαπλή Βαθμολόγηση</a>
+                <a href="" className="new"><i className="fa-solid fa-plus"></i> </a>
+                <a href="#popup-sub" className="sub">Οριστική Υποβολή</a>
             </div>
 
+            <div id="popup-sub" className="overlay">
+                <div className="popup-s">
+                    <div className="content">
+                        <p>Σίγουρα θέλετε να υποβάλετε το βαθμολόγιο;</p><p>Οι οριστικές βαθμολογίες ΔΕΝ αλλάζουν!</p>
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/teacher/lessons/edit-grades"
+                               className="cancel-g">Άκυρο</a>
+                            <a href="/teacher/lessons/fin-grades"
+                               className="confirm">Επιβεβαίωση</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="popup-save" className="overlay">
+                <div className="popup-sv">
+                    <div className="content">
+                        Σίγουρα θέλετε να αποθηκεύσετε το βαθμολόγιο;
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/teacher/lessons/edit-grades"
+                               className="cancel-g">Άκυρο</a>
+                            <a href="/teacher/lessons/saved-grades"
+                               className="confirm">Αποθήκευση</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
 
