@@ -100,16 +100,10 @@ function Sidebar() {
                 </ul>
             </nav>
 
-            <div className="search-bar">
-                <input type="text" placeholder=" Αναζήτηση"/>
-                <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-
-            {!isLogged && <a href={'/login'}>
-                <Button className={'button-round-blue'}  tooltip="Login" tooltipOptions={{ position: 'left' , className: 'toolTip-blue', fontSize: '2rem', cursor: 'pointer', mouseTrack: true, mouseTrackTop: 15}}>
-                    <IoLogIn/>
-                </Button>
-            </a>}
+            {/*<div className="search-bar">*/}
+            {/*    <input type="text" placeholder=" Αναζήτηση"/>*/}
+            {/*    <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>*/}
+            {/*</div>*/}
 
         </div>
 
