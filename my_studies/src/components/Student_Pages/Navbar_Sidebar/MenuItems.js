@@ -88,7 +88,7 @@ export const MenuItems2_alt = [
 
 export const MenuItems = [
     {
-        url: "/students",
+        url: "/student",
         cName: "nav-links-i",
         icon: "fa-solid fa-house"
     },
