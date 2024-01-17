@@ -23,6 +23,9 @@ import StudentDhlwseis3 from "./components/Student_Pages/Student_Dhlwseis/Studen
 import StudentLessons from "./components/Student_Pages/Student_Lessons/StudentLessons";
 import StudentLessons1 from "./components/Student_Pages/Student_Lessons/StudentLessons1";
 import StudentProf from "./components/Student_Pages/Student_Profile/StudentProf";
+import TeacherHome from "./components/Teacher_Page_Staples/Teacher_Home/TeacherHome";
+import TeacherLessons from "./components/Teacher_Page_Staples/Teacher_Lessons/TeacherLessons";
+import TeacherLessons1 from "./components/Teacher_Page_Staples/Teacher_Lessons/TeacherLessons1";
 import {AuthProvider} from "./components/Auth/AuthContext";
 
 function App() {
@@ -30,6 +33,9 @@ function App() {
         <AuthProvider>
             <Router>
               <Routes>
+                  <Route path='/teacher/lessons/edit-grades' element={<TeacherLessons1/>} />
+                  <Route path='/teacher/lessons' element={<TeacherLessons/>} />
+                  <Route path='/teacher' element={<TeacherHome/>} />
                   <Route path='/student/profile' element={<StudentProf/>} />
                   <Route path='/student/lessons/lesson' element={<StudentLessons1/>} />
                   <Route path='/student/lessons' element={<StudentLessons/>} />

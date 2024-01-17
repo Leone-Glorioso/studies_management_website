@@ -1,31 +1,21 @@
 export const profile = [
     {
-        url: "/student/profile",
+        url: "/teacher/profile",
         cName: "nav-links-side",
         icon: "fa-regular fa-circle-user",
         title: "ΟΝΟΜΑ-ΕΠΩΝΥΜΟ"
     },
 ]
 export const MenuItems1 = [
-    {
-        url: "/student/lessons",
+    /*{
+        url: "/teacher/lessons",
         cName: "nav-links-side",
         title: " Μαθήματα"
-    },
+    },*/
     {
-        url: "/student/grades",
+        url: "/teacher/grades",
         cName: "nav-links-side",
-        title: " Βαθμολογίες"
-    },
-    {
-        url: "/student/forms",
-        cName: "nav-links-side",
-        title: " Δηλώσεις"
-    },
-    {
-        url: "/student/certificates",
-        cName: "nav-links-side",
-        title: " Πιστοποιητικά"
+        title: " Βαθμολόγιο"
     },
     /*{
         url: "#",
@@ -88,7 +78,7 @@ export const MenuItems2_alt = [
 
 export const MenuItems = [
     {
-        url: "/students",
+        url: "/teacher",
         cName: "nav-links-i",
         icon: "fa-solid fa-house"
     },
