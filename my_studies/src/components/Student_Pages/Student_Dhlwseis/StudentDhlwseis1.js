@@ -38,25 +38,26 @@ function StudentDhlwseis1() {
             })
             setLessonsIn(less_in);
             setLessonsOut(less_out);
+            switch (user.year)
+            {
+                case 1:
+                    setLimit(3);
+                    break;
+                case 2:
+                    setLimit(4);
+                    break;
+                case 3:
+                    setLimit(5);
+                    break;
+                default:
+                    setLimit(10);
+                    break;
+            }
+            setChecked(lessons_in.length);
+            console.log(limit, checked);
         }
         if(isLogged)
             fetchLessons();
-        switch (user.year)
-        {
-            case 1:
-                setLimit(3);
-                break;
-            case 2:
-                setLimit(4);
-                break;
-            case 3:
-                setLimit(5);
-                break;
-            default:
-                setLimit(10);
-                break;
-        }
-        setChecked(lessons_in.length);
     }, []);
 
     const onClickCheckBox = (e) => {
