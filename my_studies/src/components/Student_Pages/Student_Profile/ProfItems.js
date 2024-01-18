@@ -20,6 +20,14 @@ export const Prof1 = [
 export const Prof2 = [
     {
         cName: "prof-info",
+        title: "Όνομα",
+    },
+    {
+        cName: "prof-info",
+        title: "Επίθετο",
+    },
+    {
+        cName: "prof-info",
         title: "Όνομα πατέρα"
     },
     {
