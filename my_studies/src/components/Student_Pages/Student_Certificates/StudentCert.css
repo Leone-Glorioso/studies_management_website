@@ -246,6 +246,18 @@ a.new-button {
             text-align: center;
         }
 
+        .col-4-alt{
+            background-color: white;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2vw;
+            text-align: center;
+            padding-left: 19.3vw;
+        }
+
+
         .col-4:hover{
             background-color: #6C6C6C;
         }

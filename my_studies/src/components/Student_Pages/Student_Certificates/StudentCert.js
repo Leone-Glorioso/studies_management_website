@@ -4,6 +4,8 @@ import Sidebar from "../Navbar_Sidebar/Sidebar";
 import {useAuth} from "../../Auth/AuthContext";
 import {collection, getDocs, query, where, orderBy} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
+import Pdf from '../../../files/certificate.pdf';
+import print from "print-js";
 
 function StudentCert() {
 
@@ -48,6 +50,11 @@ function StudentCert() {
         if(isLogged)
             fetchCerts();
     }, []);
+
+    const handlePrint = (e) => {
+        e.preventDefault();
+        print(Pdf);
+    }
 
     return (
         <div>
@@ -103,8 +110,9 @@ function StudentCert() {
                                 {c.state === "on_hold" && <div className="col col-3" data-label="state">Αναμονή</div>}
                                 {c.state === "rejected" && <div className="col col-3" data-label="state">Απόρριψη</div>}
                                 {c.state === "accepted" && <div className="col col-3" data-label="state">Αποδοχή</div>}
-                                <a href="#" className="col col-4">Προβολή</a>
-                                <a href="#popup-pr" className="col col-5">Εκτύπωση</a>
+                                {c.state !== "accepted" && <div className="col col-4-alt"></div>}
+                                {c.state === "accepted" && <a href={Pdf} target={"_blank"} className="col col-4">Προβολή</a>}
+                                {c.state === "accepted" && <a href="#popup-pr" className="col col-5" onClick={handlePrint}>Εκτύπωση</a>}
                             </li>
                         )
                     })}
