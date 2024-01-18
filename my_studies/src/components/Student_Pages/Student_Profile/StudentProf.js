@@ -135,6 +135,16 @@ function StudentProf() {
             setProf2_Logged([
                 {
                     cName: "prof-info",
+                    title: "Όνομα: ",
+                    text: user.name
+                },
+                {
+                    cName: "prof-info",
+                    title: "Επίθετο: ",
+                    text: user.surname
+                },
+                {
+                    cName: "prof-info",
                     title: "Όνομα πατέρα: ",
                     text: user.father
                 },
