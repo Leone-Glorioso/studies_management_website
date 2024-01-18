@@ -21,7 +21,10 @@ const LoginWindow = (props) => {
             const docs = await getDocs(q);
             const data = [];
             docs.forEach((doc)=> {
-                data.push({id: doc.id, ...doc.data()});
+                data.push({id: doc.id, tk: doc.data().TK, address: doc.data().address, date_of_birth: doc.data().date_of_birth.toDate().toDateString(), email: doc.data().email,
+                            father: doc.data().father, first_sign_in: doc.data().first_sign_in.toDate().toDateString(), mother: doc.data().mother, name: doc.data().name,
+                            phone: doc.data().phone, semester: doc.data().semester, semester_first_signup: doc.data().semester_first_signup, surname: doc.data().surname,
+                            type: doc.data().type, username: doc.data().username, year: doc.data().year});
             })
             if(data.length === 0)
             {
