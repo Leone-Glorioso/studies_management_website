@@ -16,7 +16,7 @@ import {FaChalkboardTeacher, FaUserCircle, FaUserFriends} from "react-icons/fa";
 import {GiScrollQuill} from "react-icons/gi";
 
 const items_1 = [
-    <Card text={'Δες πληροφορίες για τα μαθήματα που έχεις πάρει, αλλά και όσα μπορείς να πάρεις. Δες πληροφορίες όπως ποιοί καθηγητές τα έχουν πάρει, πόσες πιστωτικές μονάδες δίνουν και πολλά άλλα.'} image={'/carousel/student/lessons.jpg'} image_alt={'lessons'} data_value={1} icon={<FaBook/>} title={'Μαθήματα'} type={"student"}/>,
+    <Card text={'Δες πληροφορίες για τα μαθήματα που έχεις πάρει, αλλά και όσα μπορείς να πάρεις. Δες πληροφορίες όπως ποιοί καθηγητές τα έχουν πάρει, πόσες πιστωτικές μονάδες δίνουν και πολλά άλλα.'} image={'/carousel/student/lessons.jpg'} image_alt={'lessons'} data_value={1} icon={<FaBook/>} title={'Μαθήματα'} type={"student"} link={'/student/lessons'}/>,
     <Card text={'Δες τις βαθμολογίες από όλα σου τα μαθήματα! Μπορείς να τις εκτυπώσεις ή να τις εξάγεις σε pdf'} image={'/carousel/student/grades.jpg'} image_alt={'grades'} data_value={2} icon={<FaScroll/>}  title={'Βαθμολογίες'} type={"student"}/>,
     <Card text={'Δήλωσε τα μαθήματα που θες να παρακολουθήσεις! Μπορείς να κάνεις όσες δηλώσεις θες εντός της προθεσμίας άμα αλλάξεις την γνώμη σου!'} image={'/carousel/student/dhloseis.png'} image_alt={'dhloseis'} data_value={3} icon={<BsBookmarkPlusFill/>}  title={'Δηλώσεις'} type={"student"}/>,
     <Card text={'Έκδοσε πιστοποιητικά από τα διαθέσιμα είδη. Μπορείς ανά πάσα στιγμή να ελέγξεις την κατάσταση τους και να εκτυπώσεις όσα έχουν εγκριθεί'} image={'/carousel/student/certificate.jpg'} image_alt={'certificate'} data_value={4} icon={<FaCertificate/>}  title={'Πιστοποιητικά'} type={"student"}/>,
