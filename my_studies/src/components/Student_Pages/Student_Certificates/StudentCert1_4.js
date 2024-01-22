@@ -2,9 +2,8 @@ import React, {Component, useEffect, useState} from "react";
 import './StudentCert1_4.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
 import {useAuth} from "../../Auth/AuthContext";
-import {collection, addDoc} from "firebase/firestore";
-import {db, app} from "../../config/firebase_config";
-import firebase from "firebase/app";
+import {collection, doc, Timestamp, setDoc,addDoc} from "firebase/firestore";
+import {db} from "../../config/firebase_config";
 
 function StudentCert1_4() {
 
@@ -87,18 +86,15 @@ function StudentCert1_4() {
         },
     ]
 
-    const onFinalSubmit = () => {
-        const call = async () => {
-            await addDoc(collection(db, 'certificates'), {
-                username: user.username,
-                state: "on_hold",
-                type: Auth.getType(),
-                date: app.firestore.Timestamp.now()
-            });
-        }
-        if(isLogged)
-            call();
-    }
+    // const onFinalSubmit = async () => {
+    //     if(isLogged)
+    //         await addDoc(collection(db, 'certificates'), {
+    //             username: user.username,
+    //             state: "on_hold",
+    //             type: Auth.getType(),
+    //             date: Timestamp.now()
+    //         });
+    // }
 
     return (
         <div>
@@ -183,7 +179,7 @@ function StudentCert1_4() {
                     <ul className="buttons1">
                         <li className="buttons-c1">
                             <a href="/student/certificates/new-certificate/personal_info/confirmation/end" className="cancel-p">Άκυρο</a>
-                            <a href="/student/certificates/new-certificate/personal_info/confirmation/end/done" className="confirm" onClick={onFinalSubmit}>Επιβεβαίωση</a>
+                            <a href="/student/certificates/new-certificate/personal_info/confirmation/end/done" className="confirm">Επιβεβαίωση</a>
                         </li>
                     </ul>
                 </div>
