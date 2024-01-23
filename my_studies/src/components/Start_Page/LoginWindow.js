@@ -10,7 +10,7 @@ const LoginWindow = (props) => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState(false);
-    const [occ, SetOcc] = useState('');
+    const [occ, SetOcc] = useState("");
     const Auth = useAuth()
     const navigate = useNavigate();
 
@@ -22,10 +22,12 @@ const LoginWindow = (props) => {
             const docs = await getDocs(q);
             const data = [];
             docs.forEach((doc) => {
-                SetOcc(doc.data().type);
+                SetOcc(doc.data().type.toString());
             })
+            console.log(occ);
             if(occ === "student")
             {
+                console.log("Entered student");
                 docs.forEach((doc)=> {
                     data.push({id: doc.id, tk: doc.data().TK, address: doc.data().address, date_of_birth: doc.data().date_of_birth.toDate().toDateString(), email: doc.data().email,
                         father: doc.data().father, first_sign_in: doc.data().first_sign_in.toDate().toDateString(), mother: doc.data().mother, name: doc.data().name,
@@ -41,6 +43,7 @@ const LoginWindow = (props) => {
             }
             else
             {
+                console.log("Entered teacher");
                 docs.forEach((doc)=> {
                     data.push({id: doc.id, tk: doc.data().TK, address: doc.data().address, date_of_birth: doc.data().date_of_birth.toDate().toDateString(), email: doc.data().email,
                         father: doc.data().father, first_sign_in: doc.data().first_sign_in.toDate().toDateString(), mother: doc.data().mother, name: doc.data().name,
