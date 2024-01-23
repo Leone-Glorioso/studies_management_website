@@ -7,6 +7,29 @@ import {db} from "../../config/firebase_config";
 
 function TeacherLessons3() {
 
+    // Function to toggle between hiding and showing the dropdown content
+    const myFunction = () => {
+        const dropdown = document.getElementById("myDropdown");
+        dropdown.classList.toggle("show");
+    };
+
+    // Function to filter dropdown content based on user input
+    const filterFunction = () => {
+        const input = document.getElementById("myInput");
+        const filter = input.value.toUpperCase();
+        const dropdown = document.getElementById("myDropdown");
+        const anchors = dropdown.getElementsByTagName("a");
+
+        for (let i = 0; i < anchors.length; i++) {
+            const txtValue = anchors[i].textContent || anchors[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                anchors[i].style.display = "";
+            } else {
+                anchors[i].style.display = "none";
+            }
+        }
+    };
+
     return (
         <div>
             <Sidebar/>
@@ -47,6 +70,23 @@ function TeacherLessons3() {
                 <div className="popup-o">
                     <div className="content">
                         <p>Εισάγετε τελικό βαθμό:</p>
+                        <div className="dropdown-st">
+                            <button onClick={myFunction} className="dropbtn">
+                                Επιλογή φοιτητή
+                            </button>
+                            <div id="myDropdown" className="dropdown-content">
+                                <input
+                                    type="text"
+                                    placeholder="Αναζήση AM.."
+                                    id="myInput"
+                                    onKeyUp={filterFunction}
+                                />
+                                <a href="/teacher/lessons/new-grades#popup-one">sdi2100127</a>
+                                <a href="/teacher/lessons/new-grades#popup-one">sdi2100129</a>
+                                <a href="/teacher/lessons/new-grades#popup-one">sdi2100074</a>
+                            </div>
+                        </div>
+                        <p></p>
                         <label htmlFor="grade">Βαθμός:</label><input type="number" fname="grade"></input>
                     </div>
                     <ul className="buttons1">
