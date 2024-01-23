@@ -31,8 +31,8 @@ function UniversalNavbar() {
                     {!isLogged && <a href="/student/profile" className="menu-item" id={'profile'} data-pr-tooltip="Είσοδος"> <i><TbLogin/></i> </a>}
                     <a href="/help" className="menu-item" id={'help'} data-pr-tooltip="Βοήθεια"> <i><IoHelpCircleOutline/></i> </a>
                     <a href="/student" className="menu-item" id={'students'} data-pr-tooltip="Φοιτητές"> <i><FaUserGraduate/></i> </a>
-                    <a href="#" className="menu-item" id={'teachers'} data-pr-tooltip="Εκπαιδευτικοί"> <i><FaChalkboardTeacher/></i> </a>
-                    {isLogged && <a href="/" className="menu-item" id={'logout'} onClick={()=>{Auth.userLogout()}} data-pr-tooltip="Αποσύνδεση"> <i><TbLogout/></i> </a>}
+                    <a href="/teacher" className="menu-item" id={'teachers'} data-pr-tooltip="Εκπαιδευτικοί"> <i><FaChalkboardTeacher/></i> </a>
+                    {isLogged && <a href={'#'} className="menu-item" id={'logout'} onClick={()=>{Auth.userLogout()}} data-pr-tooltip="Αποσύνδεση"> <i><TbLogout/></i> </a>}
 
 
                 </nav>
