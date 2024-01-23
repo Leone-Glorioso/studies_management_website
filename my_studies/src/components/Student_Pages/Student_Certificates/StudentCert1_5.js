@@ -22,8 +22,11 @@ function StudentCert1_5() {
                 date: Timestamp.now()
             });
         }
-        if(isLogged)
+        if(isLogged && Auth.getType() != 0)
+        {
             submit_cert();
+            Auth.setType(0);
+        }
     }, []);
 
     return (
