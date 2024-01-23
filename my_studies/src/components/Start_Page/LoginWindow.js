@@ -10,6 +10,7 @@ const LoginWindow = (props) => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState(false);
+    const [occ, SetOcc] = useState("");
     const Auth = useAuth()
     const navigate = useNavigate();
 
@@ -20,18 +21,42 @@ const LoginWindow = (props) => {
             const q = query(db_ref, where('username', '==', username), where('password', '==', password));
             const docs = await getDocs(q);
             const data = [];
-            docs.forEach((doc)=> {
-                data.push({id: doc.id, tk: doc.data().TK, address: doc.data().address, date_of_birth: doc.data().date_of_birth.toDate().toDateString(), email: doc.data().email,
-                            father: doc.data().father, first_sign_in: doc.data().first_sign_in.toDate().toDateString(), mother: doc.data().mother, name: doc.data().name,
-                            phone: doc.data().phone, semester: doc.data().semester, semester_first_signup: doc.data().semester_first_signup, surname: doc.data().surname,
-                            type: doc.data().type, username: doc.data().username, year: doc.data().year});
+            docs.forEach((doc) => {
+                SetOcc(doc.data().type.toString());
             })
-            if(data.length === 0)
+            console.log(occ);
+            if(occ === "student")
             {
-                return;
+                console.log("Entered student");
+                docs.forEach((doc)=> {
+                    data.push({id: doc.id, tk: doc.data().TK, address: doc.data().address, date_of_birth: doc.data().date_of_birth.toDate().toDateString(), email: doc.data().email,
+                        father: doc.data().father, first_sign_in: doc.data().first_sign_in.toDate().toDateString(), mother: doc.data().mother, name: doc.data().name,
+                        phone: doc.data().phone, semester: doc.data().semester, semester_first_signup: doc.data().semester_first_signup, surname: doc.data().surname,
+                        type: doc.data().type, username: doc.data().username, year: doc.data().year});
+                })
+                if(data.length === 0)
+                {
+                    return;
+                }
+                Auth.userLogin(data[0]);
+                navigate('/student');
             }
-            Auth.userLogin(data[0]);
-            navigate('/student');
+            else
+            {
+                console.log("Entered teacher");
+                docs.forEach((doc)=> {
+                    data.push({id: doc.id, tk: doc.data().TK, address: doc.data().address, date_of_birth: doc.data().date_of_birth.toDate().toDateString(), email: doc.data().email,
+                        father: doc.data().father, first_sign_in: doc.data().first_sign_in.toDate().toDateString(), mother: doc.data().mother, name: doc.data().name,
+                        phone: doc.data().phone, surname: doc.data().surname, type: doc.data().type, username: doc.data().username});
+                })
+                if(data.length === 0)
+                {
+                    return;
+                }
+                Auth.userLogin(data[0]);
+                navigate('/teacher');
+            }
+
         }
         await fetchUser();
     }
