@@ -72,7 +72,7 @@ function StudentDhlwseis1() {
             <Sidebar/>
 
             <ul className="breadcrumb">
-                <li><a href="/student">Αρχική Μαθητή</a></li>
+                <li><a href="/student">Αρχική Φοιτητή</a></li>
                 <li><a href="/student/forms">Δηλώσεις</a></li>
                 <li>Νέα Δήλωση</li>
             </ul>

@@ -43,7 +43,7 @@ function StudentGrades() {
                 <Sidebar/>
 
                 <ul className="breadcrumb">
-                    <li><a href="/student">Αρχική Μαθητή</a></li>
+                    <li><a href="/student">Αρχική Φοιτητή</a></li>
                     <li>Βαθμολογίες</li>
                 </ul>
 

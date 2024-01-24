@@ -10,7 +10,7 @@ class StudentDhlwseis3 extends Component {
                 <Sidebar/>
 
                 <ul className="breadcrumb">
-                    <li><a href="/student">Αρχική Μαθητή</a></li>
+                    <li><a href="/student">Αρχική Φοιτητή</a></li>
                     <li><a href="/student/forms">Δηλώσεις</a></li>
                     <li>Προσωρινά αποθηκευμένες</li>
                 </ul>
