@@ -28,51 +28,37 @@ ul.breadcrumb {
     }
 }
 
-.Lessons{
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    position: fixed;
-    top: 450px;
-    left: 290px;
+.lessons{
+    top: 47vh;
+    left: 260px;
+    width: 500px;
+    border-collapse: collapse;
+
+    th {
+        text-align: left;
+        font-size: 15px;
+        text-decoration-color: black;
+        font-weight: 600;
+        background-color: #A2D2F5;
+    }
+
+    td {
+        font-size: 15px;
+        text-decoration-color: black;
+        font-weight: 400;
+        border: 3px solid #A2D2F5;
+    }
+
+    tr {
+        height: 40px;
+    }
 }
 
-.lesson {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-gap: 200px;
-    list-style: none;
+tr:nth-child(even) {
+    background-color: #D6EEEE;
 }
 
-.lesson-links {
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #01447e;
-
-    border-radius:5px;
-    border: 3px solid #01447e;
-    padding: 125px 100px 10px 65px;
-    background-color: #83c434;
-}
-
-.code, .semester {
-    position: fixed;
-    top: 330px;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-
-    border-radius:5px;
-    border: 3px solid #01447e;
-    padding: 5px;
-    background-color: #205982;
-}
-
-.code {
-    top: 455px;
-}
+tr:hover {background-color: #8CBFE4;}
 
 :root {
     --button-background: white;

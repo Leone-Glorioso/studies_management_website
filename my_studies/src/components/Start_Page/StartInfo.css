@@ -1,0 +1,38 @@
+.bgContainer {
+    height: 40vh;
+    width: 99vw;
+    background-image: url("/public/bookcase_2.jpg");
+    /*background-color: #A2D2F5;*/
+    background-size: contain;
+}
+
+.students, .teachers, .grammateia {
+    position: fixed;
+    top: 150px;
+    padding: 20px;
+    background-color: #ccc;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 20px;
+
+    li {
+        padding: 5px 0px;
+    }
+}
+
+.students {
+    left: 100px;
+}
+
+.teachers {
+    left: 570px;
+}
+
+.grammateia {
+    right: 100px;
+}
+
+.head {
+    color: #01447e;
+    font-weight: bold;
+}
