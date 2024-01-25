@@ -28,6 +28,7 @@ function Sidebar() {
 
     return (
         <div>
+            <img src={'/logo.png'} alt={"Logo"} className={'logo_ekpa_special'}/>
             <UniversalNavbar/>
             <nav className="SidebarItems">
                 <ul className="prof">

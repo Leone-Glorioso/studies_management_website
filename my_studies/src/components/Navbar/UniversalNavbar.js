@@ -56,7 +56,7 @@ function UniversalNavbar() {
                 })
                 Auth.userLogin(data[0]);
                 setActiveLogin(false);
-                navigate(".");
+                navigate(0);
             }
             else
             {
@@ -68,7 +68,7 @@ function UniversalNavbar() {
                 })
                 Auth.userLogin(data[0]);
                 setActiveLogin(false);
-                navigate(".");
+                navigate(0);
             }
 
         }

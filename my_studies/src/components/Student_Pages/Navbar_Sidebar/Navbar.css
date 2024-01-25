@@ -55,3 +55,10 @@
     width: 50px;
     margin-top: 20px;
 }
+
+.logo_ekpa_special {
+    height: 13.2vh;
+    position: static;
+    margin-left: 0px;
+    /*margin-bottom: 20px;*/
+}
