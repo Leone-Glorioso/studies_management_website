@@ -5,11 +5,15 @@
     justify-content: center;
     height: 100vh;
     background-color: #EAD6B7; /* Set the background color to beige */
-    max-width: 500px; /* Set the maximum width of the container */
+    max-width: 700px; /* Set the maximum width of the container */
     max-height: 250px; /* Set the maximum height of the container */
-    margin: 50px auto 0; /* Add margin to the top (50px in this example), and center horizontally */
+    /*margin: 50px auto 0; !* Add margin to the top (50px in this example), and center horizontally *!*/
     padding: 20px; /* Add some padding for better visual appearance */
     border-radius: 15px; /* Add rounded corners with a radius of 15 pixels */
+    position: fixed;
+    margin-left: 37%;
+    margin-top: 10%;
+    z-index: 10000000;
 }
 
 .bgContainer {
@@ -295,6 +299,23 @@
     opacity: 0;
 }
 .overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay-login {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9000000;
+}
+.overlay-login-checked {
     visibility: visible;
     opacity: 1;
 }
