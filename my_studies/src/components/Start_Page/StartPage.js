@@ -4,6 +4,7 @@ import StartPageHeader from "./StartPageHeader";
 import {BiBook, BiCard, BiHelpCircle, BiUser} from "react-icons/bi";
 import { Button } from 'primereact/button';
 import ContentCarousel from "./ContentCarousel";
+import ContentCarousel1 from "./ContentCarousel1";
 import Card from "./Card";
 import {AiFillLock} from "react-icons/ai";
 import {FaBook, FaCertificate, FaRegBookmark, FaWpforms} from "react-icons/fa6";
@@ -11,9 +12,28 @@ import {FaScroll} from "react-icons/fa6";
 import {BsBookmarkPlus, BsBookmarkPlusFill} from "react-icons/bs";
 import {MdSettings} from "react-icons/md";
 import {IoHelpCircleOutline} from "react-icons/io5";
-import {FaChalkboardTeacher, FaUserCircle, FaUserFriends} from "react-icons/fa";
+import {FaChalkboardTeacher, FaUser, FaUserCircle, FaUserFriends} from "react-icons/fa";
 import {GiScrollQuill} from "react-icons/gi";
 import StartInfo from "./StartInfo";
+
+const items_0 = [
+    <Card text={'Δες πληροφορίες σχετικά με:\n' +
+        '\n' +
+        'Μαθήματά,\n' +
+        'Δηλώσεις,\n' +
+        'Βαθμολογίες,\n' +
+        'Πιστοποιητικά'} image={'bookcase_2.jpg'} image_alt={'bookcase'} data_value={1} icon={<FaUser/>} title={'Είσαι φοιτητής;'} type={"student"} link={'/student'}/>,
+    <Card text={'Δες πληροφορίες σχετικά με:\n' +
+        '\n' +
+        'Μαθήματά,\n' +
+        'Βαθμολογίες'} image={'bookcase_2.jpg'} image_alt={'bookcase'} data_value={2} icon={<FaUser/>} title={'Είσαι καθηγητής;'} type={"teacher"} link={'/teacher'}/>,
+    <Card text={'Δες πληροφορίες σχετικά με:\n' +
+        '\n' +
+        'Φοιτητές,\n' +
+        'Εκπαιδευτές,\n' +
+        'Μαθήματα,\n' +
+        'Δηλώσεις'} image={'bookcase_2.jpg'} image_alt={'bookcase'} data_value={3} icon={<FaUser/>} title={'Είσαι μέλος γραμματείας;'} type={"admin"}/>
+];
 
 const items_1 = [
     <Card text={'Δες πληροφορίες για τα μαθήματα που έχεις πάρει, αλλά και όσα μπορείς να πάρεις. Δες πληροφορίες όπως ποιοί καθηγητές τα έχουν πάρει, πόσες πιστωτικές μονάδες δίνουν και πολλά άλλα.'} image={'/carousel/student/lessons.jpg'} image_alt={'lessons'} data_value={1} icon={<FaBook/>} title={'Μαθήματα'} type={"student"} link={'/student/lessons'}/>,
@@ -46,8 +66,14 @@ const StartPage = () => {
         <div>
             <StartPageHeader/>
             <br/>
-            <StartInfo/>
+            {/*<StartInfo/>*/}
             <br/>
+
+            <div className="container_one">
+                <h1>Γενικές πληροφορίες</h1>
+            </div>
+            <ContentCarousel1 items={items_0}/>
+
             <div className="container_two_alt">
                 <h1>Φοιτητές</h1>
             </div>

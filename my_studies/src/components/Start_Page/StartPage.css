@@ -5,6 +5,16 @@
 /*    font-family: 'Arial', sans-serif; !* Adjust the font family as needed *!*/
 /*}*/
 
+.container_one {
+    width: 35%;
+
+    background-color: #ccc; /* Gray background color for the container */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding to create space between the header and container */
+    text-align: center; /* Center-align the text within the container */
+    margin-top: 10vh;
+}
+
 .container_two {
     background-color: #ccc; /* Gray background color for the container */
     border-radius: 10px; /* Rounded corners */
