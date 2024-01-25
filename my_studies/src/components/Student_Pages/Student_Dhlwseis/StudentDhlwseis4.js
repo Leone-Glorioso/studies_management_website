@@ -36,28 +36,43 @@ class StudentDhlwseis4 extends Component {
                 </div>
 
                 <div id="popup-ep" className="overlay">
-                    <div className="popup-ep">
+                    <div className="popup-ep-fs">
                         <div className="content">
                             Η δήλωσή σας:
-                                <table className="table-dhlf">
-                                    <tr>
-                                        <th>Κωδικός Μαθήματος</th>
-                                        <th>Τίτλος Μαθήματος</th>
-                                        <th>Δήλωση</th>
-                                    </tr>
-                                    <tr>
-                                        <td>000000</td>
-                                        <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
-                                        <td className="checkboxes"><input type="checkbox"/></td>
-                                    </tr>
-                                    <tr>
-                                        <td>111111</td>
-                                        <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
-                                        <td className="checkboxes"><input type="checkbox"/></td>
-                                    </tr>
-                                </table>
+                            <table className="table-dhlfs">
+                                <tr>
+                                    <th>Κωδικός Μαθήματος</th>
+                                    <th>Τίτλος Μαθήματος</th>
+                                    <th>Δήλωση</th>
+                                </tr>
+                                <tr>
+                                    <td>000000</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                            </table>
                         </div>
-                        <ul className="button-ok">
+                        <ul className="button-ok-fs">
                             <li className="buttons-c1">
                                 <a href="/student/forms/final" className="confirm">OK</a>
                             </li>
@@ -67,7 +82,7 @@ class StudentDhlwseis4 extends Component {
 
             </div>
 
-    )
+        )
     }
 
 }

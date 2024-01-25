@@ -70,10 +70,10 @@ class StudentDhlwseis3 extends Component {
                 </div>
 
                 <div id="popup-ep" className="overlay">
-                    <div className="popup-ep">
+                    <div className="popup-ep-s">
                         <div className="content">
                             Η δήλωσή σας:
-                            <table className="table-dhlf">
+                            <table className="table-dhls">
                                 <tr>
                                     <th>Κωδικός Μαθήματος</th>
                                     <th>Τίτλος Μαθήματος</th>
@@ -89,9 +89,24 @@ class StudentDhlwseis3 extends Component {
                                     <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
                                     <td className="checkboxes"><input type="checkbox"/></td>
                                 </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
                             </table>
                         </div>
-                        <ul className="button-ok">
+                        <ul className="button-ok-s">
                             <li className="buttons-c1">
                                 <a href="/student/forms/saved" className="confirm">OK</a>
                             </li>

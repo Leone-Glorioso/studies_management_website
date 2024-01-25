@@ -202,19 +202,19 @@ ul.breadcrumb {
     }
 }
 
-.popup-ep {
+.popup-ep-f {
     margin: 70px auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
     width: 50%;
-    height: 40%;
+    height: 55%;
     position: relative;
     transition: all 5s ease-in-out;
-    top: 25%;
+    top: 20%;
 }
 
-.popup-ep .content {
+.popup-ep-f .content {
     font-size: 20px;
     font-weight: bold;
     max-height: 30%;
@@ -226,7 +226,7 @@ ul.breadcrumb {
         top: 365px;
         left: 290px;*/
         width: 40%;
-        top: 45%;
+        top: 40%;
         left: 30%;
         border-collapse: collapse;
 
@@ -277,10 +277,10 @@ ul.breadcrumb {
     }
 }
 
-.button-ok {
+.button-ok-f {
     position: relative;
-    top: 60%;
-    left: 35%;
+    top: 75%;
+    left: 38%;
     li {
         border-radius: 3px;
         padding: 25px 30px;
