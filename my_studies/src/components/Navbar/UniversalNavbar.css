@@ -35,6 +35,7 @@
     line-height: 90px;
     transform: translate3d(0, 0, 0);
     transition: transform ease-out 200ms;
+    /*z-index: 100;*/
 }
 
 .menu-open {
@@ -52,6 +53,7 @@
     margin-left: -12.5px;
     margin-top: -1.5px;
     transition: transform 200ms;
+    z-index: 1000;
 }
 
 .hamburger-1 {
@@ -90,7 +92,7 @@
     align-items: center;
     font-size: 50px;
     text-align: left;
-    z-index: 100
+    z-index: 100;
 }
 
 .menu-item:hover {
@@ -280,7 +282,7 @@
     border-radius: 15px; /* Add rounded corners with a radius of 15 pixels */
     position: fixed;
     margin-left: 37%;
-    margin-top: 10%;
+    margin-top: 20%;
     z-index: 10000000;
 }
 
@@ -585,11 +587,12 @@
 /*    z-index: 9000000;*/
 /*}*/
 .overlay-login-checked {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 110%;
     position: fixed;
     z-index: 900000;
     background: rgba(0, 0, 0, 0.7);
+    margin-top: -10%;
 }
 
 .popup {
