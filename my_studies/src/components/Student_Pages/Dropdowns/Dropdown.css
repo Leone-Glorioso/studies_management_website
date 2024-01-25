@@ -1,0 +1,200 @@
+:root {
+    --button-background: white;
+    --button-color: #123C5A;
+
+    --dropdown-highlight: #63B2EB;
+    --dropdown-width: 160px;
+    --dropdown-background: #8CBFE4;
+    --dropdown-color: #123C5A;
+}
+
+.button_grades, .button1_grades, .button2_grades, .button3_grades {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid #123C5A;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    background: var(--button-background);
+    color: var(--button-color);
+    font-size: 20px;
+    cursor: pointer;
+
+    i{
+        font-size: 15px;
+    }
+}
+
+.button_grades {
+    position: fixed;
+    top: 270px;
+    left: 290px;
+}
+
+.button1_grades {
+    position: fixed;
+    top: 270px;
+    left: 490px;
+}
+
+.button2_grades {
+    position: fixed;
+    top: 270px;
+    left: 790px;
+}
+
+.button3_grades {
+    position: fixed;
+    top: 270px;
+    left: 990px;
+}
+
+.title0 {
+    position: fixed;
+    top: 250px;
+    left: 290px;
+
+    font-size: 15px;
+}
+
+.title1 {
+    position: fixed;
+    top: 250px;
+    left: 490px;
+
+    font-size: 15px;
+}
+
+.title2 {
+    position: fixed;
+    top: 250px;
+    left: 790px;
+
+    font-size: 15px;
+}
+
+.title3 {
+    position: fixed;
+    top: 250px;
+    left: 990px;
+
+    font-size: 15px;
+}
+
+/* Dropdown styles */
+.dropdown_grades {
+    position: fixed;
+    top: 310px;
+    left: 360px;
+    padding: 0;
+    margin-right: 1em;
+
+    border: 2px solid #123C5A;
+}
+
+.dropdown1_grades {
+    position: fixed;
+    top: 310px;
+    left: 590px;
+    padding: 0;
+    margin-right: 1em;
+
+    border: 2px solid #123C5A;
+}
+
+.dropdown2_grades {
+    position: fixed;
+    top: 310px;
+    left: 850px;
+    padding: 0;
+    margin-right: 1em;
+
+    border: 2px solid #123C5A;
+}
+
+.dropdown3_grades {
+    position: fixed;
+    top: 310px;
+    left: 1080px;
+    padding: 0;
+    margin-right: 1em;
+
+    border: 2px solid #123C5A;
+}
+
+.dropdown_grades summary, .dropdown1_grades summary, .dropdown2_grades summary, .dropdown3_grades summary {
+    list-style: none none;
+}
+
+.dropdown_grades > summary::-webkit-details-marker, .dropdown1_grades > summary::-webkit-details-marker, .dropdown2_grades > summary::-webkit-details-marker, .dropdown3_grades > summary::-webkit-details-marker {
+    display: none;
+}
+
+.dropdown_grades summary:focus, .dropdown1_grades summary:focus, .dropdown2_grades summary:focus, .dropdown3_grades summary:focus {
+    outline: none;
+}
+
+.dropdown_grades ul, .dropdown1_grades ul, .dropdown2_grades ul, .dropdown3_grades ul {
+    position: absolute;
+    padding: 20px 0;
+    width: var(--dropdown-width);
+    left: 50%;
+    margin: 20px 0 0 calc((var(--dropdown-width) / 2) * -1);
+    box-sizing: border-box;
+    z-index: 2;
+
+    background: var(--dropdown-background);
+    border-radius: 6px;
+    list-style: none;
+}
+
+.dropdown_grades ul li, .dropdown1_grades ul li, .dropdown2_grades ul li, .dropdown3_grades ul li {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown_grades ul li a:link, .dropdown_grades ul li a:visited, .dropdown1_grades ul li a:link, .dropdown1_grades ul li a:visited, .dropdown2_grades ul li a:link, .dropdown2_grades ul li a:visited, .dropdown3_grades ul li a:link, .dropdown3_grades ul li a:visited {
+    display: inline-block;
+    padding: 10px 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    color: var(--dropdown-color);
+    text-decoration: none;
+}
+
+.dropdown_grades ul li a:hover, .dropdown1_grades ul li a:hover, .dropdown2_grades ul li a:hover, .dropdown3_grades ul li a:hover {
+    background-color: var(--dropdown-highlight);
+    color: white;
+}
+
+/* Dropdown triangle */
+.dropdown_grades ul::before, .dropdown1_grades ul::before, .dropdown2_grades ul::before, .dropdown3_grades ul::before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent var(--dropdown-background) transparent;
+}
+
+
+/* Close the dropdown with outside clicks */
+.dropdown_grades > summary::before, .dropdown1_grades > summary::before, .dropdown2_grades > summary::before, .dropdown3_grades > summary::before {
+    display: none;
+}
+
+.dropdown_grades[open] > summary::before, .dropdown1_grades[open] > summary::before, .dropdown2_grades[open] > summary::before, .dropdown3_grades[open] > summary::before {
+    content: ' ';
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}

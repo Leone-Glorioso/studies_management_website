@@ -1,6 +1,7 @@
 import React, {Component, useEffect, useState} from "react";
 import './StudentGrades.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
+import Dropdown from "../Dropdowns/Dropdown";
 import {useAuth} from "../../Auth/AuthContext";
 import {collection, getDocs, query, where} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
@@ -84,64 +85,7 @@ function StudentGrades() {
                         })}
                     </table>}
 
-                <ul className="dropdowns">
-                    <li className="drop-buttons">
-                        <details className="dropdown_grades">
-                            <summary role="button">
-                                <a className="button_grades">Κατηγορίες</a>
-                            </summary>
-
-
-                            <ul>
-                                <li><a href="#">Όλα</a></li>
-                                <li><a href="#">Περασμένα</a></li>
-                                <li><a href="#">Κομμένα</a></li>
-                                <li><a href="#">Γενικής Παιδείας</a></li>
-                                <li><a href="#">Κατεύθυνσης Α</a></li>
-                                <li><a href="#">Κατεύθυνσης Β</a></li>
-                                <li><a href="#">Υποχρεωτικά</a></li>
-                                <li><a href="#">Προαιρετικά</a></li>
-                                <li><a href="#">Κατ' επιλογή υποχρεωτικά</a></li>
-                            </ul>
-                        </details>
-
-                        <details className="dropdown1_grades">
-                            <summary role="button">
-                                <a className="button1_grades">Ακαδημαϊκή Περίοδος</a>
-                            </summary>
-                            <ul>
-                                <li><a href="#">2022-2023</a></li>
-                                <li><a href="#">2023-2024</a></li>
-                            </ul>
-                        </details>
-
-                        <details className="dropdown2_grades">
-                            <summary role="button">
-                                <a className="button2_grades">Εξάμηνο</a>
-                            </summary>
-                            <ul>
-                                <li><a href="#">1ο</a></li>
-                                <li><a href="#">2ο</a></li>
-                                <li><a href="#">3ο</a></li>
-                                <li><a href="#">4ο</a></li>
-                                <li><a href="#">5ο</a></li>
-                                <li><a href="#">6ο</a></li>
-                                <li><a href="#">7ο</a></li>
-                                <li><a href="#">8ο</a></li>
-                            </ul>
-                        </details>
-
-                        <details className="dropdown3_grades">
-                            <summary role="button">
-                                <a className="button3_grades">Ταξινόμηση κατά</a>
-                            </summary>
-                            <ul>
-                                <li><a href="#">Πιο Πρόσφατα</a></li>
-                                <li><a href="#">Λιγότερο πρόσφατα</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                </ul>
+                <Dropdown/>
 
                 <a href="#popup-pr" className="print_button">Εκτύπωση</a>
 
