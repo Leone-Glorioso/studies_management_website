@@ -13,8 +13,9 @@ function StudentDhlwseis1() {
     const [lessons_out, setLessonsOut] = useState([]);
     const [limit, setLimit] = useState(0);
     const [checked, setChecked] = useState(0);
+    const [firstTime, setFirstTime] = useState(true)
 
-    useEffect(() => {
+    useEffect( () => {
         async function fetchLessons()
         {
             const db_ref = collection(db, 'dhloseis');
@@ -38,6 +39,15 @@ function StudentDhlwseis1() {
             })
             setLessonsIn(less_in);
             setLessonsOut(less_out);
+        }
+        if(isLogged)
+            fetchLessons();
+    }, []);
+
+    const onClickCheckBox = (e) => {
+        console.log("Entered" + firstTime);
+        if(firstTime)
+        {
             switch (user.year)
             {
                 case 1:
@@ -54,17 +64,14 @@ function StudentDhlwseis1() {
                     break;
             }
             setChecked(lessons_in.length);
-            console.log(limit, checked);
+            console.log(limit, checked, lessons_in.length, lessons_in, user.year);
+            setFirstTime(false);
         }
-        if(isLogged)
-            fetchLessons();
-    }, []);
-
-    const onClickCheckBox = (e) => {
         if(e.target.checked)
             setChecked(checked+1);
         else
             setChecked(checked-1);
+        console.log(checked);
     }
 
     return (

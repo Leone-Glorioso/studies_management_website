@@ -24,7 +24,11 @@ const LoginWindow = (props) => {
             docs.forEach((doc) => {
                 SetOcc(doc.data().type.toString());
             })
-            console.log(occ);
+            if(docs.size === 0)
+            {
+                navigate('#popup-er');
+                return;
+            }
             if(occ === "student")
             {
                 console.log("Entered student");
@@ -34,10 +38,10 @@ const LoginWindow = (props) => {
                         phone: doc.data().phone, semester: doc.data().semester, semester_first_signup: doc.data().semester_first_signup, surname: doc.data().surname,
                         type: doc.data().type, username: doc.data().username, year: doc.data().year});
                 })
-                if(data.length === 0)
-                {
-                    return;
-                }
+                // if(data.length === 0)
+                // {
+                //     return;
+                // }
                 Auth.userLogin(data[0]);
                 navigate('/student');
             }
@@ -49,10 +53,10 @@ const LoginWindow = (props) => {
                         father: doc.data().father, first_sign_in: doc.data().first_sign_in.toDate().toDateString(), mother: doc.data().mother, name: doc.data().name,
                         phone: doc.data().phone, surname: doc.data().surname, type: doc.data().type, username: doc.data().username});
                 })
-                if(data.length === 0)
-                {
-                    return;
-                }
+                // if(data.length === 0)
+                // {
+                //     return;
+                // }
                 Auth.userLogin(data[0]);
                 navigate('/teacher');
             }
@@ -62,50 +66,66 @@ const LoginWindow = (props) => {
     }
 
         return (
-            <div className={"bgContainer"}>
-                <br/>
-                <div className={"mainContainer"}>
-                    <div className="inputContainer">
-                        <div className="input-group">
-                        <span className="icon">
-                          <FaUser />
-                        </span>
-                            <input
-                                value={username}
-                                placeholder="Όνομα Χρήστη"
-                                onChange={ev => setUsername(ev.target.value)}
-                                className="inputBox"
-                            />
-                        </div>
-                    </div>
-                    <br />
-                    <div className="inputContainer">
-                        <div className="input-group">
+            <div>
+                <div className={"bgContainer"}>
+                    <br/>
+                    <div className={"mainContainer"}>
+                        <div className="inputContainer">
+                            <div className="input-group">
                             <span className="icon">
-                              <FaLock />
+                              <FaUser />
                             </span>
+                                <input
+                                    value={username}
+                                    placeholder="Όνομα Χρήστη"
+                                    onChange={ev => setUsername(ev.target.value)}
+                                    className="inputBox"
+                                />
+                            </div>
+                        </div>
+                        <br />
+                        <div className="inputContainer">
+                            <div className="input-group">
+                                <span className="icon">
+                                  <FaLock />
+                                </span>
+                                <input
+                                    value={password}
+                                    placeholder="Κωδικός"
+                                    type="password" // Ensure the input type is set to "password" for password fields
+                                    onChange={ev => setPassword(ev.target.value)}
+                                    className="inputBox"
+                                />
+                            </div>
+                        </div>
+                        <br/>
+                        <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
+                        <br/>
+                        <div className={"container_special"}>
+                            <Button className="green-button-round" tooltip="Ασφαλής Σύνδεση: Χρησιμοποιείται εάν βρίσκεστε σε δημόσιο δίκτυο" tooltipOptions={{ position: 'bottom' , className: 'tooltipContainer', fontSize: '2rem', cursor: 'pointer'}} onClick={onButtonClick}>
+                                <FaUnlock id={"icon1"}/>
+                                <FaLock id={"icon2"}/>
+                            </Button>
                             <input
-                                value={password}
-                                placeholder="Κωδικός"
-                                type="password" // Ensure the input type is set to "password" for password fields
-                                onChange={ev => setPassword(ev.target.value)}
-                                className="inputBox"
-                            />
+                                className={"green-button"}
+                                type="button"
+                                onClick={onButtonClick}
+                                value={"Σύνδεση"} />
                         </div>
                     </div>
-                    <br/>
-                    <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
-                    <br/>
-                    <div className={"container_special"}>
-                        <Button className="green-button-round" tooltip="Ασφαλής Σύνδεση: Χρησιμοποιείται εάν βρίσκεστε σε δημόσιο δίκτυο" tooltipOptions={{ position: 'bottom' , className: 'tooltipContainer', fontSize: '2rem', cursor: 'pointer'}} onClick={onButtonClick}>
-                            <FaUnlock id={"icon1"}/>
-                            <FaLock id={"icon2"}/>
-                        </Button>
-                        <input
-                            className={"green-button"}
-                            type="button"
-                            onClick={onButtonClick}
-                            value={"Σύνδεση"} />
+                </div>
+
+                <div id="popup-er" className="overlay">
+                    <div className="popup">
+                        <div className="content">
+                            Κάποιο από τα στοιχεία σας ήταν λανθασμένο, παρακαλώ ξαναπροσπαθήστε.
+                        </div>
+                        <ul className="buttons1">
+                            <li className="buttons-c1">
+                                <a href="/"
+                                   className="confirm">OK</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

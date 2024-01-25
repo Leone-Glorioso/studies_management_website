@@ -69,19 +69,19 @@ const StartPage = () => {
             {/*    </Button>*/}
             {/*</a>*/}
 
-            <div id="popup-er" className="overlay">
-                <div className="popup">
-                    <div className="content">
-                        Κάποιο από τα στοιχεία σας ήταν λανθασμένο, παρακαλώ ξαναπροσπαθήστε.
-                    </div>
-                    <ul className="buttons1">
-                        <li className="buttons-c1">
-                            <a href="/student/certificates"
-                               className="confirm">OK</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            {/*<div id="popup-er" className="overlay">*/}
+            {/*    <div className="popup">*/}
+            {/*        <div className="content">*/}
+            {/*            Κάποιο από τα στοιχεία σας ήταν λανθασμένο, παρακαλώ ξαναπροσπαθήστε.*/}
+            {/*        </div>*/}
+            {/*        <ul className="buttons1">*/}
+            {/*            <li className="buttons-c1">*/}
+            {/*                <a href="/"*/}
+            {/*                   className="confirm">OK</a>*/}
+            {/*            </li>*/}
+            {/*        </ul>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
 
         </div>
     );
