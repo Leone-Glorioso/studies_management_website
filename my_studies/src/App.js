@@ -63,7 +63,6 @@ function App() {
                   <Route path='/student' element={<StudentHome/>} />
                   <Route path='/login' element={<LoginWindow/>}/>
                   <Route path='/' element={<StartPage/>}/>
-                  {/*<Route path='/ts' element={<Teacher_Sidebar/>}/>*/}
                   <Route path='/help' element={<HelpHome/>}/>
                   <Route path='/help/student' element={<HelpStudents/>}/>
                   <Route path='/help/teacher' element={<HelpTeachers/>}/>
