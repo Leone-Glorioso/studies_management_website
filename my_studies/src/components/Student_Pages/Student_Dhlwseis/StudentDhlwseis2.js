@@ -107,59 +107,43 @@ const onClickCheckBox = (e) => {
                 </div>
 
                 <div id="popup-ep" className="overlay">
-                    <div className="popup-ep">
+                    <div className="popup-ep-f">
                         <div className="content">
                             Η δήλωσή σας:
-                            {!isLogged &&
-                                <table className="table-dhlf">
-                                    <tr>
-                                        <th>Κωδικός Μαθήματος</th>
-                                        <th>Τίτλος Μαθήματος</th>
-                                        <th>Δήλωση</th>
-                                    </tr>
-                                    <tr>
-                                        <td>000000</td>
-                                        <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
-                                        <td className="checkboxes"><input type="checkbox"/></td>
-                                    </tr>
-                                    <tr>
-                                        <td>111111</td>
-                                        <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
-                                        <td className="checkboxes"><input type="checkbox"/></td>
-                                    </tr>
-                                </table>
-                            }
-
-                            {
-                                <table className="table-dhlf">
-                                    <tr>
-                                        <th>Κωδικός Μαθήματος</th>
-                                        <th>Τίτλος Μαθήματος</th>
-                                        <th>Δήλωση</th>
-                                    </tr>
-                                    {lessons_in.map((item) => {
-                                        return (
-                                            <tr>
-                                                <td>{item.num}</td>
-                                                <td>{item.name}</td>
-                                                <td className="checkboxes"><input type="checkbox" defaultChecked={true} onClick={onClickCheckBox.bind(this)}/></td>
-                                            </tr>
-                                        )
-                                    })}
-
-                                    {lessons_out.map((item) => {
-                                        return (
-                                            <tr>
-                                                <td>{item.num}</td>
-                                                <td>{item.name}</td>
-                                                <td className="checkboxes"><input type="checkbox" defaultChecked={false} onClick={onClickCheckBox.bind(this)}/></td>
-                                            </tr>
-                                        )
-                                    })}
-                                </table>
-                            }
+                            <table className="table-dhlf">
+                                <tr>
+                                    <th>Κωδικός Μαθήματος</th>
+                                    <th>Τίτλος Μαθήματος</th>
+                                    <th>Δήλωση</th>
+                                </tr>
+                                <tr>
+                                    <td>000000</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                            </table>
                         </div>
-                        <ul className="button-ok">
+                        <ul className="button-ok-f">
                             <li className="buttons-c1">
                                 <a href="/student/forms/new-form/done" className="confirm">OK</a>
                             </li>
