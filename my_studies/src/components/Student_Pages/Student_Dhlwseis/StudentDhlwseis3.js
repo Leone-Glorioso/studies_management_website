@@ -28,14 +28,14 @@ class StudentDhlwseis3 extends Component {
                             <div className="col col-1" data-label="date">00-00-0000</div>
                             <div className="col col-2" data-label="type">ΧΧΧΧΧΧΧΧ</div>
                             <a href="#popup-d" className="col col-3">Διαγραφή</a>
-                            <a href="#" className="col col-4">Προβολή</a>
+                            <a href="#popup-ep" className="col col-4">Προβολή</a>
                             <a href="#popup-pr-d" className="col col-5">Εκτύπωση</a>
                         </li>
                         <li className="table-row">
                             <div className="col col-1" data-label="date">00-00-0000</div>
                             <div className="col col-2" data-label="type">ΧΧΧΧΧΧΧΧ</div>
                             <a href="#popup-d" className="col col-3">Διαγραφή</a>
-                            <a href="#" className="col col-4">Προβολή</a>
+                            <a href="#popup-ep" className="col col-4">Προβολή</a>
                             <a href="#popup-pr-d" className="col col-5">Εκτύπωση</a>
                         </li>
                     </ul>
@@ -69,6 +69,35 @@ class StudentDhlwseis3 extends Component {
                     </div>
                 </div>
 
+                <div id="popup-ep" className="overlay">
+                    <div className="popup-ep">
+                        <div className="content">
+                            Η δήλωσή σας:
+                            <table className="table-dhlf">
+                                <tr>
+                                    <th>Κωδικός Μαθήματος</th>
+                                    <th>Τίτλος Μαθήματος</th>
+                                    <th>Δήλωση</th>
+                                </tr>
+                                <tr>
+                                    <td>000000</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                                <tr>
+                                    <td>111111</td>
+                                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                                    <td className="checkboxes"><input type="checkbox"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <ul className="button-ok">
+                            <li className="buttons-c1">
+                                <a href="/student/forms/saved" className="confirm">OK</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
             </div>
 

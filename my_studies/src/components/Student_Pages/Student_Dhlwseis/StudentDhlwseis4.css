@@ -39,7 +39,7 @@ ul.breadcrumb {
     padding-right: 10px;
 }
 
-.responsive-table-d {
+.responsive-table-df {
     width: 1150px;
 
     li {
@@ -69,28 +69,11 @@ ul.breadcrumb {
         flex-basis: 10%;
     }
 
-    .col-4 {
-        flex-basis: 10%;
-    }
-
-    .col-5 {
-        flex-basis: 10%;
-    }
-
     .table-row {
         background-color: white;
         box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
 
         .col-3 {
-            background-color: #C02424;
-            color: white;
-            text-decoration: none;
-            padding: 5px;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .col-4 {
             background-color: #909090;
             color: white;
             text-decoration: none;
@@ -99,14 +82,6 @@ ul.breadcrumb {
             border-radius: 5px;
         }
 
-        .col-5 {
-            background-color: #328424;
-            color: white;
-            text-decoration: none;
-            padding: 5px;
-            border: none;
-            border-radius: 5px;
-        }
     }
 }
 
@@ -125,149 +100,6 @@ ul.breadcrumb {
     visibility: visible;
     opacity: 1;
 }
-
-.popup-pr-p {
-
-    .popup {
-        margin: 70px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 5px;
-        width: 30%;
-        position: relative;
-        transition: all 5s ease-in-out;
-        top: 25%;
-    }
-
-    .popup .content {
-        font-size: 20px;
-        font-weight: bold;
-        max-height: 30%;
-        overflow: auto;
-    }
-
-    @media screen and (max-width: 700px){
-        .box{
-            width: 70%;
-        }
-        .popup{
-            width: 70%;
-        }
-    }
-
-    .buttons1 {
-
-        li {
-            border-radius: 3px;
-            padding: 25px 30px;
-            display: flex;
-            justify-content: space-between;
-
-        }
-        .buttons-c1 {
-            letter-spacing: 0.03em;
-        }
-
-        .confirm {
-            flex-basis: 20%;
-
-            font-size: 20px;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-            background: #328424;
-            display: inline-block;
-            text-align: center;
-            padding: 5px;
-            border: none;
-            border-radius: 5px;
-            box-sizing: border-box;
-            cursor: pointer;
-        }
-    }
-}
-
-.popup-d {
-
-    .popup {
-        margin: 70px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 5px;
-        width: 30%;
-        position: relative;
-        transition: all 5s ease-in-out;
-        top: 25%;
-    }
-
-    .popup .content {
-        font-size: 20px;
-        font-weight: bold;
-        max-height: 30%;
-        overflow: auto;
-        text-align: center;
-    }
-
-    @media screen and (max-width: 700px){
-        .box{
-            width: 70%;
-        }
-        .popup{
-            width: 70%;
-        }
-    }
-
-    .buttons1 {
-
-        li {
-            border-radius: 3px;
-            padding: 25px 30px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .buttons-c1 {
-            letter-spacing: 0.03em;
-
-        }
-
-        .cancel-p {
-            flex-basis: 10%;
-
-            font-size: 20px;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-            background: #95A5A6;
-            display: inline-block;
-            text-align: center;
-            padding: 5px;
-            border: none;
-            border-radius: 5px;
-            box-sizing: border-box;
-            cursor: pointer;
-        }
-
-        .delete {
-            flex-basis: 20%;
-
-            font-size: 20px;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-            background: #C02424;
-            display: inline-block;
-            text-align: center;
-            padding: 5px;
-            border: none;
-            border-radius: 5px;
-            box-sizing: border-box;
-            cursor: pointer;
-        }
-
-    }
-}
-
-
 
 .popup-ep {
     margin: 70px auto;

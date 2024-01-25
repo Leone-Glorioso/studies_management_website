@@ -239,7 +239,7 @@ tr:hover {background-color: #8CBFE4;}
     }
 }
 
-.new, .saved {
+.new, .saved, .final {
     position: fixed;
     top: 240px;
     right: 50px;
@@ -262,5 +262,12 @@ tr:hover {background-color: #8CBFE4;}
     position: fixed;
     top: 240px;
     right: 200px;
+    background: #95A5A6;
+}
+
+.final {
+    position: fixed;
+    top: 240px;
+    right: 480px;
     background: #95A5A6;
 }

@@ -176,6 +176,7 @@ function StudentDhlwseis() {
 
 
             <div className="buttons-c">
+                <a href="/student/forms/final" className="final">Οριστικοποιημένες Δηλώσεις</a>
                 <a href="/student/forms/saved" className="saved">Αποθηκευμένες Δηλώσεις</a>
                 <a href="/student/forms/new-form" className="new">Νέα Δήλωση</a>
             </div>
