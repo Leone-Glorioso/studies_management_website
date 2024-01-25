@@ -11,6 +11,7 @@ function StudentCert1_4() {
     const isLogged = Auth.userIsAuthenticated();
     const user = Auth.getUser();
     const [cert, setCert] = useState('');
+    let Prof2_logged = []
 
     useEffect(() => {
         switch (Auth.getType()){
@@ -57,44 +58,38 @@ function StudentCert1_4() {
             title: "Ημερομηνία γέννησης"
         },
     ]
+    if(isLogged)
+         Prof2_logged = [
+            {
+                cName: "prof-info-certs3",
+                title: "Όνομα: ",
+                text: user.name
+            },
+            {
+                cName: "prof-info-certs3",
+                title: "Επίθετο: ",
+                text: user.surname
+            },
+            {
+                cName: "prof-info-certs3",
+                title: "Όνομα πατέρα: ",
+                text: user.father
+            },
+            {
+                cName: "prof-info-certs3",
+                title: "Όνομα μητέρας: ",
+                text: user.mother
+            },
+            {
+                cName: "prof-info-certs3",
+                title: "Ημερομηνία γέννησης: ",
+                text: user.date_of_birth
+            },
+        ]
 
-    const Prof2_logged = [
-        {
-            cName: "prof-info-certs3",
-            title: "Όνομα: ",
-            text: user.name
-        },
-        {
-            cName: "prof-info-certs3",
-            title: "Επίθετο: ",
-            text: user.surname
-        },
-        {
-            cName: "prof-info-certs3",
-            title: "Όνομα πατέρα: ",
-            text: user.father
-        },
-        {
-            cName: "prof-info-certs3",
-            title: "Όνομα μητέρας: ",
-            text: user.mother
-        },
-        {
-            cName: "prof-info-certs3",
-            title: "Ημερομηνία γέννησης: ",
-            text: user.date_of_birth
-        },
-    ]
-
-    // const onFinalSubmit = async () => {
-    //     if(isLogged)
-    //         await addDoc(collection(db, 'certificates'), {
-    //             username: user.username,
-    //             state: "on_hold",
-    //             type: Auth.getType(),
-    //             date: Timestamp.now()
-    //         });
-    // }
+    const onNotLogged = () => {
+        Auth.setWindow(true);
+    }
 
     return (
         <div>
@@ -167,7 +162,8 @@ function StudentCert1_4() {
                 <li className="buttons-c">
                     <a href="/student/certificates/new-certificate/personal_info" className="prev">Προηγούμενο</a>
                     <a href="/student/certificates/" className="cancel">Άκυρο</a>
-                    <a href="#popup1" className="edit">Επιβεβαίωση</a>
+                    {!isLogged && <a onClick={onNotLogged} className="edit">Επιβεβαίωση</a>}
+                    {isLogged && <a href="#popup1" className="edit">Επιβεβαίωση</a>}
                 </li>
             </ul>
 

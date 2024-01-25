@@ -28,6 +28,7 @@ function Sidebar() {
 
     return (
         <div>
+            <img src={'/logo.png'} alt={"Logo"} className={'logo_ekpa_special'}/>
             <UniversalNavbar/>
             <nav className="SidebarItems">
                 <ul className="prof">
@@ -63,26 +64,6 @@ function Sidebar() {
                     })}
                 </ul>
 
-                {/*<ul className="side-menu2">*/}
-                {/*    {isLogged && MenuItems2.map((item, index) => {*/}
-                {/*        return (*/}
-                {/*            <li key={index}>*/}
-                {/*                <a href={item.url} className={item.cName}>*/}
-                {/*                    <i className={item.icon}></i>{item.title}*/}
-                {/*                </a>*/}
-                {/*            </li>*/}
-                {/*        )*/}
-                {/*    })}*/}
-                {/*    {!isLogged && MenuItems2_alt.map((item, index) => {*/}
-                {/*        return (*/}
-                {/*            <li key={index}>*/}
-                {/*                <a href={item.url} className={item.cName}>*/}
-                {/*                    <i className={item.icon}></i>{item.title}*/}
-                {/*                </a>*/}
-                {/*            </li>*/}
-                {/*        )*/}
-                {/*    })}*/}
-                {/*</ul>*/}
             </nav>
 
             <nav className="NavbarItems">
@@ -104,13 +85,6 @@ function Sidebar() {
                 <input type="text" placeholder=" Αναζήτηση"/>
                 <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
             </div>
-
-            {/*{!isLogged && <a href={'/login'}>*/}
-            {/*    <Button className={'button-round-blue'}  tooltip="Login" tooltipOptions={{ position: 'left' , className: 'toolTip-blue', fontSize: '2rem', cursor: 'pointer', mouseTrack: true, mouseTrackTop: 15}}>*/}
-            {/*        <IoLogIn/>*/}
-            {/*    </Button>*/}
-            {/*</a>}*/}
-
         </div>
 
     )

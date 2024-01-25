@@ -24,7 +24,8 @@ function UniversalNavbar() {
 
     const Auth = useAuth()
     const isLogged = Auth.userIsAuthenticated()
-    const [activeLogin, setActiveLogin] = useState(false)
+    let activeLogin = Auth.getWindow()
+    const setActiveLogin = Auth.setWindow
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [occ, SetOcc] = useState("");

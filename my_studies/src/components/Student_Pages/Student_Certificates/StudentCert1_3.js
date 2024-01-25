@@ -9,6 +9,7 @@ function StudentCert1_3() {
     const isLogged = Auth.userIsAuthenticated();
     const user = Auth.getUser();
     const [cert, setCert] = useState('');
+    let Prof2_logged = []
 
     useEffect(() => {
         switch (Auth.getType()){
@@ -56,33 +57,34 @@ function StudentCert1_3() {
         },
     ]
 
-    const Prof2_logged = [
-        {
-            cName: "prof-info-certs2",
-            title: "Όνομα: ",
-            text: user.name
-        },
-        {
-            cName: "prof-info-certs2",
-            title: "Επίθετο: ",
-            text: user.surname
-        },
-        {
-            cName: "prof-info-certs2",
-            title: "Όνομα πατέρα: ",
-            text: user.father
-        },
-        {
-            cName: "prof-info-certs2",
-            title: "Όνομα μητέρας: ",
-            text: user.mother
-        },
-        {
-            cName: "prof-info-certs2",
-            title: "Ημερομηνία γέννησης: ",
-            text: user.date_of_birth
-        },
-    ]
+    if(isLogged)
+         Prof2_logged = [
+            {
+                cName: "prof-info-certs2",
+                title: "Όνομα: ",
+                text: user.name
+            },
+            {
+                cName: "prof-info-certs2",
+                title: "Επίθετο: ",
+                text: user.surname
+            },
+            {
+                cName: "prof-info-certs2",
+                title: "Όνομα πατέρα: ",
+                text: user.father
+            },
+            {
+                cName: "prof-info-certs2",
+                title: "Όνομα μητέρας: ",
+                text: user.mother
+            },
+            {
+                cName: "prof-info-certs2",
+                title: "Ημερομηνία γέννησης: ",
+                text: user.date_of_birth
+            },
+        ]
 
     return (
         <div>

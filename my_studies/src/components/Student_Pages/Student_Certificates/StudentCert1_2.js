@@ -9,6 +9,7 @@ function StudentCert1_2() {
     const Auth = useAuth();
     const isLogged = Auth.userIsAuthenticated();
     const user = Auth.getUser();
+    let Prof2_logged = []
 
     const Prof2 = [
         {
@@ -32,34 +33,34 @@ function StudentCert1_2() {
             title: "Ημερομηνία γέννησης"
         },
     ]
-
-    const Prof2_logged = [
-        {
-            cName: "prof-info-certs",
-            title: "Όνομα: ",
-            text: user.name
-        },
-        {
-            cName: "prof-info-certs",
-            title: "Επίθετο: ",
-            text: user.surname
-        },
-        {
-            cName: "prof-info-certs",
-            title: "Όνομα πατέρα: ",
-            text: user.father
-        },
-        {
-            cName: "prof-info-certs",
-            title: "Όνομα μητέρας: ",
-            text: user.mother
-        },
-        {
-            cName: "prof-info-certs",
-            title: "Ημερομηνία γέννησης: ",
-            text: user.date_of_birth
-        },
-    ]
+    if(isLogged)
+        Prof2_logged = [
+            {
+                cName: "prof-info-certs",
+                title: "Όνομα: ",
+                text: user.name
+            },
+            {
+                cName: "prof-info-certs",
+                title: "Επίθετο: ",
+                text: user.surname
+            },
+            {
+                cName: "prof-info-certs",
+                title: "Όνομα πατέρα: ",
+                text: user.father
+            },
+            {
+                cName: "prof-info-certs",
+                title: "Όνομα μητέρας: ",
+                text: user.mother
+            },
+            {
+                cName: "prof-info-certs",
+                title: "Ημερομηνία γέννησης: ",
+                text: user.date_of_birth
+            },
+        ]
 
     return (
         <div>

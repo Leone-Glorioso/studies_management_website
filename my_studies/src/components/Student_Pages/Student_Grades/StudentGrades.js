@@ -38,6 +38,10 @@ function StudentGrades() {
             fetchGrades();
     }, []);
 
+    const onNotLogged = () => {
+        Auth.setWindow(true);
+    }
+
 
         return (
             <div>
@@ -87,7 +91,8 @@ function StudentGrades() {
 
                 <Dropdown/>
 
-                <a href="#popup-pr" className="print_button">Εκτύπωση</a>
+                {!isLogged && <a onClick={onNotLogged} className="print_button">Εκτύπωση</a>}
+                {isLogged && <a href="#popup-pr" className="print_button">Εκτύπωση</a>}
 
                 <div id="popup-pr" className="overlay">
                     <div className="popup">

@@ -101,10 +101,10 @@ function Sidebar() {
                 </ul>
             </nav>
 
-            {/*<div className="search-bar">*/}
-            {/*    <input type="text" placeholder=" Αναζήτηση"/>*/}
-            {/*    <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>*/}
-            {/*</div>*/}
+            <div className="search-bar">
+                <input type="text" placeholder=" Αναζήτηση"/>
+                <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
+            </div>
 
         </div>
 
