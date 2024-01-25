@@ -1,7 +1,7 @@
 import React from 'react';
 import './UniversalNavbar.css';
 import {useAuth} from "../Auth/AuthContext";
-import {FaChalkboardTeacher, FaGraduationCap, FaUser, FaUserCircle, FaUserGraduate} from "react-icons/fa";
+import {FaChalkboardTeacher, FaGraduationCap, FaHome, FaUser, FaUserCircle, FaUserGraduate} from "react-icons/fa";
 import {BiHelpCircle} from "react-icons/bi";
 import {IoHelp, IoHelpCircle, IoHelpCircleOutline} from "react-icons/io5";
 import {TbLogin, TbLogout} from "react-icons/tb";
@@ -27,8 +27,9 @@ function UniversalNavbar() {
 
                     <Tooltip target={".menu-item"} className={'toolTipUniv'} position={"bottom"} mouseTrack/>
 
+                    <a href="/" className="menu-item" id={'start'} data-pr-tooltip="Αρχική"> <i><FaHome/></i> </a>
                     {isLogged && <a href="/student/profile" className="menu-item" id={'profile'} data-pr-tooltip="Προφίλ"> <i><FaUserCircle/></i> </a>}
-                    {!isLogged && <a href="#pop-er" className="menu-item" id={'profile'} data-pr-tooltip="Είσοδος"> <i><TbLogin/></i> </a>}
+                    {!isLogged && <a href="#pop-log" className="menu-item" id={'profile'} data-pr-tooltip="Είσοδος"> <i><TbLogin/></i> </a>}
                     <a href="/help" className="menu-item" id={'help'} data-pr-tooltip="Βοήθεια"> <i><IoHelpCircleOutline/></i> </a>
                     <a href="/student" className="menu-item" id={'students'} data-pr-tooltip="Φοιτητές"> <i><FaUserGraduate/></i> </a>
                     <a href="/teacher" className="menu-item" id={'teachers'} data-pr-tooltip="Εκπαιδευτικοί"> <i><FaChalkboardTeacher/></i> </a>
@@ -57,6 +58,20 @@ function UniversalNavbar() {
                 {/*        </filter>*/}
                 {/*    </defs>*/}
                 {/*</svg>*/}
+
+                <div id="popup-log" className="overlay">
+                    <div className="popup">
+                        <div className="content">
+                            Κάποιο από τα στοιχεία σας ήταν λανθασμένο, παρακαλώ ξαναπροσπαθήστε.
+                        </div>
+                        <ul className="buttons1">
+                            <li className="buttons-c1">
+                                <a href="/"
+                                   className="confirm">OK</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
         </div>
     );
 }

@@ -96,6 +96,13 @@
     background: #123C5A;
     color: whitesmoke;
 }
+
+#start {
+    font-size: 70px;
+    line-height: 100px;
+    line-height: 100px;
+}
+
 #profile {
     font-size: 70px;
     line-height: 100px;
@@ -137,25 +144,31 @@
 .menu-open:checked ~ .menu-item {
     transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.menu-open:checked ~ #profile {
+
+.menu-open:checked ~ #start {
     transition-duration: 190ms;
     transform: translate3d(-110px, 0, 0);
 }
+
+.menu-open:checked ~ #profile {
+    transition-duration: 190ms;
+    transform: translate3d(-220px, 0, 0);
+}
 .menu-open:checked ~ #help {
     transition-duration: 290ms;
-    transform: translate3d(-220px, 0, 0);
+    transform: translate3d(-330px, 0, 0);
 }
 .menu-open:checked ~ #students {
     transition-duration: 390ms;
-    transform: translate3d(-330px, 0, 0);
+    transform: translate3d(-440px, 0, 0);
 }
 .menu-open:checked ~ #teachers {
     transition-duration: 490ms;
-    transform: translate3d(-440px, 0, 0);
+    transform: translate3d(-550px, 0, 0);
 }
 .menu-open:checked ~ #logout {
     transition-duration: 590ms;
-    transform: translate3d(-550px, 0, 0);
+    transform: translate3d(-660px, 0, 0);
 }
 
 .toolTipUniv {
@@ -170,4 +183,78 @@
     margin: 1vh auto 0; /* Add margin to the top (50px in this example), and center horizontally */
     padding: 1vh; /* Add some padding for better visual appearance */
     border-radius: 15px; /* Add rounded corners with a radius of 15 pixels */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    top: 25%;
+}
+
+.popup .content {
+    font-size: 20px;
+    font-weight: bold;
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+    .box{
+        width: 70%;
+    }
+    .popup{
+        width: 70%;
+    }
+}
+
+.buttons1 {
+
+    li {
+        border-radius: 3px;
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .buttons-c1 {
+        letter-spacing: 0.03em;
+    }
+
+    .confirm {
+        flex-basis: 20%;
+
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        background: #328424;
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
 }
