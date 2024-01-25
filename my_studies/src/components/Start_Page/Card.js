@@ -29,7 +29,8 @@ function Card({text, image, image_alt, data_value, icon, title, type, link}) {
                     </div>}
                 </div>
             </a>}
-            {type === "teacher" && <div className={'card_outer'} data-value={data_value} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+            {type === "teacher" && <a href={link}>
+                <div className={'card_outer'} data-value={data_value} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
                 {!hover && <img src={image} alt={image_alt} className={'image_opaque'}/>}
                 {hover && <img src={image} alt={image_alt} className={'image_opaque_hovered'}/>}
                 { !hover && <div className={'card_title'}>{title}</div>}
@@ -41,8 +42,10 @@ function Card({text, image, image_alt, data_value, icon, title, type, link}) {
                 { !hover && <div className={'icon_in_card_2'}>
                     {icon}
                 </div>}
-            </div>}
-            {type === "admin" && <div className={'card_outer'} data-value={data_value} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+            </div>
+            </a>}
+            {type === "admin" && <a href={link}>
+                <div className={'card_outer'} data-value={data_value} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
                 {!hover && <img src={image} alt={image_alt} className={'image_opaque'}/>}
                 {hover && <img src={image} alt={image_alt} className={'image_opaque_hovered'}/>}
                 { !hover && <div className={'card_title'}>{title}</div>}
@@ -54,7 +57,8 @@ function Card({text, image, image_alt, data_value, icon, title, type, link}) {
                 { !hover && <div className={'icon_in_card_3'}>
                     {icon}
                 </div>}
-            </div>}
+            </div>
+            </a>}
         </div>
     );
 }

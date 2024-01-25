@@ -48,7 +48,7 @@ function StudentDhlwseis() {
             <Sidebar/>
 
             <ul className="breadcrumb">
-                <li><a href="/student">Αρχική Μαθητή</a></li>
+                <li><a href="/student">Αρχική Φοιτητή</a></li>
                 <li>Δηλώσεις</li>
             </ul>
 
@@ -176,6 +176,7 @@ function StudentDhlwseis() {
 
 
             <div className="buttons-c">
+                <a href="/student/forms/final" className="final">Οριστικοποιημένες Δηλώσεις</a>
                 <a href="/student/forms/saved" className="saved">Αποθηκευμένες Δηλώσεις</a>
                 <a href="/student/forms/new-form" className="new">Νέα Δήλωση</a>
             </div>

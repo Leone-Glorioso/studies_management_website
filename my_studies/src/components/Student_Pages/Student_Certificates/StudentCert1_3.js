@@ -89,7 +89,7 @@ function StudentCert1_3() {
             <Sidebar/>
 
             <ul className="breadcrumb">
-                <li><a href="/student">Αρχική Μαθητή</a></li>
+                <li><a href="/student">Αρχική Φοιτητή</a></li>
                 <li><a href="/student/certificates">Πιστοποιητικά</a></li>
                 <li>Νέο Πιστοποιητικό</li>
             </ul>

@@ -92,12 +92,17 @@ export const MenuItems = [
         cName: "nav-links-i",
         icon: "fa-solid fa-house"
     },
-    /*{
+    {
         url: "#",
         cName: "nav-links-i",
         icon: "fa-solid fa-earth-americas"
     },
     {
+        url: "/help/student",
+        cName: "nav-links-i",
+        icon: "fa-solid fa-circle-question"
+    },
+    /*{
         url: "#",
         cName: "nav-links-i",
         icon: "fa-solid fa-bell"

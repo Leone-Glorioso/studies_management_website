@@ -48,7 +48,7 @@ function StudentLessons1() {
             <Sidebar/>
 
             <ul className="breadcrumb">
-                <li><a href="/student">Αρχική Μαθητή</a></li>
+                <li><a href="/student">Αρχική Φοιτητή</a></li>
                 <li><a href="/student/lessons">Μαθήματα</a></li>
                 <li>Όνομα μαθήματος</li>
             </ul>
