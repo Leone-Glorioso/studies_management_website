@@ -2,7 +2,7 @@ import React, {Component, useEffect, useState} from "react";
 import './StudentDhlwseis3.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
 import {useAuth} from "../../Auth/AuthContext";
-import {collection, getDocs, orderBy, query, where} from "firebase/firestore";
+import {collection, getDocs, orderBy, query, where, doc, deleteDoc} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
 
 function StudentDhlwseis3() {
@@ -20,13 +20,22 @@ function StudentDhlwseis3() {
             const docs = await getDocs(q);
             const data = [];
             docs.forEach((doc)=> {
-                data.push({date: doc.data().date.toDate().toDateString(), time: doc.data().date.toDate().toLocaleTimeString("en-GB")});
+                data.push({date: doc.data().date.toDate().toDateString(), time: doc.data().date.toDate().toLocaleTimeString("en-GB"), id: doc.id});
             })
             setComps(data);
         }
         if(isLogged)
             fetdhDhl();
     }, []);
+
+    const onDeleteSaved = (id) => {
+        async function fetdhDhl()
+        {
+            await deleteDoc(doc(db, 'dhloseis', id));
+        }
+        if(isLogged)
+            fetdhDhl();
+    }
 
 
 
@@ -80,7 +89,7 @@ function StudentDhlwseis3() {
                             <li className="table-row">
                                 <div className="col col-1" data-label="date">{comp.date}</div>
                                 <div className="col col-2" data-label="type">{comp.time}</div>
-                                <a href="#popup-d" className="col col-3">Διαγραφή</a>
+                                <a href="#popup-d" className="col col-3" onClick={onDeleteSaved}>Διαγραφή</a>
                                 <a href="#popup-ep" className="col col-4">Προβολή</a>
                                 <a href="#popup-pr-d" className="col col-5">Εκτύπωση</a>
                             </li>
