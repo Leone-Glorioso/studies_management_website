@@ -14,7 +14,6 @@ import {MdSettings} from "react-icons/md";
 import {IoHelpCircleOutline} from "react-icons/io5";
 import {FaChalkboardTeacher, FaUser, FaUserCircle, FaUserFriends} from "react-icons/fa";
 import {GiScrollQuill} from "react-icons/gi";
-import StartInfo from "./StartInfo";
 
 const items_0 = [
     <Card text={'Δες πληροφορίες σχετικά με:\n' +
@@ -65,9 +64,17 @@ const StartPage = () => {
     return (
         <div>
             <StartPageHeader/>
-            <br/>
-            {/*<StartInfo/>*/}
-            <br/>
+
+            <div className="lab">Γραμματείες Πανεπιστημίου Αθηνών</div>
+
+            <div className="info">
+                <div>Ο ιστοχώρος αυτός παρέχει υπηρεσίες σχετικές με φοιτητικά θέματα του Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών.</div>
+                <br/>
+                <div>Εδώ φοιτητές, εκπαιδευτικό προσωπικό έχουν τη δυνατότητα άμεσης επικοινωνίας με την Γραμματέια, από οπουδήποτε στον κόσμο, άμεσα και γρήγορα!</div>
+                <br/>
+                <div className="quest">Έχεις λογαρισμό πρόσβασης;<a href="#" className="login-link">Συνδέσου</a></div>
+                <div>Αλλιώς, κατέβα για να μάθεις περισσότερα και να εξερευνήσεις τον ιστοχώρο.</div>
+            </div>
 
             <div className="container_one">
                 <h1>Γενικές πληροφορίες</h1>

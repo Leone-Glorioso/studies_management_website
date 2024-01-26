@@ -5,6 +5,33 @@
 /*    font-family: 'Arial', sans-serif; !* Adjust the font family as needed *!*/
 /*}*/
 
+.lab {
+    color: #123C5A;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    left: 1%;
+}
+
+.info {
+    width: 65%;
+    height: 51vh;
+    color: black;
+    font-size: 1.25rem;
+    font-weight: normal;
+    position: relative;
+
+    margin-top: 5vh;
+    padding: 50px 10px;
+    background-color: #a1cffa;
+    border-radius: 10px;
+}
+
+.quest {
+    color: #123C5A;
+    font-weight: bold;
+}
+
 .container_one {
     width: 35%;
 
@@ -12,7 +39,10 @@
     border-radius: 10px; /* Rounded corners */
     padding: 20px; /* Padding to create space between the header and container */
     text-align: center; /* Center-align the text within the container */
-    margin-top: 10vh;
+
+    position: relative;
+    left: 65vw;
+    top: -51vh;
 }
 
 .container_two {

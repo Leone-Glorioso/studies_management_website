@@ -39,7 +39,7 @@
     }
 
     .text_in_card {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -51,7 +51,7 @@
     }
 
     .card_title {
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: black;
         position: absolute;
         top: 75%;
@@ -71,7 +71,7 @@
     }
 
     .icon_in_card_1 {
-        font-size: 6rem;
+        font-size: 4rem;
         position: absolute;
         top: 20%;
         left: 52%;
@@ -90,7 +90,7 @@
     }
 
     .icon_in_card_1_alt {
-        font-size: 3rem;
+        font-size: 2rem;
         position: absolute;
         top: 5%;
         left: 57%;
@@ -109,7 +109,7 @@
     }
 
     .icon_in_card_2 {
-        font-size: 6rem;
+        font-size: 4rem;
         position: absolute;
         top: 20%;
         left: 52%;
@@ -128,7 +128,7 @@
     }
 
     .icon_in_card_2_alt {
-        font-size: 3rem;
+        font-size: 2rem;
         position: absolute;
         top: 5%;
         left: 57%;
@@ -148,7 +148,7 @@
 
 
     .icon_in_card_3 {
-        font-size: 6rem;
+        font-size: 4rem;
         position: absolute;
         top: 20%;
         left: 52%;
@@ -167,7 +167,7 @@
     }
 
     .icon_in_card_3_alt {
-        font-size: 3rem;
+        font-size: 2rem;
         position: absolute;
         top: 5%;
         left: 57%;

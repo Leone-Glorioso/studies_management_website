@@ -5,5 +5,7 @@
     height: 40vh;
     border-radius: 15px;
     position: relative;
+    left: 65vw;
+    top: -51vh;
     margin-top: 1vh;
 }
