@@ -11,12 +11,13 @@ function StudentDhlwseis4() {
     const isLogged = Auth.userIsAuthenticated();
     const user = Auth.getUser();
     const [comps, setComps] = useState([]);
+    // const [active, setActive] = useState(false);
     // const [lessons_in, setLessonsIn] = useState([]);
     // const [lessons_out, setLessonsOut] = useState([]);
     // const [pos, setPos] = useState(0);
-    let pos = 0;
-    let lessons_in = [];
-    let lessons_out = [];
+    // let pos = 0;
+    // let lessons_in = [];
+    // let lessons_out = [];
 
     useEffect(() => {
         async function fetdhDhl()
@@ -34,15 +35,11 @@ function StudentDhlwseis4() {
             fetdhDhl();
     }, []);
 
-    async function onClickView(e) {
+    async function onClickView(e, pos) {
         async function fetchLessons()
         {
-            // setLessonsIn([]);
-            // setLessonsOut([]);
-            lessons_in = []
-            lessons_out = []
-            console.log(e.target.id, lessons_in, lessons_out);
-            pos = e.target.id;
+            Auth.setLessonsIn([]);
+            Auth.setLessonsOut([]);
             const db_ref = collection(db, 'dhloseis');
             const q = query(db_ref, where('student_username', '==', user.username), where('type', '==', 'final'), orderBy("date", "desc"));
             const docs = await getDocs(q);
@@ -65,15 +62,10 @@ function StudentDhlwseis4() {
                 else
                     less_out.push({id: doc.id, ...doc.data()});
             })
-            // setLessonsIn(less_in);
-            // setLessonsOut(less_out);
-            lessons_in = less_in;
-            lessons_out = less_out;
-            console.log(lessons_in, lessons_out);
+            Auth.setLessonsIn(less_in);
+            Auth.setLessonsOut(less_out);
         }
         if(isLogged){
-            // console.log(e.target.id);
-            // setPos(e.target.id);
             await fetchLessons();
         }
 
@@ -121,7 +113,7 @@ function StudentDhlwseis4() {
                             <li className="table-row">
                                 <div className="col col-1" data-label="date">{comp.date}</div>
                                 <div className="col col-2" data-label="type">{comp.time}</div>
-                                <a id={index} href="#popup-ep" className="col col-3" onClick={onClickView}>Προβολή</a>
+                                <a id={index} href="#popup-ep" className="col col-3" onClick={(e) => onClickView(e, index)}>Προβολή</a>
                             </li>
                         );
                     })}
@@ -183,7 +175,7 @@ function StudentDhlwseis4() {
                                 <th>Τίτλος Μαθήματος</th>
                                 <th>Δήλωση</th>
                             </tr>
-                            {lessons_in.map((item) => {
+                            {Auth.getLessonsIn().map((item) => {
                                 return (
                                     <tr>
                                         <td>{item.num}</td>
@@ -193,7 +185,7 @@ function StudentDhlwseis4() {
                                 )
                             })}
 
-                            {lessons_out.map((item) => {
+                            {Auth.getLessonsOut().map((item) => {
                                 return (
                                     <tr>
                                         <td>{item.num}</td>
