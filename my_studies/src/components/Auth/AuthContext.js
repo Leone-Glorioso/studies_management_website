@@ -22,7 +22,8 @@ function AuthProvider({ children }) {
     const userLogin = (user) => {
         sessionStorage.setItem("user", JSON.stringify(user));
         cookies.set('user', JSON.stringify(user), {
-            expires: new Date(Date.now() + 5000000)
+            expires: new Date(Date.now() + 5000000),
+            path: '/'
         })
         setUser(user);
     };
