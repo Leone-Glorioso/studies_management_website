@@ -37,9 +37,6 @@ function UniversalNavbar() {
             const q = query(db_ref, where('username', '==', username), where('password', '==', password));
             const docs = await getDocs(q);
             const data = [];
-            // docs.forEach((doc) => {
-            //     SetOcc(doc.data().type.toString());
-            // })
             if(docs.size === 0)
             {
                 navigate('#popup-er');
@@ -73,6 +70,10 @@ function UniversalNavbar() {
         setActiveLogin(false);
     }
 
+    const logout = (e) => {
+        Auth.userLogout();
+    }
+
     return (
         <div>
 
@@ -94,62 +95,10 @@ function UniversalNavbar() {
                     <a href="/help" className="menu-item" id={'help'} data-pr-tooltip="Βοήθεια"> <i><IoHelpCircleOutline/></i> </a>
                     <a href="/student" className="menu-item" id={'students'} data-pr-tooltip="Φοιτητές"> <i><FaUserGraduate/></i> </a>
                     <a href="/teacher" className="menu-item" id={'teachers'} data-pr-tooltip="Εκπαιδευτικοί"> <i><FaChalkboardTeacher/></i> </a>
-                    {isLogged && <a href={"javascript:window.location.href=window.location.href"} className="menu-item" id={'logout'} onClick={Auth.userLogout} data-pr-tooltip="Αποσύνδεση"> <i><TbLogout/></i> </a>}
+                    {isLogged && <a href={"javascript:window.location.href=window.location.href"} className="menu-item" id={'logout'} onClick={logout} data-pr-tooltip="Αποσύνδεση"> <i><TbLogout/></i> </a>}
 
 
                 </nav>
-
-            {/*{!activeLogin && <div className={"overlay-login"}>*/}
-            {/*    /!*<br/>*!/*/}
-            {/*    <div className={"mainContainer"}>*/}
-            {/*        <Button className={'red-button-round'} >*/}
-            {/*            <IoClose/>*/}
-            {/*        </Button>*/}
-            {/*        <br/>*/}
-            {/*        <div className="inputContainer">*/}
-            {/*            <div className="input-group">*/}
-            {/*                <span className="icon">*/}
-            {/*                  <FaUser />*/}
-            {/*                </span>*/}
-            {/*                <input*/}
-            {/*                    value={username}*/}
-            {/*                    placeholder="Όνομα Χρήστη"*/}
-            {/*                    onChange={ev => setUsername(ev.target.value)}*/}
-            {/*                    className="inputBox"*/}
-            {/*                />*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*        <br />*/}
-            {/*        <div className="inputContainer">*/}
-            {/*            <div className="input-group">*/}
-            {/*                    <span className="icon">*/}
-            {/*                      <FaLock />*/}
-            {/*                    </span>*/}
-            {/*                <input*/}
-            {/*                    value={password}*/}
-            {/*                    placeholder="Κωδικός"*/}
-            {/*                    type="password" // Ensure the input type is set to "password" for password fields*/}
-            {/*                    onChange={ev => setPassword(ev.target.value)}*/}
-            {/*                    className="inputBox"*/}
-            {/*                />*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*        <br/>*/}
-            {/*        <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>*/}
-            {/*        <br/>*/}
-            {/*        <div className={"container_special"}>*/}
-            {/*            <Button className="green-button-round" tooltip="Ασφαλής Σύνδεση: Χρησιμοποιείται εάν βρίσκεστε σε δημόσιο δίκτυο" tooltipOptions={{ position: 'bottom' , className: 'tooltipContainer', fontSize: '2rem', cursor: 'pointer'}} onClick={onButtonClick}>*/}
-            {/*                <FaUnlock id={"icon1"}/>*/}
-            {/*                <FaLock id={"icon2"}/>*/}
-            {/*            </Button>*/}
-            {/*            <input*/}
-            {/*                className={"green-button"}*/}
-            {/*                type="button"*/}
-            {/*                onClick={onButtonClick}*/}
-            {/*                value={"Σύνδεση"} />*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</div>}*/}
 
             {activeLogin && <div className={"overlay-login-checked"}>
                 <div className={"mainContainer"}>
