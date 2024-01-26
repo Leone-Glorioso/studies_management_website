@@ -94,7 +94,7 @@ function UniversalNavbar() {
                     <a href="/help" className="menu-item" id={'help'} data-pr-tooltip="Βοήθεια"> <i><IoHelpCircleOutline/></i> </a>
                     <a href="/student" className="menu-item" id={'students'} data-pr-tooltip="Φοιτητές"> <i><FaUserGraduate/></i> </a>
                     <a href="/teacher" className="menu-item" id={'teachers'} data-pr-tooltip="Εκπαιδευτικοί"> <i><FaChalkboardTeacher/></i> </a>
-                    {isLogged && <a href={"javascript:window.location.href=window.location.href"} className="menu-item" id={'logout'} onClick={()=>{Auth.userLogout()}} data-pr-tooltip="Αποσύνδεση"> <i><TbLogout/></i> </a>}
+                    {isLogged && <a href={"javascript:window.location.href=window.location.href"} className="menu-item" id={'logout'} onClick={Auth.userLogout} data-pr-tooltip="Αποσύνδεση"> <i><TbLogout/></i> </a>}
 
 
                 </nav>

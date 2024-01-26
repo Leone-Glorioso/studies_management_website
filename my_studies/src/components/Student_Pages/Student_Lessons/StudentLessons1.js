@@ -50,7 +50,7 @@ function StudentLessons1() {
             <ul className="breadcrumb">
                 <li><a href="/student">Αρχική Φοιτητή</a></li>
                 <li><a href="/student/lessons">Μαθήματα</a></li>
-                <li>Όνομα μαθήματος</li>
+                <li>{lesson.name}</li>
             </ul>
 
             <div className="Lessons-info">
