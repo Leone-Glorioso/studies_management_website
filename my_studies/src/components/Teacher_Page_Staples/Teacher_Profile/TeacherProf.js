@@ -225,7 +225,7 @@ function TeacherProf() {
             </ul>
 
             <p className="title2">Προσωπικά στοιχεία:</p>
-            {!isLogged && <div className="pers-info">
+            {!isLogged && <div className="pers-info-teach">
                 <ul className="info">
                     {Prof2.map((item, index) => {
                         return (
@@ -238,7 +238,7 @@ function TeacherProf() {
                     })}
                 </ul>
             </div>}
-            {isLogged && <div className="pers-info-logged">
+            {isLogged && <div className="pers-info-logged-teach">
                 <ul className="info">
                     {Prof2_logged.map((item, index) => {
                         return (

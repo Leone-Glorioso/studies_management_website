@@ -107,7 +107,7 @@ p.title2 {
     color: #123C5A;
 }
 
-.pers-info{
+.pers-info-teach{
     display: flex;
     align-items: center;
     font-size: 30px;
@@ -128,12 +128,12 @@ p.title2 {
     }
 }
 
-.pers-info-logged{
+.pers-info-logged-teach{
     display: flex;
     align-items: center;
     font-size: 30px;
     position: fixed;
-    top: 610px;
+    top: 350px;
     left: 290px;
 
     padding: 10px 100px 10px 10px;

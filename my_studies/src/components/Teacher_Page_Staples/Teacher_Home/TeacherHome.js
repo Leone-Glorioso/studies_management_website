@@ -15,26 +15,22 @@ function TeacherHome()  {
     useEffect(() => {
         async function fetchLessons()
         {
-            const db_ref = collection(db, 'dhloseis');
-            const q = query(db_ref, where('student_username', '==', user.username), where('isCurrent', '==', true));
-            const docs = await getDocs(q);
+            const docs = await getDocs(collection(db, 'lessons'));
             const data = [];
             docs.forEach((doc)=> {
-                data.push(doc.data().lessons);
+                data.push({id: doc.id, ...doc.data()});
             })
-            if(data.length !== 1)
-                return;
-            const data_alt = [];
-            const lesson_names = data[0];
-            for (const lesson of lesson_names) {
-                const db_ref_alt = collection(db, 'lessons');
-                const q_alt = query(db_ref_alt, where('num', '==', lesson));
-                const docs_alt = await getDocs(q_alt);
-                docs_alt.forEach((doc)=> {
-                    data_alt.push({code: doc.data().num, name: doc.data().name});
-                })
-            }
-            setLessons(data_alt);
+            const less = []
+            data.forEach((lesson) => {
+                // console.log(user.username in lesson.teachers, lesson, lesson.teachers, user.username);
+                if(lesson.teachers.indexOf(user.username) > -1){
+                    less.push(lesson);
+                    console.log("ENTER");
+                }
+
+            })
+            console.log(less);
+            setLessons(less);
         }
         if(isLogged)
             fetchLessons();
@@ -71,7 +67,7 @@ function TeacherHome()  {
                     {lessons.map( (lesson) => {
                             return(
                                 <tr>
-                                    <td>{lesson.code}</td>
+                                    <td>{lesson.num}</td>
                                     <td>{lesson.name}</td>
                                 </tr>
                             )
