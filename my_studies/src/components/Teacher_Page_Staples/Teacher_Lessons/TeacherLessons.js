@@ -14,26 +14,37 @@ function TeacherLessons() {
     useEffect(() => {
         async function fetchLessons()
         {
-            const db_ref = collection(db, 'dhloseis');
-            const q = query(db_ref, where('student_username', '==', user.username), where('isCurrent', '==', true));
-            const docs = await getDocs(q);
+            const docs = await getDocs(collection(db, 'lessons'));
             const data = [];
             docs.forEach((doc)=> {
-                data.push(doc.data().lessons);
+                data.push({id: doc.id, ...doc.data()});
             })
-            if(data.length !== 1)
-                return;
-            const data_alt = [];
-            const lesson_names = data[0];
-            for (const lesson of lesson_names) {
-                const db_ref_alt = collection(db, 'lessons');
-                const q_alt = query(db_ref_alt, where('num', '==', lesson));
-                const docs_alt = await getDocs(q_alt);
+            const less = [];
+            data.forEach((lesson) => {
+                // console.log(user.username in lesson.teachers, lesson, lesson.teachers, user.username);
+                if(lesson.teachers.indexOf(user.username) > -1){
+                    less.push(lesson);
+                }
+
+            })
+            console.log(less);
+            const less_with_details = [];
+            for (const lesson of less){
+                const db_ref = collection(db, 'grading');
+                console.log(lesson.num)
+                const q = query(db_ref, where('teacher', '==', user.username), where('lesson', '==', lesson.num));
+                const docs_alt = await getDocs(q);
+                const data_alt = [];
                 docs_alt.forEach((doc)=> {
-                    data_alt.push({code: doc.data().num, name: doc.data().name});
+                    data_alt.push({ ...doc.data()});
                 })
+                if(data_alt.length === 1)
+                    less_with_details.push({less: lesson, grading: data_alt[0]});
+                else
+                    less_with_details.push(lesson);
             }
-            setLessons(data_alt);
+            console.log(less_with_details);
+            setLessons(less_with_details);
         }
         if(isLogged)
             fetchLessons();
@@ -52,21 +63,6 @@ function TeacherLessons() {
                 <li>Βαθμολόγια</li>
             </ul>
 
-            {/*<div className="Lessons">*/}
-            {/*    <ul className="lesson">*/}
-            {/*        {LessonItems.map((item, index) => {*/}
-            {/*            return (*/}
-            {/*                <li key={index}>*/}
-            {/*                    <a href={item.url} className={item.cName}>*/}
-            {/*                        {item.title}*/}
-            {/*                    </a>*/}
-            {/*                    <div className="code">Κωδ</div>*/}
-            {/*                    <div className="semester">ΕΞ</div>*/}
-            {/*                </li>*/}
-            {/*            )*/}
-            {/*        })}*/}
-            {/*    </ul>*/}
-            {/*</div>*/}
 
             {!isLogged && <table className="table-l">
                 <tr>
@@ -97,14 +93,30 @@ function TeacherLessons() {
                     <tr>
                         <th>Κωδικός Μαθήματος</th>
                         <th>Τίτλος Μαθήματος</th>
-                        <th>Τίτλος Μαθήματος</th>
                         <th>Κατάσταση</th>
                         <th></th>
                     </tr>
                     {lessons.map((lesson) => {
-                        return (
-                            <tr>
-                                    <td>{lesson.code}</td>
+                        if(lesson.grading === undefined)
+                            return (
+                                <tr>
+                                    <td>{lesson.num}</td>
+                                    <td>{lesson.name}</td>
+                                    <td><a href={'/teacher/lessons/new-grades'} className="button-n">Νέο Βαθμολόγιο</a></td>
+                                </tr>
+                            )
+                        else if(lesson.grading.state === 'temporary')
+                            return (
+                                <tr>
+                                    <td>{lesson.less.num}</td>
+                                    <td>{lesson.less.name}</td>
+                                    <td><a href={'/teacher/lessons/edit-grades'} className="button-e">Επεξεργασία</a></td>
+                                </tr>
+                                )
+                        else
+                            return (
+                                <tr>
+                                    <td>{lesson.num}</td>
                                     <td>{lesson.name}</td>
                                 </tr>
                             )
