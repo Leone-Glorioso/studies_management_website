@@ -54,6 +54,10 @@ function TeacherLessons() {
         Auth.setWindow(true);
     }
 
+    const onGoToEdit = (e,lesson) => {
+        Auth.setLessonsEdit(lesson);
+    }
+
     return (
         <div>
             <Sidebar/>
@@ -110,7 +114,7 @@ function TeacherLessons() {
                                 <tr>
                                     <td>{lesson.less.num}</td>
                                     <td>{lesson.less.name}</td>
-                                    <td><a href={'/teacher/lessons/edit-grades'} className="button-e">Επεξεργασία</a></td>
+                                    <td><a onClick={(e) => onGoToEdit(e, lesson)} href={'/teacher/lessons/edit-grades'} className="button-e">Επεξεργασία</a></td>
                                 </tr>
                                 )
                         else

@@ -12,6 +12,7 @@ function AuthProvider({ children }) {
     const [deleteId, setDeleteId] = useState(0);
     const [lessons_in, setLessons_In] = useState([]);
     const [lessons_out, setLessons_Out] = useState([]);
+    const [lesson_editing, setLesson_Editing] = useState(null);
     const cookies = new Cookies();
 
     const userIsAuthenticated = () => {
@@ -117,6 +118,18 @@ function AuthProvider({ children }) {
         setLessons_Out(l);
     }
 
+    const getLessonsEdit = () => {
+        return cookies.get('less_edit')
+    }
+
+    const setLessonsEdit = (l) => {
+        sessionStorage.setItem("less_edit", JSON.stringify(l));
+        cookies.set('less_edit', JSON.stringify(l), {
+            expires: new Date(Date.now() + 1000000)
+        })
+        setLesson_Editing(l);
+    }
+
     const contextValue = {
         user,
         userIsAuthenticated,
@@ -143,6 +156,9 @@ function AuthProvider({ children }) {
         lessons_out,
         getLessonsOut,
         setLessonsOut,
+        lesson_editing,
+        setLessonsEdit,
+        getLessonsEdit,
     };
 
     return (

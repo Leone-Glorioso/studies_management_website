@@ -33,51 +33,27 @@ function TeacherLessons1() {
     const Auth = useAuth();
     const isLogged = Auth.userIsAuthenticated();
     const user = Auth.getUser();
-    const [lessons, setLessons] = useState([]);
+    const [students, setStudents] = useState([]);
 
     useEffect(() => {
-        async function fetchLessons()
+        async function fetchStudents()
         {
-            const db_ref = collection(db, 'dhloseis');
-            const q = query(db_ref, where('student_username', '==', user.username), where('isCurrent', '==', true));
-            const docs = await getDocs(q);
-            const data = [];
-            docs.forEach((doc)=> {
-                data.push(doc.data().lessons);
-            })
-            if(data.length !== 1)
-                return;
-            const data_alt = [];
-            const lesson_names = data[0];
-            for (const lesson of lesson_names) {
-                const db_ref_alt = collection(db, 'lessons');
-                const q_alt = query(db_ref_alt, where('num', '==', lesson));
-                const docs_alt = await getDocs(q_alt);
-                docs_alt.forEach((doc)=> {
-                    data_alt.push({code: doc.data().num, name: doc.data().name});
+            const list_of = []
+            for(const grade of Auth.getLessonsEdit().grading.grades)
+            {
+                const db_ref = collection(db, 'user');
+                const q = query(db_ref, where('username', '==', grade.student));
+                const docs = await getDocs(q);
+                docs.forEach((doc) => {
+                    list_of.push({username: doc.data().username, name: doc.data().name, surname: doc.data().surname, grade: grade.grade})
                 })
             }
-            setLessons(data_alt);
-        }
-        if(isLogged)
-            fetchLessons();
-    }, []);
+            setStudents(list_of);
 
-    // const onGoToLessonPage = async (event) => {
-    //     async function fetchLesson()
-    //     {
-    //         const lesson_id = lessons[event.currentTarget.id].code;
-    //         const db_ref = collection(db, 'lessons');
-    //         const q = query(db_ref, where('num', '==', lesson_id));
-    //         const docs = await getDocs(q);
-    //         const data = [];
-    //         docs.forEach((doc) => {
-    //             data.push({id: doc.id, ...doc.data()})
-    //         })
-    //         Auth.lessonSetter(data[0]);
-    //     }
-    //     await fetchLesson();
-    // }
+        }
+        if(isLogged && Auth.getLessonsEdit() !== undefined)
+            fetchStudents();
+    }, []);
 
     return (
         <div>
@@ -89,23 +65,9 @@ function TeacherLessons1() {
                 <li>Επεξεργασία βαθμολογίου</li>
             </ul>
 
-            <p className="les-title">Όνομα μαθήματος</p>
+            {(!isLogged || Auth.getLessonsEdit() === undefined) && <p className="les-title">Όνομα μαθήματος</p>}
+            {isLogged && Auth.getLessonsEdit() !== undefined && <p className="les-title">{Auth.getLessonsEdit().less.name}</p>}
 
-            {/*<div className="Lessons">*/}
-            {/*    <ul className="lesson">*/}
-            {/*        {LessonItems.map((item, index) => {*/}
-            {/*            return (*/}
-            {/*                <li key={index}>*/}
-            {/*                    <a href={item.url} className={item.cName}>*/}
-            {/*                        {item.title}*/}
-            {/*                    </a>*/}
-            {/*                    <div className="code">Κωδ</div>*/}
-            {/*                    <div className="semester">ΕΞ</div>*/}
-            {/*                </li>*/}
-            {/*            )*/}
-            {/*        })}*/}
-            {/*    </ul>*/}
-            {/*</div>*/}
 
             {!isLogged && <table className="table-s">
                 <tr>
@@ -137,11 +99,13 @@ function TeacherLessons1() {
                         <th>Επώνυμο</th>
                         <th>Βαθμός</th>
                     </tr>
-                    {lessons.map((lesson) => {
+                    {students.map((student) => {
                             return (
                                 <tr>
-                                    <td>{lesson.code}</td>
-                                    <td>{lesson.name}</td>
+                                    <td>{student.username}</td>
+                                    <td>{student.name}</td>
+                                    <td>{student.surname}</td>
+                                    <td>{student.grade}</td>
                                 </tr>
                             )
                         }
