@@ -28,10 +28,16 @@ function StudentDhlwseis3() {
             fetdhDhl();
     }, []);
 
-    const onDeleteSaved = (id) => {
+    const onPressDel = (e) => {
+        Auth.setDelId(e.target.id);
+        console.log(Auth.deleteId);
+    }
+
+    const onDeleteSaved = () => {
         async function fetdhDhl()
         {
-            await deleteDoc(doc(db, 'dhloseis', id));
+            await deleteDoc(doc(db, 'dhloseis', Auth.getDelId()));
+            Auth.setDelId(0);
         }
         if(isLogged)
             fetdhDhl();
@@ -89,7 +95,7 @@ function StudentDhlwseis3() {
                             <li className="table-row">
                                 <div className="col col-1" data-label="date">{comp.date}</div>
                                 <div className="col col-2" data-label="type">{comp.time}</div>
-                                <a href="#popup-d" className="col col-3" onClick={onDeleteSaved}>Διαγραφή</a>
+                                <a id={comp.id} href="#popup-d" className="col col-3" onClick={onPressDel}>Διαγραφή</a>
                                 <a href="#popup-ep" className="col col-4">Προβολή</a>
                                 <a href="#popup-pr-d" className="col col-5">Εκτύπωση</a>
                             </li>
@@ -112,7 +118,7 @@ function StudentDhlwseis3() {
                 </div>
             </div>
 
-            <div id="popup-d" className="overlay">
+            {!isLogged && <div id="popup-d" className="overlay">
                 <div className="popup">
                     <div className="content">
                         Σίγουρα θέλετε να διαγράψετε τη δήλωση;
@@ -124,7 +130,21 @@ function StudentDhlwseis3() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>}
+
+            {isLogged && <div id="popup-d" className="overlay">
+                <div className="popup">
+                    <div className="content">
+                        Σίγουρα θέλετε να διαγράψετε τη δήλωση;
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/student/forms/saved" className="cancel-p">Άκυρο</a>
+                            <a href="/student/forms/saved" className="delete" onClick={onDeleteSaved}>Διαγραφή</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
 
             <div id="popup-ep" className="overlay">
                 <div className="popup-ep-s">

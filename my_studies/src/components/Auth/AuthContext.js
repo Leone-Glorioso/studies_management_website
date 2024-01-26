@@ -9,6 +9,7 @@ function AuthProvider({ children }) {
     const [lesson, setLesson] = useState(null);
     const [type, typeSet] = useState(0);
     const [windowState, setWindowState] = useState(false);
+    const [deleteId, setDeleteId] = useState(0);
     const cookies = new Cookies();
 
     const userIsAuthenticated = () => {
@@ -77,6 +78,18 @@ function AuthProvider({ children }) {
         setWindowState(window);
     }
 
+    const getDelId = () => {
+        return cookies.get('del')
+    }
+
+    const setDelId = (del) => {
+        sessionStorage.setItem("del", JSON.stringify(del));
+        cookies.set('del', JSON.stringify(del), {
+            expires: new Date(Date.now() + 1000000)
+        })
+        setWindowState(del);
+    }
+
     const contextValue = {
         user,
         userIsAuthenticated,
@@ -94,6 +107,9 @@ function AuthProvider({ children }) {
         windowState,
         setWindow,
         getWindow,
+        deleteId,
+        setDelId,
+        getDelId,
     };
 
     return (
