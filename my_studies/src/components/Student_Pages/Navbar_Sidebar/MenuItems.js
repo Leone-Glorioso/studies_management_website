@@ -73,7 +73,7 @@ export const MenuItems2_alt = [
         title: " Ρυθμίσεις"
     },
     {
-        url: "#",
+        url: "/student/help",
         cName: "nav-links-side",
         icon: "fa-solid fa-circle-question",
         title: " Βοήθεια"
@@ -98,7 +98,7 @@ export const MenuItems = [
         icon: "fa-solid fa-earth-americas"
     },
     {
-        url: "/help/student",
+        url: "/student/help",
         cName: "nav-links-i",
         icon: "fa-solid fa-circle-question"
     },

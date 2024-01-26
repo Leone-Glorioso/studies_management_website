@@ -32,6 +32,8 @@ import TeacherLessons3 from "./components/Teacher_Page_Staples/Teacher_Lessons/T
 import TeacherLessons4 from "./components/Teacher_Page_Staples/Teacher_Lessons/TeacherLessons4";
 import TeacherProf from "./components/Teacher_Page_Staples/Teacher_Profile/TeacherProf";
 import {AuthProvider} from "./components/Auth/AuthContext";
+import StudentHelp from "./components/Student_Pages/Student_Help/Student_Help";
+import TeacherHelp from "./components/Teacher_Page_Staples/Teacher_Help/Teacher_Help";
 
 function App() {
     return(
@@ -39,6 +41,7 @@ function App() {
             <Router>
               <Routes>
                   <Route path='/teacher/profile' element={<TeacherProf/>} />
+                  <Route path='/teacher/help' element={<TeacherHelp/>} />
                   <Route path='/teacher/lessons/saved-grades' element={<TeacherLessons4/>} />
                   <Route path='/teacher/lessons/new-grades' element={<TeacherLessons3/>} />
                   <Route path='/teacher/lessons/fin-grades' element={<TeacherLessons2/>} />
@@ -46,6 +49,7 @@ function App() {
                   <Route path='/teacher/lessons' element={<TeacherLessons/>} />
                   <Route path='/teacher' element={<TeacherHome/>} />
                   <Route path='/student/profile' element={<StudentProf/>} />
+                  <Route path='/student/help' element={<StudentHelp/>} />
                   <Route path='/student/lessons/lesson' element={<StudentLessons1/>} />
                   <Route path='/student/lessons' element={<StudentLessons/>} />
                   <Route path='/student/forms/final' element={<StudentDhlwseis4/>} />

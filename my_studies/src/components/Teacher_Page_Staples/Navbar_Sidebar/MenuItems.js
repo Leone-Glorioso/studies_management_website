@@ -88,7 +88,7 @@ export const MenuItems = [
         icon: "fa-solid fa-earth-americas"
     },
     {
-        url: "/help/teacher",
+        url: "/teacher/help",
         cName: "nav-links-i",
         icon: "fa-solid fa-circle-question"
     },
