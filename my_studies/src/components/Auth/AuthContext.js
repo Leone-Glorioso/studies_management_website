@@ -37,7 +37,7 @@ function AuthProvider({ children }) {
     const userLogout = () => {
         // Clear the user data from local storage
         sessionStorage.removeItem("user");
-        cookies.remove('user')
+        cookies.remove('user', {path: '/'})
         setUser(null);
     };
 
