@@ -75,6 +75,10 @@ function StudentDhlwseis1() {
         console.log(checked);
     }
 
+    const onNotLogged = () => {
+        Auth.setWindow(true);
+    }
+
     return (
         <div>
             <Sidebar/>
@@ -141,7 +145,8 @@ function StudentDhlwseis1() {
             <div className="buttons-c">
                 <a href="/student/forms" className="cancel"> Άκυρο</a>
                 <a href="/student/forms/saved" className="temp">Προσωρινή αποθήκευση</a>
-                <a href="/student/forms/new-form/done" className="submit">Οριστική υποβολή</a>
+                {!isLogged && <a onClick={onNotLogged} className="submit">Οριστική υποβολή</a>}
+                {isLogged && <a href="/student/forms/new-form/done" className="submit">Οριστική υποβολή</a>}
             </div>
 
 

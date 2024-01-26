@@ -7,11 +7,14 @@
 }
 
 .logo_ekpa {
-    height: 15vh;
+    height: 13.2vh;
+    position: static;
+    /*margin-bottom: 20px;*/
 }
 
 .out_div{
     margin-bottom: 0px;
+    height: 13.2vh;
 }
 
 .NavbarItems{

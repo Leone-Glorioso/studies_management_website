@@ -24,10 +24,10 @@ function UniversalNavbar() {
 
     const Auth = useAuth()
     const isLogged = Auth.userIsAuthenticated()
-    const [activeLogin, setActiveLogin] = useState(false)
+    let activeLogin = Auth.getWindow()
+    const setActiveLogin = Auth.setWindow
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [occ, SetOcc] = useState("");
     const navigate = useNavigate();
 
     const onButtonClick = async () => {
@@ -37,39 +37,29 @@ function UniversalNavbar() {
             const q = query(db_ref, where('username', '==', username), where('password', '==', password));
             const docs = await getDocs(q);
             const data = [];
-            docs.forEach((doc) => {
-                SetOcc(doc.data().type.toString());
-            })
+            // docs.forEach((doc) => {
+            //     SetOcc(doc.data().type.toString());
+            // })
             if(docs.size === 0)
             {
                 navigate('#popup-er');
                 return;
             }
-            if(occ === "student")
-            {
-                console.log("Entered student");
-                docs.forEach((doc)=> {
+            docs.forEach((doc)=> {
+                if(doc.data().type === "student")
                     data.push({id: doc.id, tk: doc.data().TK, address: doc.data().address, date_of_birth: doc.data().date_of_birth.toDate().toDateString(), email: doc.data().email,
                         father: doc.data().father, first_sign_in: doc.data().first_sign_in.toDate().toDateString(), mother: doc.data().mother, name: doc.data().name,
                         phone: doc.data().phone, semester: doc.data().semester, semester_first_signup: doc.data().semester_first_signup, surname: doc.data().surname,
                         type: doc.data().type, username: doc.data().username, year: doc.data().year});
-                })
-                Auth.userLogin(data[0]);
-                setActiveLogin(false);
-                navigate(".");
-            }
-            else
-            {
-                console.log("Entered teacher");
-                docs.forEach((doc)=> {
+
+                else
                     data.push({id: doc.id, tk: doc.data().TK, address: doc.data().address, date_of_birth: doc.data().date_of_birth.toDate().toDateString(), email: doc.data().email,
                         father: doc.data().father, first_sign_in: doc.data().first_sign_in.toDate().toDateString(), mother: doc.data().mother, name: doc.data().name,
                         phone: doc.data().phone, surname: doc.data().surname, type: doc.data().type, username: doc.data().username});
-                })
-                Auth.userLogin(data[0]);
-                setActiveLogin(false);
-                navigate(".");
-            }
+            })
+            Auth.userLogin(data[0]);
+            setActiveLogin(false);
+            navigate(0);
 
         }
         await fetchUser();

@@ -39,21 +39,9 @@ function TeacherLessons() {
             fetchLessons();
     }, []);
 
-    // const onGoToLessonPage = async (event) => {
-    //     async function fetchLesson()
-    //     {
-    //         const lesson_id = lessons[event.currentTarget.id].code;
-    //         const db_ref = collection(db, 'lessons');
-    //         const q = query(db_ref, where('num', '==', lesson_id));
-    //         const docs = await getDocs(q);
-    //         const data = [];
-    //         docs.forEach((doc) => {
-    //             data.push({id: doc.id, ...doc.data()})
-    //         })
-    //         Auth.lessonSetter(data[0]);
-    //     }
-    //     await fetchLesson();
-    // }
+    const onNotLogged = () => {
+        Auth.setWindow(true);
+    }
 
     return (
         <div>
@@ -91,16 +79,18 @@ function TeacherLessons() {
                     <td>000000</td>
                     <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
                     <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
-                    <td><a href="/teacher/lessons/edit-grades" className="button-e">Επεξεργασία</a></td>
+                    <td><a onClick={onNotLogged} className="button-e">Επεξεργασία</a></td>
                 </tr>
                 <tr>
                     <td>111111</td>
                     <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
                     <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
-                    <td><a href="/teacher/lessons/new-grades" className="button-n">Νέο Βαθμολόγιο</a></td>
+                    <td><a onClick={onNotLogged} className="button-n">Νέο Βαθμολόγιο</a></td>
                 </tr>
 
             </table>}
+
+            {/*<td><a href="/teacher/lessons/edit-grades" className="button-e">Επεξεργασία</a></td>*/}
 
             {isLogged &&
                 <table className="table-l">

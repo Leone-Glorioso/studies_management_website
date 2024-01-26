@@ -8,6 +8,7 @@ function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [lesson, setLesson] = useState(null);
     const [type, typeSet] = useState(0);
+    const [windowState, setWindowState] = useState(false);
     const cookies = new Cookies();
 
     const userIsAuthenticated = () => {
@@ -64,6 +65,18 @@ function AuthProvider({ children }) {
         typeSet(type);
     }
 
+    const getWindow = () => {
+        return cookies.get('window')
+    }
+
+    const setWindow = (window) => {
+        sessionStorage.setItem("window", JSON.stringify(window));
+        cookies.set('window', JSON.stringify(window), {
+            expires: new Date(Date.now() + 1000000)
+        })
+        setWindowState(window);
+    }
+
     const contextValue = {
         user,
         userIsAuthenticated,
@@ -78,6 +91,9 @@ function AuthProvider({ children }) {
         type,
         getType,
         setType,
+        windowState,
+        setWindow,
+        getWindow,
     };
 
     return (

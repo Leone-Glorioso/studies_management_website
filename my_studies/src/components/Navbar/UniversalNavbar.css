@@ -305,6 +305,7 @@
     margin: 2vh auto 0; /* Add margin to the top (50px in this example), and center horizontally */
     padding: 1vw; /* Add some padding for better visual appearance */
     border-radius: 15px; /* Add rounded corners with a radius of 15 pixels */
+    z-index: 10000000;
 }
 
 .titleContainer {

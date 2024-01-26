@@ -28,6 +28,7 @@ function Sidebar() {
 
     return (
         <div>
+            <img src={'/logo.png'} alt={"Logo"} className={'logo_ekpa_special'}/>
             <UniversalNavbar/>
             <nav className="SidebarItems">
                 <ul className="prof">
@@ -100,10 +101,10 @@ function Sidebar() {
                 </ul>
             </nav>
 
-            {/*<div className="search-bar">*/}
-            {/*    <input type="text" placeholder=" Αναζήτηση"/>*/}
-            {/*    <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>*/}
-            {/*</div>*/}
+            <div className="search-bar">
+                <input type="text" placeholder=" Αναζήτηση"/>
+                <button className="s-button"><i className="fa-solid fa-magnifying-glass"></i></button>
+            </div>
 
         </div>
 

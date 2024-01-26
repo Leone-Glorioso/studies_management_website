@@ -279,8 +279,8 @@ ul.breadcrumb {
     align-items: center;
     font-size: 30px;
     position: fixed;
-    top: 610px;
-    left: 290px;
+    top: 380px;
+    left: 30vw;
 
     padding: 10px 300px 10px 10px;
     border-radius: 5px;
@@ -300,8 +300,8 @@ ul.breadcrumb {
     align-items: center;
     font-size: 30px;
     position: fixed;
-    top: 450px;
-    left: 290px;
+    top: 380px;
+    left: 30vw;
 
     padding: 10px 100px 10px 10px;
     border-radius: 5px;
