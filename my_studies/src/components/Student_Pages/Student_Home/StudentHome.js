@@ -37,14 +37,14 @@ function StudentHome()  {
             }
             setLessons(data_alt);
         }
-        if(isLogged)
+        if(isLogged && user.type === 'student')
             fetchLessons();
     }, []);
 
     const [Prof1_logged, setProf1_Logged] = useState([]);
 
     useEffect(() => {
-        if (isLogged) {
+        if (isLogged && user.type === 'student') {
             setProf1_Logged([
                 {
                     cName: "prof-info",
@@ -93,7 +93,7 @@ function StudentHome()  {
             }
             setGrades(data_alt);
         }
-        if(isLogged)
+        if(isLogged && user.type === 'student')
             fetchGrades();
     }, []);
 
@@ -107,7 +107,7 @@ function StudentHome()  {
             <a className="title-sp" href="/student/lessons">Τα μαθηματά μου</a>
             <p className="desc-sp">Παρακάτω βλέπεις τα μαθήματα που έχεις δηλώσει το τρέχον εξάμηνο:</p>
 
-            {!isLogged && <table>
+            {(!isLogged || user.type !== 'student') && <table>
                 <tr>
                     <th>Κωδικός Μαθήματος</th>
                     <th>Τίτλος Μαθήματος</th>
@@ -123,7 +123,7 @@ function StudentHome()  {
 
             </table>}
 
-            {isLogged &&
+            {isLogged && user.type === 'student' &&
                 <table>
                     <tr>
                         <th>Κωδικός Μαθήματος</th>
@@ -144,7 +144,7 @@ function StudentHome()  {
             <p className="go-to-lessons">Δες περισσότερα στα: <a href="/student/lessons">Μαθήματα</a></p>
 
             <p className="title1-sp">Σχετικά με της σπουδές μου:</p>
-            {!isLogged && <div className="Study-info-sp">
+            {(!isLogged || user.type !== 'student') && <div className="Study-info-sp">
                 <ul className="info">
                     {Prof1.map((item, index) => {
                         return (
@@ -157,7 +157,7 @@ function StudentHome()  {
                     })}
                 </ul>
             </div>}
-            {isLogged && <div className="Study-info-logged-sp">
+            {isLogged && user.type === 'student' && <div className="Study-info-logged-sp">
                 <ul className="info">
                     {Prof1_logged.map((item, index) => {
                         return (
@@ -173,7 +173,7 @@ function StudentHome()  {
             <p className="go-to-profile">Δες περισσότερα στο: <a href="/student/profile">Προφίλ</a></p>
 
             <p className="title2-sp">Οι τελευταίες βαθμολογίες μου:</p>
-            {!isLogged && <table className="table-gr">
+            {(!isLogged || user.type !== 'student') && <table className="table-gr">
                 <tr>
                     <th>Κωδικός Μαθήματος</th>
                     <th>Τίτλος Μαθήματος</th>
@@ -200,7 +200,7 @@ function StudentHome()  {
                     <td>Χ</td>
                 </tr>
             </table>}
-            {isLogged &&
+            {isLogged && user.type === 'student' &&
                 <table className="table-gr">
                     <tr>
                         <th>Κωδικός Μαθήματος</th>

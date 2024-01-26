@@ -33,7 +33,7 @@ function StudentCert1_2() {
             title: "Ημερομηνία γέννησης"
         },
     ]
-    if(isLogged)
+    if(isLogged && user.type === 'student')
         Prof2_logged = [
             {
                 cName: "prof-info-certs",
@@ -92,7 +92,7 @@ function StudentCert1_2() {
 
             <p className="text">Επιβεβαιωσε τα προσωπικά σου στοιχεία:</p>
 
-            {!isLogged && <div className="pers-info-certs">
+            {(!isLogged || user.type !== 'student') && <div className="pers-info-certs">
                 <ul className="info">
                     {Prof2.map((item, index) => {
                         return (
@@ -105,7 +105,7 @@ function StudentCert1_2() {
                     })}
                 </ul>
             </div>}
-            {isLogged && <div className="pers-info-logged-certs">
+            {isLogged && user.type === 'student' && <div className="pers-info-logged-certs">
                 <ul className="info">
                     {Prof2_logged.map((item, index) => {
                         return (

@@ -41,7 +41,7 @@ function StudentLessons() {
             console.log(data_alt);
             setLessons(data_alt);
         }
-        if(isLogged)
+        if(isLogged && user.type === 'student')
             fetchLessons();
     }, []);
 
@@ -59,7 +59,7 @@ function StudentLessons() {
             console.log(data_alt);
             navigate('/student/lessons/lesson');
         }
-        if(isLogged)
+        if(isLogged && user.type === 'student')
             fetchlesson()
     }
 
@@ -72,7 +72,7 @@ function StudentLessons() {
                 <li>Μαθήματα</li>
             </ul>
 
-            {!isLogged && <table className="lessons">
+            {(!isLogged || user.type !== 'student') && <table className="lessons">
                 <tr>
                     <th>Κωδικός Μαθήματος</th>
                     <th>Τίτλος Μαθήματος</th>
@@ -88,7 +88,7 @@ function StudentLessons() {
 
             </table>}
 
-            {isLogged &&
+            {isLogged && user.type === 'student' &&
                 <table>
                     <tr>
                         <th>Κωδικός Μαθήματος</th>

@@ -65,7 +65,7 @@ function StudentDhlwseis4() {
             Auth.setLessonsIn(less_in);
             Auth.setLessonsOut(less_out);
         }
-        if(isLogged){
+        if(isLogged && user.type === 'student'){
             await fetchLessons();
         }
 
@@ -81,7 +81,7 @@ function StudentDhlwseis4() {
                 <li>Οριστικοποιημένες</li>
             </ul>
 
-            {!isLogged && <div className="container">
+            {(!isLogged || user.type !== 'student') && <div className="container">
                 <ul className="responsive-table-df">
                     <li className="table-header">
                         <div className="col col-1">Ημερομηνία</div>
@@ -101,7 +101,7 @@ function StudentDhlwseis4() {
                 </ul>
             </div>}
 
-            {isLogged && <div className="container">
+            {isLogged && user.type === 'student' && <div className="container">
                 <ul className="responsive-table-df">
                     <li className="table-header">
                         <div className="col col-1">Ημερομηνία</div>
@@ -120,7 +120,7 @@ function StudentDhlwseis4() {
                 </ul>
             </div>}
 
-            {!isLogged && <div id="popup-ep" className="overlay">
+            {(!isLogged || user.type !== 'student') && <div id="popup-ep" className="overlay">
                 <div className="popup-ep-fs">
                     <div className="content">
                         Η δήλωσή σας:
@@ -165,7 +165,7 @@ function StudentDhlwseis4() {
                 </div>
             </div>}
 
-            {isLogged && <div id="popup-ep" className="overlay">
+            {isLogged && user.type === 'student' && <div id="popup-ep" className="overlay">
                 <div className="popup-ep-fs">
                     <div className="content">
                         Η δήλωσή σας:

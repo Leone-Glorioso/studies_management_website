@@ -22,7 +22,7 @@ function StudentCert1_5() {
                 date: Timestamp.now()
             });
         }
-        if(isLogged && Auth.getType() != 0)
+        if(isLogged && user.type === 'student' && Auth.getType() != 0)
         {
             submit_cert();
             Auth.setType(0);

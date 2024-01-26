@@ -47,7 +47,7 @@ function StudentCert() {
                 setCerts(data);
             })
         }
-        if(isLogged)
+        if(isLogged && user.type === 'student')
             fetchCerts();
     }, []);
 
@@ -67,7 +67,7 @@ function StudentCert() {
 
             <a href="/student/certificates/new-certificate" className="new-button">Νεό Πιστοποιητικό</a>
 
-            {!isLogged && <div className="container">
+            {(!isLogged || user.type !== 'student') && <div className="container">
                 <ul className="responsive-table">
                     <li className="table-header">
                         <div className="col col-1">Ημερομηνία</div>
@@ -93,7 +93,7 @@ function StudentCert() {
                 </ul>
             </div>}
 
-            {isLogged && <div className="container">
+            {isLogged && user.type === 'student' && <div className="container">
                 <ul className="responsive-table">
                     <li className="table-header">
                         <div className="col col-1">Ημερομηνία</div>

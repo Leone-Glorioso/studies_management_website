@@ -24,7 +24,7 @@ function StudentDhlwseis3() {
             })
             setComps(data);
         }
-        if(isLogged)
+        if(isLogged && user.type === 'student')
             fetdhDhl();
     }, []);
 
@@ -55,7 +55,7 @@ function StudentDhlwseis3() {
                 <li>Προσωρινά αποθηκευμένες</li>
             </ul>
 
-            {!isLogged && <div className="container">
+            {(!isLogged || user.type !== 'student') && <div className="container">
                 <ul className="responsive-table-d">
                     <li className="table-header">
                         <div className="col col-1">Ημερομηνία</div>
@@ -81,7 +81,7 @@ function StudentDhlwseis3() {
                 </ul>
             </div>}
 
-            {isLogged && <div className="container">
+            {isLogged && user.type === 'student' && <div className="container">
                 <ul className="responsive-table-d">
                     <li className="table-header">
                         <div className="col col-1">Ημερομηνία</div>
@@ -118,7 +118,7 @@ function StudentDhlwseis3() {
                 </div>
             </div>
 
-            {!isLogged && <div id="popup-d" className="overlay">
+            {(!isLogged || user.type !== 'student') && <div id="popup-d" className="overlay">
                 <div className="popup">
                     <div className="content">
                         Σίγουρα θέλετε να διαγράψετε τη δήλωση;
@@ -132,7 +132,7 @@ function StudentDhlwseis3() {
                 </div>
             </div>}
 
-            {isLogged && <div id="popup-d" className="overlay">
+            {isLogged && user.type === 'student' && <div id="popup-d" className="overlay">
                 <div className="popup">
                     <div className="content">
                         Σίγουρα θέλετε να διαγράψετε τη δήλωση;

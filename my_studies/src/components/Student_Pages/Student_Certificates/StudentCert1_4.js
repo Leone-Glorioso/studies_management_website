@@ -58,7 +58,7 @@ function StudentCert1_4() {
             title: "Ημερομηνία γέννησης"
         },
     ]
-    if(isLogged)
+    if(isLogged && user.type === 'student')
          Prof2_logged = [
             {
                 cName: "prof-info-certs3",
@@ -121,7 +121,7 @@ function StudentCert1_4() {
 
             <p className="text">Τελική αίτηση:</p>
 
-            {!isLogged && <div className="pers-info-certs3">
+            {(!isLogged || user.type !== 'student') && <div className="pers-info-certs3">
                 <ul className="info">
                     {Prof2.map((item, index) => {
                         return (
@@ -139,7 +139,7 @@ function StudentCert1_4() {
                     </li>
                 </ul>
             </div>}
-            {isLogged && <div className="pers-info-logged-certs3">
+            {isLogged && user.type === 'student' && <div className="pers-info-logged-certs3">
                 <ul className="info">
                     {Prof2_logged.map((item, index) => {
                         return (
@@ -163,7 +163,8 @@ function StudentCert1_4() {
                     <a href="/student/certificates/new-certificate/personal_info" className="prev">Προηγούμενο</a>
                     <a href="/student/certificates/" className="cancel">Άκυρο</a>
                     {!isLogged && <a onClick={onNotLogged} className="edit">Επιβεβαίωση</a>}
-                    {isLogged && <a href="#popup1" className="edit">Επιβεβαίωση</a>}
+                    {isLogged && user.type === 'student' && <a href="#popup1" className="edit">Επιβεβαίωση</a>}
+                    {isLogged && user.type !== 'student' && <button href="#popup1" className="edit-disabled" disabled={true}>Επιβεβαίωση</button>}
                 </li>
             </ul>
 

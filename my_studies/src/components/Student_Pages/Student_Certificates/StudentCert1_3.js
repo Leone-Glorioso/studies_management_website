@@ -57,7 +57,7 @@ function StudentCert1_3() {
         },
     ]
 
-    if(isLogged)
+    if(isLogged && user.type === 'student')
          Prof2_logged = [
             {
                 cName: "prof-info-certs2",
@@ -116,7 +116,7 @@ function StudentCert1_3() {
 
             <p className="text">Επιβεβαιωσε τα προσωπικά σου στοιχεία:</p>
 
-            {!isLogged && <div className="pers-info-certs2">
+            {(!isLogged || user.type !== 'student') && <div className="pers-info-certs2">
                 <ul className="info">
                     {Prof2.map((item, index) => {
                         return (
@@ -134,7 +134,7 @@ function StudentCert1_3() {
                     </li>
                 </ul>
             </div>}
-            {isLogged && <div className="pers-info-logged-certs2">
+            {isLogged && user.type === 'student' && <div className="pers-info-logged-certs2">
                 <ul className="info">
                     {Prof2_logged.map((item, index) => {
                         return (

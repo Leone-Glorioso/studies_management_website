@@ -39,7 +39,7 @@ function StudentDhlwseis() {
             setLessonsIn(less_in);
             setLessonsOut(less_out);
         }
-        if(isLogged)
+        if(isLogged && user.type === 'student')
             fetchLessons();
     }, []);
 
@@ -71,7 +71,7 @@ function StudentDhlwseis() {
             {/*    </tr>*/}
             {/*</table>*/}
 
-            {!isLogged && <table className="table-dhl">
+            {(!isLogged || user.type !== 'student') && <table className="table-dhl">
                 <tr>
                     <th>Κωδικός Μαθήματος</th>
                     <th>Τίτλος Μαθήματος</th>
@@ -89,7 +89,7 @@ function StudentDhlwseis() {
                 </tr>
             </table>}
 
-            {isLogged && <table className="table-dhl">
+            {isLogged && user.type === 'student' && <table className="table-dhl">
                 <tr>
                     <th>Κωδικός Μαθήματος</th>
                     <th>Τίτλος Μαθήματος</th>

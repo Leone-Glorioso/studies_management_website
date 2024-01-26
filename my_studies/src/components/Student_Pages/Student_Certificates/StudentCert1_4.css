@@ -162,6 +162,23 @@ ul.breadcrumb {
         cursor: pointer;
     }
 
+    .edit-disabled {
+        flex-basis: 20%;
+
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        background: gray;
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
     .cancel {
         flex-basis: 10%;
 

@@ -34,7 +34,7 @@ function StudentGrades() {
         }
         setGrades(data_alt);
     }
-        if(isLogged)
+        if(isLogged && user.type === 'student')
             fetchGrades();
     }, []);
 
@@ -52,7 +52,7 @@ function StudentGrades() {
                     <li>Βαθμολογίες</li>
                 </ul>
 
-                {!isLogged && <table className="table-gr">
+                {(!isLogged || user.type !== 'student') && <table className="table-gr">
                     <tr>
                         <th>Κωδικός Μαθήματος</th>
                         <th>Τίτλος Μαθήματος</th>
@@ -70,7 +70,7 @@ function StudentGrades() {
                     </tr>
                 </table>}
 
-                {isLogged &&
+                {isLogged && user.type === 'student' &&
                     <table className="table-gr">
                         <tr>
                             <th>Κωδικός Μαθήματος</th>
@@ -92,7 +92,8 @@ function StudentGrades() {
                 <Dropdown/>
 
                 {!isLogged && <a onClick={onNotLogged} className="print_button">Εκτύπωση</a>}
-                {isLogged && <a href="#popup-pr" className="print_button">Εκτύπωση</a>}
+                {isLogged && user.type === 'student' && <a href="#popup-pr" className="print_button">Εκτύπωση</a>}
+                {isLogged && user.type !== 'student' && <button href="#popup-pr" className="print_button_dis" disabled={true}>Εκτύπωση</button>}
 
                 <div id="popup-pr" className="overlay">
                     <div className="popup">

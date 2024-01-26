@@ -108,7 +108,7 @@ function StudentProf() {
     // ]
 
     useEffect(() => {
-        if(isLogged){
+        if(isLogged && user.type === 'student'){
             setProf1_Logged([
                 {
                     cName: "prof-info",
@@ -226,7 +226,7 @@ function StudentProf() {
 
             <a href="#" className="cert-button">Πιστοποιητικά</a>
             <p className="title1">Σχετικά με της σπουδές μου:</p>
-            {!isLogged && <div className="Study-info">
+            {(!isLogged || user.type !== 'student') && <div className="Study-info">
                 <ul className="info">
                     {Prof1.map((item, index) => {
                         return (
@@ -239,7 +239,7 @@ function StudentProf() {
                     })}
                 </ul>
             </div>}
-            {isLogged && <div className="Study-info-logged">
+            {isLogged && user.type === 'student' && <div className="Study-info-logged">
                 <ul className="info">
                 {Prof1_logged.map((item, index) => {
                     return (
@@ -254,7 +254,7 @@ function StudentProf() {
             </div>}
 
             <p className="title2">Προσωπικά στοιχεία:</p>
-            {!isLogged && <div className="pers-info">
+            {(!isLogged || user.type !== 'student') && <div className="pers-info">
                 <ul className="info">
                     {Prof2.map((item, index) => {
                         return (
@@ -267,7 +267,7 @@ function StudentProf() {
                     })}
                 </ul>
             </div>}
-            {isLogged && <div className="pers-info-logged">
+            {isLogged && user.type === 'student' && <div className="pers-info-logged">
                 <ul className="info">
                 {Prof2_logged.map((item, index) => {
                     return (
@@ -282,7 +282,7 @@ function StudentProf() {
             </div>}
 
             <p className="title3">Στοιχεία επικοινωνίας:</p>
-            {!isLogged && <div className="com-info">
+            {(!isLogged || user.type !== 'student') && <div className="com-info">
                 <ul className="info">
                     {Prof3.map((item, index) => {
                         return (
@@ -295,7 +295,7 @@ function StudentProf() {
                     })}
                 </ul>
             </div>}
-            {isLogged && <div className="com-info-logged">
+            {isLogged && user.type === 'student' && <div className="com-info-logged">
                 <ul className="info">
                 {Prof3_logged.map((item, index) => {
                     return (
