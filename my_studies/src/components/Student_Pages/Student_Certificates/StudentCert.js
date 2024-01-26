@@ -111,35 +111,47 @@ function StudentCert() {
                                 {c.state === "rejected" && <div className="col col-3" data-label="state">Απόρριψη</div>}
                                 {c.state === "accepted" && <div className="col col-3" data-label="state">Αποδοχή</div>}
                                 {c.state !== "accepted" && <div className="col col-4-alt"></div>}
-                                {c.state === "accepted" && <a href={Pdf} target={"_blank"} className="col col-4">Προβολή</a>}
-                                {c.state === "accepted" && <a href="#popup-pr" className="col col-5" onClick={handlePrint}>Εκτύπωση</a>}
+                                {c.state === "accepted" &&
+                                    <a href={Pdf} target={"_blank"} className="col col-4">Προβολή</a>}
+                                {c.state === "accepted" &&
+                                    <a href="#popup-pr" className="col col-5" onClick={handlePrint}>Εκτύπωση</a>}
                             </li>
                         )
                     })}
                 </ul>
             </div>}
 
-            <details className="dropdown-c">
-                <summary role="button">
-                    <a className="button-c">Κατάσταση Αίτησης</a>
-                </summary>
-                <ul>
-                    <li><a href="#">Εγκεκριμένη</a></li>
-                    <li><a href="#">Σε Εκκρεμότητα</a></li>
-                    <li><a href="#">Απορριφθείσα</a></li>
-                    <li><a href="#">Ακυρωμένη</a></li>
-                </ul>
-            </details>
+            <ul className="dropdowns">
+                <li className="drop-buttons">
+                    <details className="dropdown_certs">
+                        <summary role="button">
+                            <div className="title0">Κατηγορίες</div>
+                            <a className="button_certs">Όλες <i className="fa-solid fa-chevron-down"></i></a>
+                        </summary>
 
-            <details className="dropdown1-c">
-                <summary role="button">
-                    <a className="button1-c">Ταξινόμηση κατά</a>
-                </summary>
-                <ul>
-                    <li><a href="#">Πιο Πρόσφατα</a></li>
-                    <li><a href="#">Λιγότερο πρόσφατα</a></li>
-                </ul>
-            </details>
+
+                        <ul>
+                            <li><a href="#">Όλες</a></li>
+                            <li><a href="#">Σε εκκρεμότητα</a></li>
+                            <li><a href="#">Εγκεκριμένες</a></li>
+                            <li><a href="#">Απορριφθείσες</a></li>
+                            <li><a href="#">Ακυρωμένες</a></li>
+                        </ul>
+                    </details>
+
+                    <details className="dropdown1_certs">
+                        <summary role="button">
+                            <div className="title1">Ταξινόμηση κατά</div>
+                            <a className="button1_certs">Πιο πρόσφατα<i
+                                className="fa-solid fa-chevron-down"></i></a>
+                        </summary>
+                        <ul>
+                            <li><a href="#">Πιο πρόσφατα</a></li>
+                            <li><a href="#">Λιγότερο πρόσφατα</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
 
             <div id="popup-pr" className="overlay">
                 <div className="popup">

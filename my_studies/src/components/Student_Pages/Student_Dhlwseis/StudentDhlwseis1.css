@@ -117,3 +117,94 @@ tr:hover {background-color: #8CBFE4;}
     background: #95A5A6;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-fs, .popup-sd {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    top: 25%;
+}
+
+.popup-fs .content, .popup-sd .content {
+    font-size: 20px;
+    font-weight: bold;
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+    .box{
+        width: 70%;
+    }
+    .popup{
+        width: 70%;
+    }
+}
+
+.buttons1 {
+
+    li {
+        border-radius: 3px;
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .buttons-c1 {
+        letter-spacing: 0.03em;
+
+    }
+
+    .confirm {
+        flex-basis: 20%;
+
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        background: #328424;
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    .cancel-p {
+        flex-basis: 10%;
+
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        background: #95A5A6;
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+}

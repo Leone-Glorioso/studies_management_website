@@ -6,21 +6,10 @@ function TeacherHelp(props) {
 
     const [faqs, setFaqs] = useState([
         {
-            question: "How many programmers does it take to screw a lightbulb?",
+            question: "Πως μπορώ να περάσω βαθμούς σε κάποιο μάθημα;",
             answer:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra lorem eu dolor rhoncus, at scelerisque ligula gravida. Sed porta id mi sit amet convallis. Etiam iaculis massa sit amet lacus blandit sodales. Nulla ultrices velit a diam placerat congue. Pellentesque iaculis, ipsum quis eleifend dapibus, est dui eleifend ante, quis fermentum mi ligula quis nisl. Ut et ex dui. Integer id venenatis quam.",
+                "Για να περάσεις βαθμούς αρχικά πρέπει να μπεις στη σελίδα 'Βαθμολόγια' των καθηγητών. Έπειτα μπορείς να επιλέξεις το μάθημα για το οποίο ενδιαφέρεσαι και ανάλογα να δημιουργήσεις ένα νέο βαθμολόγιο ή να επεξεργαστείς κάποιο υπάρχον. Μπορείς να ανεβάσεις πολλούς βαθμούς μαζί σε μορφή αρχείου επιλέγοντας 'Πολλαπλή βαθμολόγηση' ή ατομικά επιλέγοντας '+'. Τέλος, επιλέγεις αν θέλεις να αποθηκεύσεις προσωρινά το βαθμολόγιό σου, ή να το υποβάλεις οριστικά. Για την ολοκλήρωση της διαδικασίας αυτής θα πρέπει να είσαι μέλος του εκπαιδευτικού προσωπικού και να έχεις συνδεθεί στην πλατφόρμα. ",
             open: true
-        },
-        {
-            question: "Who is the most awesome person?",
-            answer: "You! The viewer!",
-            open: false
-        },
-        {
-            question:
-                "How many questions does it take to makes a succesful FAQ Page?",
-            answer: "This many!",
-            open: false
         }
     ]);
 

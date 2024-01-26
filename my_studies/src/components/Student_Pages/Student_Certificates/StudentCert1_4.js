@@ -170,7 +170,7 @@ function StudentCert1_4() {
             <div id="popup1" className="overlay">
                 <div className="popup">
                     <div className="content">
-                        Σίγουρα θέλετε να υποβάλετε την δήλωση;
+                        Σίγουρα θέλετε να υποβάλετε την αίτηση;
                     </div>
                     <ul className="buttons1">
                         <li className="buttons-c1">

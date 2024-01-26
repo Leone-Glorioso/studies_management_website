@@ -123,7 +123,8 @@ function StudentDhlwseis1() {
                             <tr>
                                 <td>{item.num}</td>
                                 <td>{item.name}</td>
-                                <td className="checkboxes"><input type="checkbox" defaultChecked={true} onClick={onClickCheckBox.bind(this)}/></td>
+                                <td className="checkboxes"><input type="checkbox" defaultChecked={true}
+                                                                  onClick={onClickCheckBox.bind(this)}/></td>
                             </tr>
                         )
                     })}
@@ -133,7 +134,8 @@ function StudentDhlwseis1() {
                             <tr>
                                 <td>{item.num}</td>
                                 <td>{item.name}</td>
-                                <td className="checkboxes"><input type="checkbox" defaultChecked={false} onClick={onClickCheckBox.bind(this)}/></td>
+                                <td className="checkboxes"><input type="checkbox" defaultChecked={false}
+                                                                  onClick={onClickCheckBox.bind(this)}/></td>
                             </tr>
                         )
                     })}
@@ -144,11 +146,42 @@ function StudentDhlwseis1() {
 
             <div className="buttons-c">
                 <a href="/student/forms" className="cancel"> Άκυρο</a>
-                <a href="/student/forms/saved" className="temp">Προσωρινή αποθήκευση</a>
+                <a href="#popup-sd" className="temp">Προσωρινή αποθήκευση</a>
                 {!isLogged && <a onClick={onNotLogged} className="submit">Οριστική υποβολή</a>}
-                {isLogged && <a href="/student/forms/new-form/done" className="submit">Οριστική υποβολή</a>}
+                {isLogged && <a href="#popup-fs" className="submit">Οριστική υποβολή</a>}
             </div>
 
+            <div id="popup-fs" className="overlay">
+                <div className="popup-fs">
+                    <div className="content">
+                        Σίγουρα θέλετε να υποβάλετε την δήλωση;
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/student/forms/new-form"
+                               className="cancel-p">Άκυρο</a>
+                            <a href="/student/forms/new-form/done"
+                               className="confirm">Επιβεβαίωση</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="popup-sd" className="overlay">
+                <div className="popup-sd">
+                    <div className="content">
+                        Σίγουρα θέλετε να αποθηκεύσετε την δήλωση;
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/student/forms/new-form"
+                               className="cancel-p">Άκυρο</a>
+                            <a href="/student/forms/saved"
+                               className="confirm">Αποθήκευση</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
 

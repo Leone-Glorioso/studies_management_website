@@ -38,41 +38,53 @@ ul.breadcrumb {
     --dropdown-color: #123C5A;
 }
 
-a.button-c {
+.button_certs, .button1_certs {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid #123C5A;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    background: var(--button-background);
+    color: var(--button-color);
+    font-size: 20px;
+    cursor: pointer;
+
+    i{
+        font-size: 15px;
+    }
+}
+
+.button_certs {
     position: fixed;
     top: 270px;
     left: 290px;
-    display: inline-block;
-    padding: 10px 15px;
-    border: 2px solid #123C5A;
-    border-radius: 5px;
-    box-sizing: border-box;
-
-    background: var(--button-background);
-    color: var(--button-color);
-    font-size: 20px;
-    cursor: pointer;
 }
 
-a.button1-c {
+.button1_certs {
     position: fixed;
     top: 270px;
-    left: 510px;
-    display: inline-block;
-    padding: 10px 15px;
-    border: 2px solid #123C5A;
-    border-radius: 5px;
-    box-sizing: border-box;
-
-    background: var(--button-background);
-    color: var(--button-color);
-    font-size: 20px;
-    cursor: pointer;
+    left: 490px;
 }
 
+.title0 {
+    position: fixed;
+    top: 250px;
+    left: 290px;
+
+    font-size: 15px;
+}
+
+.title1 {
+    position: fixed;
+    top: 250px;
+    left: 490px;
+
+    font-size: 15px;
+}
 
 /* Dropdown styles */
-.dropdown-c {
+.dropdown_certs {
     position: fixed;
     top: 310px;
     left: 360px;
@@ -82,29 +94,29 @@ a.button1-c {
     border: 2px solid #123C5A;
 }
 
-.dropdown1-c {
+.dropdown1_certs {
     position: fixed;
     top: 310px;
-    left: 600px;
+    left: 590px;
     padding: 0;
     margin-right: 1em;
 
     border: 2px solid #123C5A;
 }
 
-.dropdown-c summary, .dropdown1-c summary {
+.dropdown_certs summary, .dropdown1_certs summary {
     list-style: none none;
 }
 
-.dropdown-c > summary::-webkit-details-marker, .dropdown1-c > summary::-webkit-details-marker {
+.dropdown_certs > summary::-webkit-details-marker, .dropdown1_certs > summary::-webkit-details-marker {
     display: none;
 }
 
-.dropdown-c summary:focus, .dropdown1-c summary:focus {
+.dropdown_certs summary:focus, .dropdown1_certs summary:focus {
     outline: none;
 }
 
-.dropdown-c ul, .dropdown1-c ul {
+.dropdown_certs ul, .dropdown1_certs ul {
     position: absolute;
     padding: 20px 0;
     width: var(--dropdown-width);
@@ -118,12 +130,12 @@ a.button1-c {
     list-style: none;
 }
 
-.dropdown-c ul li, .dropdown1-c ul li {
+.dropdown_certs ul li, .dropdown1_certs ul li {
     padding: 0;
     margin: 0;
 }
 
-.dropdown-c ul li a:link, .dropdown-c ul li a:visited, .dropdown1-c ul li a:link, .dropdown1-c ul li a:visited {
+.dropdown_certs ul li a:link, .dropdown_certs ul li a:visited, .dropdown1_certs ul li a:link, .dropdown1_certs ul li a:visited {
     display: inline-block;
     padding: 10px 0.8rem;
     width: 100%;
@@ -133,13 +145,13 @@ a.button1-c {
     text-decoration: none;
 }
 
-.dropdown-c ul li a:hover, .dropdown1-c ul li a:hover {
+.dropdown_certs ul li a:hover, .dropdown1_certs ul li a:hover {
     background-color: var(--dropdown-highlight);
     color: white;
 }
 
 /* Dropdown triangle */
-.dropdown-c ul::before, .dropdown1-c ul::before {
+.dropdown_certs ul::before, .dropdown1_certs ul::before {
     content: ' ';
     position: absolute;
     width: 0;
@@ -154,11 +166,11 @@ a.button1-c {
 
 
 /* Close the dropdown with outside clicks */
-.dropdown-c > summary::before, .dropdown1-c > summary::before {
+.dropdown_certs > summary::before, .dropdown1_certs > summary::before {
     display: none;
 }
 
-.dropdown-c[open] > summary::before, .dropdown1-c[open] > summary::before {
+.dropdown_certs[open] > summary::before, .dropdown1_certs[open] > summary::before {
     content: ' ';
     display: block;
     position: fixed;
@@ -168,6 +180,7 @@ a.button1-c {
     bottom: 0;
     z-index: 1;
 }
+
 
 a.new-button {
     position: fixed;
