@@ -89,7 +89,7 @@ function AuthProvider({ children }) {
         cookies.set('del', JSON.stringify(del), {
             expires: new Date(Date.now() + 1000000)
         })
-        setWindowState(del);
+        setDeleteId(del);
     }
 
     const getLessonsIn = () => {
