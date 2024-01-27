@@ -97,9 +97,9 @@ p.title1 {
     }
 }
 
-p.title2 {
+.pers-info-title {
     position: fixed;
-    top: 570px;
+    top: 63vh;
     left: 290px;
 
     font-weight: bold;

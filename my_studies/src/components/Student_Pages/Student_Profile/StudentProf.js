@@ -224,7 +224,7 @@ function StudentProf() {
                 <li>Προφίλ μαθητή</li>
             </ul>
 
-            <a href="#" className="cert-button">Πιστοποιητικά</a>
+            {/*<a href="#" className="cert-button">Πιστοποιητικά</a>*/}
             <p className="title1">Σχετικά με της σπουδές μου:</p>
             {(!isLogged || user.type !== 'student') && <div className="Study-info">
                 <ul className="info">
@@ -253,7 +253,7 @@ function StudentProf() {
                 </ul>
             </div>}
 
-            <p className="title2">Προσωπικά στοιχεία:</p>
+            <p className={'pers-info-title'}>Προσωπικά στοιχεία:</p>
             {(!isLogged || user.type !== 'student') && <div className="pers-info">
                 <ul className="info">
                     {Prof2.map((item, index) => {
