@@ -36,10 +36,10 @@ function TeacherLessons() {
                 const docs_alt = await getDocs(q);
                 const data_alt = [];
                 docs_alt.forEach((doc)=> {
-                    data_alt.push({ ...doc.data()});
+                    data_alt.push({id:doc.id, ...doc.data()});
                 })
                 if(data_alt.length === 1)
-                    less_with_details.push({less: lesson, grading: data_alt[0]});
+                    less_with_details.push({less: lesson, grading: data_alt[0], grade_id: data_alt[0].id});
                 else
                     less_with_details.push(lesson);
             }

@@ -2,8 +2,9 @@ import React, {Component, useEffect, useState} from "react";
 import './TeacherLessons1.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
 import {useAuth} from "../../Auth/AuthContext";
-import {collection, getDocs, orderBy, query, where} from "firebase/firestore";
+import {collection, getDocs, orderBy, query, where, doc, updateDoc} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
+import {useNavigate} from "react-router-dom";
 
 function TeacherLessons1() {
 
@@ -34,6 +35,10 @@ function TeacherLessons1() {
     const isLogged = Auth.userIsAuthenticated();
     const user = Auth.getUser();
     const [students, setStudents] = useState([]);
+    const [username, setUsername] = useState('');
+    const [grade, setGrade] = useState(0);
+    const [isUsername, setIsUsername] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchStudents()
@@ -54,6 +59,40 @@ function TeacherLessons1() {
         if(isLogged && Auth.getLessonsEdit() !== undefined)
             fetchStudents();
     }, []);
+
+    const onClickToSet = (e, name) => {
+        setUsername(name);
+        setIsUsername(true);
+        const dropdown = document.getElementById("myDropdown");
+        dropdown.classList.toggle("show");
+    }
+
+    const onSetGrade = (e,grade_in) => {
+        setGrade(Number(grade_in));
+    }
+
+    const submitNewGrade = (e, student, grade_in) => {
+        async function updateGrade() {
+            const grades = Auth.getLessonsEdit().grading.grades;
+            const new_grades = []
+            for(const grade_loop of grades){
+                if(grade_loop.student !== student)
+                    new_grades.push(grade_loop);
+            }
+            new_grades.push({grade: grade_in, student: student });
+            const doc_ref = doc(db, 'grading', Auth.getLessonsEdit().grade_id);
+            console.log(new_grades,grades);
+            await updateDoc(doc_ref,{
+                "grades": new_grades
+            })
+            let set_grades = Auth.getLessonsEdit();
+            set_grades.grading.grades = new_grades;
+            Auth.setLessonsEdit(set_grades);
+            navigate(0);
+        }
+        if(isLogged && user.type === 'teacher')
+            updateGrade();
+    }
 
     return (
         <div>
@@ -168,7 +207,7 @@ function TeacherLessons1() {
                 </div>
             </div>
 
-            <div id="popup-one" className="overlay">
+            {(!isLogged || user.type !== 'teacher') && <div id="popup-one" className="overlay">
                 <div className="popup-o">
                     <div className="content">
                         <p>Εισάγετε τελικό βαθμό:</p>
@@ -183,13 +222,13 @@ function TeacherLessons1() {
                                     id="myInput"
                                     onKeyUp={filterFunction}
                                 />
-                                <a href="/teacher/lessons/new-grades#popup-one">sdi2100127</a>
-                                <a href="/teacher/lessons/new-grades#popup-one">sdi2100129</a>
-                                <a href="/teacher/lessons/new-grades#popup-one">sdi2100074</a>
+                                <a>sdi2100127</a>
+                                <a>sdi2100129</a>
+                                <a>sdi2100074</a>
                             </div>
                         </div>
-                        <p></p>
-                        <label htmlFor="grade">Βαθμός:</label><input type="number" fname="grade"></input>
+                         <p></p>
+                        <label htmlFor="grade">Βαθμός:</label><input type="number" fname="grade" min={'1'} max={'10'} step={'0.1'}></input>
                     </div>
                     <ul className="buttons1">
                         <li className="buttons-c1">
@@ -200,7 +239,44 @@ function TeacherLessons1() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>}
+
+            {isLogged && user.type === 'teacher' && <div id="popup-one" className="overlay">
+                <div className="popup-o">
+                    <div className="content">
+                        <p>Εισάγετε τελικό βαθμό:</p>
+                        <div className="dropdown-st">
+                            <button onClick={myFunction} className="dropbtn">
+                                Επιλογή φοιτητή
+                            </button>
+                            <div id="myDropdown" className="dropdown-content">
+                                <input
+                                    type="text"
+                                    placeholder="Αναζήση AM.."
+                                    id="myInput"
+                                    onKeyUp={filterFunction}
+                                />
+                                {students.map((student) => {
+                                    return (
+                                        <a onClick={(e)=> onClickToSet(e, student.username)}>{student.username}</a>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                        {!isUsername && <p></p>}
+                        {isUsername && <p>{username}</p>}
+                        <label htmlFor="grade">Βαθμός:</label><input type="number" fname="grade" min={'1'} max={'10'} step={'0.1'} onChange={(e)=> onSetGrade(e, e.target.value)}></input>
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/teacher/lessons/new-grades"
+                               className="cancel-g">Άκυρο</a>
+                            <a className="confirm"
+                            onClick={(e) => submitNewGrade(e, username, grade)}>ΟΚ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
 
         </div>
 
