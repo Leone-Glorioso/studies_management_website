@@ -264,7 +264,7 @@ function TeacherLessons1() {
                     </div>
                     <ul className="buttons1">
                         <li className="buttons-c1">
-                            <a href="/teacher/lessons/new-grades"
+                            <a href="/teacher/lessons/edit-grades"
                                className="cancel-g">Άκυρο</a>
                             <a href="/teacher/lessons/edit-grades"
                                className="confirm">OK</a>
@@ -278,6 +278,7 @@ function TeacherLessons1() {
                     <div className="content">
                         <p>Επιλέξτε κάποιο από τα αρχεία σας</p>
                     </div>
+                    <br/>
                     <input
                         type={"file"}
                         id={"csvFileInput"}
@@ -286,7 +287,7 @@ function TeacherLessons1() {
                     />
                     <ul className="buttons1">
                         <li className="buttons-c1">
-                            <a href="/teacher/lessons/new-grades"
+                            <a href="/teacher/lessons/edit-grades"
                                className="cancel-g">Άκυρο</a>
                             <a href="/teacher/lessons/edit-grades"
                                className="confirm"
