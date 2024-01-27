@@ -111,10 +111,10 @@
     line-height: 100px;
     transition-duration: 180ms;
 }
-#help {
-    font-size: 80px;
-    transition-duration: 180ms;
-}
+/*#help {*/
+/*    font-size: 80px;*/
+/*    transition-duration: 180ms;*/
+/*}*/
 #students {
     transition-duration: 180ms;
 }
@@ -157,21 +157,21 @@
     transition-duration: 190ms;
     transform: translate3d(-220px, 0, 0);
 }
-.menu-open:checked ~ #help {
-    transition-duration: 290ms;
-    transform: translate3d(-330px, 0, 0);
-}
+/*.menu-open:checked ~ #help {*/
+/*    transition-duration: 290ms;*/
+/*    transform: translate3d(-330px, 0, 0);*/
+/*}*/
 .menu-open:checked ~ #students {
     transition-duration: 390ms;
-    transform: translate3d(-440px, 0, 0);
+    transform: translate3d(-330px, 0, 0);
 }
 .menu-open:checked ~ #teachers {
     transition-duration: 490ms;
-    transform: translate3d(-550px, 0, 0);
+    transform: translate3d(-440px, 0, 0);
 }
 .menu-open:checked ~ #logout {
     transition-duration: 590ms;
-    transform: translate3d(-660px, 0, 0);
+    transform: translate3d(-550px, 0, 0);
 }
 
 .toolTipUniv {

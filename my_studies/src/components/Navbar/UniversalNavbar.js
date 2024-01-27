@@ -24,6 +24,7 @@ function UniversalNavbar() {
 
     const Auth = useAuth()
     const isLogged = Auth.userIsAuthenticated()
+    const user = Auth.getUser()
     let activeLogin = Auth.getWindow()
     const setActiveLogin = Auth.setWindow
     const [username, setUsername] = useState("")
@@ -90,9 +91,9 @@ function UniversalNavbar() {
                     <Tooltip target={".menu-item"} className={'toolTipUniv'} position={"bottom"} mouseTrack/>
 
                     <a href="/" className="menu-item" id={'start'} data-pr-tooltip="Αρχική"> <i><FaHome/></i> </a>
-                    {isLogged && <a href="/student/profile" className="menu-item" id={'profile'} data-pr-tooltip="Προφίλ"> <i><FaUserCircle/></i> </a>}
+                    {isLogged && user.type === 'student' && <a href="/student/profile" className="menu-item" id={'profile'} data-pr-tooltip="Προφίλ"> <i><FaUserCircle/></i> </a>}
+                    {isLogged && user.type === 'teacher' && <a href="/teacher/profile" className="menu-item" id={'profile'} data-pr-tooltip="Προφίλ"> <i><FaUserCircle/></i> </a>}
                     {!isLogged && <a className="menu-item" id={'profile'} data-pr-tooltip="Είσοδος" onClick={onLoginClick}> <i><TbLogin/></i> </a>}
-                    <a href="/help" className="menu-item" id={'help'} data-pr-tooltip="Βοήθεια"> <i><IoHelpCircleOutline/></i> </a>
                     <a href="/student" className="menu-item" id={'students'} data-pr-tooltip="Φοιτητές"> <i><FaUserGraduate/></i> </a>
                     <a href="/teacher" className="menu-item" id={'teachers'} data-pr-tooltip="Εκπαιδευτικοί"> <i><FaChalkboardTeacher/></i> </a>
                     {isLogged && <a href={"javascript:window.location.href=window.location.href"} className="menu-item" id={'logout'} onClick={logout} data-pr-tooltip="Αποσύνδεση"> <i><TbLogout/></i> </a>}

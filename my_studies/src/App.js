@@ -65,12 +65,12 @@ function App() {
                   <Route path='/student/certificates/new-certificate' element={<StudentCert1/>} />
                   <Route path='/student/certificates' element={<StudentCert/>} />
                   <Route path='/student' element={<StudentHome/>} />
-                  <Route path='/login' element={<LoginWindow/>}/>
+                  {/*<Route path='/login' element={<LoginWindow/>}/>*/}
                   <Route path='/' element={<StartPage/>}/>
-                  <Route path='/help' element={<HelpHome/>}/>
-                  <Route path='/help/student' element={<HelpStudents/>}/>
-                  <Route path='/help/teacher' element={<HelpTeachers/>}/>
-                  <Route path='/help/admin' element={<HelpAdministration/>}/>
+                  {/*<Route path='/help' element={<HelpHome/>}/>*/}
+                  {/*<Route path='/help/student' element={<HelpStudents/>}/>*/}
+                  {/*<Route path='/help/teacher' element={<HelpTeachers/>}/>*/}
+                  {/*<Route path='/help/admin' element={<HelpAdministration/>}/>*/}
               </Routes>
             </Router>
         </AuthProvider>
