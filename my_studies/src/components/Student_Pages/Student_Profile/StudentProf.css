@@ -47,8 +47,8 @@ a.cert-button {
 }
 
 p.title1 {
-    position: relative;
-    top: 30vh;
+    position: fixed;
+    top: 37vh;
     left: 20vw;
 
     font-weight: bold;
@@ -60,19 +60,19 @@ p.title1 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: relative;
-    top: 35vh;
+    position: fixed;
+    top: 41vh;
     left: 20vw;
     width: 35%;
 
-    padding: 10px 300px 10px 10px;
+    padding: 5px 200px 5px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
 
     .info {
         display: grid;
-        grid-template-rows: repeat(6, auto);
-        grid-gap: 10px;
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 0px;
         list-style: none;
     }
 }
@@ -81,26 +81,26 @@ p.title1 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: relative;
-    top: 35vh;
+    position: fixed;
+    top: 41vh;
     left: 20vw;
     width: 35%;
 
-    padding: 10px 100px 10px 10px;
+    padding: 5px 100px 5px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
 
     .info {
         display: grid;
-        grid-template-rows: repeat(6, auto);
-        grid-gap: 10px;
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 0px;
         list-style: none;
     }
 }
 
 .pers-info-title {
-    position: relative;
-    top: 40vh;
+    position: fixed;
+    top: 65vh;
     left: 20vw;
 
     font-weight: bold;
@@ -112,19 +112,19 @@ p.title1 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: relative;
-    top: 45vh;
+    position: fixed;
+    top: 69vh;
     left: 20vw;
     width: 35%;
 
-    padding: 10px 300px 10px 10px;
+    padding: 5px 300px 5px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
 
     .info {
         display: grid;
         grid-template-rows: repeat(6, auto);
-        grid-gap: 10px;
+        grid-gap: 0px;
         list-style: none;
     }
 }
@@ -133,12 +133,12 @@ p.title1 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: relative;
-    top: 45vh;
+    position: fixed;
+    top: 69vh;
     left: 20vw;
     width: 35%;
 
-    padding: 10px 100px 10px 10px;
+    padding: 5px 100px 5px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
 
@@ -152,8 +152,8 @@ p.title1 {
 }
 
 p.title3 {
-    position: relative;
-    top: -45vh;
+    position: fixed;
+    top: 37vh;
     left: 57vw;
 
     font-weight: bold;
@@ -165,8 +165,8 @@ p.title3 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: relative;
-    top: -45vh;
+    position: fixed;
+    top: 41vh;
     left: 57vw;
     width: 40%;
 
@@ -186,8 +186,8 @@ p.title3 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: relative;
-    top: -40vh;
+    position: fixed;
+    top: 41vh;
     left: 57vw;
     width: 40%;
 

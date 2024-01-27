@@ -29,8 +29,8 @@ ul.breadcrumb {
 }
 
 p.title2-teach {
-    position: relative;
-    top: 30vh;
+    position: fixed;
+    top: 37vh;
     left: 20vw;
 
     font-weight: bold;
@@ -42,8 +42,8 @@ p.title2-teach {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: relative;
-    top: 35vh;
+    position: fixed;
+    top: 41vh;
     left: 20vw;
     width: 35%;
 
@@ -63,8 +63,8 @@ p.title2-teach {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: relative;
-    top: 35vh;
+    position: fixed;
+    top: 41vh;
     left: 20vw;
     width: 35%;
 
@@ -81,8 +81,8 @@ p.title2-teach {
 }
 
 p.title3-teach {
-    position: relative;
-    top: -12vh;
+    position: fixed;
+    top: 37vh;
     left: 57vw;
 
     font-weight: bold;
@@ -94,8 +94,8 @@ p.title3-teach {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: relative;
-    top: -7vh;
+    position: fixed;
+    top: 41vh;
     left: 57vw;
     width: 40%;
 
@@ -115,8 +115,8 @@ p.title3-teach {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: relative;
-    top: -7vh;
+    position: fixed;
+    top: 41vh;
     left: 57vw;
     width: 40%;
 
