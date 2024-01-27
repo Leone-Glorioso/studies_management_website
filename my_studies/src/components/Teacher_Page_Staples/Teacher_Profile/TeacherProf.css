@@ -28,79 +28,10 @@ ul.breadcrumb {
     }
 }
 
-a.cert-button {
-    position: fixed;
-    top: 235px;
-    right: 50px;
-    display: inline-block;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
-    box-sizing: border-box;
-
-    background: #205982;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-p.title1 {
-    position: fixed;
-    top: 310px;
-    left: 290px;
-
-    font-weight: bold;
-    font-size: 20px;
-    color: #123C5A;
-}
-
-.Study-info{
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    position: fixed;
-    top: 350px;
-    left: 290px;
-
-    padding: 10px 300px 10px 10px;
-    border-radius: 5px;
-    background-color: #D9D9D9;
-
-    .info {
-        display: grid;
-        grid-template-rows: repeat(6, auto);
-        grid-gap: 10px;
-        list-style: none;
-    }
-}
-
-.Study-info-logged{
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    position: fixed;
-    top: 350px;
-    left: 290px;
-    width: 31%;
-
-    padding: 10px 100px 10px 10px;
-    border-radius: 5px;
-    background-color: #D9D9D9;
-
-    .info {
-        display: grid;
-        grid-template-rows: repeat(6, auto);
-        grid-gap: 10px;
-        list-style: none;
-    }
-}
-
-p.title2 {
-    position: fixed;
-    top: 310px;
-    left: 290px;
+p.title2-teach {
+    position: relative;
+    top: 30vh;
+    left: 20vw;
 
     font-weight: bold;
     font-size: 20px;
@@ -111,14 +42,14 @@ p.title2 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: fixed;
-    top: 350px;
-    left: 290px;
+    position: relative;
+    top: 35vh;
+    left: 20vw;
+    width: 35%;
 
     padding: 10px 300px 10px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
-    width: 600px;
 
     .info {
         display: grid;
@@ -132,14 +63,14 @@ p.title2 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: fixed;
-    top: 350px;
-    left: 290px;
+    position: relative;
+    top: 35vh;
+    left: 20vw;
+    width: 35%;
 
     padding: 10px 100px 10px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
-    width: 31%;
 
     .info {
         display: grid;
@@ -149,23 +80,24 @@ p.title2 {
     }
 }
 
-p.title3 {
-    position: fixed;
-    top: 310px;
-    left: 1000px;
+p.title3-teach {
+    position: relative;
+    top: -12vh;
+    left: 57vw;
 
     font-weight: bold;
     font-size: 20px;
     color: #123C5A;
 }
 
-.com-info{
+.com-info-teach{
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: fixed;
-    top: 350px;
-    left: 1000px;
+    position: relative;
+    top: -7vh;
+    left: 57vw;
+    width: 40%;
 
     padding: 10px 300px 10px 10px;
     border-radius: 5px;
@@ -179,18 +111,18 @@ p.title3 {
     }
 }
 
-.com-info-logged{
+.com-info-logged-teach{
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: fixed;
-    top: 350px;
-    left: 1000px;
+    position: relative;
+    top: -7vh;
+    left: 57vw;
+    width: 40%;
 
     padding: 10px 30px 10px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
-    width: 31%;
 
     .info {
         display: grid;
@@ -200,7 +132,7 @@ p.title3 {
     }
 }
 
-.prof-info {
+.prof-info-teach {
     font-size: 1vw;
     text-decoration: none;
     font-weight: normal;
@@ -208,7 +140,7 @@ p.title3 {
     padding: 10px;
 }
 
-.prof-info-logged {
+.prof-info-logged-teach {
     font-size: 1vw;
     /*font-size: 20px;*/
     text-decoration: none;
@@ -217,7 +149,7 @@ p.title3 {
     padding: 10px;
 }
 
-.profile-card {
+.profile-card-teach {
     position: sticky;
     background-color: #95A5A6;
 }

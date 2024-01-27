@@ -47,9 +47,9 @@ a.cert-button {
 }
 
 p.title1 {
-    position: fixed;
-    top: 310px;
-    left: 290px;
+    position: relative;
+    top: 30vh;
+    left: 20vw;
 
     font-weight: bold;
     font-size: 20px;
@@ -60,9 +60,10 @@ p.title1 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: fixed;
-    top: 350px;
-    left: 290px;
+    position: relative;
+    top: 35vh;
+    left: 20vw;
+    width: 35%;
 
     padding: 10px 300px 10px 10px;
     border-radius: 5px;
@@ -80,10 +81,10 @@ p.title1 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: fixed;
-    top: 350px;
-    left: 290px;
-    width: 31%;
+    position: relative;
+    top: 35vh;
+    left: 20vw;
+    width: 35%;
 
     padding: 10px 100px 10px 10px;
     border-radius: 5px;
@@ -98,9 +99,9 @@ p.title1 {
 }
 
 .pers-info-title {
-    position: fixed;
-    top: 63vh;
-    left: 290px;
+    position: relative;
+    top: 40vh;
+    left: 20vw;
 
     font-weight: bold;
     font-size: 20px;
@@ -111,14 +112,14 @@ p.title1 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: fixed;
-    top: 610px;
-    left: 290px;
+    position: relative;
+    top: 45vh;
+    left: 20vw;
+    width: 35%;
 
     padding: 10px 300px 10px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
-    width: 600px;
 
     .info {
         display: grid;
@@ -132,14 +133,15 @@ p.title1 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: fixed;
-    top: 610px;
-    left: 290px;
+    position: relative;
+    top: 45vh;
+    left: 20vw;
+    width: 35%;
 
     padding: 10px 100px 10px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
-    width: 31%;
+
 
     .info {
         display: grid;
@@ -150,9 +152,9 @@ p.title1 {
 }
 
 p.title3 {
-    position: fixed;
-    top: 310px;
-    left: 1000px;
+    position: relative;
+    top: -45vh;
+    left: 57vw;
 
     font-weight: bold;
     font-size: 20px;
@@ -163,9 +165,10 @@ p.title3 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: fixed;
-    top: 350px;
-    left: 1000px;
+    position: relative;
+    top: -45vh;
+    left: 57vw;
+    width: 40%;
 
     padding: 10px 300px 10px 10px;
     border-radius: 5px;
@@ -183,14 +186,14 @@ p.title3 {
     display: flex;
     align-items: center;
     font-size: 30px;
-    position: fixed;
-    top: 350px;
-    left: 1000px;
+    position: relative;
+    top: -40vh;
+    left: 57vw;
+    width: 40%;
 
     padding: 10px 30px 10px 10px;
     border-radius: 5px;
     background-color: #D9D9D9;
-    width: 31%;
 
     .info {
         display: grid;

@@ -224,7 +224,7 @@ function TeacherProf() {
                 <li>Προφίλ Καθηγητή</li>
             </ul>
 
-            <p className="title2">Προσωπικά στοιχεία:</p>
+            <p className="title2-teach">Προσωπικά στοιχεία:</p>
             {!isLogged && <div className="pers-info-teach">
                 <ul className="info">
                     {Prof2.map((item, index) => {
@@ -252,8 +252,8 @@ function TeacherProf() {
                 </ul>
             </div>}
 
-            <p className="title3">Στοιχεία επικοινωνίας:</p>
-            {!isLogged && <div className="com-info">
+            <p className="title3-teach">Στοιχεία επικοινωνίας:</p>
+            {!isLogged && <div className="com-info-teach">
                 <ul className="info">
                     {Prof3.map((item, index) => {
                         return (
@@ -266,7 +266,7 @@ function TeacherProf() {
                     })}
                 </ul>
             </div>}
-            {isLogged && <div className="com-info-logged">
+            {isLogged && <div className="com-info-logged-teach">
                 <ul className="info">
                     {Prof3_logged.map((item, index) => {
                         return (
