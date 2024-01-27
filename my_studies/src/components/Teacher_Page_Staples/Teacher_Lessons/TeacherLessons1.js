@@ -100,7 +100,7 @@ function TeacherLessons1() {
             let set_grades = Auth.getLessonsEdit();
             set_grades.grading.grades = new_grades;
             Auth.setLessonsEdit(set_grades);
-            // navigate(0);
+            navigate(0);
         }
         if(isLogged && user.type === 'teacher')
             saveTempGrades();
@@ -289,8 +289,7 @@ function TeacherLessons1() {
                         <li className="buttons-c1">
                             <a href="/teacher/lessons/edit-grades"
                                className="cancel-g">Άκυρο</a>
-                            <a href="/teacher/lessons/edit-grades"
-                               className="confirm"
+                            <a className="confirm"
                             onClick={handleOnSubmit}>OK</a>
                         </li>
                     </ul>

@@ -16,6 +16,91 @@ function TeacherLessons3() {
     const [grade, setGrade] = useState(0);
     const [isUsername, setIsUsername] = useState(false);
     const navigate = useNavigate();
+    const [file, setFile] = useState(null);
+    const [arrayGrades, setArrayGrades] = useState([]);
+    const fileReader = new FileReader();
+
+    const handleOnChange = (e) => {
+        setFile(e.target.files[0]);
+    };
+
+    const csvFileToArray = string => {
+        const csvHeader = string.slice(0, string.indexOf("\n")-1).split(";");
+        const csvRows = string.slice(string.indexOf("\n") + 1).split("\r\n");
+
+        const array = csvRows.map(i => {
+            const values = i.split(";");
+            const obj = csvHeader.reduce((object, header, index) => {
+                object[header] = values[index];
+                return object;
+            }, {});
+            return obj;
+        });
+        array.pop();
+
+        setArrayGrades(array);
+    };
+
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+
+        if (file) {
+            fileReader.onload = function (event) {
+                const text = event.target.result;
+                csvFileToArray(text);
+            };
+
+            fileReader.readAsText(file);
+        }
+
+        console.log(arrayGrades);
+        const student_array = [];
+        arrayGrades.forEach((a)=> {
+            student_array.push(a.username);
+        })
+        console.log(student_array);
+
+        async function saveTempGrades(){
+            const stud_array = [];
+            for(const st of students)
+                stud_array.push({student: st.username, grade: 5})
+            const insert_data = {
+                'lesson': Auth.getLessonsEdit().num,
+                'state': 'temporary',
+                'teacher': user.username,
+                'grades': stud_array
+            };
+
+            const docRef = await addDoc(collection(db, 'grading'),insert_data)
+
+            //-------------------------------------------------
+
+            const lesson = Auth.getLessonsEdit()
+            Auth.setLessonsEdit({less: lesson, grading: insert_data, grade_id: docRef.id})
+
+
+            //-------------------------------------------------
+            const grades = Auth.getLessonsEdit().grading.grades;
+            const new_grades = []
+            for(const grade_loop of grades){
+                if(!student_array.includes(grade_loop.student))
+                    new_grades.push(grade_loop);
+            }
+            for(const new_grade of arrayGrades)
+                new_grades.push({student: new_grade.username, grade: Number(new_grade.grade)});
+            const doc_ref = doc(db, 'grading', Auth.getLessonsEdit().grade_id);
+            console.log(new_grades,grades);
+            await updateDoc(doc_ref,{
+                "grades": new_grades
+            })
+            let set_grades = Auth.getLessonsEdit();
+            set_grades.grading.grades = new_grades;
+            Auth.setLessonsEdit(set_grades);
+            // navigate(0);
+        }
+        if(isLogged && user.type === 'teacher')
+            saveTempGrades();
+    };
 
     useEffect(() => {
         async function fetchStudents()
@@ -130,7 +215,7 @@ function TeacherLessons3() {
                 <a href="#popup-one" className="new"><i className="fa-solid fa-plus"></i> </a>
             </div>
 
-            <div id="popup-mult" className="overlay">
+            {(!isLogged || user.type !== 'teacher') && <div id="popup-mult" className="overlay">
                 <div className="popup-m">
                     <div className="content">
                         <p>Επιλέξτε κάποιο από τα αρχεία σας</p>
@@ -144,7 +229,31 @@ function TeacherLessons3() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>}
+
+            {isLogged && user.type === 'teacher' && <div id="popup-mult" className="overlay">
+                <div className="popup-m">
+                    <div className="content">
+                        <p>Επιλέξτε κάποιο από τα αρχεία σας</p>
+                    </div>
+                    <br/>
+                    <input
+                        type={"file"}
+                        id={"csvFileInput"}
+                        accept={".csv"}
+                        onChange={handleOnChange}
+                    />
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/teacher/lessons/new-grades"
+                               className="cancel-g">Άκυρο</a>
+                            <a href="/teacher/lessons/edit-grades"
+                               className="confirm"
+                               onClick={handleOnSubmit}>OK</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
 
             {(!isLogged || user.type !== 'teacher') && <div id="popup-one" className="overlay">
                 <div className="popup-o">
