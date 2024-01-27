@@ -40,19 +40,27 @@ function TeacherLessons1() {
     const [isUsername, setIsUsername] = useState(false);
     const navigate = useNavigate();
     const [file, setFile] = useState(null);
-    // const [arrayGrades, setArrayGrades] = useState([]);
+    const [arrayGrades, setArrayGrades] = useState([]);
     const fileReader = new FileReader();
     // const [new_grades, setNewGrades] = useState([])
 
     const handleOnChange = (e) => {
         setFile(e.target.files[0]);
+        if (e.target.files[0]) {
+            fileReader.onload = function (event) {
+                const text = event.target.result;
+                csvFileToArray(text);
+            };
+
+            fileReader.readAsText(e.target.files[0]);
+        }
     };
 
-    const csvFileToArray = string => {
+    const csvFileToArray = (string) => {
         const csvHeader = string.slice(0, string.indexOf("\n")-1).split(";");
         const csvRows = string.slice(string.indexOf("\n") + 1).split("\r\n");
 
-        const array = csvRows.map(i => {
+        const array = csvRows.map((i) => {
             const values = i.split(";");
             const obj = csvHeader.reduce((object, header, index) => {
                 object[header] = values[index];
@@ -61,7 +69,8 @@ function TeacherLessons1() {
             return obj;
         });
 
-        return array;
+        setArrayGrades(array);
+        console.log(array);
     };
 
     // const handleOnChangeMultiple = (e) => {
@@ -118,18 +127,6 @@ function TeacherLessons1() {
         async function saveTempGrades(){
             let student_array = [];
             let new_grades = [];
-            let arrayGrades = [];
-            e.preventDefault();
-
-            if (file) {
-                fileReader.onload = function (event) {
-                    const text = event.target.result;
-                    arrayGrades = csvFileToArray(text);
-                };
-
-                fileReader.readAsText(file);
-            }
-
             console.log(arrayGrades);
             arrayGrades.forEach((a)=> {
                 student_array.push(a.username);
@@ -235,6 +232,8 @@ function TeacherLessons1() {
         if(isLogged && user.type === 'teacher')
             finalize().then(()=>console.log('finished'));
     }
+
+    const headerKeys = Object.keys(Object.assign({}, ...arrayGrades));
 
     return (
         <div>
