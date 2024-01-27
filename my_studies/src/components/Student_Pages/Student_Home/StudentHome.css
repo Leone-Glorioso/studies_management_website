@@ -149,7 +149,7 @@ p.title1-sp {
 
 p.title2-sp {
     position: fixed;
-    top: 450px;
+    top: 500px;
     left: 260px;
 
     padding-top: 15px;
@@ -161,7 +161,7 @@ p.title2-sp {
 
 .table-gr{
     position: fixed;
-    top: 500px;
+    top: 550px;
     left: 260px;
     width: 83vw;
     border-collapse: collapse;
