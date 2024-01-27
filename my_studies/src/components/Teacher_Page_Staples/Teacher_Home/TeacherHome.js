@@ -42,7 +42,7 @@ function TeacherHome()  {
             <div className="title">Τα μαθηματά μου</div>
             <p className="desc">Παρακάτω βλέπετε τα μαθήματα που έχετε αναλάβει το τρέχον εξάμηνο:</p>
 
-            {!isLogged && <table>
+            {(!isLogged || user.type !== 'teacher') && <table>
                 <tr>
                     <th>Κωδικός Μαθήματος</th>
                     <th>Τίτλος Μαθήματος</th>
@@ -58,7 +58,7 @@ function TeacherHome()  {
 
             </table>}
 
-            {isLogged &&
+            {isLogged && user.type === 'teacher' &&
                 <table>
                     <tr>
                         <th>Κωδικός Μαθήματος</th>
