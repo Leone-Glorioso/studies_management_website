@@ -2,7 +2,7 @@ import React, {Component, useEffect, useState} from "react";
 import './TeacherLessons3.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
 import {useAuth} from "../../Auth/AuthContext";
-import {collection, doc, getDocs, orderBy, query, updateDoc, where, addDoc} from "firebase/firestore";
+import {collection, doc, getDocs, orderBy, query, updateDoc, where, addDoc, setDoc} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
 import {useNavigate} from "react-router-dom";
 
@@ -19,16 +19,25 @@ function TeacherLessons3() {
     const [file, setFile] = useState(null);
     const [arrayGrades, setArrayGrades] = useState([]);
     const fileReader = new FileReader();
+    const number = Auth.getLessonsEdit().num;
 
     const handleOnChange = (e) => {
         setFile(e.target.files[0]);
+        if (e.target.files[0]) {
+            fileReader.onload = function (event) {
+                const text = event.target.result;
+                csvFileToArray(text);
+            };
+
+            fileReader.readAsText(e.target.files[0]);
+        }
     };
 
-    const csvFileToArray = string => {
+    const csvFileToArray = (string) => {
         const csvHeader = string.slice(0, string.indexOf("\n")-1).split(";");
         const csvRows = string.slice(string.indexOf("\n") + 1).split("\r\n");
 
-        const array = csvRows.map(i => {
+        const array = csvRows.map((i) => {
             const values = i.split(";");
             const obj = csvHeader.reduce((object, header, index) => {
                 object[header] = values[index];
@@ -36,67 +45,35 @@ function TeacherLessons3() {
             }, {});
             return obj;
         });
-        array.pop();
 
         setArrayGrades(array);
+        console.log(array);
     };
 
     const handleOnSubmit = (e) => {
-        e.preventDefault();
-
-        if (file) {
-            fileReader.onload = function (event) {
-                const text = event.target.result;
-                csvFileToArray(text);
-            };
-
-            fileReader.readAsText(file);
-        }
-
-        console.log(arrayGrades);
-        const student_array = [];
-        arrayGrades.forEach((a)=> {
-            student_array.push(a.username);
-        })
-        console.log(student_array);
 
         async function saveTempGrades(){
-            const stud_array = [];
-            for(const st of students)
-                stud_array.push({student: st.username, grade: 5})
+            const arr = []
+            arrayGrades.forEach((a)=>{
+                arr.push({student: a.username, grade: Number(a.grade)});
+            })
             const insert_data = {
-                'lesson': Auth.getLessonsEdit().num,
+                'lesson': number,
                 'state': 'temporary',
                 'teacher': user.username,
-                'grades': stud_array
+                'grades': arr
             };
-
-            const docRef = await addDoc(collection(db, 'grading'),insert_data)
-
-            //-------------------------------------------------
-
-            const lesson = Auth.getLessonsEdit()
-            Auth.setLessonsEdit({less: lesson, grading: insert_data, grade_id: docRef.id})
-
-
-            //-------------------------------------------------
-            const grades = Auth.getLessonsEdit().grading.grades;
-            const new_grades = []
-            for(const grade_loop of grades){
-                if(!student_array.includes(grade_loop.student))
-                    new_grades.push(grade_loop);
-            }
-            for(const new_grade of arrayGrades)
-                new_grades.push({student: new_grade.username, grade: Number(new_grade.grade)});
-            const doc_ref = doc(db, 'grading', Auth.getLessonsEdit().grade_id);
-            console.log(new_grades,grades);
-            await updateDoc(doc_ref,{
-                "grades": new_grades
-            })
-            let set_grades = Auth.getLessonsEdit();
-            set_grades.grading.grades = new_grades;
-            Auth.setLessonsEdit(set_grades);
-            // navigate(0);
+            const doc_ref = doc(collection(db, 'grading'));
+            Auth.setLessonsEdit({less: Auth.getLessonsEdit(), grading: insert_data, grade_id: doc_ref.id})
+            await setDoc(doc_ref, {
+                'lesson': number,
+                'state': 'temporary',
+                'teacher': user.username,
+                'grades': arr
+            }).catch((error)=>{
+                console.log(error);
+            });
+            navigate("/teacher/lessons/edit-grades");
         }
         if(isLogged && user.type === 'teacher')
             saveTempGrades();
@@ -247,8 +224,7 @@ function TeacherLessons3() {
                         <li className="buttons-c1">
                             <a href="/teacher/lessons/new-grades"
                                className="cancel-g">Άκυρο</a>
-                            <a href="/teacher/lessons/edit-grades"
-                               className="confirm"
+                            <a className="confirm"
                                onClick={handleOnSubmit}>OK</a>
                         </li>
                     </ul>
