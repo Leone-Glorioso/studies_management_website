@@ -2,7 +2,7 @@ import React, {Component, useEffect, useState} from "react";
 import './TeacherLessons1.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
 import {useAuth} from "../../Auth/AuthContext";
-import {collection, getDocs, orderBy, query, where, doc, updateDoc} from "firebase/firestore";
+import {collection, getDocs, orderBy, query, where, doc, updateDoc, addDoc, setDoc} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
 import {useNavigate} from "react-router-dom";
 
@@ -154,7 +154,7 @@ function TeacherLessons1() {
             const doc_ref = doc(db, 'grading', Auth.getLessonsEdit().grade_id);
             // console.log(new_grades,grades);
             await updateDoc(doc_ref,{
-                "grades": new_grades
+                grades: new_grades
             });
             let set_grades = Auth.getLessonsEdit();
             set_grades.grading.grades = new_grades;
@@ -209,7 +209,7 @@ function TeacherLessons1() {
             const doc_ref = doc(db, 'grading', Auth.getLessonsEdit().grade_id);
             console.log(new_grades,grades);
             await updateDoc(doc_ref,{
-                "grades": new_grades
+                grades: new_grades
             })
             let set_grades = Auth.getLessonsEdit();
             set_grades.grading.grades = new_grades;
@@ -218,6 +218,31 @@ function TeacherLessons1() {
         }
         if(isLogged && user.type === 'teacher')
             updateGrade();
+    }
+
+    const handleFinalizeGrading = (e) => {
+        async function finalize(){
+            const info = Auth.getLessonsEdit()
+            const doc_ref = doc(db, 'grading', info.grade_id)
+            await updateDoc(doc_ref, {
+                state: 'final'
+            })
+            const db_ref = collection(db, 'grades')
+            for(grade of info.grading.grades)
+            {
+                // const doc_ref_2 = doc(collection(db, 'grades'))
+                await addDoc(db_ref, {
+                    grade: grade.grade,
+                    lesson_id: Auth.getLessonsEdit().less.num,
+                    period: 'Ιανουάριος 2023-24',
+                    student_username: grade.student,
+                    teacher_username: user.username
+                })
+            }
+        }
+
+        if(isLogged && user.type === 'teacher')
+            finalize().then(()=>console.log('finished'));
     }
 
     return (
@@ -285,7 +310,7 @@ function TeacherLessons1() {
                 <a href="#popup-sub" className="sub">Οριστική Υποβολή</a>
             </div>
 
-            <div id="popup-sub" className="overlay">
+            {(!isLogged || user.type !== 'teacher') && <div id="popup-sub" className="overlay">
                 <div className="popup-s">
                     <div className="content">
                         <p>Σίγουρα θέλετε να υποβάλετε το βαθμολόγιο;</p><p>Οι οριστικές βαθμολογίες ΔΕΝ αλλάζουν!</p>
@@ -299,7 +324,24 @@ function TeacherLessons1() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>}
+
+            {isLogged && user.type === 'teacher' &&  <div id="popup-sub" className="overlay">
+                <div className="popup-s">
+                    <div className="content">
+                        <p>Σίγουρα θέλετε να υποβάλετε το βαθμολόγιο;</p><p>Οι οριστικές βαθμολογίες ΔΕΝ αλλάζουν!</p>
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/teacher/lessons/edit-grades"
+                               className="cancel-g">Άκυρο</a>
+                            <a href="/teacher/lessons/fin-grades"
+                               className="confirm"
+                                onClick={(e)=> handleFinalizeGrading(e)}>Επιβεβαίωση</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
 
             <div id="popup-save" className="overlay">
                 <div className="popup-sv">
