@@ -40,7 +40,7 @@ function TeacherLessons1() {
     const [isUsername, setIsUsername] = useState(false);
     const navigate = useNavigate();
     const [file, setFile] = useState(null);
-    const [arrayGrades, setArrayGrades] = useState([]);
+    // const [arrayGrades, setArrayGrades] = useState([]);
     const fileReader = new FileReader();
     // const [new_grades, setNewGrades] = useState([])
 
@@ -61,50 +61,40 @@ function TeacherLessons1() {
             return obj;
         });
 
-        setArrayGrades(array);
+        return array;
     };
 
-    const handleOnChangeMultiple = (e) => {
-        setFile(e.target.files[0]);
-        e.preventDefault();
-        let array = [];
-
-        if (e.target.files[0]) {
-            console.log('entered');
-            fileReader.onload = function (event) {
-                const string = event.target.result;
-                const csvHeader = string.slice(0, string.indexOf("\n")-1).split(";");
-                const csvRows = string.slice(string.indexOf("\n") + 1).split("\r\n");
-
-                array = csvRows.map(i => {
-                    const values = i.split(";");
-                    const obj = csvHeader.reduce((object, header, index) => {
-                        object[header] = values[index];
-                        return object;
-                    }, {});
-                    return obj;
-                });
-            };
-
-            fileReader.readAsText(e.target.files[0]);
-        }
-
-        console.log(array);
-        let student_array = [];
-        let new_grades = [];
-        array.forEach((a)=> {
-            student_array.push(a.username);
-        })
-        console.log(student_array);
-        const grades = Auth.getLessonsEdit().grading.grades;
-        for(const grade_loop of grades){
-            if(!student_array.includes(grade_loop.student))
-                new_grades.push(grade_loop);
-        }
-        for(const new_grade of array)
-            new_grades.push({student: new_grade.username, grade: Number(new_grade.grade)});
-        Auth.setNewGrading(new_grades);
-    };
+    // const handleOnChangeMultiple = (e) => {
+    //     setFile(e.target.files[0]);
+    //     e.preventDefault();
+    //     let array = [];
+    //
+    //     if (e.target.files[0]) {
+    //         console.log('entered');
+    //         fileReader.onload = function (event) {
+    //             const string = event.target.result;
+    //             setArrayGrades(csvFileToArray(string));
+    //         };
+    //
+    //         fileReader.readAsText(e.target.files[0]);
+    //     }
+    //
+    //     console.log(array);
+    //     let student_array = [];
+    //     let new_grades = [];
+    //     array.forEach((a)=> {
+    //         student_array.push(a.username);
+    //     })
+    //     console.log(student_array);
+    //     const grades = Auth.getLessonsEdit().grading.grades;
+    //     for(const grade_loop of grades){
+    //         if(!student_array.includes(grade_loop.student))
+    //             new_grades.push(grade_loop);
+    //     }
+    //     for(const new_grade of array)
+    //         new_grades.push({student: new_grade.username, grade: Number(new_grade.grade)});
+    //     Auth.setNewGrading(new_grades);
+    // };
 
     // const handleOnSubmit = (e) => {
     //
@@ -126,14 +116,15 @@ function TeacherLessons1() {
     const handleOnSubmit = (e) => {
 
         async function saveTempGrades(){
-            const student_array = [];
-            const new_grades = [];
+            let student_array = [];
+            let new_grades = [];
+            let arrayGrades = [];
             e.preventDefault();
 
             if (file) {
                 fileReader.onload = function (event) {
                     const text = event.target.result;
-                    csvFileToArray(text);
+                    arrayGrades = csvFileToArray(text);
                 };
 
                 fileReader.readAsText(file);
