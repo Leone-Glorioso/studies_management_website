@@ -119,13 +119,14 @@ function AuthProvider({ children }) {
     }
 
     const getLessonsEdit = () => {
-        return cookies.get('less_edit')
+        return cookies.get('less_edit', {path: '/'})
     }
 
     const setLessonsEdit = (l) => {
         sessionStorage.setItem("less_edit", JSON.stringify(l));
         cookies.set('less_edit', JSON.stringify(l), {
-            expires: new Date(Date.now() + 1000000)
+            expires: new Date(Date.now() + 1000000),
+            path: '/'
         })
         setLesson_Editing(l);
     }

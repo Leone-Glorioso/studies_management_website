@@ -106,7 +106,7 @@ function TeacherLessons() {
                                 <tr>
                                     <td>{lesson.num}</td>
                                     <td>{lesson.name}</td>
-                                    <td><a href={'/teacher/lessons/new-grades'} className="button-n">Νέο Βαθμολόγιο</a></td>
+                                    <td><a  onClick={(e) => onGoToEdit(e, lesson)} href={'/teacher/lessons/new-grades'} className="button-n">Νέο Βαθμολόγιο</a></td>
                                 </tr>
                             )
                         else if(lesson.grading.state === 'temporary')

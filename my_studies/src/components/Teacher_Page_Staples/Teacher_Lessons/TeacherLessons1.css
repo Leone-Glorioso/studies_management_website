@@ -136,6 +136,10 @@ tr:hover {background-color: #8CBFE4;}
     top: 25%;
 }
 
+.popup-sv{
+    width: 20%;
+}
+
 .popup-s .content, .popup-sv .content {
     font-size: 20px;
     font-weight: bold;
@@ -165,7 +169,7 @@ tr:hover {background-color: #8CBFE4;}
 
     }
 
-    .confirm {
+    .confirm-saved {
         flex-basis: 20%;
 
         font-size: 20px;
@@ -175,11 +179,12 @@ tr:hover {background-color: #8CBFE4;}
         background: #328424;
         display: inline-block;
         text-align: center;
-        padding: 5px;
+        padding: 10px;
         border: none;
         border-radius: 5px;
         box-sizing: border-box;
         cursor: pointer;
+        margin-left: 250px;
     }
 
     .cancel-g {
