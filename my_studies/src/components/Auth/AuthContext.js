@@ -13,6 +13,7 @@ function AuthProvider({ children }) {
     const [lessons_in, setLessons_In] = useState([]);
     const [lessons_out, setLessons_Out] = useState([]);
     const [lesson_editing, setLesson_Editing] = useState(null);
+    const [new_grades, setNewGrades] = useState([])
     const cookies = new Cookies();
 
     const userIsAuthenticated = () => {
@@ -131,6 +132,19 @@ function AuthProvider({ children }) {
         setLesson_Editing(l);
     }
 
+    const getNewGrading = () => {
+        return cookies.get('grad', {path: '/'})
+    }
+
+    const setNewGrading = (l) => {
+        sessionStorage.setItem("grad", JSON.stringify(l));
+        cookies.set('grad', JSON.stringify(l), {
+            expires: new Date(Date.now() + 1000000),
+            path: '/'
+        })
+        setNewGrades(l);
+    }
+
     const contextValue = {
         user,
         userIsAuthenticated,
@@ -160,6 +174,9 @@ function AuthProvider({ children }) {
         lesson_editing,
         setLessonsEdit,
         getLessonsEdit,
+        new_grades,
+        setNewGrading,
+        getNewGrading,
     };
 
     return (
