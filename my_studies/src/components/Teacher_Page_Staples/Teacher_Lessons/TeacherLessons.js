@@ -120,8 +120,9 @@ function TeacherLessons() {
                         else
                             return (
                                 <tr>
-                                    <td>{lesson.num}</td>
-                                    <td>{lesson.name}</td>
+                                    <td>{lesson.less.num}</td>
+                                    <td>{lesson.less.name}</td>
+                                    <td> Οριστικοποιημένο </td>
                                 </tr>
                             )
                         }

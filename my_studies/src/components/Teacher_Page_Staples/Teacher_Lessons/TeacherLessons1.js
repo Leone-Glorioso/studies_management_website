@@ -127,11 +127,9 @@ function TeacherLessons1() {
         async function saveTempGrades(){
             let student_array = [];
             let new_grades = [];
-            console.log(arrayGrades);
             arrayGrades.forEach((a)=> {
                 student_array.push(a.username);
             })
-            console.log(student_array);
             const grades = Auth.getLessonsEdit().grading.grades;
             for(const grade_loop of grades){
                 if(!student_array.includes(grade_loop.student))
@@ -140,7 +138,6 @@ function TeacherLessons1() {
             for(const new_grade of arrayGrades)
                 new_grades.push({student: new_grade.username, grade: Number(new_grade.grade)});
             const doc_ref = doc(db, 'grading', Auth.getLessonsEdit().grade_id);
-            // console.log(new_grades,grades);
             await updateDoc(doc_ref,{
                 grades: new_grades
             });
@@ -210,30 +207,29 @@ function TeacherLessons1() {
 
     const handleFinalizeGrading = (e) => {
         async function finalize(){
-            const info = Auth.getLessonsEdit()
-            const doc_ref = doc(db, 'grading', info.grade_id)
+            let info = Auth.getLessonsEdit()
+            const doc_ref = doc(db, 'grading', info.grading.id)
+            console.log(info.grading.id)
             await updateDoc(doc_ref, {
                 state: 'final'
             })
             const db_ref = collection(db, 'grades')
-            for(grade of info.grading.grades)
+            for(const inside_grade of info.grading.grades)
             {
-                // const doc_ref_2 = doc(collection(db, 'grades'))
                 await addDoc(db_ref, {
-                    grade: grade.grade,
+                    grade: inside_grade.grade,
                     lesson_id: Auth.getLessonsEdit().less.num,
                     period: 'Ιανουάριος 2023-24',
-                    student_username: grade.student,
+                    student_username: inside_grade.student,
                     teacher_username: user.username
                 })
             }
+            navigate("/teacher/lessons/fin-grades");
         }
 
         if(isLogged && user.type === 'teacher')
             finalize().then(()=>console.log('finished'));
     }
-
-    const headerKeys = Object.keys(Object.assign({}, ...arrayGrades));
 
     return (
         <div>
@@ -310,7 +306,7 @@ function TeacherLessons1() {
                             <a href="/teacher/lessons/edit-grades"
                                className="cancel-g">Άκυρο</a>
                             <a href="/teacher/lessons/fin-grades"
-                               className="confirm">Επιβεβαίωση</a>
+                                className="confirm">Επιβεβαίωση</a>
                         </li>
                     </ul>
                 </div>
@@ -325,8 +321,7 @@ function TeacherLessons1() {
                         <li className="buttons-c1">
                             <a href="/teacher/lessons/edit-grades"
                                className="cancel-g">Άκυρο</a>
-                            <a href="/teacher/lessons/fin-grades"
-                               className="confirm"
+                            <a className="confirm"
                                 onClick={(e)=> handleFinalizeGrading(e)}>Επιβεβαίωση</a>
                         </li>
                     </ul>
@@ -340,8 +335,6 @@ function TeacherLessons1() {
                     </div>
                     <ul className="buttons1">
                         <li className="buttons-c1">
-                            {/*<a href="/teacher/lessons/edit-grades"*/}
-                            {/*   className="cancel-g">Άκυρο</a>*/}
                             <a href="/teacher/lessons"
                                className="confirm-saved">ΟΚ</a>
                         </li>
