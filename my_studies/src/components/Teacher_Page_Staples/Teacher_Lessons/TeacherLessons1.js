@@ -241,7 +241,7 @@ function TeacherLessons1() {
                 <li>Επεξεργασία βαθμολογίου</li>
             </ul>
 
-            {(!isLogged || Auth.getLessonsEdit() === undefined) && <p className="les-title">Όνομα μαθήματος</p>}
+            {((!isLogged || user.type !== 'teacher')|| Auth.getLessonsEdit() === undefined) && <p className="les-title">Όνομα μαθήματος</p>}
             {isLogged && Auth.getLessonsEdit() !== undefined && <p className="les-title">{Auth.getLessonsEdit().less.name}</p>}
 
 

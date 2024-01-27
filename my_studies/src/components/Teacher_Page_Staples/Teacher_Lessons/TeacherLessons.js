@@ -68,7 +68,7 @@ function TeacherLessons() {
             </ul>
 
 
-            {!isLogged && <table className="table-l">
+            {(!isLogged || user.type !== 'teacher') && <table className="table-l">
                 <tr>
                     <th>Κωδικός Μαθήματος</th>
                     <th>Τίτλος Μαθήματος</th>
@@ -92,7 +92,7 @@ function TeacherLessons() {
 
             {/*<td><a href="/teacher/lessons/edit-grades" className="button-e">Επεξεργασία</a></td>*/}
 
-            {isLogged &&
+            {isLogged && user.type === 'teacher' &&
                 <table className="table-l">
                     <tr>
                         <th>Κωδικός Μαθήματος</th>
