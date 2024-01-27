@@ -153,7 +153,7 @@ function TeacherLessons1() {
             }
 
             <div className="teach-buttons">
-                <a href="#popup-save" className="save">Προσωρινή αποθήκευση</a>
+                {/*<a href="#popup-save" className="save">Προσωρινή αποθήκευση</a>*/}
                 <a href="#popup-mult" className="mult">Πολλαπλή Βαθμολόγηση</a>
                 <a href="#popup-one" className="new"><i className="fa-solid fa-plus"></i> </a>
                 <a href="#popup-sub" className="sub">Οριστική Υποβολή</a>
