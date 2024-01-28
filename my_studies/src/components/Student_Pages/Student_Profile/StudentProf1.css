@@ -164,7 +164,7 @@ p.title1 {
     .info {
         display: grid;
         grid-template-rows: repeat(6, auto);
-        grid-gap: 10px;
+        grid-gap: 0px;
         list-style: none;
     }
 }
