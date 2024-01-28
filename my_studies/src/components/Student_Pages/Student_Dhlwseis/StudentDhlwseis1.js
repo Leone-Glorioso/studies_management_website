@@ -16,7 +16,7 @@ function StudentDhlwseis1() {
     const [checked, setChecked] = useState(0);
     const [firstTime, setFirstTime] = useState(true)
 
-    useEffect( () => {
+    useEffect(() => {
         async function fetchLessons()
         {
             const db_ref = collection(db, 'dhloseis');
@@ -33,7 +33,7 @@ function StudentDhlwseis1() {
             const less_in = [];
             const less_out = [];
             docs_alt.forEach((doc)=> {
-                if(doc.data().num in in_dhloseis)
+                if(in_dhloseis.includes(doc.data().num))
                     less_in.push({id: doc.id, ...doc.data()});
                 else
                     less_out.push({id: doc.id, ...doc.data()});
