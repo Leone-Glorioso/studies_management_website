@@ -208,8 +208,7 @@ function TeacherLessons1() {
     const handleFinalizeGrading = (e) => {
         async function finalize(){
             let info = Auth.getLessonsEdit()
-            const doc_ref = doc(db, 'grading', info.grading.id)
-            console.log(info.grading.id)
+            const doc_ref = doc(db, 'grading', info.grade_id)
             await updateDoc(doc_ref, {
                 state: 'final'
             })
@@ -218,7 +217,7 @@ function TeacherLessons1() {
             {
                 await addDoc(db_ref, {
                     grade: inside_grade.grade,
-                    lesson_id: Auth.getLessonsEdit().less.num,
+                    lesson_id: info.less.num,
                     period: 'Ιανουάριος 2023-24',
                     student_username: inside_grade.student,
                     teacher_username: user.username

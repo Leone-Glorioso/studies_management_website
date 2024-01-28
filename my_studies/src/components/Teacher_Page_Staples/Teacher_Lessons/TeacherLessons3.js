@@ -73,6 +73,8 @@ function TeacherLessons3() {
             }).catch((error)=>{
                 console.log(error);
             });
+            Auth.setCurrent(doc_ref.id);
+            Auth.setFromSaved(false);
             navigate("/teacher/lessons/edit-grades");
         }
         if(isLogged && user.type === 'teacher')
@@ -166,6 +168,8 @@ function TeacherLessons3() {
             let set_grades = Auth.getLessonsEdit();
             set_grades.grading.grades = new_grades;
             Auth.setLessonsEdit(set_grades);
+            Auth.setCurrent(doc_ref.id);
+            Auth.setFromSaved(false);
             navigate("/teacher/lessons/edit-grades");
         }
         if(isLogged && user.type === 'teacher')
