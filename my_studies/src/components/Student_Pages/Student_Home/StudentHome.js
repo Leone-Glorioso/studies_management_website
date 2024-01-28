@@ -141,9 +141,7 @@ function StudentHome()  {
                 </table>
             }
 
-            <p className="go-to-lessons">Δες περισσότερα στα: <a href="/student/lessons">Μαθήματα</a></p>
-
-            <p className="title1-sp">Σχετικά με της σπουδές μου:</p>
+            <p className="title1-sp"><a href="/student/profile">Σχετικά με της σπουδές μου:</a></p>
             {(!isLogged || user.type !== 'student') && <div className="Study-info-sp">
                 <ul className="info">
                     {Prof1.map((item, index) => {
@@ -170,9 +168,8 @@ function StudentHome()  {
                     })}
                 </ul>
             </div>}
-            <p className="go-to-profile">Δες περισσότερα στο: <a href="/student/profile">Προφίλ</a></p>
 
-            <p className="title2-sp">Οι τελευταίες βαθμολογίες μου:</p>
+            <p className="title2-sp"><a href="/student/grades">Οι τελευταίες βαθμολογίες μου:</a></p>
             {(!isLogged || user.type !== 'student') && <table className="table-gr-sp">
                 <tr>
                     <th>Κωδικός Μαθήματος</th>
@@ -218,7 +215,6 @@ function StudentHome()  {
                         )
                     })}
                 </table>}
-            <p className="go-to-grades">Δες περισσότερα στις: <a href="/student/grades">Βαθμολογίες</a></p>
 
         </div>
 

@@ -59,6 +59,10 @@ tr:nth-child(even) {
 tr:hover {background-color: #8CBFE4;}
 
 p.title1-sp {
+    a {
+        text-decoration: none;
+        color: #123C5A;
+    }
     position: fixed;
     top: 30vh;
     left: 60vw;
@@ -67,7 +71,6 @@ p.title1-sp {
     padding-bottom: 15px;
     font-weight: bold;
     font-size: 20px;
-    color: #123C5A;
 }
 
 .Study-info-sp{
@@ -111,43 +114,11 @@ p.title1-sp {
     }
 }
 
-.go-to-lessons {
-    font-size: 15px;
-    color: black;
-    font-weight: normal;
-    /*background-color: #A2D2F5;*/
-    position: fixed;
-    top: 65vh;
-    left: 18vw;
-    padding-top: 15px;
-    padding-bottom: 15px;
-
-    a {
-        text-decoration: none;
-        color: #123C5A;
-        font-weight: bold;
-    }
-}
-
-.go-to-profile {
-    font-size: 15px;
-    color: black;
-    font-weight: normal;
-    /*background-color: #A2D2F5;*/
-    position: fixed;
-    top: 65vh;
-    left: 60vw;
-    padding-top: 15px;
-    padding-bottom: 15px;
-
-    a {
-        text-decoration: none;
-        color: #123C5A;
-        font-weight: bold;
-    }
-}
-
 p.title2-sp {
+    a {
+        text-decoration: none;
+        color: #123C5A;
+    }
     position: fixed;
     top: 68vh;
     left: 18vw;
@@ -156,7 +127,6 @@ p.title2-sp {
     padding-bottom: 15px;
     font-weight: bold;
     font-size: 20px;
-    color: #123C5A;
 }
 
 .table-gr-sp{
@@ -193,22 +163,4 @@ tr:nth-child(even) {
 }
 
 tr:hover {background-color: #8CBFE4;}
-
-.go-to-grades {
-    font-size: 15px;
-    color: black;
-    font-weight: normal;
-    /*background-color: #A2D2F5;*/
-    position: fixed;
-    bottom: 5vh;
-    left: 18vw;
-    padding-top: 15px;
-    padding-bottom: 15px;
-
-    a {
-        text-decoration: none;
-        color: #123C5A;
-        font-weight: bold;
-    }
-}
 
