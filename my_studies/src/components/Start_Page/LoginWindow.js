@@ -11,6 +11,7 @@ const LoginWindow = ({active}) => {
     const [password, setPassword] = useState("")
     const [logState, setLogState] = useState(active);
     const [occ, SetOcc] = useState("");
+    const [error, setError] = useState(false);
     const Auth = useAuth()
     const navigate = useNavigate();
 
@@ -26,7 +27,7 @@ const LoginWindow = ({active}) => {
             })
             if(docs.size === 0)
             {
-                navigate('#popup-er');
+                setError(true);
                 return;
             }
             if(occ === "student")
@@ -93,6 +94,8 @@ const LoginWindow = ({active}) => {
                             </div>
                         </div>
                         <br/>
+                        {error && <p>Λάθος Όνομα Χρήστη ή Κωδικός</p>}
+                        <br/>
                         <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
                         <br/>
                         <div className={"container_special"}>
@@ -140,6 +143,8 @@ const LoginWindow = ({active}) => {
                                 />
                             </div>
                         </div>
+                        <br/>
+                        {error && <p>Λάθος Όνομα Χρήστη ή Κωδικός</p>}
                         <br/>
                         <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
                         <br/>

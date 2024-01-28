@@ -30,6 +30,7 @@ function UniversalNavbar() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate();
+    const [error, setError] = useState(false);
 
     const onButtonClick = async () => {
         async function fetchUser()
@@ -40,7 +41,7 @@ function UniversalNavbar() {
             const data = [];
             if(docs.size === 0)
             {
-                navigate('#popup-er');
+                setError(true);
                 return;
             }
             docs.forEach((doc)=> {
@@ -135,10 +136,12 @@ function UniversalNavbar() {
                         </div>
                     </div>
                     <br/>
+                    {error && <p  className={'red-error'}>Λάθος Όνομα Χρήστη ή Κωδικός</p>}
+                    <br/>
                     <a href="https://account.di.uoa.gr/" target="_blank">Ξέχασες τον κωδικό σου;</a>
                     <br/>
                     <div className={"container_special"}>
-                        <Button className="green-button-round" tooltip="Ασφαλής Σύνδεση: Χρησιμοποιείται εάν βρίσκεστε σε δημόσιο δίκτυο" tooltipOptions={{ position: 'bottom' , className: 'tooltipContainer', fontSize: '2rem', cursor: 'pointer'}} onClick={onButtonClick}>
+                        <Button className="green-button-round" tooltip="Ασφαλής Σύνδεση: Χρησιμοποιείται εάν βρίσκεστε σε δημόσιο δίκτυο" tooltipOptions={{ position: 'bottom' , className: 'tooltipContainer-univ', fontSize: '2rem', cursor: 'pointer'}} onClick={onButtonClick}>
                             <FaUnlock id={"icon1"}/>
                             <FaLock id={"icon2"}/>
                         </Button>
@@ -151,19 +154,19 @@ function UniversalNavbar() {
                 </div>
             </div>}
 
-            <div id="popup-er" className="overlay">
-                <div className="popup">
-                    <div className="content">
-                        Κάποιο από τα στοιχεία σας ήταν λανθασμένο, παρακαλώ ξαναπροσπαθήστε.
-                    </div>
-                    <ul className="buttons1">
-                        <li className="buttons-c1">
-                            <a href="/"
-                               className="confirm">OK</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            {/*<div id="popup-er" className="overlay">*/}
+            {/*    <div className="popup">*/}
+            {/*        <div className="content">*/}
+            {/*            Κάποιο από τα στοιχεία σας ήταν λανθασμένο, παρακαλώ ξαναπροσπαθήστε.*/}
+            {/*        </div>*/}
+            {/*        <ul className="buttons1">*/}
+            {/*            <li className="buttons-c1">*/}
+            {/*                <a href="/"*/}
+            {/*                   className="confirm">OK</a>*/}
+            {/*            </li>*/}
+            {/*        </ul>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
     );
 }
