@@ -4,12 +4,14 @@ import Sidebar from "../Navbar_Sidebar/Sidebar";
 import {useAuth} from "../../Auth/AuthContext";
 import {collection, doc, Timestamp, setDoc,addDoc} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
+import {useNavigate} from "react-router-dom";
 
 function StudentCert1_4() {
 
     const Auth = useAuth();
     const isLogged = Auth.userIsAuthenticated();
     const user = Auth.getUser();
+    const navigate = useNavigate();
     const [cert, setCert] = useState('');
     let Prof2_logged = []
 
@@ -91,6 +93,25 @@ function StudentCert1_4() {
         Auth.setWindow(true);
     }
 
+    const submitCert = (e) => {
+        async function submit_cert()
+        {
+            const doc_ref = await addDoc(collection(db, 'certificates'), {
+                username: user.username,
+                state: "on_hold",
+                type: Auth.getType(),
+                date: Timestamp.now()
+            });
+            Auth.setCurrent(doc_ref.id);
+            navigate("/student/certificates/new-certificate/personal_info/confirmation/end/done");
+        }
+        if(isLogged && user.type === 'student' && Auth.getType() !== 0)
+        {
+            submit_cert();
+            Auth.setType(0);
+        }
+    }
+
     return (
         <div>
             <Sidebar/>
@@ -168,7 +189,7 @@ function StudentCert1_4() {
                 </li>
             </ul>
 
-            <div id="popup1" className="overlay">
+            {(!isLogged || user.type !== 'student') && <div id="popup1" className="overlay">
                 <div className="popup">
                     <div className="content">
                         Σίγουρα θέλετε να υποβάλετε την αίτηση;
@@ -180,7 +201,21 @@ function StudentCert1_4() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>}
+
+            {isLogged && user.type === 'student' &&  <div id="popup1" className="overlay">
+                <div className="popup">
+                    <div className="content">
+                        Σίγουρα θέλετε να υποβάλετε την αίτηση;
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/student/certificates/new-certificate/personal_info/confirmation/end" className="cancel-p">Άκυρο</a>
+                            <a onClick={(e)=> submitCert(e)} className="confirm">Επιβεβαίωση</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
 
         </div>
 

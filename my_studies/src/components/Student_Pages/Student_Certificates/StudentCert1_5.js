@@ -1,33 +1,59 @@
-import React, {Component, useEffect} from "react";
+import React, {Component, useEffect, useState} from "react";
 import './StudentCert1_5.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
-import {addDoc, collection, getDocs, orderBy, query, Timestamp, where} from "firebase/firestore";
+import {
+    addDoc,
+    collection,
+    deleteDoc,
+    doc,
+    getDocs,
+    orderBy,
+    query,
+    Timestamp,
+    updateDoc,
+    where
+} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
 import {useAuth} from "../../Auth/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 function StudentCert1_5() {
 
     const Auth = useAuth();
     const isLogged = Auth.userIsAuthenticated();
     const user = Auth.getUser();
+    // const [created_id, setCreatedId] = useState('');
+    const navigate = useNavigate();
 
 
-    useEffect(() => {
-        async function submit_cert()
-        {
-            await addDoc(collection(db, 'certificates'), {
-                username: user.username,
-                state: "on_hold",
-                type: Auth.getType(),
-                date: Timestamp.now()
-            });
+    // useEffect(() => {
+    //     async function submit_cert()
+    //     {
+    //         const doc_ref = await addDoc(collection(db, 'certificates'), {
+    //             username: user.username,
+    //             state: "on_hold",
+    //             type: Auth.getType(),
+    //             date: Timestamp.now()
+    //         });
+    //         setCreatedId(doc_ref.id);
+    //     }
+    //     if(isLogged && user.type === 'student' && Auth.getType() != 0)
+    //     {
+    //         submit_cert();
+    //         Auth.setType(0);
+    //     }
+    // }, []);
+
+    const nulifyCert = (e) => {
+
+        async function deleteCert(){
+            const doc_ref = doc(db, 'certificates', Auth.getCurrent());
+            await deleteDoc(doc_ref);
+            navigate("/student/certificates");
         }
-        if(isLogged && user.type === 'student' && Auth.getType() != 0)
-        {
-            submit_cert();
-            Auth.setType(0);
-        }
-    }, []);
+        if(isLogged && user.type === 'student')
+            deleteCert();
+    }
 
     return (
         <div>
@@ -73,7 +99,7 @@ function StudentCert1_5() {
                 </div>
             </div>
 
-            <div id="popup2" className="overlay">
+            {(!isLogged || user.type !== 'student') && <div id="popup2" className="overlay">
                 <div className="popup">
                     <div className="content">
                         Σίγουρα θέλετε να αναιρέσετε την αίτηση;
@@ -82,11 +108,26 @@ function StudentCert1_5() {
                         <li className="buttons-c1">
                             <a href="/student/certificates/new-certificate/personal_info/confirmation/end/done"
                                className="cancel-p">Άκυρο</a>
-                            <a href="/student/certificates/new-certificate/" className="confirm">Αναίρεση</a>
+                            <a href="/student/certificates" className="confirm">Αναίρεση</a>
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>}
+
+            {isLogged && user.type === 'student' && <div id="popup2" className="overlay">
+                <div className="popup">
+                    <div className="content">
+                        Σίγουρα θέλετε να αναιρέσετε την αίτηση;
+                    </div>
+                    <ul className="buttons1_5">
+                        <li className="buttons-c1">
+                            <a href="/student/certificates/new-certificate/personal_info/confirmation/end/done"
+                               className="cancel-p">Άκυρο</a>
+                            <a onClick={(e)=>nulifyCert(e)} className="confirm">Αναίρεση</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
 
         </div>
 
