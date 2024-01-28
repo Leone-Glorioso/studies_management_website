@@ -131,6 +131,21 @@ function StudentDhlwseis1() {
             setNewDhl();
     }
 
+    const saveLesson = (e) => {
+        async function setNewDhl(){
+            await addDoc(collection(db, 'dhloseis'),{
+                date: Timestamp.now(),
+                isCurrent: false,
+                lessons: lessons_in_nums,
+                student_username: user.username,
+                type: 'temporary'
+            });
+            navigate("/student/forms/saved");
+        }
+        if(isLogged && user.type === 'student')
+            setNewDhl();
+    }
+
     return (
         <div>
             <Sidebar/>
@@ -235,7 +250,7 @@ function StudentDhlwseis1() {
                 </div>
             </div>}
 
-            <div id="popup-sd" className="overlay">
+            {(!isLogged || user.type !== 'student') && <div id="popup-sd" className="overlay">
                 <div className="popup-sd">
                     <div className="content">
                         Σίγουρα θέλετε να αποθηκεύσετε την δήλωση;
@@ -249,7 +264,22 @@ function StudentDhlwseis1() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>}
+
+            {isLogged && user.type === 'student' && <div id="popup-sd" className="overlay">
+                <div className="popup-sd">
+                    <div className="content">
+                        Σίγουρα θέλετε να αποθηκεύσετε την δήλωση;
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/student/forms/new-form"
+                               className="cancel-p">Άκυρο</a>
+                            <a onClick={saveLesson} className="confirm">Αποθήκευση</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
 
         </div>
 
