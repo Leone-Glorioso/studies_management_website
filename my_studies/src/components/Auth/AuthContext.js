@@ -14,6 +14,8 @@ function AuthProvider({ children }) {
     const [lessons_out, setLessons_Out] = useState([]);
     const [lesson_editing, setLesson_Editing] = useState(null);
     const [new_grades, setNewGrades] = useState([])
+    const [old_current, setOldCurrent] = useState('');
+    const [dhl_from_saved, setDhlFromSaved] = useState(false);
     const cookies = new Cookies();
 
     const userIsAuthenticated = () => {
@@ -145,6 +147,32 @@ function AuthProvider({ children }) {
         setNewGrades(l);
     }
 
+    const getCurrent = () => {
+        return cookies.get('curr', {path: '/'})
+    }
+
+    const setCurrent = (c) => {
+        sessionStorage.setItem("curr", JSON.stringify(c));
+        cookies.set('curr', JSON.stringify(c), {
+            expires: new Date(Date.now() + 1000000),
+            path: '/'
+        })
+        setOldCurrent(c);
+    }
+
+    const getFromSaved = () => {
+        return cookies.get('from_saved', {path: '/'})
+    }
+
+    const setFromSaved = (c) => {
+        sessionStorage.setItem("from_saved", JSON.stringify(c));
+        cookies.set('from_saved', JSON.stringify(c), {
+            expires: new Date(Date.now() + 1000000),
+            path: '/'
+        })
+        setDhlFromSaved(c);
+    }
+
     const contextValue = {
         user,
         userIsAuthenticated,
@@ -177,6 +205,12 @@ function AuthProvider({ children }) {
         new_grades,
         setNewGrading,
         getNewGrading,
+        old_current,
+        setCurrent,
+        getCurrent,
+        dhl_from_saved,
+        setFromSaved,
+        getFromSaved,
     };
 
     return (

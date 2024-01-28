@@ -100,8 +100,11 @@ function StudentDhlwseis3() {
             const doc_ref = doc(db, 'dhloseis', sub_id);
             await updateDoc(doc_ref, {
                 isCurrent: true,
-                type: 'final'
+                type: 'final',
+                date: Timestamp.now()
             })
+            Auth.setCurrent(change_id);
+            Auth.setFromSaved(true);
             navigate("/student/forms/new-form/done");
         }
         if(isLogged && user.type === 'student')
