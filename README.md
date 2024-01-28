@@ -1,8 +1,8 @@
 # 3η εργασία: Επικοινωνία Ανθρώπου Μηχανής 
 
 ## Στοιχεία ομάδας:
-* Ονοματεπώνυμο: Λεοντιάδης Κωνσταντίνος	 ΑΜ: 1115202100085
-* Ονοματεπώνυμο: Νεφέλη Οικονόμου		       ΑΜ: 1115202100127
+* **Ονοματεπώνυμο:** Λεοντιάδης Κωνσταντίνος	 **ΑΜ:** 1115202100085
+* **Ονοματεπώνυμο:** Νεφέλη Οικονόμου		       **ΑΜ:** 1115202100127
 
 
 ## Περιγραφή εργασίας:
@@ -40,8 +40,8 @@
 
 ## Δοκιμαστικοί κωδικοί:
 ### Καθηγητών:
-* username: vourdimitra	password: @vourdimitra
-* username: vlachosnasos	password: @vlachosnasos
+* **username:** vourdimitra	**password:** @vourdimitra
+* **username:** vlachosnasos	**password:** @vlachosnasos
 ### Μαθητών:
-* username: sdi2500027	password: @sdi2500027
-* username: sdi2100026	password: @sdi2500026
+* **username:** sdi2500027	**password:** @sdi2500027
+* **username:** sdi2100026	**password:** @sdi2500026
