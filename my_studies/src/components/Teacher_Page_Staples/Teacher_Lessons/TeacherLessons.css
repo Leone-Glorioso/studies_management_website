@@ -106,7 +106,7 @@ tr:hover {background-color: #8CBFE4;}
     --dropdown-color: #123C5A;
 }
 
-a.button, a.button1-t, a.button2-t, a.button3 {
+.button_t, .button1_t {
     display: inline-block;
     padding: 10px 15px;
     border: 2px solid #123C5A;
@@ -117,56 +117,74 @@ a.button, a.button1-t, a.button2-t, a.button3 {
     color: var(--button-color);
     font-size: 20px;
     cursor: pointer;
+
+    i{
+        font-size: 15px;
+    }
 }
 
-a.button1-t {
+.button_t {
     position: fixed;
-    top: 40vh;
-    left: 19vw;
+    top: 39vh;
+    left: 20vw;
 }
 
-a.button2-t {
+.button1_t {
     position: fixed;
-    top: 40vh;
-    left: 40vw;
+    top: 39vh;
+    left: 30vw;
+}
+
+.title0-t {
+    position: fixed;
+    top: 36vh;
+    left: 20vw;
+
+    font-size: 15px;
+}
+
+.title1-t {
+    position: fixed;
+    top: 36vh;
+    left: 30vw;
+
+    font-size: 15px;
 }
 
 /* Dropdown styles */
-
-.dropdown1-t {
+.dropdown_t {
     position: fixed;
-    top: 45vh;
-    left: 26vw;
+    top: 44vh;
+    left: 23vw;
     padding: 0;
     margin-right: 1em;
 
     border: 2px solid #123C5A;
 }
 
-.dropdown2-t {
+.dropdown1_t {
     position: fixed;
-    top: 45vh;
-    left: 44vw;
+    top: 44vh;
+    left: 36vw;
     padding: 0;
     margin-right: 1em;
 
     border: 2px solid #123C5A;
 }
 
-
-.dropdown1-t summary, .dropdown2-t summary {
+.dropdown_t summary, .dropdown1_t summary {
     list-style: none none;
 }
 
-.dropdown1-t > summary::-webkit-details-marker, .dropdown2-t > summary::-webkit-details-marker {
+.dropdown_t > summary::-webkit-details-marker, .dropdown1_t > summary::-webkit-details-marker {
     display: none;
 }
 
-.dropdown1-t summary:focus, .dropdown2-t summary:focus {
+.dropdown_t summary:focus, .dropdown1_t summary:focus {
     outline: none;
 }
 
-.dropdown1-t ul, .dropdown2-t ul {
+.dropdown_t ul, .dropdown1_t ul {
     position: absolute;
     padding: 20px 0;
     width: var(--dropdown-width);
@@ -180,12 +198,12 @@ a.button2-t {
     list-style: none;
 }
 
-.dropdown1-t ul li, .dropdown2-t ul li {
+.dropdown_t ul li, .dropdown1_t ul li {
     padding: 0;
     margin: 0;
 }
 
-.dropdown1-t ul li a:link, .dropdown1-t ul li a:visited, .dropdown2-t ul li a:link, .dropdown2-t ul li a:visited {
+.dropdown_t ul li a:link, .dropdown_t ul li a:visited, .dropdown1_t ul li a:link, .dropdown1_t ul li a:visited {
     display: inline-block;
     padding: 10px 0.8rem;
     width: 100%;
@@ -194,13 +212,14 @@ a.button2-t {
     color: var(--dropdown-color);
     text-decoration: none;
 }
-.dropdown1-t ul li a:hover, .dropdown2-t ul li a:hover {
+
+.dropdown_t ul li a:hover, .dropdown1_t ul li a:hover {
     background-color: var(--dropdown-highlight);
     color: white;
 }
 
 /* Dropdown triangle */
-.dropdown1-t ul::before, .dropdown2-t ul::before {
+.dropdown_t ul::before, .dropdown1_t ul::before {
     content: ' ';
     position: absolute;
     width: 0;
@@ -215,11 +234,11 @@ a.button2-t {
 
 
 /* Close the dropdown with outside clicks */
-.dropdown1-t > summary::before, .dropdown2-t > summary::before {
+.dropdown_t > summary::before, .dropdown1_t > summary::before {
     display: none;
 }
 
-.dropdown1-t[open] > summary::before, .dropdown2-t[open] > summary::before {
+.dropdown_t[open] > summary::before, .dropdown1_t[open] > summary::before {
     content: ' ';
     display: block;
     position: fixed;
@@ -229,8 +248,6 @@ a.button2-t {
     bottom: 0;
     z-index: 1;
 }
-
-
 
 .popup-ep-s-less {
     margin: 70px auto;
@@ -296,6 +313,43 @@ a.button2-t {
     }
 
     tr:hover {background-color: #8CBFE4;}
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-ep-s-less {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 45%;
+
+    position: relative;
+    transition: all 5s ease-in-out;
+    top: 22%;
+}
+
+.popup-ep-s-less .content {
+    font-size: 20px;
+    font-weight: bold;
+    max-height: 30%;
+    overflow: auto;
+    text-align: center;
 }
 
 @media screen and (max-width: 700px){

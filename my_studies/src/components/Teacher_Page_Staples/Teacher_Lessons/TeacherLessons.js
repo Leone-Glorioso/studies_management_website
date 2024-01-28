@@ -120,30 +120,34 @@ function TeacherLessons() {
                         <th></th>
                     </tr>
                     {lessons.map((lesson) => {
-                        if(lesson.grading === undefined)
-                            return (
-                                <tr>
-                                    <td>{lesson.num}</td>
-                                    <td>{lesson.name}</td>
-                                    <td><a  onClick={(e) => onGoToEdit(e, lesson)} href={'/teacher/lessons/new-grades'} className="button-n">Νέο Βαθμολόγιο</a></td>
-                                </tr>
-                            )
-                        else if(lesson.grading.state === 'temporary')
-                            return (
-                                <tr>
-                                    <td>{lesson.less.num}</td>
-                                    <td>{lesson.less.name}</td>
-                                    <td><a onClick={(e) => onGoToEditSaved(e, lesson)} href={'/teacher/lessons/edit-grades'} className="button-e">Επεξεργασία</a></td>
-                                </tr>
+                            if (lesson.grading === undefined)
+                                return (
+                                    <tr>
+                                        <td>{lesson.num}</td>
+                                        <td>{lesson.name}</td>
+                                        <td><a onClick={(e) => onGoToEdit(e, lesson)} href={'/teacher/lessons/new-grades'}
+                                               className="button-n">Νέο Βαθμολόγιο</a></td>
+                                    </tr>
                                 )
-                        else
-                            return (
-                                <tr>
-                                    <td>{lesson.less.num}</td>
-                                    <td>{lesson.less.name}</td>
-                                    <td> <a className={'button-show'} href={'#popup-ep'} onClick={(e)=> onShowFinalized(e,lesson)}>Οριστικοποιημένη</a> </td>
-                                </tr>
-                            )
+                            else if (lesson.grading.state === 'temporary')
+                                return (
+                                    <tr>
+                                        <td>{lesson.less.num}</td>
+                                        <td>{lesson.less.name}</td>
+                                        <td><a onClick={(e) => onGoToEditSaved(e, lesson)}
+                                               href={'/teacher/lessons/edit-grades'} className="button-e">Επεξεργασία</a>
+                                        </td>
+                                    </tr>
+                                )
+                            else
+                                return (
+                                    <tr>
+                                        <td>{lesson.less.num}</td>
+                                        <td>{lesson.less.name}</td>
+                                        <td><a className={'button-show'} href={'#popup-ep'}
+                                               onClick={(e) => onShowFinalized(e, lesson)}>Οριστικοποιημένη</a></td>
+                                    </tr>
+                                )
                         }
                     )}
                 </table>
@@ -210,34 +214,32 @@ function TeacherLessons() {
 
             <ul className="dropdowns">
                 <li className="drop-buttons">
-
-
-                    <details className="dropdown1-t">
+                    <details className="dropdown_t">
                         <summary role="button">
-                            <a className="button1-t">Ακαδημαϊκή Περίοδος</a>
+                            <div className="title0-t">Κατάσταση</div>
+                            <a className="button_t">Όλα <i className="fa-solid fa-chevron-down"></i></a>
                         </summary>
+
+
                         <ul>
-                            <li><a href="#">2022-2023</a></li>
-                            <li><a href="#">2023-2024</a></li>
+                            <li><a href="#">Όλα</a></li>
+                            <li><a href="#">Υπό επεξεργασία</a></li>
+                            <li><a href="#">Οριστικοποιημένα</a></li>
+                            <li><a href="#">Προς δημιουργία</a></li>
                         </ul>
                     </details>
 
-                    <details className="dropdown2-t">
+                    <details className="dropdown1_t">
                         <summary role="button">
-                            <a className="button2-t">Εξάμηνο</a>
+                            <div className="title1-t">Ταξινόμηση κατά</div>
+                            <a className="button1_t">Πιο πρόσφατα<i
+                                className="fa-solid fa-chevron-down"></i></a>
                         </summary>
                         <ul>
-                            <li><a href="#">1ο</a></li>
-                            <li><a href="#">2ο</a></li>
-                            <li><a href="#">3ο</a></li>
-                            <li><a href="#">4ο</a></li>
-                            <li><a href="#">5ο</a></li>
-                            <li><a href="#">6ο</a></li>
-                            <li><a href="#">7ο</a></li>
-                            <li><a href="#">8ο</a></li>
+                            <li><a href="#">Πιο πρόσφατα</a></li>
+                            <li><a href="#">Λιγότερο πρόσφατα</a></li>
                         </ul>
                     </details>
-
                 </li>
             </ul>
 
