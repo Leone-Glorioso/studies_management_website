@@ -86,8 +86,8 @@ ul.breadcrumb {
 /* Dropdown styles */
 .dropdown_certs {
     position: fixed;
-    top: 310px;
-    left: 360px;
+    top: 44vh;
+    left: 23vw;
     padding: 0;
     margin-right: 1em;
 
@@ -96,8 +96,8 @@ ul.breadcrumb {
 
 .dropdown1_certs {
     position: fixed;
-    top: 310px;
-    left: 590px;
+    top: 44vh;
+    left: 36vw;
     padding: 0;
     margin-right: 1em;
 
