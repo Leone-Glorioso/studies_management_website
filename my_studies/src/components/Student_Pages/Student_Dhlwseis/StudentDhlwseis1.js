@@ -125,6 +125,7 @@ function StudentDhlwseis1() {
                 student_username: user.username,
                 type: 'final'
             });
+            Auth.setCurrent(dhl_to_edit);
             navigate("/student/forms/new-form/done");
         }
         if(isLogged && user.type === 'student')
