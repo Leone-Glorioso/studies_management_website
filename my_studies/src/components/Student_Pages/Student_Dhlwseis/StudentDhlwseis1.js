@@ -3,8 +3,9 @@ import './StudentDhlwseis1.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
 import Dropdown from "../Dropdowns/Dropdown";
 import {useAuth} from "../../Auth/AuthContext";
-import {collection, getDocs, query, where} from "firebase/firestore";
+import {collection, getDocs, query, where, addDoc, doc, updateDoc, Timestamp} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
+import {useNavigate} from "react-router-dom";
 
 function StudentDhlwseis1() {
     const Auth = useAuth();
@@ -16,7 +17,8 @@ function StudentDhlwseis1() {
     const [lessons_out_nums, setLessonsOutNums] = useState([]);
     const [limit, setLimit] = useState(0);
     const [checked, setChecked] = useState(0);
-    const [firstTime, setFirstTime] = useState(true)
+    const [firstTime, setFirstTime] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchLessons()
@@ -102,6 +104,33 @@ function StudentDhlwseis1() {
         Auth.setWindow(true);
     }
 
+    const submitLesson = (e) => {
+        async function setNewDhl(){
+            const q = query(collection(db, 'dhloseis'), where('isCurrent', '==', true));
+            const docs = await getDocs(q);
+            const data = [];
+            docs.forEach((doc)=> {
+                data.push(doc.id)
+            })
+            const dhl_to_edit = data[0];
+            console.log(dhl_to_edit);
+            const doc_ref = doc(db, 'dhloseis', dhl_to_edit);
+            await updateDoc(doc_ref, {
+                isCurrent: false
+            })
+            await addDoc(collection(db, 'dhloseis'),{
+                date: Timestamp.now(),
+                isCurrent: true,
+                lessons: lessons_in_nums,
+                student_username: user.username,
+                type: 'final'
+            });
+            navigate("/student/forms/new-form/done");
+        }
+        if(isLogged && user.type === 'student')
+            setNewDhl();
+    }
+
     return (
         <div>
             <Sidebar/>
@@ -175,7 +204,7 @@ function StudentDhlwseis1() {
                 {isLogged && checked > limit && <a className="submit-disabled" >Οριστική υποβολή</a>}
             </div>
 
-            <div id="popup-fs" className="overlay">
+            {(!isLogged || user.type !== 'student') &&<div id="popup-fs" className="overlay">
                 <div className="popup-fs">
                     <div className="content">
                         Σίγουρα θέλετε να υποβάλετε την δήλωση;
@@ -189,7 +218,22 @@ function StudentDhlwseis1() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>}
+
+            {isLogged && user.type === 'student' && <div id="popup-fs" className="overlay">
+                <div className="popup-fs">
+                    <div className="content">
+                        Σίγουρα θέλετε να υποβάλετε την δήλωση;
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/student/forms/new-form"
+                               className="cancel-p">Άκυρο</a>
+                            <a onClick={submitLesson} className="confirm">Επιβεβαίωση</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
 
             <div id="popup-sd" className="overlay">
                 <div className="popup-sd">
