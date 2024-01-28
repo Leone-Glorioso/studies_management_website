@@ -126,6 +126,7 @@ function StudentDhlwseis1() {
                 type: 'final'
             });
             Auth.setCurrent(dhl_to_edit);
+            Auth.setFromSaved(false);
             navigate("/student/forms/new-form/done");
         }
         if(isLogged && user.type === 'student')

@@ -15,6 +15,7 @@ function AuthProvider({ children }) {
     const [lesson_editing, setLesson_Editing] = useState(null);
     const [new_grades, setNewGrades] = useState([])
     const [old_current, setOldCurrent] = useState('');
+    const [dhl_from_saved, setDhlFromSaved] = useState(false);
     const cookies = new Cookies();
 
     const userIsAuthenticated = () => {
@@ -159,6 +160,19 @@ function AuthProvider({ children }) {
         setOldCurrent(c);
     }
 
+    const getFromSaved = () => {
+        return cookies.get('from_saved', {path: '/'})
+    }
+
+    const setFromSaved = (c) => {
+        sessionStorage.setItem("from_saved", JSON.stringify(c));
+        cookies.set('from_saved', JSON.stringify(c), {
+            expires: new Date(Date.now() + 1000000),
+            path: '/'
+        })
+        setDhlFromSaved(c);
+    }
+
     const contextValue = {
         user,
         userIsAuthenticated,
@@ -194,6 +208,9 @@ function AuthProvider({ children }) {
         old_current,
         setCurrent,
         getCurrent,
+        dhl_from_saved,
+        setFromSaved,
+        getFromSaved,
     };
 
     return (

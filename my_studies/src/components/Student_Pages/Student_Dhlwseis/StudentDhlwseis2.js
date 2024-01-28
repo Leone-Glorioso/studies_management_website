@@ -74,12 +74,20 @@ function StudentDhlwseis2() {
             })
             const del_id = data[0];
             const doc_ref = doc(db, 'dhloseis', del_id);
-            await deleteDoc(doc_ref);
+            if(!Auth.getFromSaved()){
+                await deleteDoc(doc_ref);
+            }
+            else {
+                await updateDoc(doc_ref, {
+                    isCurrent: false,
+                    type: 'temporary'
+                })
+            }
             const doc_ref_2 = doc(db, 'dhloseis', Auth.getCurrent());
             await updateDoc(doc_ref_2, {
                 isCurrent: true
             })
-            navigate("/student/forms/new-form");
+            navigate("/student/forms");
         }
         if(isLogged && user.type === 'student')
             deleteDhl();
