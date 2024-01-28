@@ -101,7 +101,7 @@ function StudentCert1_4() {
                 <li>Νέο Πιστοποιητικό</li>
             </ul>
 
-            <ul className="progress-bar">
+            <ul className="progress-bar-t4">
                 <li className="table-header">
                     <div className="step1">Επιλογή Πιστοποιητικού</div>
                     <div className="step2">Έλεγχος Στοιχείων</div>
@@ -119,7 +119,7 @@ function StudentCert1_4() {
                 </li>
             </ul>
 
-            <p className="text">Τελική αίτηση:</p>
+            <p className="text-4">Τελική αίτηση:</p>
 
             {(!isLogged || user.type !== 'student') && <div className="pers-info-certs3">
                 <ul className="info">

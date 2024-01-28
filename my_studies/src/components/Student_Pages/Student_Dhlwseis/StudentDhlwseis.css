@@ -30,9 +30,9 @@ ul.breadcrumb {
 
 .table-dhl{
     position: fixed;
-    top: 365px;
-    left: 290px;
-    width: 1140px;
+    top: 55vh;
+    left: 22%;
+    width: 70%;
     border-collapse: collapse;
 
     th {
@@ -74,8 +74,8 @@ tr:hover {background-color: #8CBFE4;}
 
 .new, .saved, .final {
     position: fixed;
-    top: 240px;
-    right: 50px;
+    top: 32vh;
+    left: 90vw;
 
     font-size: 20px;
     font-weight: bold;
@@ -92,15 +92,11 @@ tr:hover {background-color: #8CBFE4;}
 }
 
 .saved {
-    position: fixed;
-    top: 240px;
-    right: 200px;
+    left: 71vw;
     background: #95A5A6;
 }
 
 .final {
-    position: fixed;
-    top: 240px;
-    right: 480px;
+    left: 50vw;
     background: #95A5A6;
 }

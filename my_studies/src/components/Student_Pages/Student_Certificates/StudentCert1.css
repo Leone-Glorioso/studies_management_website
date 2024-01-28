@@ -28,11 +28,11 @@ ul.breadcrumb {
     }
 }
 
-.progress-bar {
+.progress-bar-t1 {
     position: fixed;
-    top: 250px;
-    right: 125px;
-    width: 1000px;
+    top: 40vh;
+    left: 26vw;
+    width: 65vw;
 
     li {
         border-radius: 3px;
@@ -62,9 +62,9 @@ ul.breadcrumb {
 
 .progress-bar1 {
     position: fixed;
-    top: 240px;
-    right: 125px;
-    width: 1000px;
+    top: 37vh;
+    left: 24vw;
+    width: 67vw;
 
     li {
         border-radius: 3px;
@@ -101,10 +101,10 @@ ul.breadcrumb {
     }
 }
 
-.text {
+.text-1 {
     position: fixed;
-    top: 320px;
-    left: 370px;
+    top: 48vh;
+    left: 20vw;
     color: #262323;
     font-size: medium;
     font-weight: bold;
@@ -122,14 +122,14 @@ ul.breadcrumb {
     font-weight: normal;
     color: #262323;*/
     --s: 1em;     /* control the size */
-    --g: 10px;    /* the gap */
+    --g: 5px;    /* the gap */
 
     display: grid;
     grid-auto-rows: 1fr;
     gap: var(--g);
     position: fixed;
-    top: 360px;
-    left: 370px;
+    top: 50vh;
+    left: 20vw;
 }
 
 input[type=radio] {
@@ -176,16 +176,16 @@ label {
 
 .buttons1_1 {
     position: fixed;
-    bottom: 50px;
-    right: 125px;
-    width: 1000px;
+    bottom: 2vh;
+    left: 25vw;
+    width: 65vw;
 
     li {
         border-radius: 3px;
-        padding: 25px 30px;
+        padding: 0px 30px;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 25px;
+        margin-bottom: 0px;
     }
     .buttons-c {
         letter-spacing: 0.03em;
@@ -210,6 +210,9 @@ label {
     }
 
     .cancel {
+        position: fixed;
+        bottom: 2vh;
+        left: 55vw;
         flex-basis: 10%;
 
         font-size: 20px;

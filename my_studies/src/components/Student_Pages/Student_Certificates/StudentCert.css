@@ -57,28 +57,28 @@ ul.breadcrumb {
 
 .button_certs {
     position: fixed;
-    top: 270px;
-    left: 290px;
+    top: 39vh;
+    left: 20vw;
 }
 
 .button1_certs {
     position: fixed;
-    top: 270px;
-    left: 490px;
+    top: 39vh;
+    left: 30vw;
 }
 
-.title0 {
+.title0-certs {
     position: fixed;
-    top: 250px;
-    left: 290px;
+    top: 36vh;
+    left: 20vw;
 
     font-size: 15px;
 }
 
-.title1 {
+.title1-certs {
     position: fixed;
-    top: 250px;
-    left: 490px;
+    top: 36vh;
+    left: 30vw;
 
     font-size: 15px;
 }
@@ -184,8 +184,8 @@ ul.breadcrumb {
 
 a.new-button {
     position: fixed;
-    top: 260px;
-    right: 50px;
+    top: 38vh;
+    left: 80vw;
     display: inline-block;
     padding: 15px 20px;
     border: none;
@@ -200,11 +200,10 @@ a.new-button {
     cursor: pointer;
 }
 
-.container {
+.container-c {
     position: fixed;
-    /*top: 20vh;*/
-    left: -9vw;
-    width: 80vw;
+    top: 42vh;
+    left: 20vw;
     margin-left: auto;
     margin-right: auto;
     padding-left: 10px;
@@ -212,8 +211,8 @@ a.new-button {
     margin-top: 5vh;
 }
 
-.responsive-table {
-    width: 83vw;
+.responsive-table-c {
+    width: 70vw;
     li {
         border-radius: 3px;
         padding: 25px 30px;
@@ -221,7 +220,7 @@ a.new-button {
         justify-content: space-between;
         margin-bottom: 25px;
     }
-    .table-header {
+    .table-header-c {
         background-color: #95A5A6;
         font-size: 14px;
         text-transform: uppercase;
@@ -244,7 +243,7 @@ a.new-button {
         flex-basis: 10%;
     }
 
-    .table-row {
+    .table-row-c {
         background-color: white;
         box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
 

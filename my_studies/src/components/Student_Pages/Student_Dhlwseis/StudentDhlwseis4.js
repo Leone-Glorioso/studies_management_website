@@ -72,7 +72,7 @@ function StudentDhlwseis4() {
                 <li>Οριστικοποιημένες</li>
             </ul>
 
-            {(!isLogged || user.type !== 'student') && <div className="container">
+            {(!isLogged || user.type !== 'student') && <div className="container-f">
                 <ul className="responsive-table-df">
                     <li className="table-header">
                         <div className="col col-1">Ημερομηνία</div>
@@ -92,7 +92,7 @@ function StudentDhlwseis4() {
                 </ul>
             </div>}
 
-            {isLogged && user.type === 'student' && <div className="container">
+            {isLogged && user.type === 'student' && <div className="container-f">
                 <ul className="responsive-table-df">
                     <li className="table-header">
                         <div className="col col-1">Ημερομηνία</div>

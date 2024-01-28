@@ -29,9 +29,10 @@ ul.breadcrumb {
 }
 
 .lessons{
-    top: 47vh;
-    left: 260px;
-    width: 500px;
+    position: fixed;
+    top: 55vh;
+    left: 22%;
+    width: 43%;
     border-collapse: collapse;
 
     th {

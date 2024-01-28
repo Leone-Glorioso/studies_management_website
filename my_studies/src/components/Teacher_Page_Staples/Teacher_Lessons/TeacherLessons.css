@@ -30,8 +30,8 @@ ul.breadcrumb {
 
 .table-l{
     position: fixed;
-    top: 330px;
-    left: 290px;
+    top: 50vh;
+    left: 19vw;
     width: 78vw;
     border-collapse: collapse;
 
@@ -110,22 +110,22 @@ a.button, a.button1-t, a.button2-t, a.button3 {
 
 a.button1-t {
     position: fixed;
-    top: 265px;
-    left: 290px;
+    top: 40vh;
+    left: 19vw;
 }
 
 a.button2-t {
     position: fixed;
-    top: 265px;
-    left: 590px;
+    top: 40vh;
+    left: 40vw;
 }
 
 /* Dropdown styles */
 
 .dropdown1-t {
     position: fixed;
-    top: 300px;
-    left: 390px;
+    top: 45vh;
+    left: 26vw;
     padding: 0;
     margin-right: 1em;
 
@@ -134,8 +134,8 @@ a.button2-t {
 
 .dropdown2-t {
     position: fixed;
-    top: 300px;
-    left: 650px;
+    top: 45vh;
+    left: 44vw;
     padding: 0;
     margin-right: 1em;
 

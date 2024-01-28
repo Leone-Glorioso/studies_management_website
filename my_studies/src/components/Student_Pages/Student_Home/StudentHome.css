@@ -5,8 +5,8 @@
     font-weight: 600;
     /*background-color: #A2D2F5;*/
     position: fixed;
-    top: 210px;
-    left: 260px;
+    top: 30vh;
+    left: 18vw;
     padding-top: 15px;
     padding-bottom: 15px;
     /*padding-left: 30px;
@@ -19,17 +19,17 @@
     font-weight: normal;
     /*background-color: #A2D2F5;*/
     position: fixed;
-    top: 235px;
-    left: 260px;
+    top: 34vh;
+    left: 18vw;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-table{
+.table-les{
     position: fixed;
-    top: 270px;
-    left: 260px;
-    width: 500px;
+    top: 40vh;
+    left: 18vw;
+    width: 40vw;
     border-collapse: collapse;
 
     th {
@@ -60,8 +60,8 @@ tr:hover {background-color: #8CBFE4;}
 
 p.title1-sp {
     position: fixed;
-    top: 210px;
-    right: 300px;
+    top: 30vh;
+    left: 60vw;
 
     padding-top: 15px;
     padding-bottom: 15px;
@@ -75,8 +75,8 @@ p.title1-sp {
     align-items: center;
     font-size: 30px;
     position: fixed;
-    top: 250px;
-    right: 50px;
+    top: 36vh;
+    left: 60vw;
 
     padding: 10px 300px 10px 10px;
     border-radius: 5px;
@@ -95,8 +95,8 @@ p.title1-sp {
     align-items: center;
     font-size: 30px;
     position: fixed;
-    top: 250px;
-    right: 50px;
+    top: 36vh;
+    left: 60vw;
     width: 31%;
 
     padding: 10px 100px 10px 10px;
@@ -117,8 +117,8 @@ p.title1-sp {
     font-weight: normal;
     /*background-color: #A2D2F5;*/
     position: fixed;
-    top: 400px;
-    left: 260px;
+    top: 65vh;
+    left: 18vw;
     padding-top: 15px;
     padding-bottom: 15px;
 
@@ -135,8 +135,8 @@ p.title1-sp {
     font-weight: normal;
     /*background-color: #A2D2F5;*/
     position: fixed;
-    top: 450px;
-    right: 360px;
+    top: 65vh;
+    left: 60vw;
     padding-top: 15px;
     padding-bottom: 15px;
 
@@ -149,8 +149,8 @@ p.title1-sp {
 
 p.title2-sp {
     position: fixed;
-    top: 500px;
-    left: 260px;
+    top: 68vh;
+    left: 18vw;
 
     padding-top: 15px;
     padding-bottom: 15px;
@@ -159,11 +159,11 @@ p.title2-sp {
     color: #123C5A;
 }
 
-.table-gr{
+.table-gr-sp{
     position: fixed;
-    top: 550px;
-    left: 260px;
-    width: 83vw;
+    top: 74vh;
+    left: 18vw;
+    width: 78vw;
     border-collapse: collapse;
 
     th {
@@ -200,8 +200,8 @@ tr:hover {background-color: #8CBFE4;}
     font-weight: normal;
     /*background-color: #A2D2F5;*/
     position: fixed;
-    bottom: 0px;
-    left: 260px;
+    bottom: 5vh;
+    left: 18vw;
     padding-top: 15px;
     padding-bottom: 15px;
 

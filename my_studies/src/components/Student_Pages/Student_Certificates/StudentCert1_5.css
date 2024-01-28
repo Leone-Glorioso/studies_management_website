@@ -28,11 +28,11 @@ ul.breadcrumb {
     }
 }
 
-.progress-bar {
+.progress-bar-t5 {
     position: fixed;
-    top: 250px;
-    right: 125px;
-    width: 1000px;
+    top: 40vh;
+    left: 26vw;
+    width: 65vw;
 
     li {
         border-radius: 3px;
@@ -62,9 +62,9 @@ ul.breadcrumb {
 
 .progress-bar5 {
     position: fixed;
-    top: 240px;
-    right: 125px;
-    width: 1000px;
+    top: 37vh;
+    left: 24vw;
+    width: 67vw;
 
     li {
         border-radius: 3px;
@@ -101,10 +101,10 @@ ul.breadcrumb {
     }
 }
 
-.text {
+.text-5 {
     position: fixed;
-    top: 320px;
-    left: 370px;
+    top: 48vh;
+    left: 20vw;
     color: #262323;
     font-size: medium;
     font-weight: bold;
@@ -112,8 +112,8 @@ ul.breadcrumb {
 
 .buttons2 {
     position: fixed;
-    top: 350px;
-    left: 345px;
+    top: 50vh;
+    left: 20vw;
     width: 500px;
 
     li {

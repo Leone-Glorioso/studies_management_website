@@ -30,8 +30,8 @@ ul.breadcrumb {
 
 .text-d {
     position: fixed;
-    top: 320px;
-    left: 370px;
+    top: 45vh;
+    left: 20vw;
     color: #262323;
     font-size: medium;
     font-weight: bold;
@@ -40,8 +40,8 @@ ul.breadcrumb {
 .buttons2-d {
     .home, .last-form {
         position: fixed;
-        top: 370px;
-        left: 740px;
+        top: 50vh;
+        left: 45vw;
 
         font-size: 20px;
         font-weight: bold;
@@ -58,17 +58,15 @@ ul.breadcrumb {
     }
 
     .home {
-        position: fixed;
-        top: 370px;
-        left: 480px;
+        left: 28vw;
 
         background: #95A5A6;
     }
 
     .undo {
         position: fixed;
-        top: 370px;
-        left: 360px;
+        top: 50vh;
+        left: 20vw;
 
         font-size: 20px;
         font-weight: bold;
@@ -181,22 +179,31 @@ ul.breadcrumb {
 
 .message {
     position: fixed;
-    top: 450px;
-    left: 370px;
+    top: 60vh;
+    left: 20vw;
     padding: 15px;
     background-color: #8CBFE4;
     border: none;
     border-radius: 5px;
     text-align: left;
-    width: 500px;
+    width: 50%;
+    height: 20%;
 
     .text2 {
+        position: fixed;
+        top: 62vh;
+        left: 22vw;
+
         color: white;
         font-size: 25px;
         font-weight: bold;
     }
 
     .text1 {
+        position: fixed;
+        top: 67vh;
+        left: 22vw;
+
         color: black;
         font-size: 20px;
     }

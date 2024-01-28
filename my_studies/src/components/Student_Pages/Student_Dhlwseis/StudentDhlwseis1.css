@@ -41,9 +41,9 @@ ul.breadcrumb {
 
 .table-dhl{
     position: fixed;
-    top: 365px;
-    left: 290px;
-    width: 1140px;
+    top: 52vh;
+    left: 22%;
+    width: 70%;
     border-collapse: collapse;
 
     th {
@@ -86,8 +86,8 @@ tr:hover {background-color: #8CBFE4;}
 
 .cancel, .temp, .submit {
     position: fixed;
-    bottom: 100px;
-    right: 50px;
+    bottom: 6vh;
+    left: 84vw;
 
     font-size: 20px;
     font-weight: bold;
@@ -105,8 +105,8 @@ tr:hover {background-color: #8CBFE4;}
 
 .submit-disabled {
     position: fixed;
-    bottom: 100px;
-    right: 50px;
+    bottom: 8vh;
+    left: 84vw;
 
     font-size: 20px;
     font-weight: bold;
@@ -123,16 +123,12 @@ tr:hover {background-color: #8CBFE4;}
 }
 
 .temp {
-    position: fixed;
-    bottom: 100px;
-    right: 295px;
+    left: 66vw;
     background: #95A5A6;
 }
 
 .cancel {
-    position: fixed;
-    bottom: 100px;
-    right: 600px;
+    left: 60vw;
     background: #95A5A6;
 }
 

@@ -67,23 +67,23 @@ function StudentCert() {
 
             <a href="/student/certificates/new-certificate" className="new-button">Νεό Πιστοποιητικό</a>
 
-            {(!isLogged || user.type !== 'student') && <div className="container">
-                <ul className="responsive-table">
-                    <li className="table-header">
+            {(!isLogged || user.type !== 'student') && <div className="container-c">
+                <ul className="responsive-table-c">
+                    <li className="table-header-c">
                         <div className="col col-1">Ημερομηνία</div>
                         <div className="col col-2">Τύπος Αίτησης</div>
                         <div className="col col-3">Κατάσταση</div>
                         <div className="col col-4"></div>
                         <div className="col col-5"></div>
                     </li>
-                    <li className="table-row">
+                    <li className="table-row-c">
                         <div className="col col-1" data-label="date">00-00-0000</div>
                         <div className="col col-2" data-label="type">ΧΧΧΧΧΧΧΧ</div>
                         <div className="col col-3" data-label="state">ΚΚΚΚΚΚΚΚ</div>
                         <a href="#" className="col col-4">Προβολή</a>
                         <a href="#popup-pr" className="col col-5">Εκτύπωση</a>
                     </li>
-                    <li className="table-row">
+                    <li className="table-row-c">
                         <div className="col col-1" data-label="date">00-00-0000</div>
                         <div className="col col-2" data-label="type">ΧΧΧΧΧΧΧΧ</div>
                         <div className="col col-3" data-label="state">ΚΚΚΚΚΚΚΚ</div>
@@ -93,9 +93,9 @@ function StudentCert() {
                 </ul>
             </div>}
 
-            {isLogged && user.type === 'student' && <div className="container">
-                <ul className="responsive-table">
-                    <li className="table-header">
+            {isLogged && user.type === 'student' && <div className="container-c">
+                <ul className="responsive-table-c">
+                    <li className="table-header-c">
                         <div className="col col-1">Ημερομηνία</div>
                         <div className="col col-2">Τύπος Αίτησης</div>
                         <div className="col col-3">Κατάσταση</div>
@@ -104,7 +104,7 @@ function StudentCert() {
                     </li>
                     {cert.map((c) => {
                         return (
-                            <li className="table-row">
+                            <li className="table-row-c">
                                 <div className="col col-1" data-label="date">{c.date}</div>
                                 <div className="col col-2" data-label="type">{c.type}</div>
                                 {c.state === "on_hold" && <div className="col col-3" data-label="state">Αναμονή</div>}
@@ -125,7 +125,7 @@ function StudentCert() {
                 <li className="drop-buttons">
                     <details className="dropdown_certs">
                         <summary role="button">
-                            <div className="title0">Κατηγορίες</div>
+                            <div className="title0-certs">Κατάσταση</div>
                             <a className="button_certs">Όλες <i className="fa-solid fa-chevron-down"></i></a>
                         </summary>
 
@@ -141,7 +141,7 @@ function StudentCert() {
 
                     <details className="dropdown1_certs">
                         <summary role="button">
-                            <div className="title1">Ταξινόμηση κατά</div>
+                            <div className="title1-certs">Ταξινόμηση κατά</div>
                             <a className="button1_certs">Πιο πρόσφατα<i
                                 className="fa-solid fa-chevron-down"></i></a>
                         </summary>

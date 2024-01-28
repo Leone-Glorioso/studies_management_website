@@ -19,8 +19,8 @@ function TeacherLessons4() {
 
             <a href="/teacher/lessons/new-grades" className="n-button">Νέο Βαθμολόγιο</a>
 
-            <div className="container">
-                <ul className="responsive-table">
+            <div className="container-t">
+                <ul className="responsive-table-t">
                     <li className="table-header">
                         <div className="col col-1">Ημερομηνία</div>
                         <div className="col col-2">Τίτλος μαθήματος</div>

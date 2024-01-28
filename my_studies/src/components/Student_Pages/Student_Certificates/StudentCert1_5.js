@@ -39,7 +39,7 @@ function StudentCert1_5() {
                 <li>Νέο Πιστοποιητικό</li>
             </ul>
 
-            <ul className="progress-bar">
+            <ul className="progress-bar-t5">
                 <li className="table-header">
                     <div className="step1">Επιλογή Πιστοποιητικού</div>
                     <div className="step2">Έλεγχος Στοιχείων</div>
@@ -57,7 +57,7 @@ function StudentCert1_5() {
                 </li>
             </ul>
 
-            <p className="text">Η αίτησή σου υποβλήθηκε με επιτυχία!</p>
+            <p className="text-5">Η αίτησή σου υποβλήθηκε με επιτυχία!</p>
 
             <ul className="buttons2">
                 <li className="buttons-c">
@@ -68,8 +68,8 @@ function StudentCert1_5() {
 
             <div className="message">
                 <div className="text2">Τι κάνω τώρα;</div>
-                <div className="text1">Μόλις η αίτησή σου εγκριθεί θα λάβεις ειδοποιητικό μήνυμα. Θα μπορείς να δεις
-                    την αίτησή σου μέσα από το προφίλ σου.
+                <div className="text1"><p>Μόλις η αίτησή σου εγκριθεί θα λάβεις ειδοποιητικό μήνυμα.</p><p>Θα μπορείς να δεις
+                    την αίτησή σου μέσα από το προφίλ σου.</p>
                 </div>
             </div>
 

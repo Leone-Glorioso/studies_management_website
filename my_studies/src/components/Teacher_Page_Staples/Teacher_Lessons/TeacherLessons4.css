@@ -28,7 +28,7 @@ ul.breadcrumb {
     }
 }
 
-.container {
+.container-t {
     position: fixed;
     /*top: 20vh;*/
     left: -9vw;
@@ -40,7 +40,7 @@ ul.breadcrumb {
     margin-top: 5vh;
 }
 
-.responsive-table {
+.responsive-table-t {
     width: 80vw;
 
     li {

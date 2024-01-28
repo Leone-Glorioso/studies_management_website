@@ -30,9 +30,9 @@ ul.breadcrumb {
 
 .table-gr{
     position: fixed;
-    top: 350px;
-    left: 290px;
-    width: 83vw;
+    top: 55vh;
+    left: 22%;
+    width: 70%;
     border-collapse: collapse;
 
     th {
@@ -66,8 +66,8 @@ tr:hover {background-color: #8CBFE4;}
 
 .print_button {
     position: fixed;
-    top: 260px;
-    right: 50px;
+    top: 41vh;
+    left: 85vw;
     display: inline-block;
     padding: 15px 20px;
     border: none;
@@ -84,8 +84,8 @@ tr:hover {background-color: #8CBFE4;}
 
 .print_button_dis {
     position: fixed;
-    top: 260px;
-    right: 50px;
+    top: 41vh;
+    left: 85vw;
     display: inline-block;
     padding: 15px 20px;
     border: none;

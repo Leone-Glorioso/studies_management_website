@@ -26,7 +26,7 @@ function StudentCert1() {
                 <li>Νέο Πιστοποιητικό</li>
             </ul>
 
-            <ul className="progress-bar">
+            <ul className="progress-bar-t1">
                 <li className="table-header">
                     <div className="step1">Επιλογή Πιστοποιητικού</div>
                     <div className="step2">Έλεγχος Στοιχείων</div>
@@ -44,7 +44,7 @@ function StudentCert1() {
                 </li>
             </ul>
 
-            <p className="text">Επέλεξε τον τύπο του πιστοποιητικού που θέλεις να εκδόσεις:</p>
+            <p className="text-1">Επέλεξε τον τύπο του πιστοποιητικού που θέλεις να εκδόσεις:</p>
 
             <div className="radio-buttons">
                 <label><input type="radio" name="e" onChange={() => handleRadioButton(1)}/> Φοιτητικής Ιδιότητας</label>

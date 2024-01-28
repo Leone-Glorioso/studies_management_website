@@ -27,56 +27,56 @@
 
 .button_grades {
     position: fixed;
-    top: 270px;
-    left: 290px;
+    top: 42vh;
+    left: 20vw;
 }
 
 .button1_grades {
     position: fixed;
-    top: 270px;
-    left: 490px;
+    top: 42vh;
+    left: 30vw;
 }
 
 .button2_grades {
     position: fixed;
-    top: 270px;
-    left: 790px;
+    top: 42vh;
+    left: 44vw;
 }
 
 .button3_grades {
     position: fixed;
-    top: 270px;
-    left: 990px;
+    top: 42vh;
+    left: 54vw;
 }
 
 .title0 {
     position: fixed;
-    top: 250px;
-    left: 290px;
+    top: 39vh;
+    left: 20vw;
 
     font-size: 15px;
 }
 
 .title1 {
     position: fixed;
-    top: 250px;
-    left: 490px;
+    top: 39vh;
+    left: 30vw;
 
     font-size: 15px;
 }
 
 .title2 {
     position: fixed;
-    top: 250px;
-    left: 790px;
+    top: 39vh;
+    left: 44vw;
 
     font-size: 15px;
 }
 
 .title3 {
     position: fixed;
-    top: 250px;
-    left: 990px;
+    top: 39vh;
+    left: 54vw;
 
     font-size: 15px;
 }
@@ -84,8 +84,8 @@
 /* Dropdown styles */
 .dropdown_grades {
     position: fixed;
-    top: 310px;
-    left: 360px;
+    top: 48vh;
+    left: 23vw;
     padding: 0;
     margin-right: 1em;
 
@@ -94,8 +94,8 @@
 
 .dropdown1_grades {
     position: fixed;
-    top: 310px;
-    left: 590px;
+    top: 48vh;
+    left: 35vw;
     padding: 0;
     margin-right: 1em;
 
@@ -104,8 +104,8 @@
 
 .dropdown2_grades {
     position: fixed;
-    top: 310px;
-    left: 850px;
+    top: 48vh;
+    left: 47vw;
     padding: 0;
     margin-right: 1em;
 
@@ -114,8 +114,8 @@
 
 .dropdown3_grades {
     position: fixed;
-    top: 310px;
-    left: 1080px;
+    top: 48vh;
+    left: 61vw;
     padding: 0;
     margin-right: 1em;
 

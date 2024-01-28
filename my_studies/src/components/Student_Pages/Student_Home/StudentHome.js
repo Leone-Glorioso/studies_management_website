@@ -107,7 +107,7 @@ function StudentHome()  {
             <a className="title-sp" href="/student/lessons">Τα μαθηματά μου</a>
             <p className="desc-sp">Παρακάτω βλέπεις τα μαθήματα που έχεις δηλώσει το τρέχον εξάμηνο:</p>
 
-            {(!isLogged || user.type !== 'student') && <table>
+            {(!isLogged || user.type !== 'student') && <table className="table-les">
                 <tr>
                     <th>Κωδικός Μαθήματος</th>
                     <th>Τίτλος Μαθήματος</th>
@@ -124,7 +124,7 @@ function StudentHome()  {
             </table>}
 
             {isLogged && user.type === 'student' &&
-                <table>
+                <table className="table-les">
                     <tr>
                         <th>Κωδικός Μαθήματος</th>
                         <th>Τίτλος Μαθήματος</th>
@@ -173,7 +173,7 @@ function StudentHome()  {
             <p className="go-to-profile">Δες περισσότερα στο: <a href="/student/profile">Προφίλ</a></p>
 
             <p className="title2-sp">Οι τελευταίες βαθμολογίες μου:</p>
-            {(!isLogged || user.type !== 'student') && <table className="table-gr">
+            {(!isLogged || user.type !== 'student') && <table className="table-gr-sp">
                 <tr>
                     <th>Κωδικός Μαθήματος</th>
                     <th>Τίτλος Μαθήματος</th>
@@ -201,7 +201,7 @@ function StudentHome()  {
                 </tr>
             </table>}
             {isLogged && user.type === 'student' &&
-                <table className="table-gr">
+                <table className="table-gr-sp">
                     <tr>
                         <th>Κωδικός Μαθήματος</th>
                         <th>Τίτλος Μαθήματος</th>
