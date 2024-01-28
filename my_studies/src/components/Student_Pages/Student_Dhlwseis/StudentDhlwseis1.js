@@ -12,6 +12,8 @@ function StudentDhlwseis1() {
     const user = Auth.getUser();
     const [lessons_in, setLessonsIn] = useState([]);
     const [lessons_out, setLessonsOut] = useState([]);
+    const [lessons_in_nums, setLessonsInNums] = useState([]);
+    const [lessons_out_nums, setLessonsOutNums] = useState([]);
     const [limit, setLimit] = useState(0);
     const [checked, setChecked] = useState(0);
     const [firstTime, setFirstTime] = useState(true)
@@ -32,14 +34,23 @@ function StudentDhlwseis1() {
             const docs_alt = await getDocs(q_alt);
             const less_in = [];
             const less_out = [];
+            const less_in_nums = [];
+            const less_out_nums = [];
             docs_alt.forEach((doc)=> {
-                if(in_dhloseis.includes(doc.data().num))
+                if(in_dhloseis.includes(doc.data().num)) {
                     less_in.push({id: doc.id, ...doc.data()});
-                else
+                    less_in_nums.push(doc.data().num);
+                }
+                else{
                     less_out.push({id: doc.id, ...doc.data()});
+                    less_out_nums.push(doc.data().num);
+                }
+
             })
             setLessonsIn(less_in);
             setLessonsOut(less_out);
+            setLessonsInNums(less_in_nums);
+            setLessonsOutNums(less_out_nums);
         }
         if(isLogged && user.type === 'student')
             fetchLessons();
