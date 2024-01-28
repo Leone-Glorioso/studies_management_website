@@ -107,9 +107,9 @@ function StudentCert() {
                             <li className="table-row-c">
                                 <div className="col col-1" data-label="date">{c.date}</div>
                                 <div className="col col-2" data-label="type">{c.type}</div>
-                                {c.state === "on_hold" && <div className="col col-3" data-label="state">Αναμονή</div>}
-                                {c.state === "rejected" && <div className="col col-3" data-label="state">Απόρριψη</div>}
-                                {c.state === "accepted" && <div className="col col-3" data-label="state">Αποδοχή</div>}
+                                {c.state === "on_hold" && <div className="col col-3" data-label="state">Σε εκκρεμότητα</div>}
+                                {c.state === "rejected" && <div className="col col-3" data-label="state">Εγγεκριμένες</div>}
+                                {c.state === "accepted" && <div className="col col-3" data-label="state">Ακυρωμένες</div>}
                                 {c.state !== "accepted" && <div className="col col-4-alt"></div>}
                                 {c.state === "accepted" &&
                                     <a href={Pdf} target={"_blank"} className="col col-4">Προβολή</a>}
