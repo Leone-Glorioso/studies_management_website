@@ -51,6 +51,22 @@ function StudentDhlwseis1() {
             setLessonsOut(less_out);
             setLessonsInNums(less_in_nums);
             setLessonsOutNums(less_out_nums);
+            setChecked(less_in_nums.length);
+            switch (user.year)
+            {
+                case 1:
+                    setLimit(3);
+                    break;
+                case 2:
+                    setLimit(4);
+                    break;
+                case 3:
+                    setLimit(5);
+                    break;
+                default:
+                    setLimit(10);
+                    break;
+            }
         }
         if(isLogged && user.type === 'student')
             fetchLessons();
@@ -159,7 +175,8 @@ function StudentDhlwseis1() {
                 <a href="/student/forms" className="cancel"> Άκυρο</a>
                 <a href="#popup-sd" className="temp">Προσωρινή αποθήκευση</a>
                 {!isLogged && <a onClick={onNotLogged} className="submit">Οριστική υποβολή</a>}
-                {isLogged && <a href="#popup-fs" className="submit">Οριστική υποβολή</a>}
+                {isLogged && checked <= limit && <a href="#popup-fs" className="submit">Οριστική υποβολή</a>}
+                {isLogged && checked > limit && <a className="submit-disabled" >Οριστική υποβολή</a>}
             </div>
 
             <div id="popup-fs" className="overlay">

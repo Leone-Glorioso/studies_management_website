@@ -103,6 +103,25 @@ tr:hover {background-color: #8CBFE4;}
     cursor: pointer;
 }
 
+.submit-disabled {
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: rgb(128, 128, 128);
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
 .temp {
     position: fixed;
     bottom: 100px;
