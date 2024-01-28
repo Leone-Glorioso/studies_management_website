@@ -29,12 +29,12 @@ ul.breadcrumb {
 }
 
 .warning {
-    font-size: 30px;
+    font-size: 25px;
     color: #6A0000;
-    font-weight: 600;
+    font-weight: bold;
     position: fixed;
-    top: 230px;
-    left: 290px;
+    top: 33vh;
+    left: 20vw;
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -105,7 +105,7 @@ tr:hover {background-color: #8CBFE4;}
 
 .submit-disabled {
     position: fixed;
-    bottom: 8vh;
+    bottom: 6vh;
     left: 84vw;
 
     font-size: 20px;

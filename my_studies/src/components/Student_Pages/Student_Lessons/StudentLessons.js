@@ -89,7 +89,7 @@ function StudentLessons() {
             </table>}
 
             {isLogged && user.type === 'student' &&
-                <table>
+                <table className="lessons">
                     <tr>
                         <th>Κωδικός Μαθήματος</th>
                         <th>Τίτλος Μαθήματος</th>

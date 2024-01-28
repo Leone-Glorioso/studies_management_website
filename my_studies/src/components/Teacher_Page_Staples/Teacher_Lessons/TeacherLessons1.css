@@ -28,10 +28,10 @@ ul.breadcrumb {
     }
 }
 
-.les-title {
+.les-title-b {
     position: fixed;
-    top: 270px;
-    left: 290px;
+    top: 42vh;
+    left: 19vw;
     font-size: 1.5vw;
     color: #01447e;
     font-weight: bold;
@@ -40,8 +40,8 @@ ul.breadcrumb {
 
 .table-s{
     position: fixed;
-    top: 330px;
-    left: 290px;
+    top: 50vh;
+    left: 19vw;
     width: 78vw;
     border-collapse: collapse;
 
@@ -74,10 +74,10 @@ tr:nth-child(even) {
 tr:hover {background-color: #8CBFE4;}
 
 .teach-buttons {
-    .mult, .save, .new, .sub {
+    .mult-b, .save-b, .new-one, .sub-b {
         position: fixed;
-        top: 260px;
-        right: 50px;
+        top: 40vh;
+        left: 94vw;
 
         font-size: 20px;
         font-weight: bold;
@@ -93,18 +93,18 @@ tr:hover {background-color: #8CBFE4;}
         cursor: pointer;
     }
 
-    .mult {
-        right: 110px;
+    .mult-b {
+        left: 75vw;
     }
 
-    .save {
-        right: 390px;
+    .save-b {
+        left: 55vw;
         background: #95A5A6;
     }
 
-    .sub {
-        top: 500px;
-        right: 50px;
+    .sub-b {
+        top: 75vh;
+        left: 84vw;
         background: #328424;
     }
 }

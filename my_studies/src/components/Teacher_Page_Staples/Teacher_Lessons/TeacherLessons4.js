@@ -45,25 +45,35 @@ function TeacherLessons4() {
                 </ul>
             </div>
 
-            <details className="dropdown-c">
-                <summary role="button">
-                    <a className="button-c">Κατάσταση Βαθμολογίου</a>
-                </summary>
-                <ul>
-                    <li><a href="#">Οριστικοποιημένες</a></li>
-                    <li><a href="#">Σε Εκκρεμότητα</a></li>
-                </ul>
-            </details>
+            <ul className="dropdowns">
+                <li className="drop-buttons">
+                    <details className="dropdown_certs">
+                        <summary role="button">
+                            <div className="title0-certs">Κατάσταση</div>
+                            <a className="button_certs">Όλα <i className="fa-solid fa-chevron-down"></i></a>
+                        </summary>
 
-            <details className="dropdown1-c">
-                <summary role="button">
-                    <a className="button1-c">Ταξινόμηση κατά</a>
-                </summary>
-                <ul>
-                    <li><a href="#">Πιο Πρόσφατα</a></li>
-                    <li><a href="#">Λιγότερο πρόσφατα</a></li>
-                </ul>
-            </details>
+
+                        <ul>
+                            <li><a href="#">Όλα</a></li>
+                            <li><a href="#">Σε εκκρεμότητα</a></li>
+                            <li><a href="#">Οριστικοποιημένα</a></li>
+                        </ul>
+                    </details>
+
+                    <details className="dropdown1_certs">
+                        <summary role="button">
+                            <div className="title1-certs">Ταξινόμηση κατά</div>
+                            <a className="button1_certs">Πιο πρόσφατα<i
+                                className="fa-solid fa-chevron-down"></i></a>
+                        </summary>
+                        <ul>
+                            <li><a href="#">Πιο πρόσφατα</a></li>
+                            <li><a href="#">Λιγότερο πρόσφατα</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
 
             <div id="popup-pr" className="overlay">
                 <div className="popup">

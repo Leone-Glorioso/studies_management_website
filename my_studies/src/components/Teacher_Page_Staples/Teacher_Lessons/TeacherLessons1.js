@@ -241,8 +241,8 @@ function TeacherLessons1() {
                 <li>Επεξεργασία βαθμολογίου</li>
             </ul>
 
-            {((!isLogged || user.type !== 'teacher')|| Auth.getLessonsEdit() === undefined) && <p className="les-title">Όνομα μαθήματος</p>}
-            {isLogged && Auth.getLessonsEdit() !== undefined && <p className="les-title">{Auth.getLessonsEdit().less.name}</p>}
+            {((!isLogged || user.type !== 'teacher')|| Auth.getLessonsEdit() === undefined) && <p className="les-title-b">Όνομα μαθήματος</p>}
+            {isLogged && Auth.getLessonsEdit() !== undefined && <p className="les-title-b">{Auth.getLessonsEdit().less.name}</p>}
 
 
             {(!isLogged || user.type !== 'teacher') && <table className="table-s">
@@ -290,10 +290,10 @@ function TeacherLessons1() {
             }
 
             <div className="teach-buttons">
-                <a href="#popup-save" className="save">Προσωρινή αποθήκευση</a>
-                <a href="#popup-mult" className="mult">Πολλαπλή Βαθμολόγηση</a>
-                <a href="#popup-one" className="new"><i className="fa-solid fa-plus"></i> </a>
-                <a href="#popup-sub" className="sub">Οριστική Υποβολή</a>
+                <a href="#popup-save" className="save-b">Προσωρινή αποθήκευση</a>
+                <a href="#popup-mult" className="mult-b">Πολλαπλή Βαθμολόγηση</a>
+                <a href="#popup-one" className="new-one"><i className="fa-solid fa-plus"></i> </a>
+                <a href="#popup-sub" className="sub-b">Οριστική Υποβολή</a>
             </div>
 
             {(!isLogged || user.type !== 'teacher') && <div id="popup-sub" className="overlay">
