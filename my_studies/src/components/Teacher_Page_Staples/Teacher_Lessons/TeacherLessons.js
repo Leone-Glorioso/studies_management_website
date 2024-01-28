@@ -32,7 +32,8 @@ function TeacherLessons() {
             for (const lesson of less){
                 const db_ref = collection(db, 'grading');
                 console.log(lesson.num)
-                const q = query(db_ref, where('teacher', '==', user.username), where('lesson', '==', lesson.num));
+                // const q = query(db_ref, where('teacher', '==', user.username), where('lesson', '==', lesson.num));
+                const q = query(db_ref, where('lesson', '==', lesson.num));
                 const docs_alt = await getDocs(q);
                 const data_alt = [];
                 docs_alt.forEach((doc)=> {
