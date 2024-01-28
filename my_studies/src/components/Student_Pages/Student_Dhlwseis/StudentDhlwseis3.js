@@ -137,14 +137,14 @@ function StudentDhlwseis3() {
                         <div className="col col-2" data-label="type">ΧΧΧΧΧΧΧΧ</div>
                         <a href="#popup-d" className="col col-3">Διαγραφή</a>
                         <a href="#popup-ep" className="col col-4">Προβολή</a>
-                        <a href="#popup-pr-d" className="col col-5">Οριστικοποίηση</a>
+                        <a href="#popup-fs" className="col col-5">Οριστικοποίηση</a>
                     </li>
                     <li className="table-row">
                         <div className="col col-1" data-label="date">00-00-0000</div>
                         <div className="col col-2" data-label="type">ΧΧΧΧΧΧΧΧ</div>
                         <a href="#popup-d" className="col col-3">Διαγραφή</a>
                         <a href="#popup-ep" className="col col-4">Προβολή</a>
-                        <a href="#popup-pr-d" className="col col-5">Οριστικοποίηση</a>
+                        <a href="#popup-fs" className="col col-5">Οριστικοποίηση</a>
                     </li>
                 </ul>
             </div>}
