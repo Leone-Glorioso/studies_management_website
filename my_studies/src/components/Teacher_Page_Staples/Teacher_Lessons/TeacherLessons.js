@@ -10,6 +10,7 @@ function TeacherLessons() {
     const isLogged = Auth.userIsAuthenticated();
     const user = Auth.getUser();
     const [lessons, setLessons] = useState([]);
+    const [top_grades, setTopGrades] = useState([]);
 
     useEffect(() => {
         async function fetchLessons()
@@ -65,6 +66,11 @@ function TeacherLessons() {
         Auth.setFromSaved(true);
     }
 
+    const onShowFinalized = (e, lesson) => {
+        setTopGrades(lesson.grading.grades);
+        // navigate('#popup-ef');
+    }
+
     return (
         <div>
             <Sidebar/>
@@ -93,6 +99,12 @@ function TeacherLessons() {
                     <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
                     <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
                     <td><a onClick={onNotLogged} className="button-n">Νέο Βαθμολόγιο</a></td>
+                </tr>
+                <tr>
+                    <td>101010</td>
+                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                    <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                    <td><a href={'#popup-ep'} className="button-show">Οριστικοποιημένη</a></td>
                 </tr>
 
             </table>}
@@ -129,13 +141,72 @@ function TeacherLessons() {
                                 <tr>
                                     <td>{lesson.less.num}</td>
                                     <td>{lesson.less.name}</td>
-                                    <td> Οριστικοποιημένο </td>
+                                    <td> <a className={'button-show'} href={'#popup-ep'} onClick={(e)=> onShowFinalized(e,lesson)}>Οριστικοποιημένη</a> </td>
                                 </tr>
                             )
                         }
                     )}
                 </table>
             }
+
+            {(!isLogged || user.type !== 'teacher') && <div id="popup-ep" className="overlay">
+                <div className="popup-ep-s-less">
+                    <div className="content">
+                        Οι βαθμολογίες σας:
+                        <table className="table-dhls">
+                            <tr>
+                                <th>Κωδικός Μαθητή</th>
+                                <th>Τίτλος Μαθήματος</th>
+                            </tr>
+                            <tr>
+                                <td>000000</td>
+                                <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                            </tr>
+                            <tr>
+                                <td>111111</td>
+                                <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                            </tr>
+                            <tr>
+                                <td>111111</td>
+                                <td>ΧΧΧΧΧ ΧΧΧΧΧ</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <ul className="button-ok-s-less">
+                        <li className="buttons-c1">
+                            <a href="/teacher/lessons" className="confirm">OK</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
+
+            {isLogged && user.type === 'teacher' && <div id="popup-ep" className="overlay">
+                <div className="popup-ep-s-less">
+                    <div className="content">
+                        Οι βαθμολογίες σας:
+                        <table className="table-dhls">
+                            <tr>
+                                <th>Κωδικός Μαθητή</th>
+                                <th>Τίτλος Μαθήματος</th>
+                            </tr>
+                            {top_grades.map((gr) => {
+                                return (
+                                    <tr>
+                                        <td>{gr.student}</td>
+                                        <td>{gr.grade}</td>
+                                    </tr>
+                                )
+                            })}
+                        </table>
+                    </div>
+                    <ul className="button-ok-s-less">
+                        <li className="buttons-c1">
+                            <a href="/teacher/lessons" className="confirm">OK</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
+
 
             <ul className="dropdowns">
                 <li className="drop-buttons">

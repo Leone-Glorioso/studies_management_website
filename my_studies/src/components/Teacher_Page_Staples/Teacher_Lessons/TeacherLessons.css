@@ -72,6 +72,17 @@ ul.breadcrumb {
             font-weight: 600;
             text-decoration: none;
         }
+
+        .button-show {
+            padding: 5px;
+            border-radius: 2px;
+            background-color: rgb(128, 128, 128);
+
+            font-size: 1.2vw;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
     }
 
     tr {
@@ -217,4 +228,115 @@ a.button2-t {
     left: 0;
     bottom: 0;
     z-index: 1;
+}
+
+
+
+.popup-ep-s-less {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    height: 55%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    top: 20%;
+}
+
+.popup-ep-s-less .content {
+    font-size: 20px;
+    font-weight: bold;
+    max-height: 30%;
+    overflow: auto;
+    text-align: center;
+
+    .table-dhls{
+        /*position: fixed;
+        top: 365px;
+        left: 290px;*/
+        width: 40%;
+        top: 40%;
+        left: 30%;
+        border-collapse: collapse;
+
+        th {
+            text-align: left;
+            font-size: 15px;
+            text-decoration-color: black;
+            font-weight: 600;
+            background-color: #A2D2F5;
+        }
+
+        td {
+            font-size: 15px;
+            text-decoration-color: black;
+            font-weight: 400;
+            border: 3px solid #A2D2F5;
+
+            .checkboxes {
+                display: flex;
+                align-items: center;
+            }
+
+            input[type="checkbox"] {
+                width: 1.5em;
+                height: 1.5em;
+                margin-right: 0.65rem;
+            }
+        }
+
+        tr {
+            height: 40px;
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: #D6EEEE;
+    }
+
+    tr:hover {background-color: #8CBFE4;}
+}
+
+@media screen and (max-width: 700px){
+    .box{
+        width: 70%;
+    }
+    .popup{
+        width: 70%;
+    }
+}
+
+.button-ok-s-less {
+    position: relative;
+    top: 75%;
+    left: 38%;
+    li {
+        border-radius: 3px;
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .buttons-c1 {
+        letter-spacing: 0.03em;
+
+    }
+
+    .confirm {
+        flex-basis: 20%;
+
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        background: #328424;
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
 }
