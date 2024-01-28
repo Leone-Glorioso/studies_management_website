@@ -28,17 +28,17 @@ ul.breadcrumb {
     }
 }
 
-.certs-button {
+.canc-button {
     position: fixed;
     top: 32vh;
-    left: 75vw;
+    left: 80vw;
     display: inline-block;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     box-sizing: border-box;
 
-    background: #205982;
+    background: #95A5A6;
     color: white;
     text-decoration: none;
     font-size: 20px;
@@ -46,7 +46,7 @@ ul.breadcrumb {
     cursor: pointer;
 }
 
-.edit-button {
+.save-button {
     position: fixed;
     top: 32vh;
     left: 87vw;

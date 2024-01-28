@@ -24,6 +24,7 @@ import StudentDhlwseis4 from "./components/Student_Pages/Student_Dhlwseis/Studen
 import StudentLessons from "./components/Student_Pages/Student_Lessons/StudentLessons";
 import StudentLessons1 from "./components/Student_Pages/Student_Lessons/StudentLessons1";
 import StudentProf from "./components/Student_Pages/Student_Profile/StudentProf";
+import StudentProf1 from "./components/Student_Pages/Student_Profile/StudentProf1";
 import TeacherHome from "./components/Teacher_Page_Staples/Teacher_Home/TeacherHome";
 import TeacherLessons from "./components/Teacher_Page_Staples/Teacher_Lessons/TeacherLessons";
 import TeacherLessons1 from "./components/Teacher_Page_Staples/Teacher_Lessons/TeacherLessons1";
@@ -48,6 +49,7 @@ function App() {
                   <Route path='/teacher/lessons/edit-grades' element={<TeacherLessons1/>} />
                   <Route path='/teacher/lessons' element={<TeacherLessons/>} />
                   <Route path='/teacher' element={<TeacherHome/>} />
+                  <Route path='/student/profile/edit' element={<StudentProf1/>} />
                   <Route path='/student/profile' element={<StudentProf/>} />
                   <Route path='/student/help' element={<StudentHelp/>} />
                   <Route path='/student/lessons/lesson' element={<StudentLessons1/>} />

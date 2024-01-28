@@ -1,10 +1,10 @@
 import React, {Component, useEffect, useState} from "react";
-import './StudentProf.css'
+import './StudentProf1.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
 import {Prof1, Prof2, Prof3} from "./ProfItems";
 import {useAuth} from "../../Auth/AuthContext";
 
-function StudentProf() {
+function StudentProf1() {
 
     const Auth = useAuth();
     const user = Auth.getUser();
@@ -221,11 +221,9 @@ function StudentProf() {
 
             <ul className="breadcrumb">
                 <li><a href="/student">Αρχική Φοιτητή</a></li>
-                <li>Προφίλ</li>
+                <li><a href="/student/profile">Προφίλ</a></li>
+                <li>Επεξεργασία προφίλ</li>
             </ul>
-
-            <a className="certs-button" href="/student/certificates">Πιστοποιητικά</a>
-            <a className="edit-button" href="/student/profile/edit">Επεξεργασία</a>
 
             {/*<a href="#" className="cert-button">Πιστοποιητικά</a>*/}
             <p className="title1">Σχετικά με της σπουδές μου:</p>
@@ -312,6 +310,9 @@ function StudentProf() {
                 </ul>
             </div>}
 
+            <a className="save-button" href="/student/profile">Αποθήκευση</a>
+            <a className="canc-button" href="/student/profile">Άκυρο</a>
+
         </div>
 
     )
@@ -319,4 +320,4 @@ function StudentProf() {
 }
 
 
-export default StudentProf
+export default StudentProf1
