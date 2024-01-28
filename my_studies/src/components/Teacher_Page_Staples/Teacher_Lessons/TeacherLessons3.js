@@ -182,14 +182,14 @@ function TeacherLessons3() {
                 <li>Νέο βαθμολόγιο</li>
             </ul>
 
-            <p className="les-title">{Auth.getLessonsEdit().name}</p>
+            <p className="les-title-b2">{Auth.getLessonsEdit().name}</p>
             <p className="text">Μπορείτε να δημιουργήσετε το βαθμολόγιο:</p>
             <p className="text1">- είτε ανεβάζοντας κάποιο αρχείο "Πολλαπλή Βαθμολόγηση"</p>
             <p className="text2">- είτε περνώντας κάθε βαθμολογία ξεχωριστά "+"</p>
 
             <div className="teach-buttons">
-                <a href="#popup-mult" className="mult">Πολλαπλή Βαθμολόγηση</a>
-                <a href="#popup-one" className="new"><i className="fa-solid fa-plus"></i> </a>
+                <a href="#popup-mult" className="mult-b2">Πολλαπλή Βαθμολόγηση</a>
+                <a href="#popup-one" className="new-b2"><i className="fa-solid fa-plus"></i> </a>
             </div>
 
             {(!isLogged || user.type !== 'teacher') && <div id="popup-mult" className="overlay">

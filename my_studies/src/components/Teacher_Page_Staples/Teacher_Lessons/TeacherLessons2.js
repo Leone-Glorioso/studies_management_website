@@ -18,8 +18,8 @@ function TeacherLessons2() {
                 <li>Οριστικοποίηση βαθμολογίου</li>
             </ul>
 
-            <p className="les-title">Όνομα μαθήματος</p>
-            <p className="text">Το βαθμολόγιο του μαθήματός σας υποβλήθηκε με επιτυχία!</p>
+            <p className="les-title-b1">Όνομα μαθήματος</p>
+            <p className="text-b1">Το βαθμολόγιο του μαθήματός σας υποβλήθηκε με επιτυχία!</p>
 
             <div className="final-buttons">
                 <a href="#popup-cancel" className="canc">Αναίρεση</a>

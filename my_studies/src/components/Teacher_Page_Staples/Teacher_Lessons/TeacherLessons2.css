@@ -28,20 +28,20 @@ ul.breadcrumb {
     }
 }
 
-.les-title {
+.les-title-b1 {
     position: fixed;
-    top: 270px;
-    left: 290px;
+    top: 42vh;
+    left: 19vw;
     font-size: 1.5vw;
     color: #01447e;
     font-weight: bold;
 
 }
 
-.text {
+.text-b1 {
     position: fixed;
-    top: 330px;
-    left: 290px;
+    top: 47vh;
+    left: 19vw;
     font-size: 1.5vw;
     color: black;
     font-weight: normal;
@@ -50,8 +50,8 @@ ul.breadcrumb {
 .final-buttons {
     .canc, .ret, .new-g {
         position: fixed;
-        top: 400px;
-        left: 290px;
+        top: 52vh;
+        left: 19vw;
 
         font-size: 20px;
         font-weight: bold;
