@@ -96,7 +96,7 @@ function UniversalNavbar() {
                     {isLogged && user.type === 'teacher' && <a href="/teacher/profile" className="menu-item" id={'profile'} data-pr-tooltip="Προφίλ"> <i><FaUserCircle/></i> </a>}
                     {!isLogged && <a className="menu-item" id={'profile'} data-pr-tooltip="Είσοδος" onClick={onLoginClick}> <i><TbLogin/></i> </a>}
                     <a href="/student" className="menu-item" id={'students'} data-pr-tooltip="Φοιτητές"> <i><FaUserGraduate/></i> </a>
-                    <a href="/teacher" className="menu-item" id={'teachers'} data-pr-tooltip="Εκπαιδευτικοί"> <i><FaChalkboardTeacher/></i> </a>
+                    <a href="/teacher" className="menu-item" id={'teachers'} data-pr-tooltip="Καθηγητές"> <i><FaChalkboardTeacher/></i> </a>
                     {isLogged && <a href={"javascript:window.location.href=window.location.href"} className="menu-item" id={'logout'} onClick={logout} data-pr-tooltip="Αποσύνδεση"> <i><TbLogout/></i> </a>}
 
 
