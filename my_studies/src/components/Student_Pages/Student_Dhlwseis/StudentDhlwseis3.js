@@ -2,7 +2,18 @@ import React, {Component, useEffect, useRef, useState} from "react";
 import './StudentDhlwseis3.css'
 import Sidebar from "../Navbar_Sidebar/Sidebar";
 import {useAuth} from "../../Auth/AuthContext";
-import {collection, getDocs, orderBy, query, where, doc, deleteDoc, getDoc} from "firebase/firestore";
+import {
+    collection,
+    getDocs,
+    orderBy,
+    query,
+    where,
+    doc,
+    deleteDoc,
+    getDoc,
+    updateDoc,
+    addDoc, Timestamp
+} from "firebase/firestore";
 import {db} from "../../config/firebase_config";
 import {useNavigate} from "react-router-dom";
 
@@ -16,6 +27,7 @@ function StudentDhlwseis3() {
     const [lessons_out, setLessonsOut] = useState([]);
     const id_del = useRef('');
     const navigate = useNavigate();
+    const [sub_id, setSubId] = useState('');
 
     useEffect(() => {
         async function fetdhDhl()
@@ -25,7 +37,7 @@ function StudentDhlwseis3() {
             const docs = await getDocs(q);
             const data = [];
             docs.forEach((doc)=> {
-                data.push({date: doc.data().date.toDate().toDateString(), time: doc.data().date.toDate().toLocaleTimeString("en-GB"), id: doc.id});
+                data.push({date: doc.data().date.toDate().toDateString(), time: doc.data().date.toDate().toLocaleTimeString("en-GB"), id: doc.id, lessons: doc.data().lessons});
             })
             setComps(data);
         }
@@ -72,6 +84,33 @@ function StudentDhlwseis3() {
 
     }
 
+    const submitLesson = (e) => {
+        async function setNewDhl(){
+            const q = query(collection(db, 'dhloseis'), where('student_username', '==', user.username), where('isCurrent', '==', true));
+            const docs = await getDocs(q);
+            const data = []
+            docs.forEach((doc)=> {
+                data.push(doc.id)
+            })
+            const change_id = data[0];
+            const change_ref = doc(db, 'dhloseis', change_id)
+            await updateDoc(change_ref, {
+                isCurrent: false
+            })
+            const doc_ref = doc(db, 'dhloseis', sub_id);
+            await updateDoc(doc_ref, {
+                isCurrent: true,
+                type: 'final'
+            })
+            navigate("/student/forms/new-form/done");
+        }
+        if(isLogged && user.type === 'student')
+            setNewDhl();
+    }
+
+    const onClickFinishing = (e, id) => {
+        setSubId(id);
+    }
 
 
     return (
@@ -126,26 +165,43 @@ function StudentDhlwseis3() {
                                 <div className="col col-2" data-label="type">{comp.time}</div>
                                 <a id={comp.id} href="#popup-d" className="col col-3" onClick={onPressDel}>Διαγραφή</a>
                                 <a href="#popup-ep" className="col col-4" onClick={(e)=> onShowDhl(e, comp.id)}>Προβολή</a>
-                                <a href="#popup-pr-d" className="col col-5">Οριστικοποίηση</a>
+                                <a href="#popup-fs" className="col col-5" onClick={(e)=> onClickFinishing(e, comp.id)}>Οριστικοποίηση</a>
                             </li>
                         );
                     })}
                 </ul>
             </div>}
 
-            <div id="popup-pr-d" className="overlay">
-                <div className="popup">
+            {(!isLogged || user.type !== 'student') &&<div id="popup-fs" className="overlay">
+                <div className="popup-fs">
                     <div className="content">
-                        Η δήλωσή σας αποθηκεύτηκε με επιτυχία!
+                        Σίγουρα θέλετε να υποβάλετε την δήλωση;
                     </div>
                     <ul className="buttons1">
                         <li className="buttons-c1">
                             <a href="/student/forms/saved"
-                               className="confirm">OK</a>
+                               className="cancel-p">Άκυρο</a>
+                            <a href="/student/forms/new-form/done"
+                               className="confirm">Επιβεβαίωση</a>
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>}
+
+            {isLogged && user.type === 'student' && <div id="popup-fs" className="overlay">
+                <div className="popup-fs">
+                    <div className="content">
+                        Σίγουρα θέλετε να υποβάλετε την δήλωση;
+                    </div>
+                    <ul className="buttons1">
+                        <li className="buttons-c1">
+                            <a href="/student/forms/saved"
+                               className="cancel-p">Άκυρο</a>
+                            <a onClick={submitLesson} className="confirm">Επιβεβαίωση</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>}
 
             {(!isLogged || user.type !== 'student') && <div id="popup-d" className="overlay">
                 <div className="popup">
