@@ -72,34 +72,30 @@ function StudentDhlwseis1() {
             fetchLessons();
     }, []);
 
-    const onClickCheckBox = (e) => {
-        console.log("Entered" + firstTime);
-        if(firstTime)
-        {
-            switch (user.year)
-            {
-                case 1:
-                    setLimit(3);
-                    break;
-                case 2:
-                    setLimit(4);
-                    break;
-                case 3:
-                    setLimit(5);
-                    break;
-                default:
-                    setLimit(10);
-                    break;
-            }
-            setChecked(lessons_in.length);
-            console.log(limit, checked, lessons_in.length, lessons_in, user.year);
-            setFirstTime(false);
-        }
-        if(e.target.checked)
+    const onClickCheckBox = (e, num) => {
+        const less_in = []
+        const less_out = []
+        if(e.target.checked){
             setChecked(checked+1);
-        else
+            for(const less of lessons_out_nums)
+                if(less !== num)
+                    less_out.push(less);
+            for(const less of lessons_in_nums)
+                less_in.push(less);
+            less_in.push(num);
+        }
+        else{
             setChecked(checked-1);
-        console.log(checked);
+            for(const less of lessons_in_nums)
+                if(less !== num)
+                    less_in.push(less);
+            for(const less of lessons_out_nums)
+                less_out.push(less);
+            less_out.push(num);
+        }
+        console.log(less_in, less_out);
+        setLessonsInNums(less_in);
+        setLessonsOutNums(less_out);
     }
 
     const onNotLogged = () => {
@@ -151,7 +147,7 @@ function StudentDhlwseis1() {
                                 <td>{item.num}</td>
                                 <td>{item.name}</td>
                                 <td className="checkboxes"><input type="checkbox" defaultChecked={true}
-                                                                  onClick={onClickCheckBox.bind(this)}/></td>
+                                                                  onClick={(e) => onClickCheckBox(e, item.num)}/></td>
                             </tr>
                         )
                     })}
@@ -162,7 +158,7 @@ function StudentDhlwseis1() {
                                 <td>{item.num}</td>
                                 <td>{item.name}</td>
                                 <td className="checkboxes"><input type="checkbox" defaultChecked={false}
-                                                                  onClick={onClickCheckBox.bind(this)}/></td>
+                                                                  onClick={(e) => onClickCheckBox(e, item.num)}/></td>
                             </tr>
                         )
                     })}
