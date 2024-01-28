@@ -44,4 +44,4 @@
 * **username:** vlachosnasos	**password:** @vlachosnasos
 ### Μαθητών:
 * **username:** sdi2500027	**password:** @sdi2500027
-* **username:** sdi2100026	**password:** @sdi2500026
+* **username:** sdi2500026	**password:** @sdi2500026
